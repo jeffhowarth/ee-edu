@@ -434,6 +434,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#derive-hillshade" class="md-nav__link">
+    derive hillshade
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviation-from-mean-elevation" class="md-nav__link">
+    deviation from mean elevation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -588,6 +602,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#derive-hillshade" class="md-nav__link">
+    derive hillshade
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviation-from-mean-elevation" class="md-nav__link">
+    deviation from mean elevation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -650,6 +678,43 @@
   class arg01 arg; </code></pre>
 <p></center></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_slope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">slope</span><span class="p">(</span><span class="nx">input_elevation</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="derive-hillshade"><strong>derive hillshade</strong></h2>
+<p>Shaded relief is a method to visualize a three-dimensional surface through the illusion of sunlight throwing highlights and casting shadows across a rough surface. Before computers, cartographers created shaded relief by hand (<strong>manual shaded relief</strong>) in a workflow that blended science and art. Most GIS software now provide a method to automate shaded relief, called <strong>analytic hillshading</strong>, that simplifies the shading of landscapes by modeling a fixed illumination source from an infinite distance, meaning the rays arrive in parallel from a constant angle defined by a position on the horizon (<strong>azimuth</strong>) and a position above the horizon (<strong>elevation</strong>, or sometimes called <strong>zenith</strong>).    </p>
+<p>In Earth Engine, the <code>ee.Terrain.hillshade()</code> method takes three arguments to output a hillshade image.  </p>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+  step02("ee.Terrain.hillshade()") ;
+  step03[/"output_hillshade"/]  ;
+  arg01["image_elevation: elevation of ground in meters"] ;
+  arg02["azimuth: position of sun on horizon, in degrees"] ;
+  arg03["elevation: position of sun above horizon, in degrees"] ;
+
+  step02 --&gt; step03
+  arg01 --- step02
+  arg02 --- step02
+  arg03 --- step02
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+
+
+  class step01 in-out; 
+  class step02 op;
+  class step03 in-out;
+  class arg01 arg;
+  class arg02 arg; 
+  class arg03 arg; </code></pre>
+<p></center></p>
+<p>An interesting fact about the illusion of shaded relief is that it is often most effective to put the illumination source on the northwest horizon, even though the sun is rarely in this position (in the northern hemisphere). Oddly, if you place the illumination source in the southern sky, the resulting terrain will appear inverted: mountain ridges look like valleys and creeks look like ridge lines.</p>
+<p><em>more forthcoming</em></p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_hs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">hillshade</span><span class="p">(</span><span class="nx">image_elevation</span><span class="p">,</span><span class="w"> </span><span class="mf">315</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="deviation-from-mean-elevation"><strong>deviation from mean elevation</strong></h2>
+<p><em>Description forthcoming</em>  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_dme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iTerrain</span><span class="p">.</span><span class="nx">devFromMeanElev</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>

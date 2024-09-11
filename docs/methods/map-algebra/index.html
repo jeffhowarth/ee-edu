@@ -603,12 +603,15 @@
                   
 
 
-<h1 id="map-algebra"><strong>Map algebra</strong></h1>
+<h1 id="map-algebra"><strong>map algebra</strong></h1>
 <p>These methods use math operations to alter values in raster data objects. </p>
 <h2 id="apply-scalar-operation"><strong>apply scalar operation</strong></h2>
 <p><strong>Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster with a constant.</strong> </p>
-<p>A common example is when you need to change the units of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by 100. </p>
+<p>A common example is when you need to <strong>change the units</strong> of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by 100. </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">constant</span><span class="p">);</span>
+</code></pre></div>
+<p>Another common example is when you want to apply <strong>vertical exaggeration</strong> to a terrain operation by multiplying the elevation values by a constant, usually called the <strong>z-factor</strong>. For example, by multiplying elevation by 2, you will exaggerate the terrain, making every location appear twice as high as it &lsquo;really&rsquo; is. It is often helpful to exaggerate terrain when visualizing micro-topography at large scales or macro-topography at small scales.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="nx">constant</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>

@@ -1,4 +1,4 @@
-# __Map algebra__
+# __map algebra__
 
 These methods use math operations to alter values in raster data objects. 
 
@@ -6,10 +6,16 @@ These methods use math operations to alter values in raster data objects.
 
 __Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster with a constant.__ 
 
-A common example is when you need to change the units of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by 100. 
+A common example is when you need to __change the units__ of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by 100. 
 
 ```js
 var output = input.divide(constant);
+```
+
+Another common example is when you want to apply __vertical exaggeration__ to a terrain operation by multiplying the elevation values by a constant, usually called the __z-factor__. For example, by multiplying elevation by 2, you will exaggerate the terrain, making every location appear twice as high as it 'really' is. It is often helpful to exaggerate terrain when visualizing micro-topography at large scales or macro-topography at small scales.  
+
+```js
+var output = input.multiply(constant);
 ```
 
 ---
