@@ -113,7 +113,7 @@ _more forthcoming_
 var image_hs = ee.Terrain.hillshade(image_elevation, 315, 45);
 ```
 
-## __deviation from mean elevation__  
+## __:earth_americas: deviation from mean elevation__  
 
 _Description forthcoming_  
 
