@@ -248,6 +248,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../geoMethods/" class="md-nav__link">
+        geoMethods
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -257,7 +272,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -275,19 +290,15 @@
         
           
         
-          
-        
-          
-        
       
       
-        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           METHODS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_3">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           METHODS
         </label>
@@ -327,36 +338,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../access-geoMethods/" class="md-nav__link">
-        access geoMethods
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../construct-data/" class="md-nav__link">
-        construct data object
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../inspect-data/" class="md-nav__link">
-        inspect data
+      <a href="../gather-raster-data/" class="md-nav__link">
+        gather raster data
       </a>
     </li>
   
@@ -383,8 +366,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../cart-layout/" class="md-nav__link">
-        cartography layout
+      <a href="../customize-Map/" class="md-nav__link">
+        customize Map
       </a>
     </li>
   
@@ -445,8 +428,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#slope" class="md-nav__link">
-    slope
+  <a href="#derive-slope" class="md-nav__link">
+    derive slope
   </a>
   
 </li>
@@ -479,7 +462,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
         
@@ -487,13 +470,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           TUTORIAL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           TUTORIAL
         </label>
@@ -507,6 +490,59 @@
     <li class="md-nav__item">
       <a href="../../tutorials/01/" class="md-nav__link">
         01 A Sketch Map from Lidar
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          PROBLEMS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          PROBLEMS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/01/" class="md-nav__link">
+        01 Memory under cover on Chipman Hill
       </a>
     </li>
   
@@ -546,8 +582,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#slope" class="md-nav__link">
-    slope
+  <a href="#derive-slope" class="md-nav__link">
+    derive slope
   </a>
   
 </li>
@@ -568,10 +604,51 @@
 
 
 <h1 id="terrain"><strong>terrain</strong></h1>
-<p>These methods derive topographic attributes of terrain from raster elevation data.  </p>
-<h2 id="slope"><strong>slope</strong></h2>
-<p><strong>Derive slope of a surface in degrees.</strong></p>
-<p>The units of the elevation image (often called <strong>z-units</strong>) must be meters.   </p>
+<p>These methods derive topographic attributes of terrain from raster elevation data. </p>
+<p>Many terrain methods compare vertical elevation to horizontal distance. For these operations to work correctly, the vertical units (often called <strong>z-units</strong>) need to be the same as the horizontal units (<strong>xy units</strong>). Because horizontal units in Earth Engine are always meters, this means that the general pattern is to first check the z-units of your elevation data and see if you need to scale the values before you call a terrain method. </p>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+
+  step01&gt;"If z-units are meters"] ;
+  step02("Apply a terrain method") ;
+  step03&gt;"If z-units are not meters"] ;
+  step04("Apply scalar operation") ;
+
+  step01 --&gt; step02
+  step03 --&gt; step04
+  step04 --&gt; step02
+
+  classDef task fill:#DDE6C3,stroke-width:0px,color:#000000;
+
+  class step01 task; 
+  class step02 task;
+  class step03 task; 
+  class step04 task;
+</code></pre>
+<p></center></p>
+<h2 id="derive-slope"><strong>derive slope</strong></h2>
+<p><strong>Derive slope of a surface in degrees from elevation in meters.</strong>  </p>
+<p>Call the <code>ee.Terrain.slope</code> method with the elevation data (with z-units meters) as the argument.  </p>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+  step02("SLOPE") ;
+  step03[/"OUTPUT_SLOPE"/]  ;
+  arg01["elevation in meters"] ;
+
+  step02 --&gt; step03
+  arg01 --- step02
+
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+
+
+  class step01 in-out; 
+  class step02 op;
+  class step03 in-out;
+  class arg01 arg; </code></pre>
+<p></center></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_slope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">slope</span><span class="p">(</span><span class="nx">input_elevation</span><span class="p">);</span>
 </code></pre></div>
 <hr />

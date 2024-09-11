@@ -13,7 +13,6 @@ graph LR
 
   step01 --> step02
 
-
   classDef store fill:#4AA8A0,stroke-width:0px,color:#FFFFFF; 
   classDef transform fill:#4A92A8,stroke-width:0px,color:#FFFFFF;
 
@@ -35,26 +34,26 @@ The basic element of all geospatial workflows is a three step process that Waldo
 
 ``` mermaid
 graph LR
-  step01["INPUT"] ;
-  step02("METHOD") ;
-  step03[/"OUTPUT"/]  ;
-  arg01["argument"] ;
 
-  step01 --> step02 --> step03
-  arg01 --- step02
+  input["INPUT"] ;
+  method("METHOD") ;
+  output[/"OUTPUT"/]  ;
 
+  input --> method --> output
+  
+  arg["argument"] ;
+  
+  arg --o method
 
   classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
   classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
   classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
   
 
-  class step01 in-out; 
-  class step02 op;
-  class step03 in-out;
-  class arg01 arg;
-
- 
+  class input in-out; 
+  class method op;
+  class output in-out;
+  class arg arg; 
 ```
 
 </center>

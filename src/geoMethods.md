@@ -1,14 +1,16 @@
-# __access geoMethods__
+# __geoMethods__
 
-The geoMethods module is a collection of, well, methods that I wrote and packaged in a way that will allow you to use the methods without having to write them from scratch. 
+geoMethods is a collection of, well, methods that I wrote and packaged in a way that will allow you to use the methods without having to write them from scratch. 
 
-Most of the methods in the module are in the module for two reasons:    
+I wrote these methods for two reasons:    
 
 1. Each represents a recurring task of geospatial analysis that are supported by other geographic information systems (like QGIS or ArcGIS).
 
 2. Each requires a chain of transformations to make in Earth Engine which can be conceptually confusing and technically difficult for novices to do.    
 
-My hope is that the module may help you focus on how different methods of spatial analysis and cartography work conceptually without having to get bogged down in writing complicated task chains for lower-level branches of task trees.  
+My hope is that providing ready-made methods may help you focus on how different methods of spatial analysis and cartography work conceptually in workflows without having to get bogged down in writing complicated task chains for common tools.  
+
+---  
 
 ## __import module__  
 
@@ -20,13 +22,17 @@ var geo = require("users/jhowarth/eePatterns:modules/geoMethods.js");
 print("geoMethods dictionary", geo.help);    // Prints dictionary of all tools in module.
 ```
 
-This will print the module's help dictionary, which lists all methods and url links to their docs.
+The code block above will import the module and print the module's help dictionary, which lists all methods and url links to their docs. You only need to import the module once in a script the calls method in the module. I usually place the above code near the top of my script (under the header).  
+
+---  
 
 ## __docs in eePatterns__  
 
 __A globe icon :earth_americas: identifies methods from module.__  
 
 In the METHODS documentation, the :earth_americas: symbol identifies a method that requires the geoMethods module. To use any of these methods, you will need to include the [import module](#import-module) in your script prior to calling the method. 
+
+---  
 
 ## __peak under hood__
 

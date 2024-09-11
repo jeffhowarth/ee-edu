@@ -103,7 +103,7 @@ markdown_extensions:
   - markdown.extensions.meta
   - markdown.extensions.toc:
       permalink: false
-      toc_depth: 2
+      toc_depth: 3
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -141,14 +141,13 @@ markdown_extensions:
 nav:
   - title page: index.md  
   - introduction: intro.md  
+  - geoMethods: geoMethods.md  
   - METHODS:
     - javascript: methods/javascript.md
     - explain code: methods/explain-code.md  
-    - access geoMethods: methods/access-geoMethods.md  
-    - construct data object: methods/construct-data.md  
-    - inspect data: methods/inspect-data.md  
+    - gather raster data: methods/gather-raster-data.md  
     - map raster layers: methods/map-raster-layers.md 
-    - cartography layout: methods/cart-layout.md
+    - customize Map: methods/customize-Map.md
     # - filter data: patterns/filter-data.md  
     # - convert data model: patterns/convert-data-model.md  
     # - area operations: patterns/area.md  
@@ -163,8 +162,8 @@ nav:
     # - viz: visualize/image-viz.md  
   - TUTORIAL:  
     - 01 A Sketch Map from Lidar: tutorials/01.md  
-  # - PROBLEMS:
-  #   - 01 Chipman Hill Under Cover: problems/01.md  
+  - PROBLEMS:
+    - 01 Memory under cover on Chipman Hill: problems/01.md  
   # - WORKED EXAMPLES:  
   #   - naip images: examples/naip.md 
  
