@@ -78,7 +78,7 @@ graph TD
 
 </center>
 
-### __slope operation__
+### __slope method__
 
 __Derive slope of a surface in degrees from elevation in meters.__  
 
@@ -88,12 +88,12 @@ Call the ```ee.Terrain.slope``` method with the elevation data (with z-units met
 
 ``` mermaid
 graph LR
-  step02("SLOPE") ;
-  step03[/"OUTPUT_SLOPE"/]  ;
-  arg01["elevation in meters"] ;
+  step02("ee.Terrain.slope()") ;
+  step03[/"image_slope"/]  ;
+  arg01["image_elevation_meters"] ;
 
   step02 --> step03
-  arg01 --- step02
+  arg01 --o step02
 
 
   classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
@@ -109,25 +109,60 @@ graph LR
 
 </center>
 
-
 ```js
-var output_slope = ee.Terrain.slope(input_elevation);
+var image_slope = ee.Terrain.slope(image_elevation_meters);
 
 ```
 
 ---
 
-### __aspect operation__  
+## __direction of change__  
 
- Closely related to slope, aspect is the steepest downhill direction of a pixel. Like slope, aspect is derived with a kernel that computes change in elevation in both x- and y- dimensions, but rather than reporting the steepness of the slope, aspect reports the direction, generally expressed as an azimuthal angle from North 0.  
+### __concepts__  
 
-![aspect calculation](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/aspect/aspect.png)
+ Closely related to slope, __aspect__ reports the direction of change, or the steepest downhill direction of a pixel. 
+ 
+ Like slope, aspect is derived with a kernel that computes change in elevation in both x- and y- dimensions, but rather than reporting the steepness of the slope, aspect reports the direction, generally expressed as an azimuthal angle from North 0.  
+
+![aspect calculation](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/aspect/aspect.png)  
+
+### __aspect method__ 
+
+In Earth Engine, the aspect method closely resembles the pattern for slope. 
+
+<center>
+
+``` mermaid
+graph LR
+  step02("ee.Terrain.aspect()") ;
+  step03[/"image_aspect"/]  ;
+  arg01["image_elevation_meters"] ;
+
+  step02 --> step03
+  arg01 --o step02
 
 
-```js
-var image_aspect = ee.Terrain.aspect(image);
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+  
+
+  class step01 in-out; 
+  class step02 op;
+  class step03 in-out;
+  class arg01 arg; 
 ```
 
+</center>
+
+```js
+var image_aspect = ee.Terrain.aspect(image_elevation_meters);
+```
+
+
+Because the method directly compares changes in z-values to changes in x- and y- values, the units for elevation must match the units for x- and y- dimensions. Practically, this means the elevation units must be meters.  
+
+The output aspect image reports the direction of slope in degrees. Completely flat pixels (with no slope direction) receive the value 0. It is often good practice to [mask these pixels](../local-operations#mask-pixels) so as not to confuse them with north-facing locations.  
 
 ## __analytic hillshading__  
 
@@ -159,16 +194,16 @@ In Earth Engine, the ```ee.Terrain.hillshade()``` method takes three arguments t
 
 ``` mermaid
 graph LR
-  step02("ee.Terrain.hillshade()") ;
-  step03[/"output_hillshade"/]  ;
-  arg01["image_elevation"] ;
-  arg02["azimuth"] ;
-  arg03["elevation (zenith angle)"] ;
+  step02("ee.Terrain.hillshade()") ; 
+  step03[/"image_hs"/]  ;
+  arg01["image_elevation_meters"] ;
+  arg02["azimuth angle"] ;
+  arg03["zenith angle"] ;
   
   step02 --> step03
-  arg01 --- step02
-  arg02 --- step02
-  arg03 --- step02
+  arg01 --o step02
+  arg02 --o step02
+  arg03 --o step02
 
   classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
   classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
@@ -187,7 +222,7 @@ graph LR
 
 
 ```js
-var image_hs = ee.Terrain.hillshade(image_elevation, 315, 45);
+var image_hs = ee.Terrain.hillshade(image_elevation_meters, azimuth, zenith);
 ```
 
 ## __:earth_americas: deviation from mean elevation__  

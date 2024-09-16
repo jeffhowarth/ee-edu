@@ -18,7 +18,7 @@
         <link rel="prev" href="../gather-raster-data/">
       
       
-        <link rel="next" href="../customize-Map/">
+        <link rel="next" href="../explain-symbology/">
       
       <link rel="icon" href="../../assets/myIcon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
@@ -250,8 +250,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../geoMethods/" class="md-nav__link">
-        geoMethods
+      <a href="../../geo-module/" class="md-nav__link">
+        geo module
       </a>
     </li>
   
@@ -275,6 +275,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
+        
+          
         
           
         
@@ -444,37 +446,24 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#define-colors-with-legend" class="md-nav__link">
-    define colors with legend
-  </a>
-  
-    <nav class="md-nav" aria-label="define colors with legend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#from-image-with-continuous-data" class="md-nav__link">
-    from image with continuous data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#from-image-with-nominal-data" class="md-nav__link">
-    from image with nominal data
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explain-symbology/" class="md-nav__link">
+        explain symbology
+      </a>
     </li>
   
 
@@ -759,33 +748,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#define-colors-with-legend" class="md-nav__link">
-    define colors with legend
-  </a>
-  
-    <nav class="md-nav" aria-label="define colors with legend">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#from-image-with-continuous-data" class="md-nav__link">
-    from image with continuous data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#from-image-with-nominal-data" class="md-nav__link">
-    from image with nominal data
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -992,64 +954,6 @@
 
 <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="nx">single_viz</span><span class="p">,</span><span class="s2">&quot;Layer Name&quot;</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="define-colors-with-legend"><strong>define colors with legend</strong></h2>
-<p>These methods take some or all of the following arguments.</p>
-<table>
-<thead>
-<tr>
-<th align="right">ARGUMENT</th>
-<th align="left">DESCRIPTION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right"><strong>&ldquo;title&rdquo;</strong></td>
-<td align="left">Label for the legend. Must be a string. Often a short description of image will do.</td>
-</tr>
-<tr>
-<td align="right"><strong>viz</strong></td>
-<td align="left">The viz dictionary that defines how to visualize (display) the data.</td>
-</tr>
-<tr>
-<td align="right"><strong>class_labels</strong></td>
-<td align="left">A list of names for each color in the palette that define the classes or categories of the data.</td>
-</tr>
-<tr>
-<td align="right"><strong>&ldquo;position-on-map&rdquo;</strong></td>
-<td align="left">Where to place the legend. Must be a string. Composed as &ldquo;row - column&rdquo;, where rows are &ldquo;bottom&rdquo;, &ldquo;middle&rdquo;, or &ldquo;top&rdquo; and columns are &ldquo;left&rdquo;, &ldquo;center&rdquo;, &ldquo;right&rdquo;. For example, &ldquo;bottom-right&rdquo;. There is no &ldquo;middle-center&rdquo;.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="from-image-with-continuous-data"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> from image with continuous data</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="c1">// Make legend from image with continuous data. </span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">legend_continuous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">legendContinuous</span><span class="p">(</span>
-<span class="w">  </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">viz</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="s2">&quot;position-on-map&quot;</span>
-<span class="w">  </span><span class="p">)</span>
-<span class="p">;</span>
-
-<span class="c1">// Add legend to Map.  </span>
-
-<span class="nb">Map</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">legend_continuous</span><span class="p">);</span>
-</code></pre></div>
-<hr />
-<h3 id="from-image-with-nominal-data"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> from image with nominal data</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="c1">// Make legend from image with nominal data.</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">legend_nominal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">legendNominal</span><span class="p">(</span>
-<span class="w">  </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">viz</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">class_labels</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="s2">&quot;position-on-map&quot;</span>
-<span class="w">  </span><span class="p">)</span>
-<span class="p">;</span>
-
-<span class="c1">// Add legend to Map.  </span>
-
-<span class="nb">Map</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">legend_remapped</span><span class="p">);</span>
-</code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
@@ -1089,13 +993,13 @@
         
         
           
-          <a href="../customize-Map/" class="md-footer__link md-footer__link--next" aria-label="Next: customize Map" rel="next">
+          <a href="../explain-symbology/" class="md-footer__link md-footer__link--next" aria-label="Next: explain symbology" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                customize Map
+                explain symbology
               </div>
             </div>
             <div class="md-footer__button md-icon">

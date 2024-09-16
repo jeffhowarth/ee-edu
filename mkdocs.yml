@@ -141,12 +141,13 @@ markdown_extensions:
 nav:
   - title page: index.md  
   - introduction: intro.md  
-  - geoMethods: geoMethods.md  
+  - geo module: geo-module.md  
   - METHODS:
     - javascript: methods/javascript.md
     - explain code: methods/explain-code.md  
     - gather raster data: methods/gather-raster-data.md  
     - map raster layers: methods/map-raster-layers.md 
+    - explain symbology: methods/explain-symbology.md  
     - customize Map: methods/customize-Map.md
     # - filter data: patterns/filter-data.md  
     # - convert data model: patterns/convert-data-model.md  

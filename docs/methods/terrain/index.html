@@ -250,8 +250,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../geoMethods/" class="md-nav__link">
-        geoMethods
+      <a href="../../geo-module/" class="md-nav__link">
+        geo module
       </a>
     </li>
   
@@ -275,6 +275,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
+        
+          
         
           
         
@@ -358,6 +360,20 @@
     <li class="md-nav__item">
       <a href="../map-raster-layers/" class="md-nav__link">
         map raster layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explain-symbology/" class="md-nav__link">
+        explain symbology
       </a>
     </li>
   
@@ -489,15 +505,35 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#slope-operation" class="md-nav__link">
-    slope operation
+  <a href="#slope-method" class="md-nav__link">
+    slope method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direction-of-change" class="md-nav__link">
+    direction of change
+  </a>
+  
+    <nav class="md-nav" aria-label="direction of change">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concepts_1" class="md-nav__link">
+    concepts
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#aspect-operation" class="md-nav__link">
-    aspect operation
+  <a href="#aspect-method" class="md-nav__link">
+    aspect method
   </a>
   
 </li>
@@ -516,7 +552,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#concepts_1" class="md-nav__link">
+  <a href="#concepts_2" class="md-nav__link">
     concepts
   </a>
   
@@ -734,15 +770,35 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#slope-operation" class="md-nav__link">
-    slope operation
+  <a href="#slope-method" class="md-nav__link">
+    slope method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direction-of-change" class="md-nav__link">
+    direction of change
+  </a>
+  
+    <nav class="md-nav" aria-label="direction of change">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concepts_1" class="md-nav__link">
+    concepts
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#aspect-operation" class="md-nav__link">
-    aspect operation
+  <a href="#aspect-method" class="md-nav__link">
+    aspect method
   </a>
   
 </li>
@@ -761,7 +817,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#concepts_1" class="md-nav__link">
+  <a href="#concepts_2" class="md-nav__link">
     concepts
   </a>
   
@@ -858,17 +914,17 @@
   class step05 done; 
 </code></pre>
 <p></center></p>
-<h3 id="slope-operation"><strong>slope operation</strong></h3>
+<h3 id="slope-method"><strong>slope method</strong></h3>
 <p><strong>Derive slope of a surface in degrees from elevation in meters.</strong>  </p>
 <p>Call the <code>ee.Terrain.slope</code> method with the elevation data (with z-units meters) as the argument.  </p>
 <p><center></p>
 <pre class="mermaid"><code>graph LR
-  step02("SLOPE") ;
-  step03[/"OUTPUT_SLOPE"/]  ;
-  arg01["elevation in meters"] ;
+  step02("ee.Terrain.slope()") ;
+  step03[/"image_slope"/]  ;
+  arg01["image_elevation_meters"] ;
 
   step02 --&gt; step03
-  arg01 --- step02
+  arg01 --o step02
 
 
   classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
@@ -881,16 +937,42 @@
   class step03 in-out;
   class arg01 arg; </code></pre>
 <p></center></p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_slope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">slope</span><span class="p">(</span><span class="nx">input_elevation</span><span class="p">);</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_slope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">slope</span><span class="p">(</span><span class="nx">image_elevation_meters</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h3 id="aspect-operation"><strong>aspect operation</strong></h3>
-<p>Closely related to slope, aspect is the steepest downhill direction of a pixel. Like slope, aspect is derived with a kernel that computes change in elevation in both x- and y- dimensions, but rather than reporting the steepness of the slope, aspect reports the direction, generally expressed as an azimuthal angle from North 0.  </p>
-<p><img alt="aspect calculation" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/aspect/aspect.png" /></p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">aspect</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span>
+<h2 id="direction-of-change"><strong>direction of change</strong></h2>
+<h3 id="concepts_1"><strong>concepts</strong></h3>
+<p>Closely related to slope, <strong>aspect</strong> reports the direction of change, or the steepest downhill direction of a pixel. </p>
+<p>Like slope, aspect is derived with a kernel that computes change in elevation in both x- and y- dimensions, but rather than reporting the steepness of the slope, aspect reports the direction, generally expressed as an azimuthal angle from North 0.  </p>
+<p><img alt="aspect calculation" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/aspect/aspect.png" />  </p>
+<h3 id="aspect-method"><strong>aspect method</strong></h3>
+<p>In Earth Engine, the aspect method closely resembles the pattern for slope. </p>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+  step02("ee.Terrain.aspect()") ;
+  step03[/"image_aspect"/]  ;
+  arg01["image_elevation_meters"] ;
+
+  step02 --&gt; step03
+  arg01 --o step02
+
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+
+
+  class step01 in-out; 
+  class step02 op;
+  class step03 in-out;
+  class arg01 arg; </code></pre>
+<p></center></p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">aspect</span><span class="p">(</span><span class="nx">image_elevation_meters</span><span class="p">);</span>
 </code></pre></div>
+<p>Because the method directly compares changes in z-values to changes in x- and y- values, the units for elevation must match the units for x- and y- dimensions. Practically, this means the elevation units must be meters.  </p>
+<p>The output aspect image reports the direction of slope in degrees. Completely flat pixels (with no slope direction) receive the value 0. It is often good practice to <a href="../local-operations#mask-pixels">mask these pixels</a> so as not to confuse them with north-facing locations.  </p>
 <h2 id="analytic-hillshading"><strong>analytic hillshading</strong></h2>
-<h3 id="concepts_1">concepts</h3>
+<h3 id="concepts_2">concepts</h3>
 <p>Shaded relief is a method to visualize a three-dimensional surface by creating the illusion of highlights and shadows thrown by sunlight on a terrain. Before computers, cartographers created shaded relief by hand (<strong>manual shaded relief</strong>) in a workflow that blended science and art. Most GIS software now provide a method to automate shaded relief, called <strong>analytic hillshading</strong>, that simplifies the shading illusion. </p>
 <p>The method assumes that the illumination source (sun) is an infinite distance from Earth. As a result, the illumination rays travel and reach the Earth&rsquo;s surface in parallel.  </p>
 <p><img alt="illumination rays" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/hillshade/illumination-rays.png" /></p>
@@ -904,16 +986,16 @@
 <p>In Earth Engine, the <code>ee.Terrain.hillshade()</code> method takes three arguments to output a hillshade image.  </p>
 <p><center></p>
 <pre class="mermaid"><code>graph LR
-  step02("ee.Terrain.hillshade()") ;
-  step03[/"output_hillshade"/]  ;
-  arg01["image_elevation"] ;
-  arg02["azimuth"] ;
-  arg03["elevation (zenith angle)"] ;
+  step02("ee.Terrain.hillshade()") ; 
+  step03[/"image_hs"/]  ;
+  arg01["image_elevation_meters"] ;
+  arg02["azimuth angle"] ;
+  arg03["zenith angle"] ;
 
   step02 --&gt; step03
-  arg01 --- step02
-  arg02 --- step02
-  arg03 --- step02
+  arg01 --o step02
+  arg02 --o step02
+  arg03 --o step02
 
   classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
   classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
@@ -927,7 +1009,7 @@
   class arg02 arg; 
   class arg03 arg; </code></pre>
 <p></center></p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_hs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">hillshade</span><span class="p">(</span><span class="nx">image_elevation</span><span class="p">,</span><span class="w"> </span><span class="mf">315</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">);</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_hs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">hillshade</span><span class="p">(</span><span class="nx">image_elevation_meters</span><span class="p">,</span><span class="w"> </span><span class="nx">azimuth</span><span class="p">,</span><span class="w"> </span><span class="nx">zenith</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="deviation-from-mean-elevation"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> deviation from mean elevation</strong></h2>
 <p><em>Description forthcoming</em>  </p>

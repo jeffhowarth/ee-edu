@@ -6,7 +6,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/jeffhowarth/ee-patterns/geoMethods/</loc>
+         <loc>https://github.com/jeffhowarth/ee-patterns/geo-module/</loc>
          <lastmod>2024-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -22,6 +22,11 @@
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/methods/explain-code/</loc>
+         <lastmod>2024-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/jeffhowarth/ee-patterns/methods/explain-symbology/</loc>
          <lastmod>2024-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -30,7 +30,7 @@ The code block above will import the module and print the module's help dictiona
 
 __A globe icon :earth_americas: identifies methods from module.__  
 
-In the METHODS documentation, the :earth_americas: symbol identifies a method that requires the geoMethods module. To use any of these methods, you will need to include the [import module](#import-module) in your script prior to calling the method. 
+In the METHODS documentation, the :earth_americas: symbol identifies a method that requires the geo module. To use any of these methods, you will need to include the [import module](#import-module) in your script prior to calling the method. 
 
 ---  
 
