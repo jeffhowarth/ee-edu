@@ -153,8 +153,9 @@ nav:
     # - area operations: patterns/area.md  
     # - distance operations: patterns/distance.md  
     # - aggregate table: patterns/aggregate-table.md  
-    - map algebra: methods/map-algebra.md 
-    # - reclassify: patterns/reclassify.md   
+    - reclassify images: methods/reclassify.md
+    - scalar operations: methods/scalar-operations.md 
+    - local operations: methods/local-operations.md  
     # - zonal operations: patterns/zonal-operations.md  
     - terrain: methods/terrain.md  
     # - export: patterns/export.md  
@@ -162,8 +163,9 @@ nav:
     # - viz: visualize/image-viz.md  
   - TUTORIAL:  
     - 01 A Sketch Map from Lidar: tutorials/01.md  
-  - PROBLEMS:
-    - 01 Memory under cover on Chipman Hill: problems/01.md  
+    - 02 A Slippy Topographic Map: tutorials/02.md
+  - PRACTICE:
+    - 01 Memory under cover: practice/01.md  
   # - WORKED EXAMPLES:  
   #   - naip images: examples/naip.md 
  

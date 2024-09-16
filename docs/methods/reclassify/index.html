@@ -12,20 +12,20 @@
         <meta name="author" content="Jeff Howarth">
       
       
-        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/methods/map-algebra/">
+        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/methods/reclassify/">
       
       
         <link rel="prev" href="../customize-Map/">
       
       
-        <link rel="next" href="../terrain/">
+        <link rel="next" href="../scalar-operations/">
       
       <link rel="icon" href="../../assets/myIcon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>map algebra - ee-patterns</title>
+        <title>reclassify images - ee-patterns</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#map-algebra" class="md-skip">
+        <a href="#reclassify-images" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              map algebra
+              reclassify images
             
           </span>
         </div>
@@ -290,6 +290,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -390,12 +394,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          map algebra
+          reclassify images
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        map algebra
+        reclassify images
       </a>
       
         
@@ -414,8 +418,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apply-scalar-operation" class="md-nav__link">
-    apply scalar operation
+  <a href="#make-a-boolean-truefalse-image" class="md-nav__link">
+    Make a boolean (true/false) image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reclassify-by-equal-intervals" class="md-nav__link">
+    Reclassify by equal intervals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remap-old-values-to-new-values" class="md-nav__link">
+    Remap old values to new values
   </a>
   
 </li>
@@ -424,6 +442,34 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scalar-operations/" class="md-nav__link">
+        scalar operations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-operations/" class="md-nav__link">
+        local operations
+      </a>
     </li>
   
 
@@ -468,6 +514,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -490,6 +538,20 @@
     <li class="md-nav__item">
       <a href="../../tutorials/01/" class="md-nav__link">
         01 A Sketch Map from Lidar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/02/" class="md-nav__link">
+        02 A Slippy Topographic Map
       </a>
     </li>
   
@@ -524,14 +586,14 @@
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-          PROBLEMS
+          PRACTICE
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
-          PROBLEMS
+          PRACTICE
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -541,8 +603,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../problems/01/" class="md-nav__link">
-        01 Memory under cover on Chipman Hill
+      <a href="../../practice/01/" class="md-nav__link">
+        01 Memory under cover
       </a>
     </li>
   
@@ -582,8 +644,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apply-scalar-operation" class="md-nav__link">
-    apply scalar operation
+  <a href="#make-a-boolean-truefalse-image" class="md-nav__link">
+    Make a boolean (true/false) image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reclassify-by-equal-intervals" class="md-nav__link">
+    Reclassify by equal intervals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remap-old-values-to-new-values" class="md-nav__link">
+    Remap old values to new values
   </a>
   
 </li>
@@ -603,18 +679,21 @@
                   
 
 
-<h1 id="map-algebra"><strong>map algebra</strong></h1>
-<p>These methods use math operations to alter values in raster data objects. </p>
-<h2 id="apply-scalar-operation"><strong>apply scalar operation</strong></h2>
-<p><strong>Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster with a constant.</strong> </p>
-<p>A common example is when you need to <strong>change the units</strong> of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by 100. </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">constant</span><span class="p">);</span>
+<h1 id="reclassify-images"><strong>reclassify images</strong></h1>
+<p>These methods purposefully reclassify the values in an image.   </p>
+<h3 id="make-a-boolean-truefalse-image"><strong>Make a boolean (true/false) image</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w">  </span>
 </code></pre></div>
-<p>Another common example is when you want to apply <strong>vertical exaggeration</strong> to a terrain operation by multiplying the elevation values by a constant, usually called the <strong>z-factor</strong>. For example, by multiplying elevation by 2, you will exaggerate the terrain, making every location appear twice as high as it &lsquo;really&rsquo; is. It is often helpful to exaggerate terrain when visualizing micro-topography at large scales or macro-topography at small scales.  </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="nx">constant</span><span class="p">);</span>
+<h3 id="reclassify-by-equal-intervals"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Reclassify by equal intervals</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_reclassified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iReclass</span><span class="p">.</span><span class="nx">equalInterval</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">interval</span><span class="p">);</span>
 </code></pre></div>
-<hr />
-<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+<h3 id="remap-old-values-to-new-values"><strong>Remap old values to new values</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_remapped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">remap</span><span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">,</span><span class="mf">9</span><span class="p">,</span><span class="mf">10</span><span class="p">],</span><span class="w">            </span><span class="c1">// Original values</span>
+<span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">]</span><span class="w">             </span><span class="c1">// New values</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">  </span><span class="p">;</span>
+</code></pre></div>
 
 
 
@@ -652,13 +731,13 @@
         
         
           
-          <a href="../terrain/" class="md-footer__link md-footer__link--next" aria-label="Next: terrain" rel="next">
+          <a href="../scalar-operations/" class="md-footer__link md-footer__link--next" aria-label="Next: scalar operations" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                terrain
+                scalar operations
               </div>
             </div>
             <div class="md-footer__button md-icon">

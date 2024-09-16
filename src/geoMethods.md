@@ -1,6 +1,6 @@
-# __geoMethods__
+# __geo module__
 
-geoMethods is a collection of, well, methods that I wrote and packaged in a way that will allow you to use the methods without having to write them from scratch. 
+The geo module is a collection of methods that I am writing and packaging in a way that will allow you to use the methods without having to write them from scratch. 
 
 I wrote these methods for two reasons:    
 
@@ -14,12 +14,12 @@ My hope is that providing ready-made methods may help you focus on how different
 
 ## __import module__  
 
-__To use geoMethods, create a container and require the module.__  
+__To use the module, create a container and require the module.__  
 
 ```js
-var geo = require("users/jhowarth/eePatterns:modules/geoMethods.js");
+var geo = require("users/jhowarth/eePatterns:modules/geo.js");
 
-print("geoMethods dictionary", geo.help);    // Prints dictionary of all tools in module.
+print("geo methods dictionary", geo.help);    // Prints dictionary of all tools in module.
 ```
 
 The code block above will import the module and print the module's help dictionary, which lists all methods and url links to their docs. You only need to import the module once in a script the calls method in the module. I usually place the above code near the top of my script (under the header).  

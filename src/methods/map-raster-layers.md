@@ -71,11 +71,18 @@ graph LR
 Print the min and max data value of a raster image to use as min and max values in viz dictionary.   
 
 ```js
-var output_min_max = geo.iCart.iMinMax(input_image);
+var output_min_max = geo.iCart.iMinMax(image, scale, extent);
 
 print("Min & max value of image", output_min_max);
 
 ```
+
+| ARGUMENT              | DESCRIPTION               |
+| :--                   |                           |
+| __image__           | The name of the variable that contains the image data to process. |
+| __scale__                 | The scale of analysis. If possible, use the scale (resolution) of the input image. If this runs really slow (or times out), then increase the scale of analysis by a factor of 2 or more. |  
+| __extent__                | Usually the area of interest or the geographic footprint of the image.|  
+
 
 ---
 
@@ -84,10 +91,17 @@ print("Min & max value of image", output_min_max);
 __See how your data are distributed between the minimum and maximum data value by charting a histogram.__
 
 ```js
-var output_histogram = geo.iCart.iHistogram(image);
+var output_histogram = geo.iCart.iHistogram(image, scale, extent);
 
 print("Image histogram", output_histogram);
 ```
+
+
+| ARGUMENT              | DESCRIPTION               |
+| :--                   |                           |
+| __input_image__           | The name of the variable that contains the image data to process. |
+| __scale__                 | The scale of analysis. If possible, use the scale (resolution) of the input image. If this runs really slow (or times out), then increase the scale of analysis by a factor of 2 or more. |  
+| __extent__                | Usually the area of interest or the geographic footprint of the image.|  
 
 ---  
 
@@ -106,7 +120,7 @@ var single_viz =
 ;
 ```
 
-Here is a common pattern to visualize single-band images:
+Here is a common pattern to visualize single-band pseudo-color images:
 
 ```js
 var single_viz = 
@@ -160,11 +174,11 @@ Here is a complete pattern for single-band grayscale images.
 ```js
 // Print min and max values of image. 
 
-print("Min & max value of image", geo.iCart.iMinMax(image));
+print("Min & max value of image", geo.iCart.iMinMax(image, scale, extent));
 
 // Chart histogram of actual data values.
 
-print("Image histogram", geo.iCart.iHistogram(image));
+print("Image histogram", geo.iCart.iHistogram(image, scale, extent));
 
 // Define viz dictionary. 
 
@@ -179,6 +193,57 @@ var single_viz =
 
 Map.addLayer(image,single_viz,"Layer Name");
 ```
+
+## __define colors with legend__  
+
+These methods take some or all of the following arguments.
+
+| ARGUMENT          | DESCRIPTION   |
+| --:               | :--           |
+| __"title"__           | Label for the legend. Must be a string. Often a short description of image will do.  |
+| __viz__               | The viz dictionary that defines how to visualize (display) the data.   | 
+| __class_labels__      | A list of names for each color in the palette that define the classes or categories of the data. |
+| __"position-on-map"__ | Where to place the legend. Must be a string. Composed as "row - column", where rows are "bottom", "middle", or "top" and columns are "left", "center", "right". For example, "bottom-right". There is no "middle-center". |  
+
+### __:earth_americas: from image with continuous data__  
+
+```js
+// Make legend from image with continuous data. 
+
+var legend_continuous = geo.iCart.legendContinuous(
+  "title", 
+  viz, 
+  "position-on-map"
+  )
+;
+
+// Add legend to Map.  
+
+Map.add(legend_continuous);
+
+```
+
+---
+
+### __:earth_americas: from image with nominal data__
+
+```js
+
+// Make legend from image with nominal data.
+
+var legend_nominal = geo.iCart.legendNominal(
+  "title", 
+  viz, 
+  class_labels, 
+  "position-on-map"
+  )
+;
+
+// Add legend to Map.  
+
+Map.add(legend_remapped);
+```
+
 
 ---  
 
