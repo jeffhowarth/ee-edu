@@ -434,8 +434,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#make-a-boolean-truefalse-image" class="md-nav__link">
-    Make a boolean (true/false) image
+  <a href="#make-a-boolean-truefalse-raster" class="md-nav__link">
+    Make a boolean (true/false) raster
   </a>
   
 </li>
@@ -599,6 +599,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -621,6 +623,20 @@
     <li class="md-nav__item">
       <a href="../../practice/01/" class="md-nav__link">
         01 Memory under cover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/02/" class="md-nav__link">
+        02 Ice age bathtub
       </a>
     </li>
   
@@ -660,8 +676,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#make-a-boolean-truefalse-image" class="md-nav__link">
-    Make a boolean (true/false) image
+  <a href="#make-a-boolean-truefalse-raster" class="md-nav__link">
+    Make a boolean (true/false) raster
   </a>
   
 </li>
@@ -698,13 +714,109 @@
 <h1 id="reclassify-images"><strong>reclassify images</strong></h1>
 <p>These methods purposefully reclassify the values in an image. </p>
 <p><em>more forthcoming</em>  </p>
-<h3 id="make-a-boolean-truefalse-image"><strong>Make a boolean (true/false) image</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w">  </span>
+<h3 id="make-a-boolean-truefalse-raster"><strong>Make a boolean (true/false) raster</strong></h3>
+<p><img alt="boolean" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/boolean.png" /></p>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+  input[image]
+  method(".gt()") ;
+  output[/"image_boolean"/]  ;
+  arg1["20"]  ;
+
+  input --&gt; method
+  method --&gt; output
+  arg1 --o method
+
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+
+
+  class input in-out; 
+  class method op;
+  class output in-out;
+  class arg1 arg;</code></pre>
+<p></center></p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="mf">20</span><span class="p">);</span><span class="w">  </span>
 </code></pre></div>
+<p>The table below lists some of the common methods to ask true or false questions about a raster. Each takes a number as an argument. </p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="right">METHOD</th>
+<th align="left">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><code>.eq()</code>, <code>.neq()</code></td>
+<td align="left">Equal to, not equal to</td>
+</tr>
+<tr>
+<td align="right"><code>.gt()</code> <code>.gte()</code></td>
+<td align="left">Greater than, greater than or equal to</td>
+</tr>
+<tr>
+<td align="right"><code>.lt()</code> <code>.lte()</code></td>
+<td align="left">Less than, less than or equal to</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<hr />
 <h3 id="reclassify-by-equal-intervals"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Reclassify by equal intervals</strong></h3>
+<p><img alt="equal intervals" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/equal-interval.png" /></p>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+  method("geo.iReclass.equalInterval()") ;
+  output[/"image_reclassified"/]  ;
+  arg1["image"]  ;
+  arg2["interval"]  ;
+
+  method --&gt; output
+  arg1 --o method
+  arg2 --o method
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+
+
+  class method op;
+  class output in-out;
+  class arg1 arg;
+  class arg2 arg;</code></pre>
+<p></center></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_reclassified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iReclass</span><span class="p">.</span><span class="nx">equalInterval</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">interval</span><span class="p">);</span>
 </code></pre></div>
+<hr />
 <h3 id="remap-old-values-to-new-values"><strong>Remap old values to new values</strong></h3>
+<p><img alt="remap" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/remap.png" /></p>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+  input["image"] ;
+  method(".remap()") ;
+  output[/"image_remapped"/]  ;
+  arg1["[original values]"]  ;
+  arg2["[new values]"]  ;
+
+  input --&gt; method  
+  method --&gt; output
+  arg1 --o method
+  arg2 --o method
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+
+  class input in-out;
+  class method op;
+  class output in-out;
+  class arg1 arg;
+  class arg2 arg;</code></pre>
+<p></center></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_remapped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">remap</span><span class="p">(</span>
 <span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">,</span><span class="mf">9</span><span class="p">,</span><span class="mf">10</span><span class="p">],</span><span class="w">            </span><span class="c1">// Original values</span>
 <span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">]</span><span class="w">             </span><span class="c1">// New values</span>

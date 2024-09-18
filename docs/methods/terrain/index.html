@@ -680,6 +680,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -702,6 +704,20 @@
     <li class="md-nav__item">
       <a href="../../practice/01/" class="md-nav__link">
         01 Memory under cover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/02/" class="md-nav__link">
+        02 Ice age bathtub
       </a>
     </li>
   
@@ -978,8 +994,7 @@
 <p><img alt="illumination rays" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/hillshade/illumination-rays.png" /></p>
 <p>The angle of the illumination rays depends on the sun&rsquo;s position, which is determined by two coordinates. The solar <strong>azimuth</strong> angle defines the sun&rsquo;s position on the horizon in degrees from North. It is often most effective to put the illumination source above the northwest horizon, even though in the northern hemisphere it would be unusual to find the sun in this part of the sky. An interesting fact about the illusion of shaded relief is that placing the illumination source in the southern sky will make the landscape appear inverted: mountain ridges look like valleys and creeks look like ridge lines. Because of this, many analytic hillshade tools in GIS will use 315 as the starting solar azimuth angle. You can then adjust this &plusmn; 30 degrees depending on the orientation of ridges and valleys in the area of interest, while taking care not to invert the landscape by pushing the sun too far.  </p>
 <p>The second solar coordinate the defines the sun&rsquo;s position above the horizon, or how high the sun hangs in the sky. Many GIS call this the <strong>zenith</strong> angle, but in Earth Engine it is called <strong>elevation</strong>. If the sun is directly overhead, the zenith angle is 90 and the sun approaches 0 as it nears the horizon. By default, many GIS go with the Goldilocks solution and set the zenith angle at 45. It is often good to start here and then adjust based on your terrain. Lowering the zenith angle can be helpful on flat terrain, while raising the angle can be helpful in more rugged landscapes.       </p>
-<p><img alt="sun position" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/hillshade/sun-position-0913
-.png" /></p>
+<p><img alt="sun position" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/hillshade/sun-position-0913.png" /></p>
 <p>The brightness of the reflected ray is determined by the <strong>local incidence angle</strong> from the surface normal (perpendicular to the surface). When the incidence angle is near 0, the rays directly strike the surface and reflect at their brightest power. Because most GIS will store the output of the analytic hillshade method as a byte data type (0-255), the brightest pixels will have the data value 255. In a grayscale palette, this value will be displayed white. As the incidence angle increases, the rays strike the surface obliquely, the brightness values decrease, and the display values change from white to gray. As the angle exceeds 90, the brightness values change from gray to black.</p>
 <p><img alt="local incidence angle" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/hillshade/local-incidence-angle.png" />   </p>
 <h3 id="hillshade-operation">hillshade operation</h3>

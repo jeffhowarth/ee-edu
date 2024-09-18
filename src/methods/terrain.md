@@ -178,8 +178,7 @@ The angle of the illumination rays depends on the sun's position, which is deter
 
 The second solar coordinate the defines the sun's position above the horizon, or how high the sun hangs in the sky. Many GIS call this the __zenith__ angle, but in Earth Engine it is called __elevation__. If the sun is directly overhead, the zenith angle is 90 and the sun approaches 0 as it nears the horizon. By default, many GIS go with the Goldilocks solution and set the zenith angle at 45. It is often good to start here and then adjust based on your terrain. Lowering the zenith angle can be helpful on flat terrain, while raising the angle can be helpful in more rugged landscapes.       
 
-![sun position](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/hillshade/sun-position-0913
-.png)
+![sun position](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/hillshade/sun-position-0913.png)
 
 The brightness of the reflected ray is determined by the __local incidence angle__ from the surface normal (perpendicular to the surface). When the incidence angle is near 0, the rays directly strike the surface and reflect at their brightest power. Because most GIS will store the output of the analytic hillshade method as a byte data type (0-255), the brightest pixels will have the data value 255. In a grayscale palette, this value will be displayed white. As the incidence angle increases, the rays strike the surface obliquely, the brightness values decrease, and the display values change from white to gray. As the angle exceeds 90, the brightness values change from gray to black.
 

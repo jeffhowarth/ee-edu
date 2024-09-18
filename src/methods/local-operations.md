@@ -6,9 +6,80 @@ _more forthcoming_
 
 ### __mask pixels__  
 
+I think of masks like masking tape when you are painting. Any pixel with the value 0 in the mask acts like tape and prevents numbers in the output raster from being painted at that location.  
+
+![mask](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/mask.png)
+
+<center>
+
+``` mermaid
+graph LR
+  input[image]
+  method(".updateMask()") ;
+  output[/"image_with_mask"/]  ;
+  arg01["masking_image"] ;
+
+  input --> method
+  method --> output
+  arg01 --o method
+
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+  
+
+  class input in-out; 
+  class method op;
+  class output in-out;
+  class arg01 arg; 
+```
+
+</center>
+
+
 ```js
 
 var image_with_mask = image.updateMask(masking_image);
+
+```
+
+---  
+
+### __self mask pixels__  
+
+If you want to ignore pixels that store the value 0 in an image, you can self-mask.  
+
+![mask](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/self-mask.png)
+
+<center>
+
+``` mermaid
+graph LR
+  input[image]
+  method(".selfMask()") ;
+  output[/"image_with_mask"/]  ;
+
+  input --> method
+  method --> output
+
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+  
+
+  class input in-out; 
+  class method op;
+  class output in-out;
+```
+
+</center>
+
+
+```js
+
+var image_with_mask = image.selfMask();
 
 ```
 
