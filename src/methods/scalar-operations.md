@@ -2,6 +2,17 @@
 
 Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster with a constant.   
 
+<center>
+
+| METHOD                        | DESCRIPTION                                             |
+| --:                           | :--                                                     |
+|```.add(number)```             | Add number to each pixel value.                       |   
+|```.subtract(number)```        | Subtract number from each pixel value.                       | 
+|```.multiply(number)```        | Multiply each pixel value by number.                  | 
+|```.divide(number)```,         | Divide each pixel value by number.                        |    
+  
+</center>
+
 ### __change value units__ 
 
 A common example is when you need to change the units of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by 100. 

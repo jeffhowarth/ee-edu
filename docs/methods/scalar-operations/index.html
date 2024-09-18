@@ -699,6 +699,34 @@
 
 <h1 id="scalar-operations"><strong>scalar operations</strong></h1>
 <p>Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster with a constant.   </p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="right">METHOD</th>
+<th align="left">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><code>.add(number)</code></td>
+<td align="left">Add number to each pixel value.</td>
+</tr>
+<tr>
+<td align="right"><code>.subtract(number)</code></td>
+<td align="left">Subtract number from each pixel value.</td>
+</tr>
+<tr>
+<td align="right"><code>.multiply(number)</code></td>
+<td align="left">Multiply each pixel value by number.</td>
+</tr>
+<tr>
+<td align="right"><code>.divide(number)</code>,</td>
+<td align="left">Divide each pixel value by number.</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
 <h3 id="change-value-units"><strong>change value units</strong></h3>
 <p>A common example is when you need to change the units of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by 100. </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">constant</span><span class="p">);</span>
