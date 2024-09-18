@@ -4,11 +4,17 @@ These methods compare values at corresponding pixels in two or more rasters.
 
 _more forthcoming_  
 
+---  
+
 ### __mask pixels__  
 
-I think of masks like masking tape when you are painting. Any pixel with the value 0 in the mask acts like tape and prevents numbers in the output raster from being painted at that location.  
+Masks act like masking tape when you paint. Any pixel with the value 0 in the mask acts like tape and prevents numbers in the output raster from being painted at that location. Masked values will not be displayed with colors when you place the raster layer on a Map. Masked values in an input raster will also be ignored in any subsequent method.    
+
+---  
 
 ![mask](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/mask.png)
+
+---  
 
 <center>
 
@@ -37,6 +43,7 @@ graph LR
 
 </center>
 
+---  
 
 ```js
 
@@ -50,7 +57,11 @@ var image_with_mask = image.updateMask(masking_image);
 
 If you want to ignore pixels that store the value 0 in an image, you can self-mask.  
 
-![mask](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/self-mask.png)
+---  
+
+![self mask](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/self-mask.png)
+
+---  
 
 <center>
 
@@ -76,6 +87,7 @@ graph LR
 
 </center>
 
+---  
 
 ```js
 

@@ -1,12 +1,18 @@
-# __reclassify images__  
+# __reclassify raster__  
 
-These methods purposefully reclassify the values in an image. 
+These methods purposefully reclassify the values in a raster. 
 
-_more forthcoming_  
+---  
 
-### __Make a boolean (true/false) raster__   
+### __Boolean raster__   
+
+This method asks a true or false question about each value in the input raster and returns a 1 if true and 0 if false in the output raster. Some people call the output a binary raster, but I try to avoid saying the word binary unless necessary. Boolean is descriptive because it means that the result can only have one of two possible values: true or false. 
+
+---  
 
 ![boolean](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/boolean.png)
+
+---  
 
 <center>
 
@@ -15,7 +21,7 @@ graph LR
   input[image]
   method(".gt()") ;
   output[/"image_boolean"/]  ;
-  arg1["20"]  ;
+  arg1["number"]  ;
 
   input --> method
   method --> output
@@ -35,11 +41,17 @@ graph LR
 
 </center>
 
+---  
+
 ```js
-var image_boolean = image.gt(20);  
+var image_boolean = image.gt(number);  
 ```
 
-The table below lists some of the common methods to ask true or false questions about a raster. Each takes a number as an argument. 
+---  
+
+The table below lists some of the common methods to ask true or false questions about a raster. Each takes a number as an argument. Some technical folks will use the verb __threshold__ to describe methods that use greater than or less than methods to produce boolean rasters.  
+
+---  
 
 <center>
 
@@ -55,7 +67,13 @@ The table below lists some of the common methods to ask true or false questions 
 
 ### __:earth_americas: Reclassify by equal intervals__  
 
+This method assigns raster values into equal interval classes. The method divides each value in a raster by the interval number and then rounds down to the nearest integer (finds the floor). The integers in the output are __ordinal__ but arbitrary class numbers. 
+
+---  
+
 ![equal intervals](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/equal-interval.png)
+
+---  
 
 <center>
 
@@ -83,6 +101,7 @@ graph LR
 
 </center>
 
+---  
 
 ```js
 var image_reclassified = geo.iReclass.equalInterval(image, interval);
@@ -92,7 +111,13 @@ var image_reclassified = geo.iReclass.equalInterval(image, interval);
 
 ### __Remap old values to new values__
 
+This method assigns integer values in the input raster to new integer values in the output raster based on transition rules defined by two lists. The first list defines the set of original values in the input raster. The second list defines the set of new values to be stored in the output raster. The order of the two lists determines the transition. The two lists must be the same length (have the same number of values).
+
+---  
+
 ![remap](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/remap.png)
+
+---  
 
 <center>
 
@@ -122,11 +147,13 @@ graph LR
 
 </center>
 
+---  
+
 ```js
 var image_remapped = image.remap(
-    [1,2,3,4,5,6,7,8,9,10],            // Original values
-    [1,1,2,2,3,3,4,4,5, 5]             // New values
-    )
+    [0,1,2,3,4],            // Original values
+    [1,0,0,0,1]             // New values 
+    )                       // Lengths of two lists must be equal.
   ;
 
 ```

@@ -154,7 +154,7 @@ nav:
     # - area operations: patterns/area.md  
     # - distance operations: patterns/distance.md  
     # - aggregate table: patterns/aggregate-table.md  
-    - reclassify images: methods/reclassify.md
+    - reclassify raster: methods/reclassify.md
     - scalar operations: methods/scalar-operations.md 
     - local operations: methods/local-operations.md  
     # - zonal operations: patterns/zonal-operations.md  

@@ -25,7 +25,7 @@
     
     
       
-        <title>reclassify images - ee-patterns</title>
+        <title>reclassify raster - ee-patterns</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reclassify-images" class="md-skip">
+        <a href="#reclassify-raster" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              reclassify images
+              reclassify raster
             
           </span>
         </div>
@@ -410,12 +410,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          reclassify images
+          reclassify raster
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        reclassify images
+        reclassify raster
       </a>
       
         
@@ -434,8 +434,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#make-a-boolean-truefalse-raster" class="md-nav__link">
-    Make a boolean (true/false) raster
+  <a href="#boolean-raster" class="md-nav__link">
+    Boolean raster
   </a>
   
 </li>
@@ -676,8 +676,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#make-a-boolean-truefalse-raster" class="md-nav__link">
-    Make a boolean (true/false) raster
+  <a href="#boolean-raster" class="md-nav__link">
+    Boolean raster
   </a>
   
 </li>
@@ -711,17 +711,20 @@
                   
 
 
-<h1 id="reclassify-images"><strong>reclassify images</strong></h1>
-<p>These methods purposefully reclassify the values in an image. </p>
-<p><em>more forthcoming</em>  </p>
-<h3 id="make-a-boolean-truefalse-raster"><strong>Make a boolean (true/false) raster</strong></h3>
+<h1 id="reclassify-raster"><strong>reclassify raster</strong></h1>
+<p>These methods purposefully reclassify the values in a raster. </p>
+<hr />
+<h3 id="boolean-raster"><strong>Boolean raster</strong></h3>
+<p>This method asks a true or false question about each value in the input raster and returns a 1 if true and 0 if false in the output raster. Some people call the output a binary raster, but I try to avoid saying the word binary unless necessary. Boolean is descriptive because it means that the result can only have one of two possible values: true or false. </p>
+<hr />
 <p><img alt="boolean" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/boolean.png" /></p>
+<hr />
 <p><center></p>
 <pre class="mermaid"><code>graph LR
   input[image]
   method(".gt()") ;
   output[/"image_boolean"/]  ;
-  arg1["20"]  ;
+  arg1["number"]  ;
 
   input --&gt; method
   method --&gt; output
@@ -738,9 +741,12 @@
   class output in-out;
   class arg1 arg;</code></pre>
 <p></center></p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="mf">20</span><span class="p">);</span><span class="w">  </span>
+<hr />
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="nx">number</span><span class="p">);</span><span class="w">  </span>
 </code></pre></div>
-<p>The table below lists some of the common methods to ask true or false questions about a raster. Each takes a number as an argument. </p>
+<hr />
+<p>The table below lists some of the common methods to ask true or false questions about a raster. Each takes a number as an argument. Some technical folks will use the verb <strong>threshold</strong> to describe methods that use greater than or less than methods to produce boolean rasters.  </p>
+<hr />
 <p><center></p>
 <table>
 <thead>
@@ -767,7 +773,10 @@
 <p></center></p>
 <hr />
 <h3 id="reclassify-by-equal-intervals"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Reclassify by equal intervals</strong></h3>
+<p>This method assigns raster values into equal interval classes. The method divides each value in a raster by the interval number and then rounds down to the nearest integer (finds the floor). The integers in the output are <strong>ordinal</strong> but arbitrary class numbers. </p>
+<hr />
 <p><img alt="equal intervals" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/equal-interval.png" /></p>
+<hr />
 <p><center></p>
 <pre class="mermaid"><code>graph LR
   method("geo.iReclass.equalInterval()") ;
@@ -789,11 +798,15 @@
   class arg1 arg;
   class arg2 arg;</code></pre>
 <p></center></p>
+<hr />
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_reclassified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iReclass</span><span class="p">.</span><span class="nx">equalInterval</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">interval</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <h3 id="remap-old-values-to-new-values"><strong>Remap old values to new values</strong></h3>
+<p>This method assigns integer values in the input raster to new integer values in the output raster based on transition rules defined by two lists. The first list defines the set of original values in the input raster. The second list defines the set of new values to be stored in the output raster. The order of the two lists determines the transition. The two lists must be the same length (have the same number of values).</p>
+<hr />
 <p><img alt="remap" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/remap.png" /></p>
+<hr />
 <p><center></p>
 <pre class="mermaid"><code>graph LR
   input["image"] ;
@@ -817,10 +830,11 @@
   class arg1 arg;
   class arg2 arg;</code></pre>
 <p></center></p>
+<hr />
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_remapped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">remap</span><span class="p">(</span>
-<span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">,</span><span class="mf">9</span><span class="p">,</span><span class="mf">10</span><span class="p">],</span><span class="w">            </span><span class="c1">// Original values</span>
-<span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">]</span><span class="w">             </span><span class="c1">// New values</span>
-<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">],</span><span class="w">            </span><span class="c1">// Original values</span>
+<span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">]</span><span class="w">             </span><span class="c1">// New values </span>
+<span class="w">    </span><span class="p">)</span><span class="w">                       </span><span class="c1">// Lengths of two lists must be equal.</span>
 <span class="w">  </span><span class="p">;</span>
 </code></pre></div>
 <hr />
