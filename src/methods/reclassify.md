@@ -6,7 +6,7 @@ These methods purposefully reclassify the values in a raster.
 
 ### __Boolean raster__   
 
-This method asks a true or false question about each value in the input raster and returns a 1 if true and 0 if false in the output raster. Some people call the output a binary raster, but I try to avoid saying the word binary unless necessary. Boolean is descriptive because it means that the result can only have one of two possible values: true or false. 
+This pattern asks a true or false question about each value in the input raster and returns a 1 if true and 0 if false in the corresponding pixel of the output raster.   
 
 ---  
 

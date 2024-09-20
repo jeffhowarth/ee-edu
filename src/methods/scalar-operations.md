@@ -19,13 +19,53 @@ Uniformly change the values of all data in a raster object by adding, subtractin
 
 ### __change value units__ 
 
-A common example is when you need to change the units of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by 100. 
+A common example is when you need to change the units of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by the number 100 (scalar).   
+
+---  
+
+<center>
+
+``` mermaid
+graph LR
+  input["image_cm"] ;
+  method(".divide()") ;
+  output[/"image_m"/]  ;
+  arg1["100"]  ;
+
+
+  input --> method  
+  method --> output
+  arg1 --o method
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+  
+  class input in-out;
+  class method op;
+  class output in-out;
+  class arg1 arg;
+```
+
+</center>
 
 ---  
 
 ```js
-var output = input.divide(constant);
+var image_m = image_cm.divide(100);
 ```
+
+---  
+
+The table below lists some common types of unit conversions and their pattern context.
+
+---  
+
+| CONTEXT                   | INPUT UNITS   | OUTPUT UNITS      | METHOD                        |
+| :--                       |:--:           | :--:              | :--                           |
+| TERRAIN                   | cm            | m                 | ```.divide(100)```            | 
+| TERRAIN                   | ft            | m                 | ```.multiply(3.28084)```      |  
+| SLOPE                     | degrees       | percent           | ```.divide(180).multiply(Math.PI).tan().multiply(100)```  |
 
 ---  
 
@@ -35,8 +75,36 @@ Another common example is when you want to apply vertical exaggeration to a terr
 
 ---  
 
+<center>
+
+``` mermaid
+graph LR
+  input["image_m"] ;
+  method(".multiply()") ;
+  output[/"image_m_ve_2"/]  ;
+  arg1["2"]  ;
+
+
+  input --> method  
+  method --> output
+  arg1 --o method
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+  
+  class input in-out;
+  class method op;
+  class output in-out;
+  class arg1 arg;
+```
+
+</center>
+
+---  
+
 ```js
-var output = input.multiply(constant);
+var image_m_ve_2 = image_m.multiply(2);
 ```
 
 ---

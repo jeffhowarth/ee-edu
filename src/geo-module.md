@@ -4,7 +4,7 @@ The geo module is a collection of methods that I am writing and packaging in a w
 
 I wrote these methods for two reasons:    
 
-1. Each represents a recurring task of geospatial analysis that are supported by other geographic information systems (like QGIS or ArcGIS).
+1. Each represents a recurring task of geospatial analysis that is supported by other geographic information systems (like QGIS or ArcGIS).
 
 2. Each requires a chain of transformations to make in Earth Engine which can be conceptually confusing and technically difficult for novices to do.    
 
@@ -19,10 +19,11 @@ __To use the module, create a container and require the module.__
 ```js
 var geo = require("users/jhowarth/eePatterns:modules/geo.js");
 
-print("geo methods dictionary", geo.help);    // Prints dictionary of all tools in module.
+print("geo methods dictionary", geo.help);    // Prints dictionary of all tools in module.  
+print("geo palettes", geo.iPalettes);         // Prints dictionary of all palettes in module. 
 ```
 
-The code block above will import the module and print the module's help dictionary, which lists all methods and url links to their docs. You only need to import the module once in a script the calls method in the module. I usually place the above code near the top of my script (under the header).  
+The code block above will import the module and print the module's help dictionary and palette dictionary to the Console. The help dictionary lists all methods and url links to their docs. The palette dictionary lists all palettes in the module. You only need to import the module once in a script that calls a method or palette from the module. I usually place the above code snippet near the top of my script (under the header).  
 
 ---  
 
@@ -38,7 +39,7 @@ In the METHODS documentation, the :earth_americas: symbol identifies a method th
 
 __Add module to your READER tray if you want to see the underlying code to any method.__
 
-The module only hides the data from you if you do not want to see it. If you would like to look under the hood, I have made the code for the module public and you can add it to the READER tray of the IDE by [__clicking here__](https://code.earthengine.google.com/?accept_repo=users/jhowarth/eePatterns){target=_blank}. 
+The module only hides the code from you if you do not want to see it. If you would like to look under the hood, I have made the code for the module public and you can add it to the READER tray of the IDE by [__clicking here__](https://code.earthengine.google.com/?accept_repo=users/jhowarth/eePatterns){target=_blank}. 
 
 ---
 

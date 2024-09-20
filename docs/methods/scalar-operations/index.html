@@ -730,15 +730,92 @@
 <p></center></p>
 <hr />
 <h3 id="change-value-units"><strong>change value units</strong></h3>
-<p>A common example is when you need to change the units of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by 100. </p>
+<p>A common example is when you need to change the units of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by the number 100 (scalar).   </p>
 <hr />
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">constant</span><span class="p">);</span>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+  input["image_cm"] ;
+  method(".divide()") ;
+  output[/"image_m"/]  ;
+  arg1["100"]  ;
+
+
+  input --&gt; method  
+  method --&gt; output
+  arg1 --o method
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+
+  class input in-out;
+  class method op;
+  class output in-out;
+  class arg1 arg;</code></pre>
+<p></center></p>
+<hr />
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image_cm</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="mf">100</span><span class="p">);</span>
 </code></pre></div>
+<hr />
+<p>The table below lists some common types of unit conversions and their pattern context.</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th align="left">CONTEXT</th>
+<th align="center">INPUT UNITS</th>
+<th align="center">OUTPUT UNITS</th>
+<th align="left">METHOD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">TERRAIN</td>
+<td align="center">cm</td>
+<td align="center">m</td>
+<td align="left"><code>.divide(100)</code></td>
+</tr>
+<tr>
+<td align="left">TERRAIN</td>
+<td align="center">ft</td>
+<td align="center">m</td>
+<td align="left"><code>.multiply(3.28084)</code></td>
+</tr>
+<tr>
+<td align="left">SLOPE</td>
+<td align="center">degrees</td>
+<td align="center">percent</td>
+<td align="left"><code>.divide(180).multiply(Math.PI).tan().multiply(100)</code></td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h3 id="vertical-exaggeration"><strong>vertical exaggeration</strong></h3>
 <p>Another common example is when you want to apply vertical exaggeration to a terrain operation by multiplying the elevation values by a constant, usually called the <strong>z-factor</strong>. For example, by multiplying elevation by 2, you will exaggerate the terrain, making every location appear twice as high as it &lsquo;really&rsquo; is. It is often helpful to exaggerate terrain when visualizing micro-topography at large scales or macro-topography at small scales. </p>
 <hr />
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="nx">constant</span><span class="p">);</span>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+  input["image_m"] ;
+  method(".multiply()") ;
+  output[/"image_m_ve_2"/]  ;
+  arg1["2"]  ;
+
+
+  input --&gt; method  
+  method --&gt; output
+  arg1 --o method
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+
+  class input in-out;
+  class method op;
+  class output in-out;
+  class arg1 arg;</code></pre>
+<p></center></p>
+<hr />
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_m_ve_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image_m</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>

@@ -714,7 +714,7 @@
 <p>I wrote these methods for two reasons:    </p>
 <ol>
 <li>
-<p>Each represents a recurring task of geospatial analysis that are supported by other geographic information systems (like QGIS or ArcGIS).</p>
+<p>Each represents a recurring task of geospatial analysis that is supported by other geographic information systems (like QGIS or ArcGIS).</p>
 </li>
 <li>
 <p>Each requires a chain of transformations to make in Earth Engine which can be conceptually confusing and technically difficult for novices to do.    </p>
@@ -726,9 +726,10 @@
 <p><strong>To use the module, create a container and require the module.</strong>  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">geo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;users/jhowarth/eePatterns:modules/geo.js&quot;</span><span class="p">);</span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo methods dictionary&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">help</span><span class="p">);</span><span class="w">    </span><span class="c1">// Prints dictionary of all tools in module.</span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo methods dictionary&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">help</span><span class="p">);</span><span class="w">    </span><span class="c1">// Prints dictionary of all tools in module.  </span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo palettes&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iPalettes</span><span class="p">);</span><span class="w">         </span><span class="c1">// Prints dictionary of all palettes in module. </span>
 </code></pre></div>
-<p>The code block above will import the module and print the module&rsquo;s help dictionary, which lists all methods and url links to their docs. You only need to import the module once in a script the calls method in the module. I usually place the above code near the top of my script (under the header).  </p>
+<p>The code block above will import the module and print the module&rsquo;s help dictionary and palette dictionary to the Console. The help dictionary lists all methods and url links to their docs. The palette dictionary lists all palettes in the module. You only need to import the module once in a script that calls a method or palette from the module. I usually place the above code snippet near the top of my script (under the header).  </p>
 <hr />
 <h2 id="docs-in-eepatterns"><strong>docs in eePatterns</strong></h2>
 <p><strong>A globe icon <img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> identifies methods from module.</strong>  </p>
@@ -736,7 +737,7 @@
 <hr />
 <h2 id="peak-under-hood"><strong>peak under hood</strong></h2>
 <p><strong>Add module to your READER tray if you want to see the underlying code to any method.</strong></p>
-<p>The module only hides the data from you if you do not want to see it. If you would like to look under the hood, I have made the code for the module public and you can add it to the READER tray of the IDE by <a href="https://code.earthengine.google.com/?accept_repo=users/jhowarth/eePatterns" target="_blank"><strong>clicking here</strong></a>. </p>
+<p>The module only hides the code from you if you do not want to see it. If you would like to look under the hood, I have made the code for the module public and you can add it to the READER tray of the IDE by <a href="https://code.earthengine.google.com/?accept_repo=users/jhowarth/eePatterns" target="_blank"><strong>clicking here</strong></a>. </p>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 

@@ -63,7 +63,7 @@ __Use strings to store text (character strings).__
 
 // Use single quotes to define string.
 
-var hello = "Hello world!"  // This is a string. 
+var hello = 'Hello world!'  // This is a string. 
 
 // You can also use double quotes to enclose string.
 
@@ -81,7 +81,7 @@ A string has a set of methods that work with that type of data.
 // Use a period and parentheses to call a string method.
 
 print(
-  hello,                  // Original
+  hello,                  // Original object that contains a string.
   hello.slice(0,2),       // Keep the first through third characters of the string.
   hello.concat('!'),      // Add an exclamation point after the string.
   hello.toUpperCase()     // Change the case to all upper. 
@@ -99,11 +99,17 @@ __Use numbers to store numerical data.__
 var integer = 12;
 var decimal = 11.987654321;
 
-print(integer, decimal);
+print(integer, decimal);              // Print number variables to Console
 
-// There are not that many number methods in javascript, but you can call them.
+// You can call some number methods with dot notation.
 
-print(decimal.toFixed(4));
+print(decimal.toFixed(4));  
+
+// Or call Javascript Math method that take number object as argument.
+
+print(Math.round(decimal));           // Round decimal number to integer.
+print(Math.floor(decimal));           // Round decimal number DOWN to nearest integer.
+print(Math.ceil(decimal));            // Round decimal number UP to nearest integer.
 
 ```
 

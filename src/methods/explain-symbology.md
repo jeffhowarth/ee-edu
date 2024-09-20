@@ -17,7 +17,7 @@ These methods take some or all of the following arguments.
 
 ### __:earth_americas: image with continuous data__  
 
-If the image contains continuous or cyclical data, place a snapshot of the color gradient on the Map with labels that identify the minimum, maximum, and midpoint data value mapped to the gradient. 
+If the image contains continuous or cyclical data, place a snapshot of the color gradient on the Map with labels that identify the minimum, maximum, and midpoint data value mapped to the color gradient. 
 
 ```js
 // Make legend from image with continuous data. 
@@ -55,10 +55,8 @@ var legend_nominal = geo.iCart.legendNominal(
 
 // Add legend to Map.  
 
-Map.add(legend_remapped);
+Map.add(legend_nominal);
 ```
-
-
 
 ---  
 

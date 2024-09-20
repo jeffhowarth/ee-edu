@@ -109,7 +109,7 @@ print("Image histogram", output_histogram);
 
 __For raster data, store the viz dictionary as a variable and then call this variable when you add the map layer.__   
 
-Here is a common pattern to visualize single-band grayscale images:
+Here is a common pattern to visualize __single-band grayscale__ images:
 
 ```js
 var single_viz = 
@@ -120,7 +120,7 @@ var single_viz =
 ;
 ```
 
-Here is a common pattern to visualize single-band pseudo-color images:
+Here is a common pattern to visualize __single-band pseudo-color__ images:
 
 ```js
 var single_viz = 
@@ -132,7 +132,7 @@ var single_viz =
 ;
 ```
 
-This is a common pattern to visualize multi-band images:
+This is a common pattern to visualize __multi-band__ images:
 
 ```js
 var multi_viz = 

@@ -283,15 +283,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-trees" class="md-nav__link">
-    task trees
+  <a href="#task-tree" class="md-nav__link">
+    task tree
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-chains" class="md-nav__link">
-    task chains
+  <a href="#task-chain" class="md-nav__link">
+    task chain
   </a>
   
 </li>
@@ -702,15 +702,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-trees" class="md-nav__link">
-    task trees
+  <a href="#task-tree" class="md-nav__link">
+    task tree
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-chains" class="md-nav__link">
-    task chains
+  <a href="#task-chain" class="md-nav__link">
+    task chain
   </a>
   
 </li>
@@ -786,9 +786,9 @@
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="nx">argument</span><span class="p">);</span>
 </code></pre></div>
 <p>The general pattern is that you start by defining a name for a container that you would like to make so that you can store the output. This container of data is called a <strong>variable</strong> that you create with the keyword <code>var</code>. You then say that this container will contain <code>=</code> what results from taking the input and applying a method to it <code>.</code> with one or more arguments <code>()</code>. A semicolon <code>;</code> punctuates a statement like a period (or wink <img alt="😉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f609.svg" title=":wink:" />).  </p>
-<h2 id="task-trees"><strong>task trees</strong></h2>
+<h2 id="task-tree"><strong>task tree</strong></h2>
 <p>Workflows are a means to achieving an end. When you sit down to write a workflow, you have some goal state for the data in mind. Your problem is to figure out how to change the data from their original condition to the goal state in your head.  </p>
-<p>Most workflows can be decomposed into a <strong>task trees</strong>: at the top, a (big) problem  may be broken down into a sequence of smaller tasks, each of these tasks may be broken down into smaller subtasks.    </p>
+<p>Most workflows can be decomposed into a <strong>task tree</strong>: at the top, a (big) problem  may be broken down into a sequence of smaller tasks, each of these tasks may be broken down into smaller subtasks.    </p>
 <pre class="mermaid"><code>graph TD
 
   L01("PROBLEM") ;
@@ -820,8 +820,8 @@
 
 </code></pre>
 <p></center></p>
-<h2 id="task-chains"><strong>task chains</strong></h2>
-<p>The lowest branches of the tree are individual transformations, the foundational elements of a workflow. Higher branches of the tree often require linking together two or more transformations in <strong>task chains</strong>, where the output of one transformation becomes the input of another. </p>
+<h2 id="task-chain"><strong>task chain</strong></h2>
+<p>The lowest branches of the tree are individual transformations, the foundational elements of a workflow. Higher branches of the tree often require linking together two or more transformations as a <strong>task chain</strong>, where the output of one transformation becomes the input of another. </p>
 <p><center></p>
 <pre class="mermaid"><code>graph LR
   step01("INPUT") ;

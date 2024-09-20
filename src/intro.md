@@ -70,11 +70,11 @@ var output = input.method(argument);
 
 The general pattern is that you start by defining a name for a container that you would like to make so that you can store the output. This container of data is called a __variable__ that you create with the keyword ```var```. You then say that this container will contain ```=``` what results from taking the input and applying a method to it ```.``` with one or more arguments ```()```. A semicolon ```;``` punctuates a statement like a period (or wink :wink:).  
 
-## __task trees__
+## __task tree__
 
 Workflows are a means to achieving an end. When you sit down to write a workflow, you have some goal state for the data in mind. Your problem is to figure out how to change the data from their original condition to the goal state in your head.  
 
-Most workflows can be decomposed into a __task trees__: at the top, a (big) problem  may be broken down into a sequence of smaller tasks, each of these tasks may be broken down into smaller subtasks.    
+Most workflows can be decomposed into a __task tree__: at the top, a (big) problem  may be broken down into a sequence of smaller tasks, each of these tasks may be broken down into smaller subtasks.    
 
 
 ``` mermaid
@@ -114,9 +114,9 @@ graph TD
 </center>
 
 
-## __task chains__  
+## __task chain__  
 
-The lowest branches of the tree are individual transformations, the foundational elements of a workflow. Higher branches of the tree often require linking together two or more transformations in __task chains__, where the output of one transformation becomes the input of another. 
+The lowest branches of the tree are individual transformations, the foundational elements of a workflow. Higher branches of the tree often require linking together two or more transformations as a __task chain__, where the output of one transformation becomes the input of another. 
 
 <center>
 

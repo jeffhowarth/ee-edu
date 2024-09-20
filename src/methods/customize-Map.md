@@ -31,8 +31,8 @@ __Use a data object to center the map and to suggest an appropriate zoom level._
 
 ```js
 Map.centerObject(
-    image,              // data object
-    16                  // zoom level
+    object,             // data object to center the Map. 
+    16                  // zoom level to display the Map.
 );
 ```
 
