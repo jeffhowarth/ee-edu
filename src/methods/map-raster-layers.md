@@ -120,6 +120,8 @@ var single_viz =
 ;
 ```
 
+---  
+
 Here is a common pattern to visualize __single-band pseudo-color__ images:
 
 ```js
@@ -131,6 +133,8 @@ var single_viz =
     }
 ;
 ```
+
+---  
 
 This is a common pattern to visualize __multi-band__ images:
 
@@ -146,6 +150,14 @@ var multi_viz =
 ```
 
 ---   
+
+If your image data represents __nominal data__ with integers, you can quickly visualize this data with __random colors__ using the ```.randomVisualizer()``` method on the image and calling an empty dictionary for the viz parameters.  
+
+```js
+Map.addLayer(image.randomVisualizer(), {}, "Nominal Classes);
+```
+
+---  
 
 ### __add map layer__       
 
