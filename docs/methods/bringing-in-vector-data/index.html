@@ -1030,17 +1030,23 @@
 <hr />
 <h3 id="bounding-box"><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> bounding box</h3>
 <hr />
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcGeometry</span><span class="p">.</span><span class="nx">boundingBox</span><span class="p">(</span><span class="nx">fc</span><span class="p">)</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcGeometry</span><span class="p">.</span><span class="nx">boundingBox</span><span class="p">(</span><span class="nx">fc</span><span class="p">);</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">fc_bounds</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cyan&#39;</span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;Bounding box&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <h3 id="centroid"><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> centroid</h3>
 <hr />
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_centroid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcGeometry</span><span class="p">.</span><span class="nx">centroidPoint</span><span class="p">(</span><span class="nx">fc</span><span class="p">)</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_centroid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcGeometry</span><span class="p">.</span><span class="nx">centroidPoint</span><span class="p">(</span><span class="nx">fc</span><span class="p">);</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">fc_centroid</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;yellow&#39;</span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;Centroid point&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <h3 id="convex-hull"><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> convex hull</h3>
 <hr />
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_convex_hull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcGeometry</span><span class="p">.</span><span class="nx">convexHullPolygon</span><span class="p">(</span><span class="nx">fc</span><span class="p">)</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_convex_hull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcGeometry</span><span class="p">.</span><span class="nx">convexHullPolygon</span><span class="p">(</span><span class="nx">fc</span><span class="p">);</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">fc_convex_hull</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;magenta&#39;</span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;Convex hull&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <h2 id="convert-vector-to-raster"><strong>convert vector to raster</strong></h2>

@@ -106,7 +106,10 @@ Map.addLayer(fc, {color: 'white'}, "Layer Name");
 ---  
 
 ```js
-var fc_bounds = geo.fcGeometry.boundingBox(fc)
+var fc_bounds = geo.fcGeometry.boundingBox(fc);
+
+Map.addLayer(fc_bounds, {color: 'cyan'}, "Bounding box", false);
+
 ```
 
 ---  
@@ -116,7 +119,10 @@ var fc_bounds = geo.fcGeometry.boundingBox(fc)
 ---  
 
 ```js
-var fc_centroid = geo.fcGeometry.centroidPoint(fc)
+var fc_centroid = geo.fcGeometry.centroidPoint(fc);
+
+Map.addLayer(fc_centroid, {color: 'yellow'}, "Centroid point", false);
+
 ```
 
 ---  
@@ -126,7 +132,10 @@ var fc_centroid = geo.fcGeometry.centroidPoint(fc)
 --- 
 
 ```js
-var fc_convex_hull = geo.fcGeometry.convexHullPolygon(fc)
+var fc_convex_hull = geo.fcGeometry.convexHullPolygon(fc);
+
+Map.addLayer(fc_convex_hull, {color: 'magenta'}, "Convex hull", false);
+
 ```
 
 

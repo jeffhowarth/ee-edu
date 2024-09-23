@@ -606,6 +606,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#checks-in-starter" class="md-nav__link">
+    checks in starter
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -730,6 +737,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#checks-in-starter" class="md-nav__link">
+    checks in starter
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -747,7 +761,7 @@
 
 <h1 id="introduction-to-feature-collections"><strong>introduction to feature collections</strong></h1>
 <h2 id="goal"><strong>goal</strong></h2>
-<p>This tutorial aims to introduce you to gathering, filtering, and displaying vector datasets in Earth Engine. Your goal is to work through the starter script and try to reproduce the layers that are shown in the app below.</p>
+<p>This tutorial aims to introduce you to gathering, filtering, and displaying large <strong>vector</strong> datasets in Earth Engine. Your goal is to work through the starter script and try to reproduce the layers that are shown in the app below.</p>
 <hr />
 <p><iframe
   src="https://ee-patterns.projects.earthengine.app/view/tutorial-03"
@@ -765,11 +779,10 @@
 <span class="c1">// ---------------------------------------------------------------------------</span>
 <span class="c1">//  I. A SIMPLE FEATURE COLLECTION PATTERN</span>
 <span class="c1">//</span>
-<span class="c1">//  Load feature collection from &quot;TIGER/2018/Counties&quot;.</span>
-<span class="c1">//  Note the number of rows in the table, the column names, and the first row of data.</span>
-<span class="c1">//  Also find all the unique county names in the county. How many are there?</span>
-<span class="c1">//</span>
-<span class="c1">//  Display all the rows in the collection as a Map layer. Use {color: &#39;white&#39;} </span>
+<span class="c1">//  (1) Gather feature collection from &quot;TIGER/2018/Counties&quot;.</span>
+<span class="c1">//  (2) Note the number of rows in the table, the column names, and the first row of data.</span>
+<span class="c1">//  (3) Also find all the unique county names in the county. How many are there?</span>
+<span class="c1">//  (4) Display all the rows in the collection as a Map layer. Use {color: &#39;white&#39;} </span>
 <span class="c1">// ---------------------------------------------------------------------------</span>
 
 
@@ -778,8 +791,8 @@
 <span class="c1">// ---------------------------------------------------------------------------</span>
 <span class="c1">//  II. FILTER BY ATTRIBUTE</span>
 <span class="c1">//</span>
-<span class="c1">//  How may counties in the USA are named &quot;Addison&quot;?</span>
-<span class="c1">//  Display all the Addison Counties on the Map with {color: &#39;gray&#39;}.</span>
+<span class="c1">//  (1) How may counties in the USA are named &quot;Addison&quot;?</span>
+<span class="c1">//  (2) Display all counties named Addison in the USA on the Map with {color: &#39;gray&#39;}.</span>
 <span class="c1">// ---------------------------------------------------------------------------</span>
 
 
@@ -787,9 +800,9 @@
 <span class="c1">// ---------------------------------------------------------------------------</span>
 <span class="c1">//  III. FILTER BY LOCATION</span>
 <span class="c1">//</span>
-<span class="c1">//  Use the geometry tool to create a point somewhere inside Addison County, Vermont.</span>
-<span class="c1">//  Filter the original feature collection by location using this poi. </span>
-<span class="c1">//  Display the result on the Map with {color: &#39;black&#39;}.</span>
+<span class="c1">//  (1) Use the geometry tool (upper left of Map) to create a point somewhere inside Addison County, Vermont.</span>
+<span class="c1">//  (2) Filter the original feature collection by location using this poi. </span>
+<span class="c1">//  (3) Display the result (Addison county filtered by poi) on the Map with {color: &#39;black&#39;}.</span>
 <span class="c1">// ---------------------------------------------------------------------------</span>
 
 
@@ -800,11 +813,11 @@
 <span class="c1">//  </span>
 <span class="c1">//  (1) Filter the original collection for &quot;Orange&quot; county.</span>
 <span class="c1">//  (2) How many Orange counties are in the USA?</span>
-<span class="c1">//  (2) Display the result on map as layer with {color: &#39;orange&#39;}.</span>
+<span class="c1">//  (3) Display the result (All counties named &#39;Orange&#39;) on map as layer with {color: &#39;orange&#39;}.</span>
 
-<span class="c1">//  (3) Filter the original collection for &quot;Orange&quot; county IN VERMONT.</span>
+<span class="c1">//  (4) Use AND filter to filter the original collection of counties for &quot;Orange&quot; county IN VERMONT.</span>
 <span class="c1">//  HINT: the STATEFP column stores strings (even through they look like numbers).</span>
-<span class="c1">//  (4) Display the result as a layer on the Map with {color: &#39;OrangeRed&#39;}.</span>
+<span class="c1">//  (5) Display the result as a layer on the Map with {color: &#39;OrangeRed&#39;}.</span>
 <span class="c1">// ---------------------------------------------------------------------------</span>
 
 
@@ -817,7 +830,7 @@
 <span class="c1">//  (2) Filter collection for Vermont.</span>
 <span class="c1">//  (3) Center Map on Vermont. </span>
 <span class="c1">//  (4) Add Vermont layer to Map with {color: &#39;green&#39;}</span>
-<span class="c1">//  (5) Filter original county collection by name &quot;Orange&quot; and use a FILTER BY LOCATION to intersect with bounds of Vermont state.</span>
+<span class="c1">//  (5) Filter original county collection by name &quot;Orange&quot; and use a FILTER BY LOCATION to filter in bounds of Vermont state.</span>
 <span class="c1">//  (6) Display result on map with {color: &quot;LightGreen&quot;}</span>
 <span class="c1">// ---------------------------------------------------------------------------</span>
 
@@ -825,10 +838,10 @@
 
 
 <span class="c1">// ---------------------------------------------------------------------------</span>
-<span class="c1">//  VI. FILTER BY ATTRIBUTE AND LOCATION: PROBLEMATIC CASE</span>
+<span class="c1">//  VI. FILTER BY ATTRIBUTE AND LOCATION: TRICKY CASE</span>
 <span class="c1">//  </span>
 <span class="c1">//  (1) Try to reproduce last workflow (FILTER BY ATTRIBUTE AND FILTER BY LOCATION) to map &quot;Essex&quot; county in Vermont.</span>
-<span class="c1">//  (2) How did it work?</span>
+<span class="c1">//  (2) How did it work? What do you think happened?</span>
 <span class="c1">//  (3) Can you fix it with a workflow that does not use AND but still links together</span>
 <span class="c1">//    (A) a FILTER BY ATTRIBUTE with </span>
 <span class="c1">//    (B) a SPATIAL FILTER  </span>
@@ -838,23 +851,86 @@
 
 
 <span class="c1">// ---------------------------------------------------------------------------</span>
-<span class="c1">//  VII. How could you select all the counties in Vermont using a FILTER BY ATTRIBUTE approach?</span>
-<span class="c1">//  After you filter the data, add the result  {color: &quot;PowderBlue&quot;}</span>
+<span class="c1">//  VII. FIRST CHALLENGE </span>
+<span class="c1">//</span>
+<span class="c1">//  (1) How could you select all the counties in Vermont using a FILTER BY ATTRIBUTE workflow?</span>
+<span class="c1">//  (2) After you filter the data, add the result  {color: &quot;PowderBlue&quot;}</span>
 <span class="c1">// ---------------------------------------------------------------------------</span>
 
 
 
 <span class="c1">// ---------------------------------------------------------------------------</span>
-<span class="c1">//  VIII. How could you select all the counties in Vermont using a FILTER BY LOCATION approach?</span>
-<span class="c1">//  After you filter the data, add the result  {color: &quot;DeepSkyBlue&quot;}</span>
+<span class="c1">//  VIII. SECOND CHALLENGE</span>
+<span class="c1">//</span>
+<span class="c1">//  (1) How could you select all the counties in Vermont using a FILTER BY LOCATION workflow?</span>
+<span class="c1">//  (2) After you filter the data, add the result  {color: &quot;DeepSkyBlue&quot;}</span>
 <span class="c1">// ---------------------------------------------------------------------------</span>
 
 
 
 <span class="c1">// ---------------------------------------------------------------------------</span>
-<span class="c1">//  IX. Convert one of the counties in Vermont dataset (VII or VIII) to nominal image and display each county in a unique color.</span>
+<span class="c1">//  IX. FINAL TASK</span>
+<span class="c1">//  </span>
+<span class="c1">//  (1) Convert one of the counties in Vermont dataset (VII or VIII) to nominal image </span>
+<span class="c1">//  (2) Display each county in a unique color.</span>
 <span class="c1">// ---------------------------------------------------------------------------</span>
 </code></pre></div>
+<h2 id="checks-in-starter"><strong>checks in starter</strong></h2>
+<p>Here are some checks that you can print to Console for sections I - V.  </p>
+<table>
+<thead>
+<tr>
+<th align="center">SECTION</th>
+<th align="left">DESCRIPTION</th>
+<th align="left">CHECKS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">I-2</td>
+<td align="left">Number of rows in table.</td>
+<td align="left">3233</td>
+</tr>
+<tr>
+<td align="center">I-2</td>
+<td align="left">Column names</td>
+<td align="left">18 of them, beginning with GEOID and ending with METDIVFP</td>
+</tr>
+<tr>
+<td align="center">I-2</td>
+<td align="left">First row of table</td>
+<td align="left">id: 00000000000000000011; geometry: Polygon, 656 vertices; properties: 17</td>
+</tr>
+<tr>
+<td align="center">I-3</td>
+<td align="left">Unique county names</td>
+<td align="left">1922 of them</td>
+</tr>
+<tr>
+<td align="center">II-1</td>
+<td align="left">Number of rows in table</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="center">III-2</td>
+<td align="left">Number of rows in table</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="center">IV-2</td>
+<td align="left">Number of rows in table</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="center">V</td>
+<td align="left">Number of rows in table (states)</td>
+<td align="left">56</td>
+</tr>
+</tbody>
+</table>
+<p>For sections VI - IX, you should be able to check your work by visually comparing your map layers to the ones shown in the app above.  </p>
+<hr />
+<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
 
 
