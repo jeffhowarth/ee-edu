@@ -109,7 +109,7 @@ print("Image histogram", output_histogram);
 
 __For raster data, store the viz dictionary as a variable and then call this variable when you add the map layer.__   
 
-Here is a common pattern to visualize __single-band grayscale__ images:
+Here is a common pattern to visualize __single-band images with grayscale__:
 
 ```js
 var single_viz = 
@@ -122,7 +122,7 @@ var single_viz =
 
 ---  
 
-Here is a common pattern to visualize __single-band pseudo-color__ images:
+Here is a common pattern to visualize __single-band images with color__ (this includes both color gradient layers and nominal layers where a unique color displays each unique class):
 
 ```js
 var single_viz = 
@@ -136,7 +136,7 @@ var single_viz =
 
 ---  
 
-This is a common pattern to visualize __multi-band__ images:
+This is a common pattern to visualize __multi-band images__ as a combination of red, green, and blue channels:
 
 ```js
 var multi_viz = 
@@ -151,11 +151,13 @@ var multi_viz =
 
 ---   
 
-If your image data represents __nominal data__ with integers, you can quickly visualize this data with __random colors__ using the ```.randomVisualizer()``` method on the image and calling an empty dictionary for the viz parameters.  
+If your image data represents __nominal data__ with integers, you can quickly visualize this data with __random colors__ using the ```.randomVisualizer()``` method on the image and calling an empty dictionary for the viz parameters.    
 
 ```js
 Map.addLayer(image.randomVisualizer(), {}, "Nominal Classes");
 ```
+
+This pattern is most useful for quick visualizations, when the color used to display the class does not matter too much. If you want to be able to control which color displays each class, then you should use the __single band image with color__ pattern described earlier and make sure that the length (number of) integer values in your class set equals the length of colors in your palette.   
 
 ---  
 

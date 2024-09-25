@@ -1011,7 +1011,7 @@
 <hr />
 <h3 id="define-raster-viz-dictionary"><strong>define raster viz dictionary</strong></h3>
 <p><strong>For raster data, store the viz dictionary as a variable and then call this variable when you add the map layer.</strong>   </p>
-<p>Here is a common pattern to visualize <strong>single-band grayscale</strong> images:</p>
+<p>Here is a common pattern to visualize <strong>single-band images with grayscale</strong>:</p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">single_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">        </span>
@@ -1020,7 +1020,7 @@
 <span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Here is a common pattern to visualize <strong>single-band pseudo-color</strong> images:</p>
+<p>Here is a common pattern to visualize <strong>single-band images with color</strong> (this includes both color gradient layers and nominal layers where a unique color displays each unique class):</p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">single_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">        </span>
@@ -1030,7 +1030,7 @@
 <span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>This is a common pattern to visualize <strong>multi-band</strong> images:</p>
+<p>This is a common pattern to visualize <strong>multi-band images</strong> as a combination of red, green, and blue channels:</p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">multi_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">bands</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">      </span>
@@ -1041,9 +1041,10 @@
 <span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>If your image data represents <strong>nominal data</strong> with integers, you can quickly visualize this data with <strong>random colors</strong> using the <code>.randomVisualizer()</code> method on the image and calling an empty dictionary for the viz parameters.  </p>
+<p>If your image data represents <strong>nominal data</strong> with integers, you can quickly visualize this data with <strong>random colors</strong> using the <code>.randomVisualizer()</code> method on the image and calling an empty dictionary for the viz parameters.    </p>
 <div class="language-js highlight"><pre><span></span><code><span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">randomVisualizer</span><span class="p">(),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s2">&quot;Nominal Classes&quot;</span><span class="p">);</span>
 </code></pre></div>
+<p>This pattern is most useful for quick visualizations, when the color used to display the class does not matter too much. If you want to be able to control which color displays each class, then you should use the <strong>single band image with color</strong> pattern described earlier and make sure that the length (number of) integer values in your class set equals the length of colors in your palette.   </p>
 <hr />
 <h3 id="add-map-layer"><strong>add map layer</strong></h3>
 <p><code>Map.addLayer()</code> method will display data as a map layer.    </p>

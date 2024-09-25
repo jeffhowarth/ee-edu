@@ -839,18 +839,20 @@
 
 <h1 id="parent-materials-of-soils"><strong>parent materials of soils</strong></h1>
 <h2 id="purpose"><strong>purpose</strong></h2>
-<p>Your goal is to make a map that could help town planners in Addison County compare information from the Addison County soil survey to property parcels in their town.  </p>
+<p>Your goal is to make a map that could help town planners in Addison County compare information from the Addison County Soil Survey (1971) to property parcels in their town.  </p>
 <p>Practically, your workflow will include the following patterns:  </p>
 <ul>
 <li>gather and inspect vector data  </li>
 <li>filter feature collections  </li>
 <li>convert vector to raster  </li>
-<li>mask raster data  </li>
+<li>mask raster data </li>
+<li>display layer of nominal classes with unique colors </li>
+<li>explain nominal class symbology    </li>
 <li>filter and flatten an image collection  </li>
 <li>make terrain layers </li>
 <li>paint strokes    </li>
 </ul>
-<p>When you solve the problem, you should have a workflow that uses the town of Middlebury as the subject to produce a map with the layers shown in the app below. Ideally, you will write the script so that you can very easily shift the map to any other town in Addison County, Vermont.   </p>
+<p>When you solve the problem, you should have a workflow that uses the town of Middlebury as the test subject to produce a map with the layers shown in the app below. Ideally, you will write the script so that you can very easily shift the map to any other town in Addison County, Vermont.   </p>
 <hr />
 <p><iframe
   src="https://ee-patterns.projects.earthengine.app/view/practice-03"
@@ -917,29 +919,29 @@
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;SOILS Palette and Class labels&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">palette_soils</span><span class="p">,</span><span class="w"> </span><span class="nx">class_labels_soils</span><span class="p">);</span>
 
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
-<span class="c1">//  GATHER HUMAN GEOGRPAHY</span>
+<span class="c1">//  1. GATHER HUMAN GEOGRAPHY</span>
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Make Addison County layer</span>
+<span class="c1">//  1.1 Make Addison County layer</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">fc_county</span><span class="w"> </span><span class="p">;</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Make study town (Middlebury) layer</span>
+<span class="c1">//  1.2 Make study town (Middlebury) layer</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">fc_town</span><span class="w"> </span><span class="p">;</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Center map on study town</span>
+<span class="c1">//  1.3 Center map on study town</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Make parcels in study town layer</span>
+<span class="c1">//  1.4 Make parcels in study town layer</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">fc_parcels</span><span class="w"> </span><span class="p">;</span>
@@ -947,11 +949,11 @@
 
 
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
-<span class="c1">//  GATHER SOILS DATA AND FILTER FOR ADDISON COUNTY </span>
+<span class="c1">//  2. GATHER SOILS DATA AND FILTER FOR ADDISON COUNTY </span>
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Gather soils data</span>
+<span class="c1">//  2.1 Gather soils data</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 
@@ -960,93 +962,93 @@
 
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Filter for soils that overlap Addison County</span>
+<span class="c1">//  2.2 Filter for soils that overlap Addison County</span>
 <span class="c1">// ------------------------------------------------------------- </span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">fc_filter_bounds_soils</span><span class="w"> </span><span class="p">;</span>
 
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
-<span class="c1">//  MAKE PARENT MATERIAL IMAGE FOR STUDY TOWN. </span>
+<span class="c1">//  3. MAKE PARENT MATERIAL IMAGE FOR STUDY TOWN. </span>
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Make nominal image of soil parent material. </span>
+<span class="c1">//  3.1 Make nominal image of soil parent material. </span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">image_nominal_soils</span><span class="w"> </span><span class="p">;</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Mask by Addison County.</span>
+<span class="c1">//  3.2 Mask by Addison County.</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">image_with_mask_soils</span><span class="w"> </span><span class="p">;</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Display masked soils image as layer. </span>
+<span class="c1">//  3.3 Display masked soils image as layer. </span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Add legend to bottom-left. </span>
+<span class="c1">//  3.4 Add legend to bottom-left of Map. </span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 
 
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
-<span class="c1">//  GATHER DEM </span>
+<span class="c1">//  4. GATHER DEM </span>
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Construct image collection. </span>
+<span class="c1">//  4.1 Construct image collection. </span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">ic_dem</span><span class="w"> </span><span class="p">;</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Filter ic by bounds of Addison County.</span>
+<span class="c1">//  4.2 Filter for images that overlap Addison County.</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">ic_filtered_dem_county</span><span class="w"> </span><span class="p">;</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Mosaic image collection to image. </span>
+<span class="c1">//  4.3 Mosaic filtered image collection to image. </span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">ic_dem_mosaic</span><span class="w"> </span><span class="p">;</span>
 
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Mask by Addison County. </span>
+<span class="c1">//  4.2 Mask mosaic image by Addison County. </span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">image_with_mask_dem</span><span class="w"> </span><span class="p">;</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Make hillshade from masked image and display as layer with 0.5 opacity.</span>
+<span class="c1">//  4.3 Make hillshade from masked image and display as layer with 0.5 opacity.</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">hs</span><span class="w">  </span><span class="p">;</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Make hillshade from masked image and display as layer with 0.5 opacity.</span>
+<span class="c1">//  4.6 Make hillshade from masked image and display as layer with 0.5 opacity.</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">slope</span><span class="w"> </span><span class="p">;</span>
 
 
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
-<span class="c1">//  PAINT STROKES</span>
+<span class="c1">//  5. PAINT STROKES</span>
 <span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Make strokes for parcels (&quot;white&quot; and 0.5 weight) and add as layer.</span>
+<span class="c1">//  5.1 Make strokes for parcels (&quot;white&quot; and 0.5 weight) and add as layer.</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">strokes_parcels</span><span class="w"> </span><span class="p">;</span>
 
 <span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  Make strokes for town (&quot;white&quot; and 4 weight) and add as layer.</span>
+<span class="c1">//  5.2 Make strokes for town (&quot;white&quot; and 4 weight) and add as layer.</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">strokes_town</span><span class="w"> </span><span class="p">;</span>
@@ -1061,12 +1063,26 @@
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;users/jhowarth/eePatterns:checks/p03.js&quot;</span><span class="p">);</span>
 
-<span class="c1">//  Uncomment the three lines below, run script, and look at the results in Console. </span>
+<span class="c1">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;</span>
 
-<span class="c1">// check.checkPoint(&quot;CP1:&quot;, image_with_mask_soils);</span>
-<span class="c1">// check.checkPoint(&quot;CP2:&quot;, image_with_mask_dem);</span>
-<span class="c1">// check.checkPoint(&quot;CP3:&quot;, hs);</span>
-<span class="c1">// check.checkPoint(&quot;CP4:&quot;, slope);</span>
+<span class="c1">//  PLEASE DO THE FOLLOWING: </span>
+
+<span class="c1">// 1. Uncomment all of the check statements below.</span>
+<span class="c1">// 2. Replace &#39;result_#p#&#39; with the name of the data object that you used to map as a layer in each section.</span>
+<span class="c1">// 3. Run the script.</span>
+<span class="c1">// 4. Use the results printed to Console in the Check Up that is due Friday 5pm. </span>
+
+<span class="c1">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;</span>
+
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkCollection</span><span class="p">(</span><span class="s2">&quot;Check 1.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_1p1</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkCollection</span><span class="p">(</span><span class="s2">&quot;Check 1.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_1p2</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkCollection</span><span class="p">(</span><span class="s2">&quot;Check 1.4&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_1p4</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkCollection</span><span class="p">(</span><span class="s2">&quot;Check 2.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_2p1</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkCollection</span><span class="p">(</span><span class="s2">&quot;Check 2.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_2p2</span><span class="p">);</span>
+
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkPoint</span><span class="p">(</span><span class="s2">&quot;Check 3.3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_3p3</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkPoint</span><span class="p">(</span><span class="s2">&quot;Check 4.5&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_4p5</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkPoint</span><span class="p">(</span><span class="s2">&quot;Check 4.6&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_4p6</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
