@@ -2,6 +2,7 @@
 
 One of the first things you will usually do with Earth Engine is gather some data from the cloud. Before we get too deep into this, we should review the basic templates for storing geographic data (__geographic data models__) and how they are implemented in Earth Engine.     
 
+---  
 ## __raster data model__  
 
 A __raster__ stores geographic data with a grid of pixels. Each __pixel__, or cell in the grid, stores a value as a digital number. The __data type__ defines the length of binary numbers used to store the digital number. In the diagram below, the values shown on the left can be stored as a 8 bit unsigned integer, or __byte__, data type shown on the right. 
@@ -116,6 +117,83 @@ print(
     )
 ;
 ```
+
+---  
+
+## __image collection data object__  
+
+In Earth Engine, an image collection is what it sounds like: a collection of images. Earth Engine often uses these raster data objects to store satellite observations, because most satellites observe a region of the earth's surface (often called a __scene__) at a moment in time and then return to this scene at regular intervals to create a __time series__. In these cases, an image collection provides a way to store all the different scenes observed at all the different times by a satellite mission.    
+
+_image forthcoming_  
+
+Image collections are also useful for storing high-resolution rasters as a set of small __tiles__, or images with relatively small geographic extent, that can be stitched together into larger images as needed. For example, Earth Engine will often store Lidar products and high resolution imagery as image collections. 
+
+![image-collections](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/gatherData/image-collection.png)
+
+---  
+
+---  
+
+### __construct from address__  
+
+Use the ```ee.ImageCollection()``` method to construct an image collection from the cloud. The method takes the cloud address as an argument.  
+
+---  
+
+<center>
+
+``` mermaid
+graph LR
+  step02("ee.ImageCollection()") ;
+  step03[/"ic"/]  ;
+  arg01["'address/of/cloud/data'"] ;
+
+  step02 --> step03
+  arg01 --o step02
+
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+  
+
+  class step01 in-out; 
+  class step02 op;
+  class step03 in-out;
+  class arg01 arg; 
+```
+
+</center>
+
+Here is the pattern in javascript:
+
+```js
+var ic = ee.ImageCollection('address/of/cloud/data');
+
+```
+
+---  
+
+### __inspect data__  
+
+After constructing an ic object, I tend to use a ```print()``` method to learn a couple things about the data.  
+
+```js
+print(
+    "IC Name",
+    ic.size(),          // Consider commenting out this line to make script run faster. 
+    ic.first(),
+    )
+;
+```   
+
+The ```ic.size()``` method tells me how many images the collection contains. If the collection is huge, this method can take a while to run, so often I will comment out this line after I have looked at the result to help make the script run faster on subsequent runs. The ```ic.first()``` method tells me some details about the first image in the collection and usually the other images in the collection will have the same band names and property keys.  
+
+### __full pattern__  
+
+Here are the two parts of the pattern together.  
+
+
 
 ---  
 

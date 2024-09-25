@@ -154,7 +154,7 @@ var multi_viz =
 If your image data represents __nominal data__ with integers, you can quickly visualize this data with __random colors__ using the ```.randomVisualizer()``` method on the image and calling an empty dictionary for the viz parameters.  
 
 ```js
-Map.addLayer(image.randomVisualizer(), {}, "Nominal Classes);
+Map.addLayer(image.randomVisualizer(), {}, "Nominal Classes");
 ```
 
 ---  

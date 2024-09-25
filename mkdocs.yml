@@ -103,7 +103,7 @@ markdown_extensions:
   - markdown.extensions.meta
   - markdown.extensions.toc:
       permalink: false
-      toc_depth: 3
+      toc_depth: 4
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -146,15 +146,19 @@ nav:
     - javascript: methods/javascript.md
     - explain code: methods/explain-code.md  
     - gather raster data: methods/gather-raster-data.md  
-    - map raster layers: methods/map-raster-layers.md 
-    - bringing in vector data: methods/bringing-in-vector-data.md  
+    - gather vector data: methods/gather-vector-data.md
+    - map raster as layers: methods/map-raster-layers.md 
+    - map vector as layers: methods/map-vector-layers.md   
     - explain symbology: methods/explain-symbology.md  
     - customize Map: methods/customize-Map.md
-    - filter data: methods/filter-data.md  
+    - filter collections: methods/filter-collections.md  
+    - flatten collections: methods/composite-mosaic.md
+    - convert data: methods/convert-data.md  
     - reclassify raster: methods/reclassify.md
     - scalar operations: methods/scalar-operations.md 
     - local operations: methods/local-operations.md   
     - terrain: methods/terrain.md  
+    - vector analysis: methods/vector-analysis.md  
   - TUTORIAL:  
     - 01 A Sketch Map from Lidar: tutorials/01.md  
     - 02 A Slippy Topographic Map: tutorials/02.md
@@ -162,6 +166,7 @@ nav:
   - PRACTICE:
     - 01 Memory under cover: practice/01.md
     - 02 Ice age bathtub: practice/02.md  
+    - 03 Parent materials of soils: practice/03.md
     
   # - WORKED EXAMPLES:  
   #   - naip images: examples/naip.md 
