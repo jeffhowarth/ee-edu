@@ -1019,20 +1019,26 @@
 </code></pre>
 <p></center></p>
 <p>A filter is a method of asking a true or false question about the content of a collection and then only keeping the records where the answer is true. In other GIS, these are called <strong>selections</strong> or <strong>queries</strong> which are often written in SQL, which follows a similar logic but employs a different syntax.  </p>
-<p>In Earth Engine, the three main types of filters are by time, by location, or by attribute. </p>
+<p>In Earth Engine, you can filter collections in three ways:  </p>
+<ul>
+<li>by time, </li>
+<li>by location, </li>
+<li>by attribute. </li>
+</ul>
 <h2 id="filter-by-time"><strong>filter by time</strong></h2>
 <p><em>we will get to this in a couple of weeks</em>  </p>
 <hr />
 <h2 id="filter-by-location"><strong>filter by location</strong></h2>
-<p>The main idea here is to use a geographic object (often a feature or geometry object) like <strong>a fork</strong> to grab other objects in the collection a feature collection that you would like to filter (like <strong>food</strong> on a plate) if these features overlap or have some other defined spatial relationship with the fork.  </p>
+<p>This involves making spatial comparisons between two layers. One layer is a collection of things (features, images) that has more things than you need. The other layer is a geometry, feature, or feature collection that defines your place of interest. These filters work by comparing the location of things in the first collection with the location of the place of interest in the second layer.   </p>
 <h3 id="by-bounds"><strong>by bounds</strong></h3>
-<p>One of the most common spatial filters tests for <strong>overlap</strong> between items in the collection and the fork object.  </p>
-<p><img alt="filter-overlap" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/filter-overlap.png" />  </p>
+<p>One of the most common spatial filters tests for <strong>overlap</strong> between items in the collection and the place of interest. Any item in the collection that overlaps the place of interest will pass through the filter and the rest of the things will be filtered out. Even things that only overlap the place of interest on the very edge will still pass through the filter and remain in the collection. The diagram below shows this by passing items 7, 13, 19 through the filter. You can think of the items in this collection as either individual images (image collection) or individual features (feature collection).   </p>
+<p><img alt="filter-bounds-overlap" src="https:/geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/filter-bounds-overlap.png" /></p>
 <hr />
-<p>The syntax for this looks a little clunky because you first call <code>.filter()</code> on the (food) collection, called <strong>c</strong> in the code snippet, which then takes <code>ee.Filter.bounds()</code> as an argument, which itself takes the <strong>fork</strong> object as an argument.  </p>
+<p>It is sometimes helpful to think of this as a <strong>fork</strong> filter, because this filter does not alter the shape of the items in the collection. The filter <em>does not</em> cut them, as a knife would, and the collective shape of the items that pass through the filter <em>does not</em> match the shape of the place of interest.  </p>
+<p>The syntax for this method in Earth Engine looks a little clunky because you first call <code>.filter()</code> on the collection that you want to filter (called <strong>c</strong> for collection in the code snippet), which then takes <code>ee.Filter.bounds()</code> as an argument, which itself takes the place of interest object as an argument.  </p>
 <pre class="mermaid"><code>graph LR
 
-  input["collection&lt;br&gt;(food)"] ;
+  input["&lt;b&gt;c&lt;/b&gt;&lt;br&gt;(collection to filter)"] ;
   method(".filter()") ;
   output[/"c_filter_bounds"/]  ;
 
@@ -1042,7 +1048,7 @@
 
   arg --o method
 
-  arg2["fork"] ;
+  arg2["&lt;b&gt;place_of_interest&lt;/b&gt;"] ;
 
   arg2 --o arg
 
@@ -1056,10 +1062,10 @@
   class output in-out;
   class arg arg; 
   class arg2 arg;</code></pre>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">c_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">fork</span><span class="p">));</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">c_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">place_of_interest</span><span class="p">));</span>
 </code></pre></div>
-<p>Because this method is very commonly used to filter both image and feature collections but has such wonky syntax, Earth Engine provides an alternative expression to call the method that is a bit simpler to write. In the snippet below, <strong>c</strong> is the food collection and <strong>fork</strong> is the fork feature (or feature collection), which is the object that is being used to test if items in the food collection overlap it. </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">c_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">fork</span><span class="p">);</span>
+<p>Because this method is very commonly used to filter both image and feature collections but has such wonky syntax, Earth Engine provides an alternative expression to call the method that is a bit simpler to write. In the snippet below, <strong>c</strong> is the collection to filter and <strong>place_of_interest</strong> is the object that is being used to test for overlap it. </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">c_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">place_of_interest</span><span class="p">);</span>
 </code></pre></div>
 <p>The main advantage of learning to write the first, clunky syntax is that you can use it to include the filter in AND methods (see below).  </p>
 <hr />

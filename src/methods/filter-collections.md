@@ -24,7 +24,11 @@ graph LR
 
 A filter is a method of asking a true or false question about the content of a collection and then only keeping the records where the answer is true. In other GIS, these are called __selections__ or __queries__ which are often written in SQL, which follows a similar logic but employs a different syntax.  
 
-In Earth Engine, the three main types of filters are by time, by location, or by attribute. 
+In Earth Engine, you can filter collections in three ways:  
+
+* by time, 
+* by location, 
+* by attribute. 
 
 ## __filter by time__
 
@@ -34,22 +38,24 @@ _we will get to this in a couple of weeks_
 
 ## __filter by location__  
 
-The main idea here is to use a geographic object (often a feature or geometry object) like __a fork__ to grab other objects in the collection a feature collection that you would like to filter (like __food__ on a plate) if these features overlap or have some other defined spatial relationship with the fork.  
+This involves making spatial comparisons between two layers. One layer is a collection of things (features, images) that has more things than you need. The other layer is a geometry, feature, or feature collection that defines your place of interest. These filters work by comparing the location of things in the first collection with the location of the place of interest in the second layer.   
 
 ### __by bounds__  
 
-One of the most common spatial filters tests for __overlap__ between items in the collection and the fork object.  
+One of the most common spatial filters tests for __overlap__ between items in the collection and the place of interest. Any item in the collection that overlaps the place of interest will pass through the filter and the rest of the things will be filtered out. Even things that only overlap the place of interest on the very edge will still pass through the filter and remain in the collection. The diagram below shows this by passing items 7, 13, 19 through the filter. You can think of the items in this collection as either individual images (image collection) or individual features (feature collection).   
 
-![filter-overlap](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/filter-overlap.png)  
+ ![filter-bounds-overlap](https:/geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/filter-bounds-overlap.png)
 
 ---  
 
-The syntax for this looks a little clunky because you first call ```.filter()``` on the (food) collection, called __c__ in the code snippet, which then takes ```ee.Filter.bounds()``` as an argument, which itself takes the __fork__ object as an argument.  
+It is sometimes helpful to think of this as a __fork__ filter, because this filter does not alter the shape of the items in the collection. The filter _does not_ cut them, as a knife would, and the collective shape of the items that pass through the filter _does not_ match the shape of the place of interest.  
+
+The syntax for this method in Earth Engine looks a little clunky because you first call ```.filter()``` on the collection that you want to filter (called __c__ for collection in the code snippet), which then takes ```ee.Filter.bounds()``` as an argument, which itself takes the place of interest object as an argument.  
 
 ``` mermaid
 graph LR
 
-  input["collection<br>(food)"] ;
+  input["<b>c</b><br>(collection to filter)"] ;
   method(".filter()") ;
   output[/"c_filter_bounds"/]  ;
 
@@ -59,7 +65,7 @@ graph LR
   
   arg --o method
 
-  arg2["fork"] ;
+  arg2["<b>place_of_interest</b>"] ;
 
   arg2 --o arg
 
@@ -76,14 +82,14 @@ graph LR
 ```
 
 ```js
-var c_filter_bounds = c.filter(ee.Filter.bounds(fork));
+var c_filter_bounds = c.filter(ee.Filter.bounds(place_of_interest));
 
 ```
 
-Because this method is very commonly used to filter both image and feature collections but has such wonky syntax, Earth Engine provides an alternative expression to call the method that is a bit simpler to write. In the snippet below, __c__ is the food collection and __fork__ is the fork feature (or feature collection), which is the object that is being used to test if items in the food collection overlap it. 
+Because this method is very commonly used to filter both image and feature collections but has such wonky syntax, Earth Engine provides an alternative expression to call the method that is a bit simpler to write. In the snippet below, __c__ is the collection to filter and __place_of_interest__ is the object that is being used to test for overlap it. 
 
 ```js
-var c_filter_bounds = c.filterBounds(fork);
+var c_filter_bounds = c.filterBounds(place_of_interest);
 ```
 
 The main advantage of learning to write the first, clunky syntax is that you can use it to include the filter in AND methods (see below).  
