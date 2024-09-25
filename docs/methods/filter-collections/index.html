@@ -1096,8 +1096,8 @@
 </code></pre></div>
 <hr />
 <h2 id="other-spatial-filters"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> other spatial filters</strong></h2>
-<p>The <code>.filterBounds()</code> method is a generally fast method to filter by location, but sometimes you may not want to keep features that only overlap the boundary of the fork features. To help in these cases, I wrote a custom method that allows you to filter features in one collection (food) based on their spatial relationship to features in another collection (fork).      </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_in_ground</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcFilter</span><span class="p">.</span><span class="nx">spatial</span><span class="p">(</span><span class="s1">&#39;spatialRelationship&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">food</span><span class="p">,</span><span class="w"> </span><span class="nx">fork</span><span class="p">);</span>
+<p>The <code>.filterBounds()</code> method is a generally fast method to filter by location, but sometimes you may not want to keep features that only overlap the boundary of the place of interest. To help in these cases, I wrote a custom method that allows you to filter features in one collection based on their spatial relationship to features in another collection (place of interest).      </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_spatial_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcFilter</span><span class="p">.</span><span class="nx">spatial</span><span class="p">(</span><span class="s1">&#39;spatialRelationship&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection</span><span class="p">,</span><span class="w"> </span><span class="nx">place_of_interest</span><span class="p">);</span>
 </code></pre></div>
 <p>You may choose one of three spatial relationships.  </p>
 <table>
@@ -1110,15 +1110,15 @@
 <tbody>
 <tr>
 <td align="right">&ldquo;containedIn&rdquo;</td>
-<td align="left">Returns features in food collection that are contained by features in the fork collection.</td>
+<td align="left">Returns features in collection that are contained by place of interest.</td>
 </tr>
 <tr>
 <td align="right">&ldquo;disjoint&rdquo;</td>
-<td align="left">Returns features in food collection that do not touch any features in fork collection.</td>
+<td align="left">Returns features in collection that do not touch place of interest.</td>
 </tr>
 <tr>
 <td align="right">&ldquo;intersects&rdquo;</td>
-<td align="left">Returns features in food collection that touch a feature in fork collection.</td>
+<td align="left">Returns features in collection that touch a place of interest.</td>
 </tr>
 </tbody>
 </table>

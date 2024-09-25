@@ -136,11 +136,11 @@ print(
 
 ## __:earth_americas: other spatial filters__  
 
-The ```.filterBounds()``` method is a generally fast method to filter by location, but sometimes you may not want to keep features that only overlap the boundary of the fork features. To help in these cases, I wrote a custom method that allows you to filter features in one collection (food) based on their spatial relationship to features in another collection (fork).      
+The ```.filterBounds()``` method is a generally fast method to filter by location, but sometimes you may not want to keep features that only overlap the boundary of the place of interest. To help in these cases, I wrote a custom method that allows you to filter features in one collection based on their spatial relationship to features in another collection (place of interest).      
 
 ```js
 
-var fc_in_ground = geo.fcFilter.spatial('spatialRelationship', food, fork);
+var fc_spatial_filter = geo.fcFilter.spatial('spatialRelationship', collection, place_of_interest);
 
 ```
 
@@ -148,9 +148,9 @@ You may choose one of three spatial relationships.
 
 | SPATIAL RELATIONSHIP  | DESCRIPTION                                                                   |
 | --:                   | :--                                                                           |
-| "containedIn"         | Returns features in food collection that are contained by features in the fork collection.    |
-| "disjoint"            | Returns features in food collection that do not touch any features in fork collection.        |  
-| "intersects"          | Returns features in food collection that touch a feature in fork collection.
+| "containedIn"         | Returns features in collection that are contained by place of interest.    |
+| "disjoint"            | Returns features in collection that do not touch place of interest.        |  
+| "intersects"          | Returns features in collection that touch a place of interest.
 
 ---  
 
