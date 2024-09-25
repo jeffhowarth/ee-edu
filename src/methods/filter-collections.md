@@ -34,22 +34,22 @@ _we will get to this in a couple of weeks_
 
 ## __filter by location__  
 
-The main idea here is to use a geographic object (often a feature or geometry object) like __a fork__ to grab other objects in the collection if they overlap or have some other defined spatial relationship with the fork.  
+The main idea here is to use a geographic object (often a feature or geometry object) like __a fork__ to grab other objects in the collection a feature collection that you would like to filter (like __food__ on a plate) if these features overlap or have some other defined spatial relationship with the fork.  
 
 ### __by bounds__  
 
-One of the most common spatial filters tests for overlap between items in the collection and the fork object.  
+One of the most common spatial filters tests for __overlap__ between items in the collection and the fork object.  
 
 ![filter-overlap](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/filter-overlap.png)  
 
 ---  
 
-The syntax for this looks a little clunky because you first call ```.filter()``` which then takes ```ee.Filter.bounds()``` as an argument which itself takes the fork object as an argument.  
+The syntax for this looks a little clunky because you first call ```.filter()``` on the (food) collection, called __c__ in the code snippet, which then takes ```ee.Filter.bounds()``` as an argument, which itself takes the __fork__ object as an argument.  
 
 ``` mermaid
 graph LR
 
-  input["collection"] ;
+  input["collection<br>(food)"] ;
   method(".filter()") ;
   output[/"c_filter_bounds"/]  ;
 
@@ -80,7 +80,7 @@ var c_filter_bounds = c.filter(ee.Filter.bounds(fork));
 
 ```
 
-Because this method is very commonly used to filter both image and feature collections but has such wonky syntax, Earth Engine provides an alternative expression to call the method that is a bit simpler to write. 
+Because this method is very commonly used to filter both image and feature collections but has such wonky syntax, Earth Engine provides an alternative expression to call the method that is a bit simpler to write. In the snippet below, __c__ is the food collection and __fork__ is the fork feature (or feature collection), which is the object that is being used to test if items in the food collection overlap it. 
 
 ```js
 var c_filter_bounds = c.filterBounds(fork);
@@ -129,11 +129,11 @@ print(
 
 ## __:earth_americas: other spatial filters__  
 
-The ```.filterBounds()``` method is a generally fast method to filter by location, but sometimes you may not want to keep features that only overlap the boundary of the fork. To help in these cases, I wrote a custom method that allows you to filter features in one collection (figure) based on their spatial relationship to features in another collection (ground).     
+The ```.filterBounds()``` method is a generally fast method to filter by location, but sometimes you may not want to keep features that only overlap the boundary of the fork features. To help in these cases, I wrote a custom method that allows you to filter features in one collection (food) based on their spatial relationship to features in another collection (fork).      
 
 ```js
 
-var fc_in_ground = geo.fcFilter.spatial('spatialRelationship', figure, ground);
+var fc_in_ground = geo.fcFilter.spatial('spatialRelationship', food, fork);
 
 ```
 
@@ -141,13 +141,13 @@ You may choose one of three spatial relationships.
 
 | SPATIAL RELATIONSHIP  | DESCRIPTION                                                                   |
 | --:                   | :--                                                                           |
-| "containedIn"         | Returns features in figure collection that are contained by features in the ground collection.    |
-| "disjoint"            | Returns features in figure collection that do not touch any features in ground collection.        |  
-| "intersects"          | Returns features in figure collection that touch a feature in ground collection.
+| "containedIn"         | Returns features in food collection that are contained by features in the fork collection.    |
+| "disjoint"            | Returns features in food collection that do not touch any features in fork collection.        |  
+| "intersects"          | Returns features in food collection that touch a feature in fork collection.
 
 ---  
 
-## __filter FC by attribute__  
+## __filter by attribute__  
 
 These methods allow you to filter a collection based on __property values__ of items in the collection. For image collections, this means that you can filter based on properties of each image. For feature collections, it means you can filter based on the properties of each feature, which are equivalent to the attribute values of columns in a table.  
 
