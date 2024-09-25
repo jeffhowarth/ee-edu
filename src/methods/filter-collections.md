@@ -44,7 +44,8 @@ This involves making spatial comparisons between two layers. One layer is a coll
 
 One of the most common spatial filters tests for __overlap__ between items in the collection and the place of interest. Any item in the collection that overlaps the place of interest will pass through the filter and the rest of the things will be filtered out. Even things that only overlap the place of interest on the very edge will still pass through the filter and remain in the collection. The diagram below shows this by passing items 7, 13, 19 through the filter. You can think of the items in this collection as either individual images (image collection) or individual features (feature collection).   
 
- ![filter-bounds-overlap](https:/geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/filter-bounds-overlap.png)
+ ![filter-bounds-overlap](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/filter-bounds-overlap.png)
+
 
 ---  
 
