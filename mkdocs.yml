@@ -141,28 +141,33 @@ markdown_extensions:
 nav:
   - title page: index.md  
   - introduction: intro.md  
+  - the three Ts: three-t.md
   - geo module: geo-module.md  
-  - METHODS:
-    - javascript: methods/javascript.md
-    - explain code: methods/explain-code.md  
-    - gather raster data: methods/gather-raster-data.md  
-    - gather vector data: methods/gather-vector-data.md
-    - map raster as layers: methods/map-raster-layers.md 
-    - map vector as layers: methods/map-vector-layers.md   
-    - explain symbology: methods/explain-symbology.md  
-    - customize Map: methods/customize-Map.md
-    - filter collections: methods/filter-collections.md  
-    - flatten collections: methods/composite-mosaic.md
-    - convert data: methods/convert-data.md  
-    - reclassify raster: methods/reclassify.md
-    - scalar operations: methods/scalar-operations.md 
-    - local operations: methods/local-operations.md   
-    - terrain: methods/terrain.md  
-    - vector analysis: methods/vector-analysis.md  
+  - PATTERNS:
+    - javascript: patterns/javascript.md
+    - explain code: patterns/explain-code.md  
+    - gather raster data: patterns/gather-raster-data.md  
+    - gather vector data: patterns/gather-vector-data.md
+    - map raster as layers: patterns/map-raster-layers.md 
+    - map vector as layers: patterns/map-vector-layers.md   
+    - explain symbology: patterns/explain-symbology.md  
+    - customize Map: patterns/customize-Map.md
+    - filter collections: patterns/filter-collections.md  
+    - flatten collections: patterns/composite-mosaic.md
+    - convert data: patterns/convert-data.md  
+    - reclassify raster: patterns/reclassify.md
+    - scalar operations: patterns/scalar-operations.md 
+    - local overlay operations: patterns/local-operations.md  
+    - focal (neighborhood) operations: patterns/focal-operations.md    
+    - zonal overlay operations: patterns/zonal-operations.md  
+    - terrain: patterns/terrain.md  
+    - vector analysis: patterns/vector-analysis.md  
+    - export data: patterns/export.md  
   - TUTORIAL:  
     - 01 A Sketch Map from Lidar: tutorials/01.md  
     - 02 A Slippy Topographic Map: tutorials/02.md
     - 03 Intro to Feature Collections: tutorials/03.md  
+    - 04 Habitat blocks of Middlebury: tutorials/04.md  
   - PRACTICE:
     - 01 Memory under cover: practice/01.md
     - 02 Ice age bathtub: practice/02.md  

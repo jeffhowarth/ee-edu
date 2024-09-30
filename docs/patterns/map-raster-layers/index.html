@@ -12,20 +12,20 @@
         <meta name="author" content="Jeff Howarth">
       
       
-        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/practice/02/">
+        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/patterns/map-raster-layers/">
       
       
-        <link rel="prev" href="../01/">
+        <link rel="prev" href="../gather-vector-data/">
       
       
-        <link rel="next" href="../03/">
+        <link rel="next" href="../map-vector-layers/">
       
       <link rel="icon" href="../../assets/myIcon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>02 Ice age bathtub - ee-patterns</title>
+        <title>map raster as layers - ee-patterns</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ice-age-bathtub" class="md-skip">
+        <a href="#map-raster-layers" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              02 Ice age bathtub
+              map raster as layers
             
           </span>
         </div>
@@ -278,14 +278,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -334,7 +336,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           PATTERNS
@@ -347,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/javascript/" class="md-nav__link">
+      <a href="../javascript/" class="md-nav__link">
         javascript
       </a>
     </li>
@@ -361,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/explain-code/" class="md-nav__link">
+      <a href="../explain-code/" class="md-nav__link">
         explain code
       </a>
     </li>
@@ -375,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/gather-raster-data/" class="md-nav__link">
+      <a href="../gather-raster-data/" class="md-nav__link">
         gather raster data
       </a>
     </li>
@@ -389,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/gather-vector-data/" class="md-nav__link">
+      <a href="../gather-vector-data/" class="md-nav__link">
         gather vector data
       </a>
     </li>
@@ -401,11 +403,100 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../patterns/map-raster-layers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          map raster as layers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         map raster as layers
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-values-vs-display-values" class="md-nav__link">
+    data values vs. display values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-image-as-layer" class="md-nav__link">
+    display image as layer
+  </a>
+  
+    <nav class="md-nav" aria-label="display image as layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#print-min-max-value-of-image" class="md-nav__link">
+    print min &amp; max value of image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart-histogram-of-data-values" class="md-nav__link">
+    chart histogram of data values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-raster-viz-dictionary" class="md-nav__link">
+    define raster viz dictionary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-map-layer" class="md-nav__link">
+    add map layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-pattern" class="md-nav__link">
+    complete pattern
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -417,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/map-vector-layers/" class="md-nav__link">
+      <a href="../map-vector-layers/" class="md-nav__link">
         map vector as layers
       </a>
     </li>
@@ -431,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/explain-symbology/" class="md-nav__link">
+      <a href="../explain-symbology/" class="md-nav__link">
         explain symbology
       </a>
     </li>
@@ -445,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/customize-Map/" class="md-nav__link">
+      <a href="../customize-Map/" class="md-nav__link">
         customize Map
       </a>
     </li>
@@ -459,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/filter-collections/" class="md-nav__link">
+      <a href="../filter-collections/" class="md-nav__link">
         filter collections
       </a>
     </li>
@@ -473,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/composite-mosaic/" class="md-nav__link">
+      <a href="../composite-mosaic/" class="md-nav__link">
         flatten collections
       </a>
     </li>
@@ -487,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/convert-data/" class="md-nav__link">
+      <a href="../convert-data/" class="md-nav__link">
         convert data
       </a>
     </li>
@@ -501,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/reclassify/" class="md-nav__link">
+      <a href="../reclassify/" class="md-nav__link">
         reclassify raster
       </a>
     </li>
@@ -515,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/scalar-operations/" class="md-nav__link">
+      <a href="../scalar-operations/" class="md-nav__link">
         scalar operations
       </a>
     </li>
@@ -529,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/local-operations/" class="md-nav__link">
+      <a href="../local-operations/" class="md-nav__link">
         local overlay operations
       </a>
     </li>
@@ -543,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/focal-operations/" class="md-nav__link">
+      <a href="../focal-operations/" class="md-nav__link">
         focal (neighborhood) operations
       </a>
     </li>
@@ -557,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/zonal-operations/" class="md-nav__link">
+      <a href="../zonal-operations/" class="md-nav__link">
         zonal overlay operations
       </a>
     </li>
@@ -571,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/terrain/" class="md-nav__link">
+      <a href="../terrain/" class="md-nav__link">
         terrain
       </a>
     </li>
@@ -585,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/vector-analysis/" class="md-nav__link">
+      <a href="../vector-analysis/" class="md-nav__link">
         vector analysis
       </a>
     </li>
@@ -599,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/export/" class="md-nav__link">
+      <a href="../export/" class="md-nav__link">
         export data
       </a>
     </li>
@@ -720,16 +811,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
         
@@ -746,7 +835,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           PRACTICE
@@ -759,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01/" class="md-nav__link">
+      <a href="../../practice/01/" class="md-nav__link">
         01 Memory under cover
       </a>
     </li>
@@ -771,80 +860,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          02 Ice age bathtub
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../practice/02/" class="md-nav__link">
         02 Ice age bathtub
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    goal
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#starter-script" class="md-nav__link">
-    starter script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advice-on-printing-histograms" class="md-nav__link">
-    advice on printing histograms
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-definitions" class="md-nav__link">
-    check definitions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-sources" class="md-nav__link">
-    data sources
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -856,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03/" class="md-nav__link">
+      <a href="../../practice/03/" class="md-nav__link">
         03 Parent materials of soils
       </a>
     </li>
@@ -897,37 +917,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    goal
+  <a href="#data-values-vs-display-values" class="md-nav__link">
+    data values vs. display values
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#starter-script" class="md-nav__link">
-    starter script
+  <a href="#display-image-as-layer" class="md-nav__link">
+    display image as layer
+  </a>
+  
+    <nav class="md-nav" aria-label="display image as layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#print-min-max-value-of-image" class="md-nav__link">
+    print min &amp; max value of image
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#advice-on-printing-histograms" class="md-nav__link">
-    advice on printing histograms
+        
+          <li class="md-nav__item">
+  <a href="#chart-histogram-of-data-values" class="md-nav__link">
+    chart histogram of data values
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#check-definitions" class="md-nav__link">
-    check definitions
+        
+          <li class="md-nav__item">
+  <a href="#define-raster-viz-dictionary" class="md-nav__link">
+    define raster viz dictionary
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#data-sources" class="md-nav__link">
-    data sources
+        
+          <li class="md-nav__item">
+  <a href="#add-map-layer" class="md-nav__link">
+    add map layer
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-pattern" class="md-nav__link">
+    complete pattern
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -946,167 +986,204 @@
                   
 
 
-<h1 id="ice-age-bathtub"><strong>Ice age bathtub</strong></h1>
-<h2 id="goal"><strong>goal</strong></h2>
-<p>Your goal is to import a digital elevation model (DEM) and make a Map with the four layers shown in the app below. When you have finished solving the problem (or when the clock is approaching <mark><strong>5pm on Friday</strong></mark>), please work through the check-up on Canvas as best you can. </p>
-<p><iframe
-  src="https://ee-patterns.projects.earthengine.app/view/practice-02"
-  style="width:854px; height:854px"
-></iframe>
-</p>
-<p><a href="https://ee-patterns.projects.earthengine.app/view/practice-02" target="_blank"><em>open app in new tab</em></a></p>
+<h1 id="map-raster-layers"><strong>map raster layers</strong></h1>
+<p>Any geographic information system will provide methods for displaying data as a map layer.  </p>
+<p>To understand these patterns, it will be helpful to review some basic concepts of data visualization.  </p>
+<h2 id="data-values-vs-display-values"><strong>data values vs. display values</strong></h2>
+<p>When you visualize data, you map data values to display values. Two things often happen by default:  </p>
+<ol>
+<li>The data type of the digital numbers defines the range of values that get mapped to the display values.</li>
+<li>The relationship between data values and display values is linear.  </li>
+</ol>
 <hr />
-<h2 id="starter-script"><strong>starter script</strong></h2>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">geo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;users/jhowarth/eePatterns:modules/geo.js&quot;</span><span class="p">);</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo methods dictionary&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">help</span><span class="p">);</span><span class="w">    </span><span class="c1">// Prints dictionary of all tools in module.</span>
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo palettes&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iPalettes</span><span class="p">);</span><span class="w">         </span><span class="c1">// Prints dictionary of all palettes in module.  </span>
-
-<span class="c1">// -------------------------------------------------------------------------------</span>
-<span class="c1">//  Gather image from &quot;projects/ee-patterns/assets/p02/NOAA-CoNED-SOCAL&quot;.</span>
-<span class="c1">//  Print a histogram - do you see land vs ocean floor in the histogram?</span>
-<span class="c1">// -------------------------------------------------------------------------------</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s2">&quot;projects/ee-patterns/assets/p02/NOAA-CoNED-SOCAL&quot;</span><span class="p">);</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Image&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">image</span><span class="p">);</span>
-
-
-<span class="c1">// -------------------------------------------------------------------------------</span>
-<span class="c1">//  Area of interest for practice problem.</span>
-<span class="c1">// -------------------------------------------------------------------------------</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">aoi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">geometry</span><span class="p">();</span>
-
-
-<span class="c1">// Center map on aoi at zoom level 9 and set base layer to hybrid.</span>
-
-
-
-
-<span class="c1">// -------------------------------------------------------------------------------</span>
-<span class="c1">//  Apply a vertical exageration (z-factor) of 2 to elevation data for hillshade. </span>
-<span class="c1">//  Make a hillshade from this image and display the hillshade image as layer on Map.</span>
-<span class="c1">// -------------------------------------------------------------------------------</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">image_ve</span><span class="w"> </span><span class="p">;</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">image_hs</span><span class="w"> </span><span class="p">;</span>
-
-
-<span class="c1">// -------------------------------------------------------------------------------</span>
-<span class="c1">//  Separate the original elevation image (without vertical exageration) into two different images:</span>
-
-<span class="c1">//  (1) land elevations</span>
-<span class="c1">//  (2) ocean floor elevations (bathymetry)</span>
-
-<span class="c1">//  Each image should only store land or bathymetry elevation values, respectively.</span>
-<span class="c1">//  All other values should be masked.</span>
-<span class="c1">// -------------------------------------------------------------------------------</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">image_land</span><span class="w"> </span><span class="p">;</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">image_bathy</span><span class="w"> </span><span class="p">;</span>
-
-<span class="c1">// -------------------------------------------------------------------------------</span>
-<span class="c1">//  Reclassify the bathymetry image at 100 meter intervals. </span>
-<span class="c1">//  Display the reclassified image as layer on Map with 0.5 opacity.</span>
-<span class="c1">//  To improve contrast, set max of viz dictionary such that all locations less than -2000 m (or class 20) are the darkest blue in palette.</span>
-<span class="c1">//  Use this palette: geo.iPalettes.iBathy.eleven</span>
-<span class="c1">// -------------------------------------------------------------------------------</span>
-
-
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">image_bathy_reclass</span><span class="w"> </span><span class="p">;</span>
-
-
-
-<span class="c1">// -------------------------------------------------------------------------------</span>
-<span class="c1">//  Define the Pleistocene shoreline as 130 meters lower than today&#39;s shoreline.</span>
-<span class="c1">//  Make a boolean image that shows all land above ocean in Pleistocene.</span>
-<span class="c1">//  Display boolean image as layer on Map with all non-land masked.</span>
-<span class="c1">//  Set opacity of layer at 0.5.</span>
-<span class="c1">// -------------------------------------------------------------------------------</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">image_pleistocene</span><span class="w"> </span><span class="p">;</span>
-
-
-<span class="c1">// -------------------------------------------------------------------------------</span>
-<span class="c1">//  Reclassify the land image at equal 100 meter intervals. </span>
-<span class="c1">//  Display the reclassified image as layer on Map with 0.5 opacity.</span>
-<span class="c1">//  Use this palette: geo.iPalettes.iHypso.bartholomew</span>
-<span class="c1">//  Set opacity of layer at 0.5.</span>
-<span class="c1">// -------------------------------------------------------------------------------</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">image_land_reclass</span><span class="w"> </span><span class="p">;</span>
-
-
-
-
-<span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  PRACTICE CHECKS</span>
-<span class="c1">// -------------------------------------------------------------</span>
-
-<span class="c1">//  I. QUANTITATIVE </span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;QUANTITATIVE CHECKS:&quot;</span><span class="p">);</span>
-
-<span class="c1">//  Import check module for tutorial 1.</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;users/jhowarth/eePatterns:checks/p02.js&quot;</span><span class="p">);</span>
-
-<span class="c1">//  Uncomment the five lines below, run script, and look at the results in Console. </span>
-
-<span class="c1">// check.checkPoint(&quot;CP1:&quot;, image_hs);</span>
-<span class="c1">// check.checkPoint(&quot;CP2:&quot;, image_land);</span>
-<span class="c1">// check.checkPoint(&quot;CP3:&quot;, image_bathy);</span>
-<span class="c1">// check.checkPoint(&quot;CP4:&quot;, image_pleistocene);</span>
-<span class="c1">// check.checkPoint(&quot;CP5:&quot;, image_bathy_reclass);</span>
-</code></pre></div>
+<p><img alt="data versus display" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/displayLayers/data-values-and-display-values.png" /></p>
 <hr />
-<h2 id="advice-on-printing-histograms"><strong>advice on printing histograms</strong></h2>
-<p>This is a BIG dataset. Whenever you print histogram or min-max values, set the scale to 30 and the extent to aoi.  </p>
-<div class="language-js highlight"><pre><span></span><code><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Image histogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iHistogram</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="nx">aoi</span><span class="p">));</span>
-</code></pre></div>
-<div class="language-js highlight"><pre><span></span><code><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Min &amp; max value of image&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iMinMax</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="nx">aoi</span><span class="p">));</span>
-</code></pre></div>
+<p>The reason that the displayed values in the example above have such poor contrast is a result of the mismatch between the <strong>possible data values</strong> defined by the data type and the <strong>actual data values</strong> stored in the raster.  </p>
+<p>A <strong>histogram</strong> is one way to compare the possible and actual data values of a raster. </p>
 <hr />
-<h2 id="check-definitions"><strong>check definitions</strong></h2>
+<p><img alt="histogram" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/displayLayers/histogram.png" /></p>
+<hr />
+<p>A common strategy to improve the contrast of an image is to <strong>stretch</strong> the display values over the range of actual data values by setting the linear map to begin and end at the minimum and maximum actual data value, respectively. This is usually called <strong>stretch enhancement</strong>.   </p>
+<hr />
+<p><img alt="histogram" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/displayLayers/stretch-enhancement.png" /></p>
+<hr />
+<h2 id="display-image-as-layer"><strong>display image as layer</strong></h2>
+<p>The diagram below shows a general pattern to display an image as a map layer with Earth Engine. The first two tasks &ndash; <em>print min &amp; max value</em> and <em>chart histogram</em> &ndash; are methods to identify the range of actual data values in the image and how they are distributed, respectively. The middle task &ndash; <em>define viz dictionary</em> &ndash; is a method for storing the min and max values for stretch enhancements. The last task &ndash; <em>display data as map layer</em> &ndash; draws the result on the Map.  </p>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+
+  step01("Print min &amp; max value") ;
+  step02("Chart histogram") ;
+  step03("Define viz dictionary")  ;
+  step04("display data as map layer") ;
+
+  step01 --&gt; step03 
+  step02 --&gt; step03 
+  step03 --&gt; step04
+
+  classDef task fill:#C3D3E6,stroke-width:0px,color:#000000;
+
+  class step01 task; 
+  class step02 task;
+  class step03 task;
+  class step04 task;
+</code></pre>
+<p></center></p>
+<hr />
+<h3 id="print-min-max-value-of-image"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> print min &amp; max value of image</strong></h3>
+<p>Print the min and max data value of a raster image to use as min and max values in viz dictionary.   </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_min_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iMinMax</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">extent</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Min &amp; max value of image&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">output_min_max</span><span class="p">);</span>
+</code></pre></div>
 <table>
 <thead>
 <tr>
-<th align="right">VARIABLE</th>
+<th align="left">ARGUMENT</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>image</strong></td>
+<td>The name of the variable that contains the image data to process.</td>
+</tr>
+<tr>
+<td align="left"><strong>scale</strong></td>
+<td>The scale of analysis. If possible, use the scale (resolution) of the input image. If this runs really slow (or times out), then increase the scale of analysis by a factor of 2 or more.</td>
+</tr>
+<tr>
+<td align="left"><strong>extent</strong></td>
+<td>Usually the area of interest or the geographic footprint of the image.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="chart-histogram-of-data-values"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> chart histogram of data values</strong></h3>
+<p><strong>See how your data are distributed between the minimum and maximum data value by charting a histogram.</strong></p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_histogram</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iHistogram</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">extent</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Image histogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">output_histogram</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">ARGUMENT</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>input_image</strong></td>
+<td>The name of the variable that contains the image data to process.</td>
+</tr>
+<tr>
+<td align="left"><strong>scale</strong></td>
+<td>The scale of analysis. If possible, use the scale (resolution) of the input image. If this runs really slow (or times out), then increase the scale of analysis by a factor of 2 or more.</td>
+</tr>
+<tr>
+<td align="left"><strong>extent</strong></td>
+<td>Usually the area of interest or the geographic footprint of the image.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="define-raster-viz-dictionary"><strong>define raster viz dictionary</strong></h3>
+<p><strong>For raster data, store the viz dictionary as a variable and then call this variable when you add the map layer.</strong>   </p>
+<p>Here is a common pattern to visualize <strong>single-band images with grayscale</strong>:</p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">single_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">        </span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">        </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">;</span>
+</code></pre></div>
+<hr />
+<p>Here is a common pattern to visualize <strong>single-band images with color</strong> (this includes both color gradient layers and nominal layers where a unique color displays each unique class):</p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">single_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">        </span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">        </span>
+<span class="w">        </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">    </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">;</span>
+</code></pre></div>
+<hr />
+<p>This is a common pattern to visualize <strong>multi-band images</strong> as a combination of red, green, and blue channels:</p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">multi_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">bands</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">      </span>
+<span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w">  </span><span class="p">[].</span><span class="w">      </span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">        </span>
+<span class="w">        </span><span class="nx">gamma</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">      </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">;</span>
+</code></pre></div>
+<hr />
+<p>If your image data represents <strong>nominal data</strong> with integers, you can quickly visualize this data with <strong>random colors</strong> using the <code>.randomVisualizer()</code> method on the image and calling an empty dictionary for the viz parameters.    </p>
+<div class="language-js highlight"><pre><span></span><code><span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">randomVisualizer</span><span class="p">(),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s2">&quot;Nominal Classes&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>This pattern is most useful for quick visualizations, when the color used to display the class does not matter too much. If you want to be able to control which color displays each class, then you should use the <strong>single band image with color</strong> pattern described earlier and make sure that the length (number of) integer values in your class set equals the length of colors in your palette.   </p>
+<hr />
+<h3 id="add-map-layer"><strong>add map layer</strong></h3>
+<p><code>Map.addLayer()</code> method will display data as a map layer.    </p>
+<div class="language-js highlight"><pre><span></span><code><span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">viz</span><span class="p">,</span><span class="s2">&quot;Layer Name&quot;</span><span class="p">,</span><span class="nx">show</span><span class="p">,</span><span class="nx">opacity</span><span class="p">);</span>
+</code></pre></div>
+<p>The <code>Map.addLayer()</code> method takes the following arguments: </p>
+<table>
+<thead>
+<tr>
+<th align="right">ARGUMENT</th>
 <th align="left">DESCRIPTION</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="right">image_hs</td>
-<td align="left">Hillshade image from elevation data with vertical exaggeration of 2, azimuth 315, and zenith 35.</td>
+<td align="right">data</td>
+<td align="left">The name of the variable that contains the data that you wish to display.</td>
 </tr>
 <tr>
-<td align="right">image_land</td>
-<td align="left">Land elevations only. All sea floor elevations should be masked.</td>
+<td align="right">viz</td>
+<td align="left">The viz dictionary that defines how to visualize (display) the data.</td>
 </tr>
 <tr>
-<td align="right">image_bathy</td>
-<td align="left">Sea floor elevations only. All land elevations should be masked. Include 0 elevation as sea floor.</td>
+<td align="right">layer name</td>
+<td align="left">A string that provides a label for the data in the list of layers.</td>
 </tr>
 <tr>
-<td align="right">image_pleistocene</td>
-<td align="left"><em>Flexible depending on how you solve this.</em> It could represent sea floor elevations when the sea-level was 130 meters lower than today, or you could skip this step and just define the boolean image. <em>Many different answers are potentially fine for this one and we will discuss in class on Monday.</em></td>
+<td align="right">show</td>
+<td align="left">A boolean argument to control whether or not the layer is displayed when first loaded.</td>
 </tr>
 <tr>
-<td align="right">image_bathy_reclass</td>
-<td align="left">Modern sea floor (bathy) elevations reclassified into equal interval classes.</td>
+<td align="right">opacity</td>
+<td align="left">A decimal number between 0 and 1 to adjust the opacity of the layer.</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="data-sources"><strong>data sources</strong></h2>
-<p><a href="https://www.usgs.gov/special-topics/coastal-national-elevation-database-applications-project" target="_blank">CoNED</a>  </p>
-<p><a href="https://gee-community-catalog.org/projects/tbdem/" target="_blank">GEE Awesome Community Datasets</a>  </p>
-<p><a href="https://topotools.cr.usgs.gov/topobathy_viewer/dwndata.htm" target="_blank">CoNED Data Archive</a>  </p>
+<h3 id="complete-pattern"><strong>complete pattern</strong></h3>
+<p>Here is a complete pattern for single-band grayscale images.</p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Print min and max values of image. </span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Min &amp; max value of image&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iMinMax</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">extent</span><span class="p">));</span>
+
+<span class="c1">// Chart histogram of actual data values.</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Image histogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iHistogram</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">extent</span><span class="p">));</span>
+
+<span class="c1">// Define viz dictionary. </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">single_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">        </span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">        </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">;</span>
+
+<span class="c1">// Add map layer. </span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="nx">single_viz</span><span class="p">,</span><span class="s2">&quot;Layer Name&quot;</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
@@ -1130,7 +1207,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 01 Memory under cover" rel="prev">
+          <a href="../gather-vector-data/" class="md-footer__link md-footer__link--prev" aria-label="Previous: gather vector data" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1139,20 +1216,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                01 Memory under cover
+                gather vector data
               </div>
             </div>
           </a>
         
         
           
-          <a href="../03/" class="md-footer__link md-footer__link--next" aria-label="Next: 03 Parent materials of soils" rel="next">
+          <a href="../map-vector-layers/" class="md-footer__link md-footer__link--next" aria-label="Next: map vector as layers" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                03 Parent materials of soils
+                map vector as layers
               </div>
             </div>
             <div class="md-footer__button md-icon">

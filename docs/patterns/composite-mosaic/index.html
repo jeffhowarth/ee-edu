@@ -12,25 +12,27 @@
         <meta name="author" content="Jeff Howarth">
       
       
-        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/">
+        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/patterns/composite-mosaic/">
       
       
+        <link rel="prev" href="../filter-collections/">
       
-        <link rel="next" href="intro/">
       
-      <link rel="icon" href="assets/myIcon.png">
+        <link rel="next" href="../convert-data/">
+      
+      <link rel="icon" href="../../assets/myIcon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>ee-patterns</title>
+        <title>flatten collections - ee-patterns</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ee-pattern-book" class="md-skip">
+        <a href="#flatten-image-collections" class="md-skip">
           Skip to content
         </a>
       
@@ -89,9 +91,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="ee-patterns" class="md-header__button md-logo" aria-label="ee-patterns" data-md-component="logo">
+    <a href="../.." title="ee-patterns" class="md-header__button md-logo" aria-label="ee-patterns" data-md-component="logo">
       
-  <img src="assets/myIcon.png" alt="logo">
+  <img src="../../assets/myIcon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              title page
+              flatten collections
             
           </span>
         </div>
@@ -188,9 +190,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ee-patterns" class="md-nav__button md-logo" aria-label="ee-patterns" data-md-component="logo">
+    <a href="../.." title="ee-patterns" class="md-nav__button md-logo" aria-label="ee-patterns" data-md-component="logo">
       
-  <img src="assets/myIcon.png" alt="logo">
+  <img src="../../assets/myIcon.png" alt="logo">
 
     </a>
     ee-patterns
@@ -216,21 +218,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         title page
       </a>
-      
     </li>
   
 
@@ -243,7 +235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="intro/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
         introduction
       </a>
     </li>
@@ -258,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="three-t/" class="md-nav__link">
+      <a href="../../three-t/" class="md-nav__link">
         the three Ts
       </a>
     </li>
@@ -273,7 +265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="geo-module/" class="md-nav__link">
+      <a href="../../geo-module/" class="md-nav__link">
         geo module
       </a>
     </li>
@@ -286,14 +278,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -342,7 +336,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           PATTERNS
@@ -355,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/javascript/" class="md-nav__link">
+      <a href="../javascript/" class="md-nav__link">
         javascript
       </a>
     </li>
@@ -369,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/explain-code/" class="md-nav__link">
+      <a href="../explain-code/" class="md-nav__link">
         explain code
       </a>
     </li>
@@ -383,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/gather-raster-data/" class="md-nav__link">
+      <a href="../gather-raster-data/" class="md-nav__link">
         gather raster data
       </a>
     </li>
@@ -397,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/gather-vector-data/" class="md-nav__link">
+      <a href="../gather-vector-data/" class="md-nav__link">
         gather vector data
       </a>
     </li>
@@ -411,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/map-raster-layers/" class="md-nav__link">
+      <a href="../map-raster-layers/" class="md-nav__link">
         map raster as layers
       </a>
     </li>
@@ -425,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/map-vector-layers/" class="md-nav__link">
+      <a href="../map-vector-layers/" class="md-nav__link">
         map vector as layers
       </a>
     </li>
@@ -439,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/explain-symbology/" class="md-nav__link">
+      <a href="../explain-symbology/" class="md-nav__link">
         explain symbology
       </a>
     </li>
@@ -453,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/customize-Map/" class="md-nav__link">
+      <a href="../customize-Map/" class="md-nav__link">
         customize Map
       </a>
     </li>
@@ -467,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/filter-collections/" class="md-nav__link">
+      <a href="../filter-collections/" class="md-nav__link">
         filter collections
       </a>
     </li>
@@ -479,11 +473,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="patterns/composite-mosaic/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          flatten collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         flatten collections
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#composite-image" class="md-nav__link">
+    composite image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosaic-image" class="md-nav__link">
+    mosaic image
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -495,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/convert-data/" class="md-nav__link">
+      <a href="../convert-data/" class="md-nav__link">
         convert data
       </a>
     </li>
@@ -509,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/reclassify/" class="md-nav__link">
+      <a href="../reclassify/" class="md-nav__link">
         reclassify raster
       </a>
     </li>
@@ -523,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/scalar-operations/" class="md-nav__link">
+      <a href="../scalar-operations/" class="md-nav__link">
         scalar operations
       </a>
     </li>
@@ -537,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/local-operations/" class="md-nav__link">
+      <a href="../local-operations/" class="md-nav__link">
         local overlay operations
       </a>
     </li>
@@ -551,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/focal-operations/" class="md-nav__link">
+      <a href="../focal-operations/" class="md-nav__link">
         focal (neighborhood) operations
       </a>
     </li>
@@ -565,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/zonal-operations/" class="md-nav__link">
+      <a href="../zonal-operations/" class="md-nav__link">
         zonal overlay operations
       </a>
     </li>
@@ -579,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/terrain/" class="md-nav__link">
+      <a href="../terrain/" class="md-nav__link">
         terrain
       </a>
     </li>
@@ -593,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/vector-analysis/" class="md-nav__link">
+      <a href="../vector-analysis/" class="md-nav__link">
         vector analysis
       </a>
     </li>
@@ -607,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/export/" class="md-nav__link">
+      <a href="../export/" class="md-nav__link">
         export data
       </a>
     </li>
@@ -666,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/01/" class="md-nav__link">
+      <a href="../../tutorials/01/" class="md-nav__link">
         01 A Sketch Map from Lidar
       </a>
     </li>
@@ -680,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/02/" class="md-nav__link">
+      <a href="../../tutorials/02/" class="md-nav__link">
         02 A Slippy Topographic Map
       </a>
     </li>
@@ -694,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/03/" class="md-nav__link">
+      <a href="../../tutorials/03/" class="md-nav__link">
         03 Intro to Feature Collections
       </a>
     </li>
@@ -708,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/04/" class="md-nav__link">
+      <a href="../../tutorials/04/" class="md-nav__link">
         04 Habitat blocks of Middlebury
       </a>
     </li>
@@ -765,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="practice/01/" class="md-nav__link">
+      <a href="../../practice/01/" class="md-nav__link">
         01 Memory under cover
       </a>
     </li>
@@ -779,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="practice/02/" class="md-nav__link">
+      <a href="../../practice/02/" class="md-nav__link">
         02 Ice age bathtub
       </a>
     </li>
@@ -793,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="practice/03/" class="md-nav__link">
+      <a href="../../practice/03/" class="md-nav__link">
         03 Parent materials of soils
       </a>
     </li>
@@ -827,6 +869,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#composite-image" class="md-nav__link">
+    composite image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosaic-image" class="md-nav__link">
+    mosaic image
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -840,14 +904,42 @@
                   
 
 
-<h1 id="ee-pattern-book"><strong>ee pattern book</strong></h1>
-<p>A collection of timeless problems of spatial analysis and image processing and how to solve them with <a href="https://earthengine.google.com/" target="_blank">Google Earth Engine</a>.      </p>
+<h1 id="flatten-image-collections"><strong>flatten image collections</strong></h1>
+<p>Many workflows for image collections will include a step that transforms an image collection into a single image (and <strong>flattens</strong> the collection).  </p>
+<h2 id="composite-image"><strong>composite image</strong></h2>
+<p>If the collection represents a time series of satellite scenes, the workflow will often include a step that makes a <strong>composite image</strong>.</p>
+<p><em>We will get to composite images in the second half of the semester.</em>  </p>
 <hr />
-<p><strong>Jeff Howarth</strong><br />
-Associate Professor of Geography <br />
-Geography Department<br />
-Middlebury College<br />
-Vermont, USA</p>
+<h2 id="mosaic-image"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> mosaic image</strong></h2>
+<p>If the collection contains a set of small tiles, then a workflow will often include a step that makes a <strong>mosaic image</strong>. This is a common step in workflows with lidar products.  </p>
+<p><img alt="mosaic-collection" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/flattenCollection/mosaic.png" /></p>
+<p><center></p>
+<pre class="mermaid"><code>graph LR
+
+  method("geo.icFlatten.mosaicToImage()") ;
+  output[/"ic_mosaic"/]  ;
+
+  method --&gt; output
+
+  arg["ic"] ;
+
+  arg --o method
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+
+
+  class input in-out; 
+  class method op;
+  class output in-out;
+  class arg arg; </code></pre>
+<p></center></p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">ic_mosaic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">icFlatten</span><span class="p">.</span><span class="nx">mosaicToImage</span><span class="p">(</span><span class="nx">ic</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Mosaic&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ic_mosaic</span><span class="p">);</span>
+</code></pre></div>
+<p>This method mosaics the tiles into a single image and gives the new image the same coordinate reference system as the first image in the collection. The crs defines the xy units of the image and this enables you to use the mosaic image as an input in terrain operations.  </p>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
@@ -870,15 +962,30 @@ Vermont, USA</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../filter-collections/" class="md-footer__link md-footer__link--prev" aria-label="Previous: filter collections" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                filter collections
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="intro/" class="md-footer__link md-footer__link--next" aria-label="Next: introduction" rel="next">
+          <a href="../convert-data/" class="md-footer__link md-footer__link--next" aria-label="Next: convert data" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                introduction
+                convert data
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -940,10 +1047,10 @@ Vermont, USA</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.instant.progress", "navigation.indexes", "navigation.footer", "content.code.copy"], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.indexes", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>

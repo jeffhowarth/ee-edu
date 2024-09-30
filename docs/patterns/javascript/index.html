@@ -12,25 +12,27 @@
         <meta name="author" content="Jeff Howarth">
       
       
-        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/">
+        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/patterns/javascript/">
       
       
+        <link rel="prev" href="../../geo-module/">
       
-        <link rel="next" href="intro/">
       
-      <link rel="icon" href="assets/myIcon.png">
+        <link rel="next" href="../explain-code/">
+      
+      <link rel="icon" href="../../assets/myIcon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>ee-patterns</title>
+        <title>javascript - ee-patterns</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ee-pattern-book" class="md-skip">
+        <a href="#javascript" class="md-skip">
           Skip to content
         </a>
       
@@ -89,9 +91,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="ee-patterns" class="md-header__button md-logo" aria-label="ee-patterns" data-md-component="logo">
+    <a href="../.." title="ee-patterns" class="md-header__button md-logo" aria-label="ee-patterns" data-md-component="logo">
       
-  <img src="assets/myIcon.png" alt="logo">
+  <img src="../../assets/myIcon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              title page
+              javascript
             
           </span>
         </div>
@@ -188,9 +190,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ee-patterns" class="md-nav__button md-logo" aria-label="ee-patterns" data-md-component="logo">
+    <a href="../.." title="ee-patterns" class="md-nav__button md-logo" aria-label="ee-patterns" data-md-component="logo">
       
-  <img src="assets/myIcon.png" alt="logo">
+  <img src="../../assets/myIcon.png" alt="logo">
 
     </a>
     ee-patterns
@@ -216,21 +218,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         title page
       </a>
-      
     </li>
   
 
@@ -243,7 +235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="intro/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
         introduction
       </a>
     </li>
@@ -258,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="three-t/" class="md-nav__link">
+      <a href="../../three-t/" class="md-nav__link">
         the three Ts
       </a>
     </li>
@@ -273,7 +265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="geo-module/" class="md-nav__link">
+      <a href="../../geo-module/" class="md-nav__link">
         geo module
       </a>
     </li>
@@ -286,14 +278,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -342,7 +336,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           PATTERNS
@@ -353,11 +347,101 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="patterns/javascript/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          javascript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         javascript
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-to-console" class="md-nav__link">
+    print to console
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    strings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    numbers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dictionaries" class="md-nav__link">
+    dictionaries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    functions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -369,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/explain-code/" class="md-nav__link">
+      <a href="../explain-code/" class="md-nav__link">
         explain code
       </a>
     </li>
@@ -383,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/gather-raster-data/" class="md-nav__link">
+      <a href="../gather-raster-data/" class="md-nav__link">
         gather raster data
       </a>
     </li>
@@ -397,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/gather-vector-data/" class="md-nav__link">
+      <a href="../gather-vector-data/" class="md-nav__link">
         gather vector data
       </a>
     </li>
@@ -411,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/map-raster-layers/" class="md-nav__link">
+      <a href="../map-raster-layers/" class="md-nav__link">
         map raster as layers
       </a>
     </li>
@@ -425,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/map-vector-layers/" class="md-nav__link">
+      <a href="../map-vector-layers/" class="md-nav__link">
         map vector as layers
       </a>
     </li>
@@ -439,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/explain-symbology/" class="md-nav__link">
+      <a href="../explain-symbology/" class="md-nav__link">
         explain symbology
       </a>
     </li>
@@ -453,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/customize-Map/" class="md-nav__link">
+      <a href="../customize-Map/" class="md-nav__link">
         customize Map
       </a>
     </li>
@@ -467,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/filter-collections/" class="md-nav__link">
+      <a href="../filter-collections/" class="md-nav__link">
         filter collections
       </a>
     </li>
@@ -481,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/composite-mosaic/" class="md-nav__link">
+      <a href="../composite-mosaic/" class="md-nav__link">
         flatten collections
       </a>
     </li>
@@ -495,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/convert-data/" class="md-nav__link">
+      <a href="../convert-data/" class="md-nav__link">
         convert data
       </a>
     </li>
@@ -509,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/reclassify/" class="md-nav__link">
+      <a href="../reclassify/" class="md-nav__link">
         reclassify raster
       </a>
     </li>
@@ -523,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/scalar-operations/" class="md-nav__link">
+      <a href="../scalar-operations/" class="md-nav__link">
         scalar operations
       </a>
     </li>
@@ -537,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/local-operations/" class="md-nav__link">
+      <a href="../local-operations/" class="md-nav__link">
         local overlay operations
       </a>
     </li>
@@ -551,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/focal-operations/" class="md-nav__link">
+      <a href="../focal-operations/" class="md-nav__link">
         focal (neighborhood) operations
       </a>
     </li>
@@ -565,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/zonal-operations/" class="md-nav__link">
+      <a href="../zonal-operations/" class="md-nav__link">
         zonal overlay operations
       </a>
     </li>
@@ -579,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/terrain/" class="md-nav__link">
+      <a href="../terrain/" class="md-nav__link">
         terrain
       </a>
     </li>
@@ -593,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/vector-analysis/" class="md-nav__link">
+      <a href="../vector-analysis/" class="md-nav__link">
         vector analysis
       </a>
     </li>
@@ -607,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/export/" class="md-nav__link">
+      <a href="../export/" class="md-nav__link">
         export data
       </a>
     </li>
@@ -666,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/01/" class="md-nav__link">
+      <a href="../../tutorials/01/" class="md-nav__link">
         01 A Sketch Map from Lidar
       </a>
     </li>
@@ -680,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/02/" class="md-nav__link">
+      <a href="../../tutorials/02/" class="md-nav__link">
         02 A Slippy Topographic Map
       </a>
     </li>
@@ -694,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/03/" class="md-nav__link">
+      <a href="../../tutorials/03/" class="md-nav__link">
         03 Intro to Feature Collections
       </a>
     </li>
@@ -708,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/04/" class="md-nav__link">
+      <a href="../../tutorials/04/" class="md-nav__link">
         04 Habitat blocks of Middlebury
       </a>
     </li>
@@ -765,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="practice/01/" class="md-nav__link">
+      <a href="../../practice/01/" class="md-nav__link">
         01 Memory under cover
       </a>
     </li>
@@ -779,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="practice/02/" class="md-nav__link">
+      <a href="../../practice/02/" class="md-nav__link">
         02 Ice age bathtub
       </a>
     </li>
@@ -793,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="practice/03/" class="md-nav__link">
+      <a href="../../practice/03/" class="md-nav__link">
         03 Parent materials of soils
       </a>
     </li>
@@ -827,6 +911,70 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-to-console" class="md-nav__link">
+    print to console
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    strings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    numbers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dictionaries" class="md-nav__link">
+    dictionaries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    functions
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -840,14 +988,131 @@
                   
 
 
-<h1 id="ee-pattern-book"><strong>ee pattern book</strong></h1>
-<p>A collection of timeless problems of spatial analysis and image processing and how to solve them with <a href="https://earthengine.google.com/" target="_blank">Google Earth Engine</a>.      </p>
-<hr />
-<p><strong>Jeff Howarth</strong><br />
-Associate Professor of Geography <br />
-Geography Department<br />
-Middlebury College<br />
-Vermont, USA</p>
+<h1 id="javascript"><strong>JavaScript</strong></h1>
+<p>Here are some basic patterns for writing in JavaScript.</p>
+<h2 id="comments"><strong>comments</strong></h2>
+<p><strong>Use comments to explain your code.</strong></p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Line comments start with two forward slashes. Like this line. </span>
+
+<span class="cm">/* Multi-line comments start with a forward slash and a star,</span>
+<span class="cm">and end with a star and a forward slash. */</span><span class="w"> </span>
+</code></pre></div>
+<h2 id="variables"><strong>variables</strong></h2>
+<p><strong>Use variables to contain (hold, store) data.</strong>  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Write a statement using the keyword var.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello world&#39;</span><span class="p">;</span><span class="w">    </span>
+
+<span class="c1">// Statements should end in a semi-colon, or else the Code Editor complains.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I feel incomplete...&quot;</span>
+
+<span class="c1">// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="c1">// !! Variable names cannot contain spaces or - dashes - !!</span>
+<span class="c1">// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="c1">// Use underscores to separate words in variable names.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">this_is_called_snake_case</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello, snake!&#39;</span><span class="p">;</span>
+
+<span class="c1">// Or use capitalizations to separate words:</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">thisIsCalledCamelCase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello, camel!&#39;</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="print-to-console"><strong>print to console</strong></h2>
+<p><strong>Use print function to print contents of variables and objects to console.</strong>  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Use parenthesis to pass arguments to print function.  </span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nx">hello</span><span class="p">);</span>
+
+<span class="c1">// Use commas to pass multiple arguments. </span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Print test&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">hello</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="strings"><strong>strings</strong></h2>
+<p><strong>Use strings to store text (character strings).</strong>  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Use single quotes to define string.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello world!&#39;</span><span class="w">  </span><span class="c1">// This is a string. </span>
+
+<span class="c1">// You can also use double quotes to enclose string.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">obi_one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello there&quot;</span><span class="p">;</span>
+
+<span class="c1">// Just do not mix them.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">cranky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&quot;</span><span class="nx">Hello</span><span class="w"> </span><span class="nx">Newman</span><span class="err">&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// This will throw an error. You will need to match the quotation marks to fix it. </span>
+</code></pre></div>
+<p>A string has a set of methods that work with that type of data.</p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Use a period and parentheses to call a string method.</span>
+
+<span class="nx">print</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">hello</span><span class="p">,</span><span class="w">                  </span><span class="c1">// Original object that contains a string.</span>
+<span class="w">  </span><span class="nx">hello</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">2</span><span class="p">),</span><span class="w">       </span><span class="c1">// Keep the first through third characters of the string.</span>
+<span class="w">  </span><span class="nx">hello</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">),</span><span class="w">      </span><span class="c1">// Add an exclamation point after the string.</span>
+<span class="w">  </span><span class="nx">hello</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w">     </span><span class="c1">// Change the case to all upper. </span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">;</span>
+</code></pre></div>
+<h2 id="numbers"><strong>numbers</strong></h2>
+<p><strong>Use numbers to store numerical data.</strong>  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// These are both numbers. </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">integer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">decimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">11.987654321</span><span class="p">;</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nx">integer</span><span class="p">,</span><span class="w"> </span><span class="nx">decimal</span><span class="p">);</span><span class="w">              </span><span class="c1">// Print number variables to Console</span>
+
+<span class="c1">// You can call some number methods with dot notation.</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nx">decimal</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">4</span><span class="p">));</span><span class="w">  </span>
+
+<span class="c1">// Or call Javascript Math method that take number object as argument.</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">decimal</span><span class="p">));</span><span class="w">           </span><span class="c1">// Round decimal number to integer.</span>
+<span class="nx">print</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">decimal</span><span class="p">));</span><span class="w">           </span><span class="c1">// Round decimal number DOWN to nearest integer.</span>
+<span class="nx">print</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">decimal</span><span class="p">));</span><span class="w">            </span><span class="c1">// Round decimal number UP to nearest integer.</span>
+</code></pre></div>
+<h2 id="lists"><strong>lists</strong></h2>
+<p><strong>Use lists to store a set of data.</strong>  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Use square brackets to define a list.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">some_vt_towns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Middlebury&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;New Haven&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bristol&#39;</span><span class="p">];</span>
+
+<span class="c1">// Use square brackets after lists to select items.</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nx">some_vt_towns</span><span class="p">,</span><span class="w"> </span><span class="nx">some_vt_towns</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+
+<span class="c1">// Call list methods with dot notation.  </span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nx">some_vt_towns</span><span class="p">.</span><span class="nx">reverse</span><span class="p">());</span>
+</code></pre></div>
+<h2 id="dictionaries"><strong>dictionaries</strong></h2>
+<p><strong>Use dictionaries to store keys and values.</strong>  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Use curly brackets (or braces) to define dictionaries.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">midd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Middlebury&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1">// Dictionaries are composed of key:value pairs.</span>
+<span class="w">  </span><span class="s2">&quot;pop_2010&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">8496</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;pop_2020&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">9152</span>
+<span class="p">};</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Middlebury&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">midd</span><span class="p">);</span>
+
+<span class="c1">// Use dot notation to call the value(s) of a key.</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nx">midd</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="functions"><strong>functions</strong></h2>
+<p><strong>Write functions to make chunks of code reuseable.</strong>  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// A simple function the takes a string as an argument.  </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">i_love_function</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">some_string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;I love &#39;</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">some_string</span><span class="p">).</span><span class="nx">concat</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nx">i_love_function</span><span class="p">(</span><span class="s1">&#39;maps&#39;</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
@@ -870,15 +1135,30 @@ Vermont, USA</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../../geo-module/" class="md-footer__link md-footer__link--prev" aria-label="Previous: geo module" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                geo module
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="intro/" class="md-footer__link md-footer__link--next" aria-label="Next: introduction" rel="next">
+          <a href="../explain-code/" class="md-footer__link md-footer__link--next" aria-label="Next: explain code" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                introduction
+                explain code
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -940,10 +1220,10 @@ Vermont, USA</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.instant.progress", "navigation.indexes", "navigation.footer", "content.code.copy"], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.indexes", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
