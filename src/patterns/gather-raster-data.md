@@ -30,6 +30,7 @@ The diagram below shows a typical pattern for accessing cloud data.
 <center>
 
 ``` mermaid
+
 graph LR
 
   step01("Construct from address") ;
@@ -75,6 +76,7 @@ graph LR
   class step02 op;
   class step03 in-out;
   class arg01 arg; 
+
 ```
 
 </center>

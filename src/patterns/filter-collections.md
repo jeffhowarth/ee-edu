@@ -56,9 +56,9 @@ The syntax for this method in Earth Engine looks a little clunky because you fir
 ``` mermaid
 graph LR
 
-  input["<b>c</b><br>(collection to filter)"] ;
-  method(".filter()") ;
-  output[/"c_filter_bounds"/]  ;
+  input["collection"] ;
+  method("<b>.filter()</b>") ;
+  output[/"collection_filter_bounds"/]  ;
 
   input --> method --> output
   
@@ -66,7 +66,7 @@ graph LR
   
   arg --o method
 
-  arg2["<b>place_of_interest</b>"] ;
+  arg2["place_of_interest"] ;
 
   arg2 --o arg
 
@@ -83,14 +83,14 @@ graph LR
 ```
 
 ```js
-var c_filter_bounds = c.filter(ee.Filter.bounds(place_of_interest));
+var collection_filter_bounds = collection.filter(ee.Filter.bounds(place_of_interest));
 
 ```
 
 Because this method is very commonly used to filter both image and feature collections but has such wonky syntax, Earth Engine provides an alternative expression to call the method that is a bit simpler to write. In the snippet below, __c__ is the collection to filter and __place_of_interest__ is the object that is being used to test for overlap it. 
 
 ```js
-var c_filter_bounds = c.filterBounds(place_of_interest);
+var collection_filter_bounds = collection.filterBounds(place_of_interest);
 ```
 
 The main advantage of learning to write the first, clunky syntax is that you can use it to include the filter in AND methods (see below).  
@@ -104,9 +104,9 @@ After applying a filter, it is good practice to quickly check to see if the filt
 ```js
 print(
   "collection before:",
-  c.size(),
+  collection.size(),
   "collection after:"
-  c_filter_bounds.size()
+  collection_filter_bounds.size()
 );
 ```
 
@@ -119,15 +119,15 @@ Here is the full pattern for filtering by overlap.
 ```js
 // Filter feature collection for overlap with fork. 
 
-var c_filter_bounds = c.filterBounds(fork);
+var collection_filter_bounds = collection.filterBounds(fork);
 
 // Check filtered result.  
 
 print(
   "collection before:",
-  c.size(),
+  collection.size(),
   "collection after:"
-  c_filter_bounds.size()
+  collection_filter_bounds.size()
 );
 
 ```
@@ -156,12 +156,14 @@ You may choose one of three spatial relationships.
 
 ## __filter by attribute__  
 
-These methods allow you to filter a collection based on __property values__ of items in the collection. For image collections, this means that you can filter based on properties of each image. For feature collections, it means you can filter based on the properties of each feature, which are equivalent to the attribute values of columns in a table.  
+These methods allow you to filter a collection based on __property values__ of items in the collection. They work for both image collections and feature collections. The filter essentially asks a true/falsw question about the properties of the collection and returns the elements of the collection where the answer is true. 
+
+ ![filter-by-attribute](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/fc-by-attribute.png)
 
 ### __filter by attribute__ 
 
 ```js
-var c_filtered = c.filter(
+var collection_filtered = collection.filter(
   ee.Filter.eq('property', 'value')
 );
 ```
@@ -173,9 +175,9 @@ var c_filtered = c.filter(
 ```js
 print(
   "collection before:",
-  c.size(),
+  collection.size(),
   "collection after:"
-  c_filtered.size()
+  collection_filtered.size()
 );
 
 ```
@@ -187,7 +189,7 @@ print(
 ```js
 // Filter by attribute  
 
-var c_filtered = c.filter(
+var collection_filtered = collection.filter(
   ee.Filter.eq('property', 'value')
 );
 
@@ -204,6 +206,44 @@ print(
 
 ---
 
+### __other criteria__ 
+
+There are a number of filters that follow the same pattern as above and take property and attribute value as arguments. The ```ee.Filter.eq()``` and ```ee.Filter.neq()``` can take either a string or number as the value argument. The other filters listed below typically take a number.  
+
+```js
+ee.Filter.eq('property', 'value')        // Equal to
+```
+
+```js
+ee.Filter.neq('property', 'value')       // Not equal to
+```
+
+```js
+ee.Filter.gt('property', 0)              // greater than
+```
+
+```js
+ee.Filter.gte('property', 0)            // greater than or equal to
+```
+
+```js
+ee.Filter.lt('property', 0)             // less than
+```
+
+```js
+ee.Filter.lte('property', 0)            // less than or equal to
+
+<center>
+
+| FILTER                            | DESCRIPTION             |
+| :--                               | :--                     |  
+| ```ee.Filter.eq()```, ```ee.Filter.neq()```   | Equal to, not equal to  |  
+| ```ee.Filter.lt()```, ```ee.Filter.lte()   | Less than, less than or equal to        |  
+| ```ee.Filter.gt()```, ```ee.Filter(gte()   | Greater than, greater than or equal to  |
+
+</center>
+
+---  
 
 ## __filter FC by multiple criteria__    
 

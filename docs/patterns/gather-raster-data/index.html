@@ -855,6 +855,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -905,6 +907,20 @@
     <li class="md-nav__item">
       <a href="../../practice/03/" class="md-nav__link">
         03 Parent materials of soils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/04/" class="md-nav__link">
+        04 Habitat blocks and connectors
       </a>
     </li>
   
@@ -1056,7 +1072,8 @@
 <h2 id="accessing-images-from-cloud"><strong>accessing images from cloud</strong></h2>
 <p>The diagram below shows a typical pattern for accessing cloud data.</p>
 <p><center></p>
-<pre class="mermaid"><code>graph LR
+<pre class="mermaid"><code>
+graph LR
 
   step01("Construct from address") ;
   step02("Inspect data object") ;
@@ -1091,7 +1108,8 @@
   class step01 in-out; 
   class step02 op;
   class step03 in-out;
-  class arg01 arg; </code></pre>
+  class arg01 arg; 
+</code></pre>
 <p></center></p>
 <p>To adapt the snippet below, you will just need to replace <code>'address/of/cloud/data'</code> with the data address. The address must be a string.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">&#39;address/of/cloud/data&#39;</span><span class="p">);</span>

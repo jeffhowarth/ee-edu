@@ -571,22 +571,9 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filter-fc-by-multiple-criteria" class="md-nav__link">
-    filter FC by multiple criteria
-  </a>
-  
-    <nav class="md-nav" aria-label="filter FC by multiple criteria">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#and-filter" class="md-nav__link">
-    AND filter
+  <a href="#other-criteria" class="md-nav__link">
+    other criteria
   </a>
   
 </li>
@@ -875,6 +862,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -925,6 +914,20 @@
     <li class="md-nav__item">
       <a href="../../practice/03/" class="md-nav__link">
         03 Parent materials of soils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/04/" class="md-nav__link">
+        04 Habitat blocks and connectors
       </a>
     </li>
   
@@ -1040,22 +1043,9 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filter-fc-by-multiple-criteria" class="md-nav__link">
-    filter FC by multiple criteria
-  </a>
-  
-    <nav class="md-nav" aria-label="filter FC by multiple criteria">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#and-filter" class="md-nav__link">
-    AND filter
+  <a href="#other-criteria" class="md-nav__link">
+    other criteria
   </a>
   
 </li>
@@ -1117,9 +1107,9 @@
 <p>The syntax for this method in Earth Engine looks a little clunky because you first call <code>.filter()</code> on the collection that you want to filter (called <strong>c</strong> for collection in the code snippet), which then takes <code>ee.Filter.bounds()</code> as an argument, which itself takes the place of interest object as an argument.  </p>
 <pre class="mermaid"><code>graph LR
 
-  input["&lt;b&gt;c&lt;/b&gt;&lt;br&gt;(collection to filter)"] ;
-  method(".filter()") ;
-  output[/"c_filter_bounds"/]  ;
+  input["collection"] ;
+  method("&lt;b&gt;.filter()&lt;/b&gt;") ;
+  output[/"collection_filter_bounds"/]  ;
 
   input --&gt; method --&gt; output
 
@@ -1127,7 +1117,7 @@
 
   arg --o method
 
-  arg2["&lt;b&gt;place_of_interest&lt;/b&gt;"] ;
+  arg2["place_of_interest"] ;
 
   arg2 --o arg
 
@@ -1141,10 +1131,10 @@
   class output in-out;
   class arg arg; 
   class arg2 arg;</code></pre>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">c_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">place_of_interest</span><span class="p">));</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">collection_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">collection</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">place_of_interest</span><span class="p">));</span>
 </code></pre></div>
 <p>Because this method is very commonly used to filter both image and feature collections but has such wonky syntax, Earth Engine provides an alternative expression to call the method that is a bit simpler to write. In the snippet below, <strong>c</strong> is the collection to filter and <strong>place_of_interest</strong> is the object that is being used to test for overlap it. </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">c_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">place_of_interest</span><span class="p">);</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">collection_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">collection</span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">place_of_interest</span><span class="p">);</span>
 </code></pre></div>
 <p>The main advantage of learning to write the first, clunky syntax is that you can use it to include the filter in AND methods (see below).  </p>
 <hr />
@@ -1152,9 +1142,9 @@
 <p>After applying a filter, it is good practice to quickly check to see if the filter reduced the collection and by how much.    </p>
 <div class="language-js highlight"><pre><span></span><code><span class="nx">print</span><span class="p">(</span>
 <span class="w">  </span><span class="s2">&quot;collection before:&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">c</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
+<span class="w">  </span><span class="nx">collection</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
 <span class="w">  </span><span class="s2">&quot;collection after:&quot;</span>
-<span class="w">  </span><span class="nx">c_filter_bounds</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">collection_filter_bounds</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
 <span class="p">);</span>
 </code></pre></div>
 <hr />
@@ -1162,15 +1152,15 @@
 <p>Here is the full pattern for filtering by overlap.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// Filter feature collection for overlap with fork. </span>
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">c_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">fork</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">collection_filter_bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">collection</span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">fork</span><span class="p">);</span>
 
 <span class="c1">// Check filtered result.  </span>
 
 <span class="nx">print</span><span class="p">(</span>
 <span class="w">  </span><span class="s2">&quot;collection before:&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">c</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
+<span class="w">  </span><span class="nx">collection</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
 <span class="w">  </span><span class="s2">&quot;collection after:&quot;</span>
-<span class="w">  </span><span class="nx">c_filter_bounds</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">collection_filter_bounds</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
 <span class="p">);</span>
 </code></pre></div>
 <hr />
@@ -1203,9 +1193,10 @@
 </table>
 <hr />
 <h2 id="filter-by-attribute"><strong>filter by attribute</strong></h2>
-<p>These methods allow you to filter a collection based on <strong>property values</strong> of items in the collection. For image collections, this means that you can filter based on properties of each image. For feature collections, it means you can filter based on the properties of each feature, which are equivalent to the attribute values of columns in a table.  </p>
+<p>These methods allow you to filter a collection based on <strong>property values</strong> of items in the collection. They work for both image collections and feature collections. The filter essentially asks a true/falsw question about the properties of the collection and returns the elements of the collection where the answer is true. </p>
+<p><img alt="filter-by-attribute" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/fc-by-attribute.png" /></p>
 <h3 id="filter-by-attribute_1"><strong>filter by attribute</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">c_filtered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">collection_filtered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">collection</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
 <span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></div>
@@ -1213,16 +1204,16 @@
 <h3 id="check-filter-results"><strong>check filter results</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="nx">print</span><span class="p">(</span>
 <span class="w">  </span><span class="s2">&quot;collection before:&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">c</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
+<span class="w">  </span><span class="nx">collection</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
 <span class="w">  </span><span class="s2">&quot;collection after:&quot;</span>
-<span class="w">  </span><span class="nx">c_filtered</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">collection_filtered</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
 <span class="p">);</span>
 </code></pre></div>
 <hr />
 <h3 id="full-pattern_1"><strong>full pattern</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// Filter by attribute  </span>
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">c_filtered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">collection_filtered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">collection</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
 <span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
 <span class="p">);</span>
 
@@ -1236,23 +1227,54 @@
 <span class="p">);</span>
 </code></pre></div>
 <hr />
-<h2 id="filter-fc-by-multiple-criteria"><strong>filter FC by multiple criteria</strong></h2>
-<p><em>More soon</em></p>
-<hr />
-<h3 id="and-filter"><strong>AND filter</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_filter_and</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fc</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
-<span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
-<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;property&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">),</span>
-<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;property&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="p">)</span>
-<span class="p">);</span>
+<h3 id="other-criteria"><strong>other criteria</strong></h3>
+<p>There are a number of filters that follow the same pattern as above and take property and attribute value as arguments. The <code>ee.Filter.eq()</code> and <code>ee.Filter.neq()</code> can take either a string or number as the value argument. The other filters listed below typically take a number.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;value&#39;</span><span class="p">)</span><span class="w">        </span><span class="c1">// Equal to</span>
+</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;value&#39;</span><span class="p">)</span><span class="w">       </span><span class="c1">// Not equal to</span>
+</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w">              </span><span class="c1">// greater than</span>
+</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w">            </span><span class="c1">// greater than or equal to</span>
+</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lt</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w">             </span><span class="c1">// less than</span>
+</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w">            </span><span class="c1">// less than or equal to</span>
 
-<span class="nx">print</span><span class="p">(</span>
-<span class="w">  </span><span class="s2">&quot;collection before:&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">c</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
-<span class="w">  </span><span class="s2">&quot;collection after:&quot;</span>
-<span class="w">  </span><span class="nx">c_filtered</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
-<span class="p">);</span>
+<span class="o">&lt;</span><span class="nx">center</span><span class="o">&gt;</span>
+
+<span class="o">|</span><span class="w"> </span><span class="nx">FILTER</span><span class="w">                            </span><span class="o">|</span><span class="w"> </span><span class="nx">DESCRIPTION</span><span class="w">             </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="o">:--</span><span class="w">                               </span><span class="o">|</span><span class="w"> </span><span class="o">:--</span><span class="w">                     </span><span class="o">|</span><span class="w">  </span>
+<span class="o">|</span><span class="w"> </span><span class="sb">```ee.Filter.eq()```</span><span class="p">,</span><span class="w"> </span><span class="sb">```ee.Filter.neq()```</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="nx">Equal</span><span class="w"> </span><span class="nx">to</span><span class="p">,</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">equal</span><span class="w"> </span><span class="nx">to</span><span class="w">  </span><span class="o">|</span><span class="w">  </span>
+<span class="o">|</span><span class="w"> </span><span class="sb">```ee.Filter.lt()```</span><span class="p">,</span><span class="w"> </span><span class="sb">```ee.Filter.lte()   | Less than, less than or equal to        |  </span>
+<span class="sb">| ```</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">gt</span><span class="p">()</span><span class="sb">```, ```</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">(</span><span class="nx">gte</span><span class="p">()</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="nx">Greater</span><span class="w"> </span><span class="nx">than</span><span class="p">,</span><span class="w"> </span><span class="nx">greater</span><span class="w"> </span><span class="nx">than</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">equal</span><span class="w"> </span><span class="nx">to</span><span class="w">  </span><span class="o">|</span>
+
+<span class="o">&lt;</span><span class="err">/center&gt;</span>
+
+<span class="o">---</span><span class="w">  </span>
+
+<span class="err">##</span><span class="w"> </span><span class="nx">__filter</span><span class="w"> </span><span class="nx">FC</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">multiple</span><span class="w"> </span><span class="nx">criteria__</span><span class="w">    </span>
+
+<span class="nx">_More</span><span class="w"> </span><span class="nx">soon_</span>
+
+<span class="o">---</span><span class="w">  </span>
+
+<span class="err">###</span><span class="w"> </span><span class="nx">__AND</span><span class="w"> </span><span class="nx">filter__</span><span class="w">   </span>
+
+<span class="sb">```js</span>
+<span class="sb">var fc_filter_and = fc.filter(</span>
+<span class="sb">  ee.Filter.and(</span>
+<span class="sb">    ee.Filter.eq(&quot;property&quot;, &quot;value&quot;),</span>
+<span class="sb">    ee.Filter.eq(&quot;property&quot;, &quot;value&quot;)</span>
+<span class="sb">  )</span>
+<span class="sb">);</span>
+
+<span class="sb">print(</span>
+<span class="sb">  &quot;collection before:&quot;,</span>
+<span class="sb">  c.size(),</span>
+<span class="sb">  &quot;collection after:&quot;</span>
+<span class="sb">  c_filtered.size()</span>
+<span class="sb">);</span>
 </code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
