@@ -233,15 +233,8 @@ ee.Filter.lt('property', 0)             // less than
 ```js
 ee.Filter.lte('property', 0)            // less than or equal to
 
-<center>
 
-| FILTER                            | DESCRIPTION             |
-| :--                               | :--                     |  
-| ```ee.Filter.eq()```, ```ee.Filter.neq()```   | Equal to, not equal to  |  
-| ```ee.Filter.lt()```, ```ee.Filter.lte()   | Less than, less than or equal to        |  
-| ```ee.Filter.gt()```, ```ee.Filter(gte()   | Greater than, greater than or equal to  |
-
-</center>
+``` 
 
 ---  
 

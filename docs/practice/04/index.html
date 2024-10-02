@@ -1137,7 +1137,7 @@
 </code></pre></div>
 <hr />
 <h3 id="02-include-rarity-in-blocks"><strong>02 Include rarity in blocks</strong></h3>
-<p>Often, rare elements on the landscape are small in size. So by selecting habitat blocks that are greater than 100 acres, we may show bias to rare elements of the landscape and under-represent them in our conservation plan, essentially making poverty traps for rare but significant natural communities. </p>
+<p>Often, rare elements on the landscape are small in size. So by selecting habitat blocks that are greater than 100 acres, we may show bias and under-represent rare elements of the landscape in our conservation plan, essentially making poverty traps for rare but significant natural communities. </p>
 <p>To try to right this wrong, this chunk of the problem gathers data on Significant Natural Communities collected through Vermont&rsquo;s Natural Heritage program and includes these locations in our habitat blocks layer, even if they are relatively small.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</span>
 <span class="c1">//  2. Make blocks inclusive of rare communities.  </span>
@@ -1188,11 +1188,11 @@
 </tr>
 <tr>
 <td align="center">1</td>
-<td align="left">Habitat blocks but not a valley bottom.</td>
+<td align="left">Habitat blocks.</td>
 </tr>
 <tr>
 <td align="center">2</td>
-<td align="left">Habitat connector (valley bottoms that are not habitat blocks).</td>
+<td align="left">Habitat connectors (valley bottoms that are not habitat blocks).</td>
 </tr>
 </tbody>
 </table>
@@ -1214,7 +1214,7 @@
 
 <span class="c1">// -------------------------------------------------------------</span>
 <span class="c1">//  3.3 Distinguish valley bottoms without impervious that do not intersect habitat blocks as a new habitat class.</span>
-<span class="c1">// Your goal here is to make a single layer where the value 1 represents habitat blocks and 2 represents corridors. </span>
+<span class="c1">// Your goal here is to make a single layer where the value 1 represents habitat blocks and 2 represents connectors that are not also blocks. </span>
 <span class="c1">// -------------------------------------------------------------</span>
 
 
