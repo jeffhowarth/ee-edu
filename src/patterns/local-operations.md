@@ -251,6 +251,48 @@ var image_A_not_B = image_A.multiply(image_B_inverted_binary);
 
 ```
 
+## __map arithmetic__  
+
+As the diagram at the top of this page illustration, a common type of local overlay operation performs arithmetic operations (addition, subtraction, multiplication, and division) with two or more rasters.  
+
+---
+
+### __addition__  
+
+```js
+var image_A_add_B = image_A.add(image_B);
+
+```
+
+---
+
+### __subtraction__
+
+```js
+
+var image_A_subtract_B = image_A.subtract(image_B);
+
+```
+
+---
+
+### __multiplication__
+
+```js
+
+var image_A_subtract_B = image_A.multiply(image_B);
+
+```
+
+--- 
+
+### __division__  
+
+```js
+var image_A_divide_B = image_A.divide(image_B);
+
+```
+
 ---
 
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
