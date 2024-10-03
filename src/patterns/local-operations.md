@@ -307,7 +307,7 @@ var image_A_subtract_B = image_A.multiply(image_B);
 
 The ```.divide()``` method performs division between values in corresponding pixels of the two rasters. The order does matter here because you divide the values in image_A by the values in image_B. Masked pixels in either image again remain masked in the output.  
 
-![local-overlay-operations](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/multiply.png)
+![local-overlay-operations](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/divide.png)
 
 
 ```js
