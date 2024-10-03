@@ -1,21 +1,56 @@
 # __scalar operations__
 
-Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster with a constant.   
+Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster by a constant.   
 
 ---  
 
-<center>
+## __add__  
 
-| METHOD                        | DESCRIPTION                                             |
-| --:                           | :--                                                     |
-|```.add(number)```             | Add number to each pixel value.                       |   
-|```.subtract(number)```        | Subtract number from each pixel value.                       | 
-|```.multiply(number)```        | Multiply each pixel value by number.                  | 
-|```.divide(number)```,         | Divide each pixel value by number.                        |    
-  
-</center>
+Add each pixel value by constant. For example, pattern below adds by one.  
+
+```js
+var image_add_constant = image.add(1)
+
+```
 
 ---  
+
+## __subtract__
+
+Subtract each pixel value by constant. For example, pattern below subtracts by 1.
+
+```js
+var image_subtract_constant = image.subtract(1)
+
+```
+
+---
+
+## __multiply__
+
+Multiply each pixel value by constant. For example, pattern below multiplies by 2.
+
+```js
+var image_multiply_constant = image.multiply(2)
+
+```
+
+---
+
+## __divide__
+
+Divide each pixel value by constant. For example, pattern below divides by 2.
+
+```js
+var image_divide_constant = image.divide(2)
+
+```
+
+---  
+
+## __problem types__     
+
+Here are a few types of problems that can be solved with scalar operations.  
 
 ### __change value units__ 
 

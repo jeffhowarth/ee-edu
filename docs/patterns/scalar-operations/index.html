@@ -551,16 +551,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#change-value-units" class="md-nav__link">
-    change value units
+  <a href="#add" class="md-nav__link">
+    add
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#subtract" class="md-nav__link">
+    subtract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiply" class="md-nav__link">
+    multiply
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#divide" class="md-nav__link">
+    divide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-types" class="md-nav__link">
+    problem types
+  </a>
+  
+    <nav class="md-nav" aria-label="problem types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-value-units" class="md-nav__link">
+    change value units
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#vertical-exaggeration" class="md-nav__link">
     vertical exaggeration
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -892,16 +933,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#change-value-units" class="md-nav__link">
-    change value units
+  <a href="#add" class="md-nav__link">
+    add
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#subtract" class="md-nav__link">
+    subtract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiply" class="md-nav__link">
+    multiply
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#divide" class="md-nav__link">
+    divide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-types" class="md-nav__link">
+    problem types
+  </a>
+  
+    <nav class="md-nav" aria-label="problem types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-value-units" class="md-nav__link">
+    change value units
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#vertical-exaggeration" class="md-nav__link">
     vertical exaggeration
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -921,37 +1003,30 @@
 
 
 <h1 id="scalar-operations"><strong>scalar operations</strong></h1>
-<p>Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster with a constant.   </p>
+<p>Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster by a constant.   </p>
 <hr />
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th align="right">METHOD</th>
-<th align="left">DESCRIPTION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right"><code>.add(number)</code></td>
-<td align="left">Add number to each pixel value.</td>
-</tr>
-<tr>
-<td align="right"><code>.subtract(number)</code></td>
-<td align="left">Subtract number from each pixel value.</td>
-</tr>
-<tr>
-<td align="right"><code>.multiply(number)</code></td>
-<td align="left">Multiply each pixel value by number.</td>
-</tr>
-<tr>
-<td align="right"><code>.divide(number)</code>,</td>
-<td align="left">Divide each pixel value by number.</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
+<h2 id="add"><strong>add</strong></h2>
+<p>Add each pixel value by constant. For example, pattern below adds by one.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_add_constant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+</code></pre></div>
 <hr />
+<h2 id="subtract"><strong>subtract</strong></h2>
+<p>Subtract each pixel value by constant. For example, pattern below subtracts by 1.</p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_subtract_constant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="multiply"><strong>multiply</strong></h2>
+<p>Multiply each pixel value by constant. For example, pattern below multiplies by 2.</p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_multiply_constant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="divide"><strong>divide</strong></h2>
+<p>Divide each pixel value by constant. For example, pattern below divides by 2.</p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_divide_constant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="problem-types"><strong>problem types</strong></h2>
+<p>Here are a few types of problems that can be solved with scalar operations.  </p>
 <h3 id="change-value-units"><strong>change value units</strong></h3>
 <p>A common example is when you need to change the units of your data. For example, to change elevation data from centimeters to meters you divide all elevation values by the number 100 (scalar).   </p>
 <hr />

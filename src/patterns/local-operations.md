@@ -253,11 +253,17 @@ var image_A_not_B = image_A.multiply(image_B_inverted_binary);
 
 ## __map arithmetic__  
 
-As the diagram at the top of this page illustration, a common type of local overlay operation performs arithmetic operations (addition, subtraction, multiplication, and division) with two or more rasters.  
+As the diagram at the top of this page illustrates, a common type of local overlay operation performs arithmetic operations (addition, subtraction, multiplication, and division) with two rasters.  
 
 ---
 
 ### __addition__  
+
+The ```.add()``` method performs addition between values in corresponding pixels of two rasters. The order (which raster is A versus B) does not matter. The main thing to remember is that any pixel that is masked will be excluded from the operation (so that output pixel will remain masked).  
+
+![local-overlay-operations](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/add.png)
+
+---   
 
 ```js
 var image_A_add_B = image_A.add(image_B);
@@ -266,7 +272,11 @@ var image_A_add_B = image_A.add(image_B);
 
 ---
 
-### __subtraction__
+### __subtraction__  
+
+The ```.subtract()``` method performs subtraction between values in corresponding pixels of two rasters. The order matters here: you subtract image_B from image_A. Masked pixels in either raster will remain masked in the output.  
+
+![local-overlay-operations](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/subtract.png)
 
 ```js
 
@@ -278,6 +288,13 @@ var image_A_subtract_B = image_A.subtract(image_B);
 
 ### __multiplication__
 
+The ```.multiply()``` method performs multiplication between values in corresponding pixels of two rasters. The order does not matter here. Masked pixels do matter and will remain masked. 
+
+Multiplication is often used with a boolean raster as a method to __erase__ values in another image, because 0 will convert to 0 and 1 will retain the original value.   
+
+![local-overlay-operations](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/multiply.png)
+
+
 ```js
 
 var image_A_subtract_B = image_A.multiply(image_B);
@@ -287,6 +304,11 @@ var image_A_subtract_B = image_A.multiply(image_B);
 --- 
 
 ### __division__  
+
+The ```.divide()``` method performs division between values in corresponding pixels of the two rasters. The order does matter here because you divide the values in image_A by the values in image_B. Masked pixels in either image again remain masked in the output.  
+
+![local-overlay-operations](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/multiply.png)
+
 
 ```js
 var image_A_divide_B = image_A.divide(image_B);

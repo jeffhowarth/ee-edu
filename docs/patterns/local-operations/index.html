@@ -1262,21 +1262,31 @@
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_A_not_B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image_A</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="nx">image_B_inverted_binary</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="map-arithmetic"><strong>map arithmetic</strong></h2>
-<p>As the diagram at the top of this page illustration, a common type of local overlay operation performs arithmetic operations (addition, subtraction, multiplication, and division) with two or more rasters.  </p>
+<p>As the diagram at the top of this page illustrates, a common type of local overlay operation performs arithmetic operations (addition, subtraction, multiplication, and division) with two rasters.  </p>
 <hr />
 <h3 id="addition"><strong>addition</strong></h3>
+<p>The <code>.add()</code> method performs addition between values in corresponding pixels of two rasters. The order (which raster is A versus B) does not matter. The main thing to remember is that any pixel that is masked will be excluded from the operation (so that output pixel will remain masked).  </p>
+<p><img alt="local-overlay-operations" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/add.png" /></p>
+<hr />
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_A_add_B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image_A</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">image_B</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <h3 id="subtraction"><strong>subtraction</strong></h3>
+<p>The <code>.subtract()</code> method performs subtraction between values in corresponding pixels of two rasters. The order matters here: you subtract image_B from image_A. Masked pixels in either raster will remain masked in the output.  </p>
+<p><img alt="local-overlay-operations" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/subtract.png" /></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_A_subtract_B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image_A</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">image_B</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <h3 id="multiplication"><strong>multiplication</strong></h3>
+<p>The <code>.multiply()</code> method performs multiplication between values in corresponding pixels of two rasters. The order does not matter here. Masked pixels do matter and will remain masked. </p>
+<p>Multiplication is often used with a boolean raster as a method to <strong>erase</strong> values in another image, because 0 will convert to 0 and 1 will retain the original value.   </p>
+<p><img alt="local-overlay-operations" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/multiply.png" /></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_A_subtract_B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image_A</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="nx">image_B</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <h3 id="division"><strong>division</strong></h3>
+<p>The <code>.divide()</code> method performs division between values in corresponding pixels of the two rasters. The order does matter here because you divide the values in image_A by the values in image_B. Masked pixels in either image again remain masked in the output.  </p>
+<p><img alt="local-overlay-operations" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/multiply.png" /></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_A_divide_B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image_A</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">image_B</span><span class="p">);</span>
 </code></pre></div>
 <hr />
