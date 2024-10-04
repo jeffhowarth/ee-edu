@@ -1,112 +1,137 @@
-# __Memory under cover on Chipman Hill__  
+__TUTORIAL 1__
+
+# _**A sketch map from lidar**_   
 
 ## __goal__  
 
-Your goal is to import a digital elevation model (DEM), make a Map with the five layers shown in the app below, and then use these layers to interpret the four POI.
+In this tutorial, our practical goal is to import a digital surface model (DSM) from this address:
+
+```js
+"projects/ee-patterns/assets/t01/Elevation_DSM0p7m2017_cm"
+```
+
+and make a map with the layers shown below.  
 
 <iframe
-  src="https://ee-patterns.projects.earthengine.app/view/practice-01"
+  src="https://ee-patterns.projects.earthengine.app/view/tutorial-01"
   style="width:854px; height:854px"
-></iframe> 
+></iframe>  
 
-[_open app in new tab_](https://ee-patterns.projects.earthengine.app/view/practice-01){target=_blank}
+[_open app in new tab_](https://ee-patterns.projects.earthengine.app/view/tutorial-01){target=_blank}
 
----   
+
+--- 
 
 ## __starter script__  
 
 ```js
-
 // -------------------------------------------------------------
-//  Access image from this cloud address:
-//  "projects/ee-patterns/assets/p01/chipmanHill_2023_35cm_DEMHF"
+//  Construct image data object from address.
 // -------------------------------------------------------------
 
 var image ;
 
-
 // -------------------------------------------------------------
-//  Customize Map. 
-// -------------------------------------------------------------
-
-// Set map center and zoom level.
-
-
-//  Set basemap style to hybrid.
-
-
-// -------------------------------------------------------------
-//  Display image as a map layer;
-//  Stretch layer display values over image data range.
+//  Print properties of image to the Console. 
 // -------------------------------------------------------------
 
 
 
 // -------------------------------------------------------------
-//  Multiply the elevation values by 2 (apply a scalar operation)
-//  and then derive slope of this surface.
+//  Set map center and zoom level.
+// -------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------
+//  Set basemap style.
+// -------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------
+//  Display image as a map layer.
+// -------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------
+//  Import geoMethods module. 
+// -------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------
+//  Set viz range to data range.
+// -------------------------------------------------------------
+
+var image_min_max ;
+
+
+
+// -------------------------------------------------------------
+//  Chart histogram of image data values.
+// -------------------------------------------------------------
+
+var image_histogram ;
+
+
+// -------------------------------------------------------------
+//  Apply scalar operation; 
+//  convert image data from centimeters to meters.
+// -------------------------------------------------------------
+
+var image_meters ;
+
+// -------------------------------------------------------------
+//  Display new image as a layer
+//  with viz range set to data range.
+// -------------------------------------------------------------
+
+
+// -------------------------------------------------------------
+//  Derive slope of the surface image. 
 // -------------------------------------------------------------
 
 var image_slope ;
 
 // -------------------------------------------------------------
-//  Display slope image as a map layer;
-//  Stretch layer display values over image data range.
-//  Display so that "steeper is darker".
+//  Display slope image as map layer so that "steeper is darker".
 // -------------------------------------------------------------
 
 
 
 // -------------------------------------------------------------
-//  Multiply the elevation values by 2 (apply a scalar operation)
-//  and then calculate the hillshade of this surface. 
-// -------------------------------------------------------------
-
-var image_hs ;
-
-// -------------------------------------------------------------
-//  Using the original elevation surface (without a scalar applied),
-//  calculate the deviation from mean elevation;
-//  Use 10 as the distance argument.
-//  Try to display the layer with this palette: ['blue', 'white', 'red']
-// -------------------------------------------------------------
-
-var image_dme ;
-
-
-// -------------------------------------------------------------
-//  PRACTICE CHECKS
+//  TUTORIAL CHECKS
 // -------------------------------------------------------------
 
 //  I. QUANTITATIVE 
 
-print("QUANTITATIVE CHECKS:");
-
 //  Import check module for tutorial 1.
-//  Uncomment the line below.
 
-var check = require("users/jhowarth/eePatterns:checks/p01.js");
+var check = require("users/jhowarth/eePatterns:checks/t01.js");
 
-//  Uncomment the three lines below, run script, and look at the results in Console. 
+//  Uncomment the four lines below, run script, and look at the results in Console. 
 
-// check.checkPoint("CP1:", image_slope);
-// check.checkPoint("CP2:", image_hs);
-// check.checkPoint("CP3:", image_dme);
+// print("QUANTITATIVE CHECKS:");
+// check.checkPoint("CP1:", image);
+// check.checkPoint("CP2:", image_meters);
+// check.checkPoint("CP3:", image_slope);
 
 //  II. QUALITATIVE  
 
 //  Use zoom to inspect locations marked A, B, C, D.
 //  For each letter, please write down:
 
-//    1. What do you think the linear feature marked by the letter "is"?
-//    2. Why?
+//    1. What do you think the location "is"?
+//    2. How does the location represent environmental change?
 
-//  When you have completed this practice problem, please take the short quiz on Canvas where you will report your results. 
+//  We will discuss in next lecture. 
 
 
 
 ```
 
----  
+---
 
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>

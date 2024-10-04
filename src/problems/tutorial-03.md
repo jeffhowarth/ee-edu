@@ -1,4 +1,6 @@
-# __introduction to feature collections__  
+__TUTORIAL 3__
+
+# _**Introduction to feature collections**_  
 
 ## __goal__  
 

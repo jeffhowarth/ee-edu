@@ -1,4 +1,6 @@
-# __a slippy topographic map of the USA__  
+__TUTORIAL 2__
+
+# _**A slippy topographic map**_  
 
 ## __goal__  
 

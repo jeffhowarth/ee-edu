@@ -1,4 +1,6 @@
-# __scalar operations__
+__PATTERNS__
+
+# _**scalar operations**_
 
 Uniformly change the values of all data in a raster object by adding, subtracting, multiplying, or dividing the raster by a constant.   
 

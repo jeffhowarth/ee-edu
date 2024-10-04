@@ -1,4 +1,6 @@
-# __gather vector data__  
+__PATTERNS__
+
+# _**gather vector data**_  
 
 Points and polylines and polygons, oh my.  
 

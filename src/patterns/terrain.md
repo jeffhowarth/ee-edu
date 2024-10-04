@@ -1,4 +1,6 @@
-# __terrain__  
+__PATTERNS__
+
+# _**terrain**_  
 
 These methods derive topographic attributes of terrain from raster elevation data. Most terrain operations characterize attributes of a surface with [focal (neighborhood) operations](../focal=operations).
 

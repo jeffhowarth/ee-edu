@@ -1,4 +1,6 @@
-# __flatten image collections__
+__PATTERNS__
+
+# _**flatten image collections**_
 
 Many workflows for image collections will include a step that transforms an image collection into a single image (and __flattens__ the collection).  
 

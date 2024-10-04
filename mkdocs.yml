@@ -163,16 +163,22 @@ nav:
     - terrain: patterns/terrain.md  
     - vector analysis: patterns/vector-analysis.md  
     - export data: patterns/export.md  
-  - TUTORIAL:  
-    - 01 A Sketch Map from Lidar: tutorials/01.md  
-    - 02 A Slippy Topographic Map: tutorials/02.md
-    - 03 Intro to Feature Collections: tutorials/03.md  
-    - 04 Habitat blocks of Middlebury: tutorials/04.md  
-  - PRACTICE:
-    - 01 Memory under cover: practice/01.md
-    - 02 Ice age bathtub: practice/02.md  
-    - 03 Parent materials of soils: practice/03.md
-    - 04 Habitat blocks and connectors: practice/04.md  
+  - PROBLEMS:  
+    - T1. A sketch map from lidar: problems/tutorial-01.md  
+    - P1. Memory under cover: problems/practice-01.md
+    - T2. A slippy topographic map: problems/tutorial-02.md
+    - P2. Ice age bathtub: problems/practice-02.md  
+    - T3. Intro to feature collections: problems/tutorial-03.md  
+    - P3. Parent materials of soils: problems/practice-03.md
+    - T4. Forest blocks: problems/tutorial-04.md  
+    - P4. Forest blocks and habitat connectors: problems/practice-04.md  
+  - SOLUTIONS:  
+    - Tutorials: solutions/tutorials.md  
+    - Practice: solutions/practice.md  
+
+
+
+
     
   # - WORKED EXAMPLES:  
   #   - naip images: examples/naip.md 

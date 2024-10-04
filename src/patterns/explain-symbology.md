@@ -1,4 +1,6 @@
-# __explain layer symbology__  
+__PATTERNS__
+
+# _**explain layer symbology**_  
 
 Methods for defining what colors in palettes _mean_ on your map.  
 

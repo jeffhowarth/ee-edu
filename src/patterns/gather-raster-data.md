@@ -1,4 +1,6 @@
-# __gather raster data__  
+__PATTERNS__
+
+# _**gather raster data**_  
 
 One of the first things you will usually do with Earth Engine is gather some data from the cloud. Before we get too deep into this, we should review the basic templates for storing geographic data (__geographic data models__) and how they are implemented in Earth Engine.     
 

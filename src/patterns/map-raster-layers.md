@@ -1,4 +1,6 @@
-# __map raster layers__  
+__PATTERNS__
+
+# _**map raster layers**_  
 
 Any geographic information system will provide methods for displaying data as a map layer.  
 

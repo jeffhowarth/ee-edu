@@ -1,4 +1,6 @@
-# __explain code__
+__PATTERNS__
+
+# _**explain code**_
 
 Always write your code for two main audiences: 
 

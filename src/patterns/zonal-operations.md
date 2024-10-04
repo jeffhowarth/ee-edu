@@ -1,4 +1,6 @@
-# __zonal operations__  
+__PATTERNS__
+
+# _**zonal operations**_  
 
 Zonal operations analyze pixel values in one layer based zones (regions) defined by another layer. In Earth Engine, the zones are generally defined by features in a feature collection.  
 

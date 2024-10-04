@@ -1,4 +1,6 @@
-# __local overlay operations__  
+__PATTERNS__
+
+# _**local overlay operations**_  
 
 These methods compare values at corresponding pixels in two or more rasters. 
 
@@ -80,15 +82,15 @@ graph LR
 
 ```js
 
-var image_with_mask = image.updateMask(masking_image);
+var image_with_mask = image.updateMask(boolean_image);
 
 ```
 
 ---  
 
-### __self mask pixels__  
+### __self mask pixels__   
 
-If you want to ignore pixels that store the value 0 in an raster, you can self-mask.  
+If you want to ignore pixels that store the value 0 in an raster, you can self-mask. This is not technically a local operation because it only involves one raster, but I wanted to keep the mask operations together. 
 
 ![self mask](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/self-mask.png)
 
@@ -130,7 +132,7 @@ var image_with_mask = image.selfMask();
 
 ### __unmask__  
 
-If you are working with a masked image, you can remove the mask and populate all the masked locations with a constant. 
+If you are working with a masked image, you can remove the mask and populate all the masked locations with a constant. Again, this is not technically a local operation because it only involves one raster, but I wanted to keep the mask operations together. 
 
 ![self mask](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/unmask.png)
 
@@ -179,7 +181,7 @@ In Earth Engine, ```unmask()``` will replace masked values with 0 by default (Th
 
 ## __logical comparisons__  
 
-The diagram below illustrates three common logical comparisons between two regions: A, B. Going from left to right, the first picture shows the two regions. The second picture shows where either region A __or__ region B are present (or true), called the __union__ of the two. The third picture shows where both region A __and__ region B are present, called the __intersection__ of the two. The fourth and final picture shows where region A is present but __not__ region B. In this last case, region B acts like an eraser or __knife__ that cuts out the portion of region A that it touches.  
+The diagram below illustrates three common logical comparisons between two regions: A, B. Going from left to right, the first picture shows the two regions. The second picture shows where either region A __or__ region B are present (or true), called the __union__ of the two. The third picture shows where both region A __and__ region B are present, called the __intersection__ of the two. The fourth and final picture shows where region A is present but __not__ region B. In this last case, region B acts like an eraser or __knife__ that cuts out the portion of region A that it touches. Sometimes this last case is called the _difference_ or _subtraction_ of two sets.    
 
 ![Logical comparisons](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/logical-comparisons.png)
 
@@ -189,10 +191,10 @@ The patterns below describe how each logical comparison shown above can be imple
 
 ---  
 
-### __or (union)__  
+### __union__  
 
 
-The ```.or()``` method takes two rasters as inputs and kicks out a boolean raster that represents their union: pixels that are true (not 0) in raster A or pixels that are true (not 0) in raster B.  
+The ```.or()``` method takes two rasters as inputs and kicks out a boolean raster that represents their __union__: pixels in the output raster are true if they are true (not 0) in either raster A or raster B.  
 
 ![OR union](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/or-union.png)
 
@@ -212,10 +214,10 @@ var image_union = image_A.or(image_B);
 
 ```
 
-### __and (intersection)__
+### __intersection__
 
 
-The ```and()``` method takes two rasters as inputs and kicks out a boolean raster that represents their intersection: locations that are true (not 0) in raster A and true (not 0) in raster B.  
+The ```and()``` method takes two rasters as inputs and kicks out a boolean raster that represents their __intersection__: pixels in the output raster are true (not 0) if they are true (not zero) in both raster A and raster B.  
 
 ![AND intersection](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/and-intersection.png)
 
@@ -239,7 +241,7 @@ var image_intersection = image_A.and(image_B);
 
 ### __not__  
 
-In Earth Engine, finding locations in raster A that are true but not true in raster B is a little tricky. The workflow involves inverting the binary of raster_B and then multiplying it against raster_A.   
+In Earth Engine, finding locations that are in raster A but not in raster B is a little tricky. The workflow involves inverting the binary of raster_B and then multiplying it against raster_A.   
 
 ![NOT](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/not.png)
 

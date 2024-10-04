@@ -1,4 +1,6 @@
-# __focal operations__  
+__PATTERNS__
+
+# _**focal operations**_  
 
 Focal operations use a __moving window__ to carry out a computation based on values in the __neighborhood of a focal cell__. The window moves systematically across the raster, performing calculations for each pixel.    
 

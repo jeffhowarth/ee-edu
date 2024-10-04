@@ -1,4 +1,6 @@
-# __customize Map__  
+__PATTERNS__
+
+# _**customize Map**_  
 
 It is often helpful to customize the Map so that it centers and zooms on your area of interest and uses a base map that supports your purpose.  
 

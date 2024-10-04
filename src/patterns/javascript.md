@@ -1,4 +1,6 @@
-# __JavaScript__  
+__PATTERNS__
+
+# _**JavaScript**_  
 
 Here are some basic patterns for writing in JavaScript.
 

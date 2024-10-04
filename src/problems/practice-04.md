@@ -1,4 +1,6 @@
-# __habitat blocks and connectors__  
+__PRACTICE 4__ 
+
+# _**Forest blocks and habitat connectors**_  
 
 ## __goal__  
 
@@ -26,7 +28,7 @@ Your workflow should reproduce all the layers shown in the app below.
 
 ## __data sources__
 
-This problem uses several datasets from the [tutorial problem](../tutorials/04.md). In addition, we will use two new datasets described in the table below.  
+This problem uses several datasets from the [tutorial problem](../problems/tutorial-04.md). In addition, we will use two new datasets described in the table below.  
 
 <center>
 

@@ -1,4 +1,6 @@
-# __filter collections__  
+__PATTERNS__
+
+# _**filter collections**_  
 
 Image and feature collections often include more data than you need. As a result, both tend to follow this pattern: 
 

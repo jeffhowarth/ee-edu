@@ -1,4 +1,6 @@
-# __reclassify raster__  
+__PATTERNS__
+
+# _**reclassify raster**_  
 
 These methods purposefully reclassify the values in a raster. 
 

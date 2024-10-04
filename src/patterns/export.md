@@ -1,4 +1,6 @@
-# __export data__  
+__PATTERNS__
+
+# _**export data**_  
 
 Earth Engine does not permanently store the data objects that you make in your workflows unless you specifically ask it to do so. The patterns below deal with two different scenarios:  
 

@@ -1,4 +1,6 @@
-# __map vector layers__  
+__PATTERNS__
+
+# _**map vector layers**_  
 
 Earth Engine is primarily a tool for visualizing raster data. This means two things:  
 
