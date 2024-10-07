@@ -81,4 +81,27 @@ print(
 
 ---  
 
+## __:earth_americas: zonal statistics__    
+
+This method calculates a statistic of image values within a zone of analysis defined by one or more features in a feature collection. The output of the method is a feature collection with a new column that contains the statistic.  
+
+_more soon_ 
+
+```js
+var fc_zonal_stat = geo.iZonal.zonalStats(dough, cutter, "statistic", scale);
+
+```
+
+The method takes four arguments that are defined in the table below.  
+
+| ARGUMENTS   | DESCRIPTION                                   |
+| :--:        | :--                                           |
+| dough       | The image with pixel values to be analyzed.   |  
+| cutter      | The feature collection with one or more features that define the zones of analysis. |
+| "statistic" | The statistic to calculate within each zone of analysis. Must be a string from these options: "sum", "max", "min", "mean", "count", "variety" ("count" reports the number of pixels, while "variety" reports the number of unique pixel values). |  
+| scale       | The scale of analysis. When you encounter time out errors, you can try to resolve by increasing the scale of analysis. |  
+
+
+---  
+
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>

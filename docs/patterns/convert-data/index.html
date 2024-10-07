@@ -329,6 +329,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -531,15 +533,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fc-to-boolean-image" class="md-nav__link">
-    FC to boolean image
+  <a href="#any-fc-to-boolean-raster" class="md-nav__link">
+    any FC to boolean raster
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fc-to-nominal-image" class="md-nav__link">
-    FC to nominal image
+  <a href="#nominal-fc-to-integer-raster" class="md-nav__link">
+    nominal FC to integer raster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-fc-to-numeric-raster" class="md-nav__link">
+    numeric FC to numeric raster
   </a>
   
 </li>
@@ -640,6 +649,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../proximity-operations/" class="md-nav__link">
+        proximity operations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../zonal-operations/" class="md-nav__link">
         zonal overlay operations
       </a>
@@ -712,6 +735,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
+        
+          
         
           
         
@@ -855,6 +880,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/tutorial-05/" class="md-nav__link">
+        T5. Scale in web mercator
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -965,15 +1004,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fc-to-boolean-image" class="md-nav__link">
-    FC to boolean image
+  <a href="#any-fc-to-boolean-raster" class="md-nav__link">
+    any FC to boolean raster
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fc-to-nominal-image" class="md-nav__link">
-    FC to nominal image
+  <a href="#nominal-fc-to-integer-raster" class="md-nav__link">
+    nominal FC to integer raster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-fc-to-numeric-raster" class="md-nav__link">
+    numeric FC to numeric raster
   </a>
   
 </li>
@@ -1028,15 +1074,43 @@
 <h2 id="vector-to-raster"><strong>vector to raster</strong></h2>
 <p>These methods typically convert feature collections to images. </p>
 <p><em>more soon</em>  </p>
-<h3 id="fc-to-boolean-image"><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> FC to boolean image</h3>
-<p>This method converts a feature collection into a boolean image.</p>
+<h3 id="any-fc-to-boolean-raster"><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> any FC to boolean raster</h3>
+<p>This method converts a feature collection into a boolean raster. </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcConvert</span><span class="p">.</span><span class="nx">toBooleanImage</span><span class="p">(</span><span class="nx">fc</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h3 id="fc-to-nominal-image"><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> FC to nominal image</h3>
-<p>This method converts a feature collection with nominal attributes to a single-band image and prints a dictionary that reports the integer code for each unique attribute specified by column name.   </p>
+<h3 id="nominal-fc-to-integer-raster"><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> nominal FC to integer raster</h3>
+<p>This method converts a feature collection with text attributes to a single-band image. It essentially creates a list of unique text attributes from a table column (defined by &ldquo;column_name&rdquo;) and matches each unique text attribute to a unique integer. The result is an image with integer pixel values. The method also prints a dictionary to the Console that reports the integer code for each unique attribute.   </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_nominal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcConvert</span><span class="p">.</span><span class="nx">toNominalImage</span><span class="p">(</span><span class="nx">fc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;column_name&quot;</span><span class="p">);</span>
 </code></pre></div>
+<hr />
+<h3 id="numeric-fc-to-numeric-raster"><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> numeric FC to numeric raster</h3>
+<p>This method uses numeric attribute data in a feature collection to create a raster. </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_tissot_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcConvert</span><span class="p">.</span><span class="nx">toNumericImage</span><span class="p">(</span><span class="nx">fc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;column_name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reducer&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>The method takes three arguments that are defined in the table below.  </p>
+<table>
+<thead>
+<tr>
+<th align="center">ARGUMENTS</th>
+<th align="left">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">fc</td>
+<td align="left">The feature collection to convert.</td>
+</tr>
+<tr>
+<td align="center">&ldquo;column_name&rdquo;</td>
+<td align="left">The name of the column with the numeric data to populate the pixel values of the output raster.</td>
+</tr>
+<tr>
+<td align="center">&ldquo;reducer&rdquo;</td>
+<td align="left">How you would like to handle cases where two of more features overlap. Essentially, what value do you want to populate a pixel with when there is more than one number? This must be a string and one of the following: &ldquo;mean&rdquo;, &ldquo;first&rdquo;, &ldquo;max&rdquo;, &ldquo;min&rdquo;.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="raster-to-vector"><strong>raster to vector</strong></h2>
 <p>These methods typically convert images to feature collections.  </p>

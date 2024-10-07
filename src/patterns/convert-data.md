@@ -13,9 +13,9 @@ These methods typically convert feature collections to images.
 
 _more soon_  
 
-### :earth_americas: FC to boolean image  
+### :earth_americas: any FC to boolean raster  
 
-This method converts a feature collection into a boolean image.
+This method converts a feature collection into a boolean raster. 
 
 ```js
 var image_boolean = geo.fcConvert.toBooleanImage(fc);
@@ -23,14 +23,34 @@ var image_boolean = geo.fcConvert.toBooleanImage(fc);
 
 ---  
 
-### :earth_americas: FC to nominal image  
+### :earth_americas: nominal FC to integer raster  
 
-This method converts a feature collection with nominal attributes to a single-band image and prints a dictionary that reports the integer code for each unique attribute specified by column name.   
+This method converts a feature collection with text attributes to a single-band image. It essentially creates a list of unique text attributes from a table column (defined by "column_name") and matches each unique text attribute to a unique integer. The result is an image with integer pixel values. The method also prints a dictionary to the Console that reports the integer code for each unique attribute.   
 
 ```js
 var image_nominal = geo.fcConvert.toNominalImage(fc, "column_name");
 
 ```
+
+---  
+
+### :earth_americas: numeric FC to numeric raster
+
+This method uses numeric attribute data in a feature collection to create a raster. 
+
+```js
+var image_tissot_area = geo.fcConvert.toNumericImage(fc, "column_name", "reducer");
+
+```
+
+The method takes three arguments that are defined in the table below.  
+
+| ARGUMENTS | DESCRIPTION       |
+|:--:       | :--               | 
+| fc        | The feature collection to convert.    |
+| "column_name" | The name of the column with the numeric data to populate the pixel values of the output raster. | 
+| "reducer"     | How you would like to handle cases where two of more features overlap. Essentially, what value do you want to populate a pixel with when there is more than one number? This must be a string and one of the following: "mean", "first", "max", "min". |
+
 
 ---  
 

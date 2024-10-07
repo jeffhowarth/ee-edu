@@ -158,7 +158,8 @@ nav:
     - reclassify raster: patterns/reclassify.md
     - scalar operations: patterns/scalar-operations.md 
     - local overlay operations: patterns/local-operations.md  
-    - focal (neighborhood) operations: patterns/focal-operations.md    
+    - focal (neighborhood) operations: patterns/focal-operations.md  
+    - proximity operations: patterns/proximity-operations.md    
     - zonal overlay operations: patterns/zonal-operations.md  
     - terrain: patterns/terrain.md  
     - vector analysis: patterns/vector-analysis.md  
@@ -172,6 +173,7 @@ nav:
     - P3. Parent materials of soils: problems/practice-03.md
     - T4. Forest blocks: problems/tutorial-04.md  
     - P4. Forest blocks and habitat connectors: problems/practice-04.md  
+    - T5. Scale in web mercator: problems/tutorial-05.md 
   - SOLUTIONS:  
     - Tutorials: solutions/tutorials.md  
     - Practice: solutions/practice.md  

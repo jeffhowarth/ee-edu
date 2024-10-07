@@ -2,167 +2,177 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/geo-module/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/intro/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/three-t/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/composite-mosaic/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/convert-data/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/customize-Map/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/explain-code/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/explain-symbology/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/export/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/filter-collections/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/focal-operations/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/gather-raster-data/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/gather-vector-data/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/javascript/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/local-operations/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/map-raster-layers/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/map-vector-layers/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/jeffhowarth/ee-patterns/patterns/proximity-operations/</loc>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/reclassify/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/scalar-operations/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/terrain/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/vector-analysis/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/zonal-operations/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/problems/practice-01/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/problems/practice-02/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/problems/practice-03/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/problems/practice-04/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/problems/tutorial-01/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/problems/tutorial-02/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/problems/tutorial-03/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/problems/tutorial-04/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/jeffhowarth/ee-patterns/problems/tutorial-05/</loc>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/solutions/practice/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/solutions/tutorials/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

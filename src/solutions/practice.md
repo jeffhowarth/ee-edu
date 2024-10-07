@@ -5,7 +5,7 @@ __SOLUTIONS__
 The links in the table below will open a worked out script for the problem in the Code Editor.  
 
 | LINK                          | PROBLEM                   | UPDATE                |
-|:--:                           |:--                        | :--                   |
+|:--:                           |:--                        | :-- :                  |
 | [__P1__][P1]{target=_blank}   | Memory under cover        | 9/11/24               |        
 | [__P2__][P2]{target=_blank}   | Ice age bathtub           | 9/18/24               |
 | [__P3__][P3]{target=_blank}   | Parent materials of soils | 9/25/24               |
