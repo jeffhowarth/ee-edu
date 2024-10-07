@@ -56,7 +56,7 @@ print("geo palettes", geo.iPalettes);         // Prints dictionary of all palett
 
 // 1.1. Center map on prime meridian and equator at zoom level 2.  
 
-
+Map.setCenter(0,0,2);
 
 // 1.2. Set base map to hybrid.
 
@@ -161,7 +161,7 @@ Map.addLayer(indicatrix, {color: 'gold'}, "3.4. Tissot's Indicatrix");
 
 // 4.3 Define viz parameters.
 
-v
+
 
 // 4.4 Display as Map layer.
 
