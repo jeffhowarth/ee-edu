@@ -1231,10 +1231,9 @@
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">crs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;EPSG: 3857&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// web mercator</span>
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">distance_image_test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iFocal</span><span class="p">.</span><span class="nx">iDistance</span><span class="p">(</span><span class="nx">image_boolean_test</span><span class="p">,</span><span class="w"> </span><span class="nx">crs</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;euclidean&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pixels&quot;</span><span class="p">);</span>
-</code></pre></div>
-<p>We can then display the result by defining viz parameters and applying them when we add the result as a Map layer.  </p>
-<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">distance_image_test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iFocal</span><span class="p">.</span><span class="nx">iDistance</span><span class="p">(</span><span class="nx">image_boolean_test</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">,</span><span class="w"> </span><span class="nx">crs</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;euclidean&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pixels&quot;</span><span class="p">);</span>
+
+<span class="c1">// -------------------------------------------------------------</span>
 <span class="c1">//  2.4. Define viz parameters</span>
 <span class="c1">// -------------------------------------------------------------</span>
 
@@ -1282,7 +1281,7 @@
 <p>This method makes an image that represents the distance of each pixel from all non-zero (and unmasked) pixels in the input image. </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">crs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;EPSG: 32145&quot;</span><span class="p">;</span><span class="w">    </span><span class="c1">// VT State Plane (NAD83)</span>
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">image_distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iFocal</span><span class="p">.</span><span class="nx">iDistance</span><span class="p">(</span><span class="nx">image_input</span><span class="p">,</span><span class="w"> </span><span class="nx">crs</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;model&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;units&quot;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">image_distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iFocal</span><span class="p">.</span><span class="nx">iDistance</span><span class="p">(</span><span class="nx">image_input</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">,</span><span class="w"> </span><span class="nx">crs</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;model&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;units&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>The method takes four arguments:  </p>
 <table>
@@ -1296,6 +1295,10 @@
 <tr>
 <td align="center">image_input</td>
 <td align="left">Input image to calculate distance to all non-zero but unmasked cells. Often a boolean or an object image.</td>
+</tr>
+<tr>
+<td align="center">radius</td>
+<td align="left">The radius of the distance kernel. This defines the size of the moving window used to calculate distance. It can not be greater than 255.</td>
 </tr>
 <tr>
 <td align="center">crs</td>

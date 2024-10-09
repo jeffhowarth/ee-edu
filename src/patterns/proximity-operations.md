@@ -130,13 +130,7 @@ The next step is to use ```geo.iFocal.iDistance()``` to calculate the euclidean 
 
 var crs = "EPSG: 3857";  // web mercator
 
-var distance_image_test = geo.iFocal.iDistance(image_boolean_test, crs, "euclidean", "pixels");
-
-```
-
-We can then display the result by defining viz parameters and applying them when we add the result as a Map layer.  
-
-```js
+var distance_image_test = geo.iFocal.iDistance(image_boolean_test, d, crs, "euclidean", "pixels");
 
 // -------------------------------------------------------------
 //  2.4. Define viz parameters
@@ -216,7 +210,7 @@ This method makes an image that represents the distance of each pixel from all n
 
 var crs = "EPSG: 32145";    // VT State Plane (NAD83)
 
-var image_distance = geo.iFocal.iDistance(image_input, crs, "model", "units");
+var image_distance = geo.iFocal.iDistance(image_input, radius, crs, "model", "units");
 ```
 
 The method takes four arguments:  
@@ -224,6 +218,7 @@ The method takes four arguments:
 | ARGUMENT      | DESCRIPTION         |
 |:--:            | :--                 |  
 | image_input   | Input image to calculate distance to all non-zero but unmasked cells. Often a boolean or an object image. |  
+| radius        | The radius of the distance kernel. This defines the size of the moving window used to calculate distance. It can not be greater than 255. |  
 | crs           | A coordinate reference system as a string that provides the EPSG definition. |  
 | "model"       | Defines the model of distance employed. Must be a string and one of the following: "euclidean", "manhattan", "chebyshev".                         |  
 | "units"       | Defines the system of measurement for the distance kernel, either "pixels" or "meters". Must be a string. |
