@@ -161,6 +161,7 @@ nav:
     - focal (neighborhood) operations: patterns/focal-operations.md  
     - proximity operations: patterns/proximity-operations.md    
     - zonal overlay operations: patterns/zonal-operations.md  
+    - vector overlay operations: patterns/vector-overlay.md  
     - terrain: patterns/terrain.md  
     - vector analysis: patterns/vector-analysis.md  
     - export data: patterns/export.md  
@@ -173,7 +174,8 @@ nav:
     - P3. Parent materials of soils: problems/practice-03.md
     - T4. Forest blocks: problems/tutorial-04.md  
     - P4. Forest blocks and habitat connectors: problems/practice-04.md  
-    - T5. Scale in web mercator: problems/tutorial-05.md 
+    - T5. Scale in web mercator: problems/tutorial-05.md  
+    - P5. Land use in watershed riparian zones: problems/practice-05.md  
   - SOLUTIONS:  
     - Tutorials: solutions/tutorials.md  
     - Practice: solutions/practice.md  

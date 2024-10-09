@@ -116,6 +116,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/jeffhowarth/ee-patterns/patterns/vector-overlay/</loc>
+         <lastmod>2024-10-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/patterns/zonal-operations/</loc>
          <lastmod>2024-10-09</lastmod>
          <changefreq>daily</changefreq>
@@ -137,6 +142,11 @@
     </url>
     <url>
          <loc>https://github.com/jeffhowarth/ee-patterns/problems/practice-04/</loc>
+         <lastmod>2024-10-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/jeffhowarth/ee-patterns/problems/practice-05/</loc>
          <lastmod>2024-10-09</lastmod>
          <changefreq>daily</changefreq>
     </url>

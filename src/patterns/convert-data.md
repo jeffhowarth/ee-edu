@@ -39,7 +39,7 @@ var image_nominal = geo.fcConvert.toNominalImage(fc, "column_name");
 This method uses numeric attribute data in a feature collection to create a raster. 
 
 ```js
-var image_tissot_area = geo.fcConvert.toNumericImage(fc, "column_name", "reducer");
+var image_numeric = geo.fcConvert.toNumericImage(fc, "column_name", "reducer");
 
 ```
 

@@ -331,6 +331,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -677,6 +679,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../vector-overlay/" class="md-nav__link">
+        vector overlay operations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../terrain/" class="md-nav__link">
         terrain
       </a>
@@ -735,6 +751,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
+        
+          
         
           
         
@@ -888,6 +906,20 @@
     <li class="md-nav__item">
       <a href="../../problems/tutorial-05/" class="md-nav__link">
         T5. Scale in web mercator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/practice-05/" class="md-nav__link">
+        P5. Land use in watershed riparian zones
       </a>
     </li>
   
@@ -1086,7 +1118,7 @@
 <hr />
 <h3 id="numeric-fc-to-numeric-raster"><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> numeric FC to numeric raster</h3>
 <p>This method uses numeric attribute data in a feature collection to create a raster. </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_tissot_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcConvert</span><span class="p">.</span><span class="nx">toNumericImage</span><span class="p">(</span><span class="nx">fc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;column_name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reducer&quot;</span><span class="p">);</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_numeric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcConvert</span><span class="p">.</span><span class="nx">toNumericImage</span><span class="p">(</span><span class="nx">fc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;column_name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reducer&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>The method takes three arguments that are defined in the table below.  </p>
 <table>

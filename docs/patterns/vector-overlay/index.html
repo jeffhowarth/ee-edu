@@ -12,20 +12,20 @@
         <meta name="author" content="Jeff Howarth">
       
       
-        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/patterns/export/">
+        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/patterns/vector-overlay/">
       
       
-        <link rel="prev" href="../vector-analysis/">
+        <link rel="prev" href="../zonal-operations/">
       
       
-        <link rel="next" href="../../problems/tutorial-01/">
+        <link rel="next" href="../terrain/">
       
       <link rel="icon" href="../../assets/myIcon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>export data - ee-patterns</title>
+        <title>vector overlay operations - ee-patterns</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#export-data" class="md-skip">
+        <a href="#vector-overlay-operations" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              export data
+              vector overlay operations
             
           </span>
         </div>
@@ -589,11 +589,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../vector-overlay/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          vector overlay operations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         vector overlay operations
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clip-by-region" class="md-nav__link">
+    clip by region
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -631,72 +672,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          export data
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../export/" class="md-nav__link">
         export data
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#to-cloud-asset" class="md-nav__link">
-    to cloud asset
-  </a>
-  
-    <nav class="md-nav" aria-label="to cloud asset">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#export-fc" class="md-nav__link">
-    export fc
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#export-image" class="md-nav__link">
-    export image
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1001,29 +981,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#to-cloud-asset" class="md-nav__link">
-    to cloud asset
+  <a href="#clip-by-region" class="md-nav__link">
+    clip by region
   </a>
-  
-    <nav class="md-nav" aria-label="to cloud asset">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#export-fc" class="md-nav__link">
-    export fc
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#export-image" class="md-nav__link">
-    export image
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1042,91 +1002,33 @@
                   
 
 
-<p><strong>PATTERNS</strong></p>
-<h1 id="export-data"><em><strong>export data</strong></em></h1>
-<p>Earth Engine does not permanently store the data objects that you make in your workflows unless you specifically ask it to do so. The patterns below deal with two different scenarios:  </p>
-<ol>
-<li>exporting data to a cloud asset</li>
-<li>exporting data to a cloud drive</li>
-</ol>
-<hr />
-<h2 id="to-cloud-asset"><strong>to cloud asset</strong></h2>
-<p>Whenever you pan your Map or zoom in and out of your Map, Earth Engine will run through all the steps required to make your data layers at the scale and extent that you are requesting.  </p>
-<p>Because of this, it is common to get to the point in a workflow where two things happen:  </p>
-<ol>
-<li>
-<p>Earth Engine starts to balk at the amount of work you are asking it to do and throws <strong>time out</strong> or <strong>tile</strong> errors.  </p>
-</li>
-<li>
-<p>You get impatient waiting for Earth Engine to process a long workflow just to zoom in and out and pan around your map. (When the slippy map gets sticky, it is like watching a game or movie that keeps buffering.)  </p>
-</li>
-</ol>
-<p>At this point, I tend to export my data as an asset so that I can just call the result directly. This is analogous to <strong>saving a copy of your data</strong> in the cloud. The asset will have a cloud address that you can then use to gather the data back into your workflow with a constructor like <code>ee.Image()</code>.   </p>
-<p>Please note that when you export data as cloud assets, you are no longer storing it as a variable. So these patterns do not begin by declaring a variable. They simply execute a function.   </p>
-<h3 id="export-fc"><strong>export fc</strong></h3>
-<p>This method will <strong>create a task</strong> that will export a feature collection as a Google Earth Engine asset. You will need to go to the <strong>task tab</strong> and run the task. When it is complete, you can access the asset through the <strong>asset tab</strong>. Open the asset (double-click) and then copy the asset id. You can then use this address in a <a href="../gather-vector-data/#accessing-data-from-cloud">data gathering pattern</a> for vector data.</p>
-<div class="language-js highlight"><pre><span></span><code><span class="nx">geo</span><span class="p">.</span><span class="nx">fcExport</span><span class="p">.</span><span class="nx">toCloudAsset</span><span class="p">(</span><span class="nx">fc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asset_name&quot;</span><span class="p">);</span>
-</code></pre></div>
-<hr />
-<p><center></p>
+<p><strong>PATTERNS</strong>  </p>
+<h1 id="vector-overlay-operations"><strong><em>vector overlay operations</em></strong></h1>
+<p>Vector overlay operations compare locations between two vector layers. In Earth Engine, the vector layers are generally features in a feature collection.  </p>
+<p><em>more soon</em>  </p>
+<h2 id="clip-by-region"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> clip by region</strong></h2>
+<p><code>geo.fcOverlay.clipByRegion()</code> is a <strong>knife</strong> method that takes two arguments. </p>
 <table>
 <thead>
 <tr>
-<th align="left">ARGUMENT</th>
+<th align="center">ARGUMENT</th>
 <th align="left">DESCRIPTION</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><strong>fc</strong></td>
-<td align="left">A feature collection to export.</td>
+<td align="center"><strong>fc_dough</strong></td>
+<td align="left">A vector dataset (feature collection) with features that you want to cut.</td>
 </tr>
 <tr>
-<td align="left"><strong>&ldquo;asset_name&rdquo;</strong></td>
-<td align="left">A name for the asset.</td>
+<td align="center"><strong>fc_cutter</strong></td>
+<td align="left">A vector dataset (feature collection) with features that you want to use as the knife to cut the dough.</td>
 </tr>
 </tbody>
 </table>
-<p></center></p>
-<hr />
-<h3 id="export-image"><strong>export image</strong></h3>
-<p>This method will <strong>create a task</strong> that will export an image as a Google Earth Engine asset. You again will need to go to the <strong>task tab</strong> and run the task. When it is complete, you can access the asset through the <strong>asset tab</strong>. Open the asset (double-click) and then copy the asset id. You can then use this address in a <a href="../patterns/gather-raster-data.md/#accessing-images-from-cloud">data gathering pattern</a> for raster data.</p>
-<div class="language-js highlight"><pre><span></span><code><span class="nx">geo</span><span class="p">.</span><span class="nx">iExport</span><span class="p">.</span><span class="nx">toCloudAsset</span><span class="p">(</span>
-<span class="w">  </span><span class="nx">image</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="s2">&quot;asset_name&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">extent</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="s2">&quot;pyramiding&quot;</span>
-<span class="p">);</span>
+<p>The output is a feature collection that retains that attributes but alters the geometry of the dough.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcOverlay</span><span class="p">.</span><span class="nx">clipByRegion</span><span class="p">(</span><span class="nx">fc_dough</span><span class="p">,</span><span class="w"> </span><span class="nx">fc_cutter</span><span class="p">);</span>
 </code></pre></div>
-<hr />
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th align="left">ARGUMENT</th>
-<th align="left">DESCRIPTION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><strong>image</strong></td>
-<td align="left">An image to export.</td>
-</tr>
-<tr>
-<td align="left"><strong>&ldquo;asset_name&rdquo;</strong></td>
-<td align="left">A name for the asset.</td>
-</tr>
-<tr>
-<td align="left"><strong>extent</strong></td>
-<td align="left">The area of interest or study region to define the bounds of the image.</td>
-</tr>
-<tr>
-<td align="left">&ldquo;pyramiding&rdquo;</td>
-<td align="left">The method for generating pyramid layers to display in slippy map. Use &ldquo;mode&rdquo; for boolean, categorical, and object rasters and &ldquo;mean&rdquo; for field rasters.</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
@@ -1150,7 +1052,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../vector-analysis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: vector analysis" rel="prev">
+          <a href="../zonal-operations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: zonal overlay operations" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1159,20 +1061,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                vector analysis
+                zonal overlay operations
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../problems/tutorial-01/" class="md-footer__link md-footer__link--next" aria-label="Next: T1. A sketch map from lidar" rel="next">
+          <a href="../terrain/" class="md-footer__link md-footer__link--next" aria-label="Next: terrain" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                T1. A sketch map from lidar
+                terrain
               </div>
             </div>
             <div class="md-footer__button md-icon">
