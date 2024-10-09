@@ -4,7 +4,7 @@ __PRACTICE 05__
 
 ## __goal__  
 
-This problem aims to help you practice using __proximity operations__ and __zonal overlays__ in Earth Engine. 
+This problem aims to help you practice working with __proximity__ and __zonal statistics__ in Earth Engine. 
 
 Your practical goal is to make a map that reports the percent of riparian zones that are either developed or used for agriculture in each watershed that overlaps a study town.  
 
@@ -33,7 +33,7 @@ Your solution should produce a map with the layers shown in the app below.
 
 ## __data sources__  
 
-In this problem, we will use the [National Hydrology Dataset (NHD)][usgs-nhd]{target=_blank} that is available as cloud asset through the [Awesome Earth Engine Community Catalog][aeecc]{target=_blank}.
+In this problem, we will use the [National Hydrology Dataset (NHD)][usgs-nhd]{target=_blank} that is available as a cloud asset through the [Awesome Earth Engine Community Catalog][aeecc]{target=_blank}.
 
 In addition, we will use town and land cover data that we have worked with in previous problems.  
 
@@ -43,8 +43,8 @@ In addition, we will use town and land cover data that we have worked with in pr
 /*    
 // ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
 
-    AUTHOR: Jeff Howarth
-    DATE:   10/8/2024    
+    AUTHOR: 
+    DATE:   
     TITLE:  Land use in watershed riparian zones
 
 // ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
