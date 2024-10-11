@@ -16,6 +16,7 @@ We will define key terms as follows:
 * __riparian__: all land within 50 feet of surface waters  
 * __developed__: all impervious surfaces (buildings, roads, pavement, and railroads)  
 * __agriculture__: all agricultural land uses (hayfields, crop fields, and pasture)  
+* __scale__: for Part 9, use scale of 30 to help the model run a little faster
 
 Your solution should produce a map with the layers shown in the app below.  
 
