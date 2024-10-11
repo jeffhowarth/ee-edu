@@ -80,6 +80,10 @@ var nhd_waterbody = ee.FeatureCollection("projects/sat-io/open-datasets/NHD/NHD_
 var viz_bool = {min:0, max:1};
 var red_palette = geo.iPalettes.yellowOrangeRed[6];
 
+// General parameters.
+
+var scale = 30;  // To help model run a little faster, please set scale at 30 in Part 9. 
+
 // -------------------------------------------------------------
 //  1. Define study town and set up map.
 // -------------------------------------------------------------
@@ -128,7 +132,7 @@ var red_palette = geo.iPalettes.yellowOrangeRed[6];
 
 
 // -------------------------------------------------------------
-//  9. Compute percent of developed land in riparian.     
+//  9. Compute percent of developed land in riparian. (Set scale = 30 to help model run faster.)       
 // ------------------------------------------------------------- 
 
 
