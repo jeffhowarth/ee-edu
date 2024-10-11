@@ -149,6 +149,45 @@ var red_palette = geo.iPalettes.yellowOrangeRed[6];
 
 ```
 
+## __checks__
+
+Please add this code to the end of your script and edit the names to match those of your layers. You will need this answers to complete the checkup on Canvas that is due Monday by 5pm.
+
+```js
+// ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+//  PRACTICE CHECKS
+// ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+print("CHECKS:");
+
+//  Import check module for practice problem 4.
+
+var check = require("users/jhowarth/eePatterns:checks/p05.js");
+
+// ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+//  PLEASE DO THE FOLLOWING: 
+
+// 1. Uncomment all of the check statements below.
+// 2. Replace 'result_part_#' with the name of the data object that you used to map as a layer in each section.
+// 3. Run the script.
+// 4. Use the results printed to Console in the Check Up that is due Monday 5pm. 
+
+// ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+
+check.checkFeature("Check Part 1:", result_part_1);
+check.checkFeature("Check Part 2:", result_part_2);
+check.checkArea("Check Part 6:", result_part_6);
+check.checkArea("Check Part 7:", result_part_7);
+check.checkArea("Check Part 8:", result_part_8);
+check.checkPoint("Check Part 9:", result_part_9);
+check.checkPoint("Check Part 10:", result_part_10);
+
+
+```
+
+
 ---  
 
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>

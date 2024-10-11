@@ -884,6 +884,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    checks
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1011,6 +1018,13 @@
         <li class="md-nav__item">
   <a href="#workflow" class="md-nav__link">
     workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    checks
   </a>
   
 </li>
@@ -1159,6 +1173,38 @@
 <span class="c1">// -------------------------------------------------------------</span>
 <span class="c1">//  11. Add watershed reference lines and legend.     </span>
 <span class="c1">// ------------------------------------------------------------- </span>
+</code></pre></div>
+<h2 id="checks"><strong>checks</strong></h2>
+<p>Please add this code to the end of your script and edit the names to match those of your layers. You will need this answers to complete the checkup on Canvas that is due Monday by 5pm.</p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;</span>
+<span class="c1">//  PRACTICE CHECKS</span>
+<span class="c1">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;CHECKS:&quot;</span><span class="p">);</span>
+
+<span class="c1">//  Import check module for practice problem 4.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;users/jhowarth/eePatterns:checks/p05.js&quot;</span><span class="p">);</span>
+
+<span class="c1">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;</span>
+
+<span class="c1">//  PLEASE DO THE FOLLOWING: </span>
+
+<span class="c1">// 1. Uncomment all of the check statements below.</span>
+<span class="c1">// 2. Replace &#39;result_part_#&#39; with the name of the data object that you used to map as a layer in each section.</span>
+<span class="c1">// 3. Run the script.</span>
+<span class="c1">// 4. Use the results printed to Console in the Check Up that is due Monday 5pm. </span>
+
+<span class="c1">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;</span>
+
+
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkFeature</span><span class="p">(</span><span class="s2">&quot;Check Part 1:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_part_1</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkFeature</span><span class="p">(</span><span class="s2">&quot;Check Part 2:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_part_2</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkArea</span><span class="p">(</span><span class="s2">&quot;Check Part 6:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_part_6</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkArea</span><span class="p">(</span><span class="s2">&quot;Check Part 7:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_part_7</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkArea</span><span class="p">(</span><span class="s2">&quot;Check Part 8:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_part_8</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkPoint</span><span class="p">(</span><span class="s2">&quot;Check Part 9:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_part_9</span><span class="p">);</span>
+<span class="nx">check</span><span class="p">.</span><span class="nx">checkPoint</span><span class="p">(</span><span class="s2">&quot;Check Part 10:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result_part_10</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
