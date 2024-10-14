@@ -16,3 +16,4 @@ The links in the table below will open a worked out script for the problem in th
 [P2]: https://code.earthengine.google.com/fa52796ad84107d0584355dc133ea4c5  
 [P3]: https://code.earthengine.google.com/08694e381688222424a26ec5b6599234  
 [P4]: https://code.earthengine.google.com/7fc01877999e3c40596fc39a027f3602
+[P5]: https://code.earthengine.google.com/7c379e62ad47e3c064e9954ff4547688
