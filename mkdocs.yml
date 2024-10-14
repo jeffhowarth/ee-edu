@@ -176,6 +176,7 @@ nav:
     - P4. Forest blocks and habitat connectors: problems/practice-04.md  
     - T5. Scale in web mercator: problems/tutorial-05.md  
     - P5. Land use in watershed riparian zones: problems/practice-05.md  
+    - TS. Troubleshooting errors: problems/troubleshooting.md
   - SOLUTIONS:  
     - Tutorials: solutions/tutorials.md  
     - Practice: solutions/practice.md  
