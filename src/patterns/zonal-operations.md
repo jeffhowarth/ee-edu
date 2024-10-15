@@ -49,7 +49,7 @@ var class_percent_of_region = geo.iZonal.classPercentRegion(area_of_classes);
 
 print(
   "Area (percent of region)",
-  area_of_classes
+  class_percent_of_region
   )
 ;
 
