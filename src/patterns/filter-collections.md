@@ -240,27 +240,95 @@ ee.Filter.lte('property', 0)            // less than or equal to
 
 ---  
 
-## __filter FC by multiple criteria__    
+## __filter FC by logical criteria__    
 
-_More soon_
+These patterns are similar to [logical comparisons in raster](../patterns/local-operations.md#logical-comparisons) but work with vector data. They can be particularly helpful to filter a feature collection by location using features in more than one other collection or to filter a feature collection by both location and by attribute.   
 
 ---  
 
-### __AND filter__   
+### __AND by location__   
+
+![filter-bounds-overlap](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/and-by-location.png)
 
 ```js
 var fc_filter_and = fc.filter(
   ee.Filter.and(
-    ee.Filter.eq("property", "value"),
-    ee.Filter.eq("property", "value")
+    ee.Filter.bounds(A),
+    ee.Filter.bounds(B)
   )
 );
 
 print(
   "collection before:",
-  c.size(),
-  "collection after:"
-  c_filtered.size()
+  fc.size(),
+  "collection after:",
+  fc_filter_and.size()
+);
+```
+
+---  
+
+### __AND by location and by attribute__  
+
+![filter-bounds-overlap](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/and-by-location-and-attribute.png) 
+
+```js
+var fc_filter_amd = fc.filter(
+  ee.Filter.and(
+    ee.Filter.bounds(A),
+    ee.Filter.eq("class", 1)
+  )
+);
+
+print(
+  "collection before:",
+  fc.size(),
+  "collection after:",
+  fc_filter_and.size()
+);
+```
+
+---  
+
+### __OR by location__  
+
+![filter-bounds-overlap](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/or-by-location.png)
+
+```js
+var fc_filter_or = fc.filter(
+  ee.Filter.or(
+    ee.Filter.bounds(A),
+    ee.Filter.bounds(B)
+  )
+);
+
+print(
+  "collection before:",
+  fc.size(),
+  "collection after:",
+  fc_filter_and.size()
+);
+```
+
+---  
+
+### __OR by location or by attribute__ 
+
+![filter-bounds-overlap](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/or-by-location-attribute.png) 
+
+```js
+var fc_filter_or = fc.filter(
+  ee.Filter.or(
+    ee.Filter.bounds(A),
+    ee.Filter.eq("class", 2)
+  )
+);
+
+print(
+  "collection before:",
+  fc.size(),
+  "collection after:",
+  fc_filter_and.size()
 );
 ```
 

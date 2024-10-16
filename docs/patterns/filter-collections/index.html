@@ -588,16 +588,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#filter-fc-by-multiple-criteria" class="md-nav__link">
-    filter FC by multiple criteria
+  <a href="#filter-fc-by-logical-criteria" class="md-nav__link">
+    filter FC by logical criteria
   </a>
   
-    <nav class="md-nav" aria-label="filter FC by multiple criteria">
+    <nav class="md-nav" aria-label="filter FC by logical criteria">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#and-filter" class="md-nav__link">
-    AND filter
+  <a href="#and-by-location" class="md-nav__link">
+    AND by location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and-by-location-and-by-attribute" class="md-nav__link">
+    AND by location and by attribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-by-location" class="md-nav__link">
+    OR by location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-by-location-or-by-attribute" class="md-nav__link">
+    OR by location or by attribute
   </a>
   
 </li>
@@ -829,6 +850,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -997,6 +1020,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/IP-01/" class="md-nav__link">
+        IP1. Independent Problem 1
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1019,6 +1056,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
+        
+          
         
           
         
@@ -1060,6 +1099,20 @@
     <li class="md-nav__item">
       <a href="../../solutions/practice/" class="md-nav__link">
         Practice
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions/error-glossary/" class="md-nav__link">
+        Error Glossary
       </a>
     </li>
   
@@ -1188,16 +1241,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#filter-fc-by-multiple-criteria" class="md-nav__link">
-    filter FC by multiple criteria
+  <a href="#filter-fc-by-logical-criteria" class="md-nav__link">
+    filter FC by logical criteria
   </a>
   
-    <nav class="md-nav" aria-label="filter FC by multiple criteria">
+    <nav class="md-nav" aria-label="filter FC by logical criteria">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#and-filter" class="md-nav__link">
-    AND filter
+  <a href="#and-by-location" class="md-nav__link">
+    AND by location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and-by-location-and-by-attribute" class="md-nav__link">
+    AND by location and by attribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-by-location" class="md-nav__link">
+    OR by location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-by-location-or-by-attribute" class="md-nav__link">
+    OR by location or by attribute
   </a>
   
 </li>
@@ -1395,22 +1469,74 @@
 <div class="language-js highlight"><pre><span></span><code><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w">            </span><span class="c1">// less than or equal to</span>
 </code></pre></div>
 <hr />
-<h2 id="filter-fc-by-multiple-criteria"><strong>filter FC by multiple criteria</strong></h2>
-<p><em>More soon</em></p>
+<h2 id="filter-fc-by-logical-criteria"><strong>filter FC by logical criteria</strong></h2>
+<p>These patterns are similar to <a href="../local-operations/#logical-comparisons">logical comparisons in raster</a> but work with vector data. They can be particularly helpful to filter a feature collection by location using features in more than one other collection or to filter a feature collection by both location and by attribute.   </p>
 <hr />
-<h3 id="and-filter"><strong>AND filter</strong></h3>
+<h3 id="and-by-location"><strong>AND by location</strong></h3>
+<p><img alt="filter-bounds-overlap" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/and-by-location.png" /></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_filter_and</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fc</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
 <span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
-<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;property&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">),</span>
-<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;property&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">A</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">B</span><span class="p">)</span>
 <span class="w">  </span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="nx">print</span><span class="p">(</span>
 <span class="w">  </span><span class="s2">&quot;collection before:&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">c</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
-<span class="w">  </span><span class="s2">&quot;collection after:&quot;</span>
-<span class="w">  </span><span class="nx">c_filtered</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">fc</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
+<span class="w">  </span><span class="s2">&quot;collection after:&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fc_filter_and</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
+<span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="and-by-location-and-by-attribute"><strong>AND by location and by attribute</strong></h3>
+<p><img alt="filter-bounds-overlap" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/and-by-location-and-attribute.png" /> </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_filter_amd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fc</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">A</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span>
+<span class="w">  </span><span class="s2">&quot;collection before:&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fc</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
+<span class="w">  </span><span class="s2">&quot;collection after:&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fc_filter_and</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
+<span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="or-by-location"><strong>OR by location</strong></h3>
+<p><img alt="filter-bounds-overlap" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/or-by-location.png" /></p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_filter_or</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fc</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">or</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">A</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">B</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span>
+<span class="w">  </span><span class="s2">&quot;collection before:&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fc</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
+<span class="w">  </span><span class="s2">&quot;collection after:&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fc_filter_and</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
+<span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="or-by-location-or-by-attribute"><strong>OR by location or by attribute</strong></h3>
+<p><img alt="filter-bounds-overlap" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/filterCollections/or-by-location-attribute.png" /> </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_filter_or</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fc</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">or</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">A</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span>
+<span class="w">  </span><span class="s2">&quot;collection before:&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fc</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span>
+<span class="w">  </span><span class="s2">&quot;collection after:&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fc_filter_and</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span>
 <span class="p">);</span>
 </code></pre></div>
 <hr />
