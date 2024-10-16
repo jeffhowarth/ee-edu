@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#error-log" class="md-skip">
+        <a href="#error-glossary" class="md-skip">
           Skip to content
         </a>
       
@@ -954,9 +954,53 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Error Glossary
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Error Glossary
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#geometry-errors" class="md-nav__link">
+    geometry errors
+  </a>
+  
+    <nav class="md-nav" aria-label="geometry errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collectiongeometry" class="md-nav__link">
+    collection.geometry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -989,6 +1033,34 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#geometry-errors" class="md-nav__link">
+    geometry errors
+  </a>
+  
+    <nav class="md-nav" aria-label="geometry errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collectiongeometry" class="md-nav__link">
+    collection.geometry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1003,9 +1075,14 @@
 
 
 <p><strong>SOLUTIONS</strong></p>
-<h1 id="error-log"><strong><em>Error Log</em></strong></h1>
+<h1 id="error-glossary"><strong><em>Error Glossary</em></strong></h1>
 <p>This page shows some error messages that you may receive while using Earth Engine and provides some tips on how you might be able to resolve them.  </p>
-<p><em>more soon</em>  </p>
+<h2 id="geometry-errors"><strong>geometry errors</strong></h2>
+<p>The error message indicates a problem with the .geometry of an object.  </p>
+<h3 id="collectiongeometry"><strong>collection.geometry</strong></h3>
+<p><img alt="geom1" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/errorGlossary/geometry-too-many-vertices.png" /> </p>
+<p>EE complains because you are asking it to do too much. The proximate cause is likely from a collection that you are using as an input to an operation. If the step that made this collection was a filter, then check to make sure the filter worked as you thought it would.  </p>
+<p><em>Make self checks a habit; at each step of a problem, check your results to see if they match what you think they should be.</em>  </p>
 
 
 
