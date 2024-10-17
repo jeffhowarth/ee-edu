@@ -85,7 +85,7 @@ print(
 
 This method calculates a statistic of image values within a zone of analysis defined by one or more features in a feature collection. The output of the method is a feature collection with a new column that contains the statistic.  
 
-_more soon_ 
+![zonal-stat]
 
 ```js
 var fc_zonal_stat = geo.iZonal.zonalStats(dough, cutter, "statistic", scale);
@@ -99,8 +99,10 @@ The method takes four arguments that are defined in the table below.
 | dough       | The image with pixel values to be analyzed.   |  
 | cutter      | The feature collection with one or more features that define the zones of analysis. |
 | "statistic" | The statistic to calculate within each zone of analysis. Must be a string from these options: "sum", "max", "min", "mean", "count", "variety" ("count" reports the number of pixels, while "variety" reports the number of unique pixel values). |  
-| scale       | The scale of analysis. When you encounter time out errors, you can try to resolve by increasing the scale of analysis. |  
+| scale       | The scale of analysis. When you encounter time out errors, you can try to resolve by changing the scale of analysis. If you do not encounter time out errors, you can leave this argument blank. |  
 
+
+[zonal-stat]: http://geography.middlebury.edu/howarth/ee_edu/eePatterns/zonal-overlay/zonal-statistic.png
 
 ---  
 

@@ -1192,7 +1192,7 @@
 <hr />
 <h2 id="zonal-statistics"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> zonal statistics</strong></h2>
 <p>This method calculates a statistic of image values within a zone of analysis defined by one or more features in a feature collection. The output of the method is a feature collection with a new column that contains the statistic.  </p>
-<p><em>more soon</em> </p>
+<p><img alt="zonal-stat" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/zonal-overlay/zonal-statistic.png" /></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">fc_zonal_stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iZonal</span><span class="p">.</span><span class="nx">zonalStats</span><span class="p">(</span><span class="nx">dough</span><span class="p">,</span><span class="w"> </span><span class="nx">cutter</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;statistic&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">);</span>
 </code></pre></div>
 <p>The method takes four arguments that are defined in the table below.  </p>
@@ -1218,7 +1218,7 @@
 </tr>
 <tr>
 <td align="center">scale</td>
-<td align="left">The scale of analysis. When you encounter time out errors, you can try to resolve by increasing the scale of analysis.</td>
+<td align="left">The scale of analysis. When you encounter time out errors, you can try to resolve by changing the scale of analysis. If you do not encounter time out errors, you can leave this argument blank.</td>
 </tr>
 </tbody>
 </table>
