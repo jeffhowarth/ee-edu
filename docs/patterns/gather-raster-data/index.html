@@ -333,6 +333,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -463,6 +465,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compile-from-other-images" class="md-nav__link">
+    compile from other images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#image-collection-data-object" class="md-nav__link">
     image collection data object
   </a>
@@ -485,8 +494,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#full-pattern_1" class="md-nav__link">
-    full pattern
+  <a href="#inspectcollection-helper" class="md-nav__link">
+    inspectCollection helper
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-bands" class="md-nav__link">
+    select band(s)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-first-image-in-collection" class="md-nav__link">
+    select first image in collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rename-bands" class="md-nav__link">
+    rename band(s)
   </a>
   
 </li>
@@ -527,6 +557,20 @@
     <li class="md-nav__item">
       <a href="../map-raster-layers/" class="md-nav__link">
         map raster as layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RGB-composites/" class="md-nav__link">
+        RGB composites
       </a>
     </li>
   
@@ -804,6 +848,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -986,6 +1032,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/practice-06/" class="md-nav__link">
+        P6. Changes in the night
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1152,6 +1212,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compile-from-other-images" class="md-nav__link">
+    compile from other images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#image-collection-data-object" class="md-nav__link">
     image collection data object
   </a>
@@ -1174,8 +1241,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#full-pattern_1" class="md-nav__link">
-    full pattern
+  <a href="#inspectcollection-helper" class="md-nav__link">
+    inspectCollection helper
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-bands" class="md-nav__link">
+    select band(s)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-first-image-in-collection" class="md-nav__link">
+    select first image in collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rename-bands" class="md-nav__link">
+    rename band(s)
   </a>
   
 </li>
@@ -1281,6 +1369,19 @@ graph LR
 <span class="p">;</span>
 </code></pre></div>
 <hr />
+<h2 id="compile-from-other-images"><strong>compile from other images</strong></h2>
+<p>You can compile a new image by bringing together one or more bands from other images. This can be helpful for making RGB composites, charts, and other workflows.  </p>
+<p>The general pattern starts with an image (named &ldquo;A&rdquo; below) and calls the <code>.addBands()</code> method to add bands from another image (&ldquo;B&rdquo;) to the output image.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">A</span><span class="p">.</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">B</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Image with added bands&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">output_image</span><span class="p">);</span>
+</code></pre></div>
+<p>To make an RGB composite, you will typically want to add bands from two other images. You can do this by chaining the pattern.</p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">rgb_stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">A</span><span class="p">.</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">B</span><span class="p">).</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">C</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;RGB stack&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">rgb_stack</span><span class="p">);</span>
+</code></pre></div>
+<hr />
 <h2 id="image-collection-data-object"><strong>image collection data object</strong></h2>
 <p>In Earth Engine, an image collection is what it sounds like: a collection of images. Earth Engine often uses these raster data objects to store satellite observations, because most satellites observe a region of the earth&rsquo;s surface (often called a <strong>scene</strong>) at a moment in time and then return to this scene at regular intervals to create a <strong>time series</strong>. In these cases, an image collection provides a way to store all the different scenes observed at all the different times by a satellite mission.    </p>
 <p><em>image forthcoming</em>  </p>
@@ -1318,15 +1419,68 @@ graph LR
 <h3 id="inspect-data"><strong>inspect data</strong></h3>
 <p>After constructing an ic object, I tend to use a <code>print()</code> method to learn a couple things about the data.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="nx">print</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;IC Name&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">label</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;:: collection ::&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">ic</span><span class="p">,</span><span class="w">                 </span><span class="c1">// Consider commenting out this line to make script run faster.</span>
+<span class="w">    </span><span class="s1">&#39;:: size ::&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">ic</span><span class="p">.</span><span class="nx">size</span><span class="p">(),</span><span class="w">          </span><span class="c1">// Consider commenting out this line to make script run faster. </span>
+<span class="w">    </span><span class="s1">&#39;:: first image ::&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">ic</span><span class="p">.</span><span class="nx">first</span><span class="p">(),</span>
+<span class="w">    </span><span class="s1">&#39;:: number of bands ::&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">ic</span><span class="p">.</span><span class="nx">first</span><span class="p">().</span><span class="nx">bandNames</span><span class="p">().</span><span class="nx">length</span><span class="p">(),</span>
+<span class="w">    </span><span class="s1">&#39;:: band names ::&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">ic</span><span class="p">.</span><span class="nx">first</span><span class="p">().</span><span class="nx">bandNames</span><span class="p">()</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="p">;</span>
 </code></pre></div>
-<p>The <code>ic.size()</code> method tells me how many images the collection contains. If the collection is huge, this method can take a while to run, so often I will comment out this line after I have looked at the result to help make the script run faster on subsequent runs. The <code>ic.first()</code> method tells me some details about the first image in the collection and usually the other images in the collection will have the same band names and property keys.  </p>
-<h3 id="full-pattern_1"><strong>full pattern</strong></h3>
-<p>Here are the two parts of the pattern together.  </p>
+<p>The <code>ic.size()</code> method tells me how many images the collection contains. If the collection is huge, this method can take a while to run, so often I will comment out this line after I have looked at the result to help make the script run faster on subsequent runs.  </p>
+<p>The <code>ic.first()</code> method tells me some details about the first image in the collection and usually the other images in the collection will have the same band names and property keys.  </p>
+<p>The <code>ic.first().bandNames().length()</code> method tells me how many bands the first image in the collection contains, while <code>ic.first().bandNames()</code> tells me the name of each band.  </p>
+<h3 id="inspectcollection-helper"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> inspectCollection helper</strong></h3>
+<p>It can be a pain to update the name of the image collection (ic) each time it is called in the snippet above. So if you would like to print all of the items shown above, you can just call this method from the geo module.  </p>
+<p><div class="language-js highlight"><pre><span></span><code><span class="nx">geo</span><span class="p">.</span><span class="nx">icGather</span><span class="p">.</span><span class="nx">inspectCollection</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span><span class="w"> </span><span class="nx">ic</span><span class="p">);</span>
+</code></pre></div>
+Please note that this method simply prints some metadata to the Console, so you cannot store it as a variable.  </p>
+<p>The method takes the following arguments.</p>
+<table>
+<thead>
+<tr>
+<th align="left">ARGUMENT</th>
+<th align="left">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>label</strong></td>
+<td align="left">A label to print to Console. Must be a string.</td>
+</tr>
+<tr>
+<td align="left"><strong>ic</strong></td>
+<td align="left">Name of image collection to inspect.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="select-bands"><strong>select band(s)</strong></h3>
+<p>Images in a collection may contain multiple bands and often you only need to work with data in a subset of these bands. The pattern below will <strong>select</strong> one band from each image.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">select_band</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;band_name&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>You can also select more than one band.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">select_bands</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;band_name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;band_name_2&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>And you can also rename one or more bands if you provide two lists. The first list identifies the bands to select and the second list defines new names for each band. The two lists must be the same length. </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">select_bands</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s2">&quot;band_name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;band_name_2&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;new_band_name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;new_namd_name_2&quot;</span><span class="p">]);</span>
+</code></pre></div>
+<hr />
+<h3 id="select-first-image-in-collection"><strong>select first image in collection</strong></h3>
+<p>This method will select the first image in the collection. It functions like a conversion tool, in the sense that the input is a collection and the output is an image.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">select_first_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">first</span><span class="p">();</span>
+</code></pre></div>
+<hr />
+<h3 id="rename-bands"><strong>rename band(s)</strong></h3>
+<p>This method will change the name of one or more bands in an image. The new band name must be a string in a list and the length of the list should match the number of bands in the image.   </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_with_band_renamed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">rename</span><span class="p">([</span><span class="s2">&quot;new_band_name&quot;</span><span class="p">]);</span>
+</code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 

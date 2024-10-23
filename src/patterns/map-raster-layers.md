@@ -96,6 +96,7 @@ __See how your data are distributed between the minimum and maximum data value b
 var output_histogram = geo.iCart.iHistogram(image, scale, extent);
 
 print("Image histogram", output_histogram);
+
 ```
 
 
@@ -113,40 +114,30 @@ __For raster data, store the viz dictionary as a variable and then call this var
 
 Here is a common pattern to visualize __single-band images with grayscale__:
 
+
 ```js
+
 var single_viz = 
     {
         min: [],        
         max: [],        
     }
 ;
+
 ```
 
 ---  
 
 Here is a common pattern to visualize __single-band images with color__ (this includes both color gradient layers and nominal layers where a unique color displays each unique class):
 
+
 ```js
+
 var single_viz = 
     {
         min: [],        
         max: [],        
         palette: [],    
-    }
-;
-```
-
----  
-
-This is a common pattern to visualize __multi-band images__ as a combination of red, green, and blue channels:
-
-```js
-var multi_viz = 
-    {
-        bands: [],      
-        min:  [].      
-        max: [],        
-        gamma: [],      
     }
 ;
 ```
@@ -209,6 +200,19 @@ var single_viz =
 
 Map.addLayer(image,single_viz,"Layer Name");
 ```
+
+---  
+
+### __:earth_americas: get Nominal scale helper__ 
+
+The helper below from the geo module will retrieve the __nominal scale__ of the image. This is the scale at the equator of the image dataset and should be interpreted with some caution, but it can be helpful as a starting point for defining the scale for the ```geo.iCart.iHistogram()``` and ```geo.iCart.iMinMax()``` methods described above.  
+
+```js
+var scale = geo.iCart.getNominalScaleFromImage(image);
+
+print("IMAGE SCALE", scale);
+```
+
 
 ---  
 

@@ -333,6 +333,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -411,6 +413,20 @@
     <li class="md-nav__item">
       <a href="../map-raster-layers/" class="md-nav__link">
         map raster as layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RGB-composites/" class="md-nav__link">
+        RGB composites
       </a>
     </li>
   
@@ -502,6 +518,19 @@
   <a href="#filter-by-time" class="md-nav__link">
     filter by time
   </a>
+  
+    <nav class="md-nav" aria-label="filter by time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter-by-calendar-range" class="md-nav__link">
+    filter by calendar range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -852,6 +881,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1034,6 +1065,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/practice-06/" class="md-nav__link">
+        P6. Changes in the night
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1155,6 +1200,19 @@
   <a href="#filter-by-time" class="md-nav__link">
     filter by time
   </a>
+  
+    <nav class="md-nav" aria-label="filter by time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter-by-calendar-range" class="md-nav__link">
+    filter by calendar range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1322,7 +1380,14 @@
 <li>by attribute. </li>
 </ul>
 <h2 id="filter-by-time"><strong>filter by time</strong></h2>
-<p><em>we will get to this in a couple of weeks</em>  </p>
+<p>An image collection represents a <strong>time series</strong> when it contains images that capture the same region of space at different moments in time. The date associated with each image will be a property of the image. Earth Engine provides several different methods to filter the collection by defining a <strong>temporal interval</strong>, or a window of time defined by a start and end date.</p>
+<h3 id="filter-by-calendar-range"><strong>filter by calendar range</strong></h3>
+<p>This method allows you to choose a calendar unit for a temporal interval. </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">select_by_calendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">calendarRange</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="p">,</span><span class="w"> </span><span class="nx">unit</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="filter-by-location"><strong>filter by location</strong></h2>
 <p>This involves making spatial comparisons between two layers. One layer is a collection of things (features, images) that has more things than you need. The other layer is a geometry, feature, or feature collection that defines your place of interest. These filters work by comparing the location of things in the first collection with the location of the place of interest in the second layer.   </p>

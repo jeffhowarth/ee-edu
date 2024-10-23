@@ -6,9 +6,58 @@ Many workflows for image collections will include a step that transforms an imag
 
 ## __composite image__  
 
-If the collection represents a time series of satellite scenes, the workflow will often include a step that makes a __composite image__.
+If the collection represents a time series of satellite scenes, the workflow will often include a step that makes a __composite image__. This reduces the image collection to a single image.  
 
-_We will get to composite images in the second half of the semester._  
+Conceptually, composite methods are analogous to local operations for images because they perform calculations for each pixel across a stack of images. The main difference is that the stack of images in a collection can be quite large and not restricted to  comparisons of just two images.  
+
+_diagram forthcoming_  
+
+---  
+
+### __statistical composites__  
+
+These methods calculate a statistic of all values at each pixel across a stack of all matching bands.  
+
+```js
+var mean_collection = ic.mean();
+
+print("Composite collection by mean", mean_collection);
+
+```
+
+The example above calculates the mean value in each pixel across the stack of matching bands in the ic. Here are some other common statistical composites. 
+
+```js
+var median_collection = ic.median();
+
+print("Composite collection by median", median_collection);
+
+```
+
+```js
+var max_collection = ic.max();
+
+print("Composite collection by max", max_collection);
+
+```
+
+```js
+var min_collection = ic.min();
+
+print("Composite collection by min", min_collection);
+
+```
+
+```js
+
+// Mode is the most common value at each pixel. 
+
+var mode_collection = ic.mode();
+
+print("Composite collection by mode", mode_collection);
+
+```
+
 
 ---  
 

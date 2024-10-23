@@ -149,6 +149,7 @@ nav:
     - gather raster data: patterns/gather-raster-data.md  
     - gather vector data: patterns/gather-vector-data.md
     - map raster as layers: patterns/map-raster-layers.md 
+    - RGB composites: patterns/RGB-composites.md
     - map vector as layers: patterns/map-vector-layers.md   
     - explain symbology: patterns/explain-symbology.md  
     - customize Map: patterns/customize-Map.md
@@ -178,6 +179,7 @@ nav:
     - P5. Land use in watershed riparian zones: problems/practice-05.md  
     - TS. Troubleshooting errors: problems/troubleshooting.md  
     - IP1. Independent Problem 1: problems/IP-01.md
+    - P6. Changes in the night: problems/practice-06.md  
   
   - SOLUTIONS:  
     - Tutorials: solutions/tutorials.md  

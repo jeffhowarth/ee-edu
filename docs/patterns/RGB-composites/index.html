@@ -12,20 +12,20 @@
         <meta name="author" content="Jeff Howarth">
       
       
-        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/problems/tutorial-05/">
+        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/patterns/RGB-composites/">
       
       
-        <link rel="prev" href="../practice-04/">
+        <link rel="prev" href="../map-raster-layers/">
       
       
-        <link rel="next" href="../practice-05/">
+        <link rel="next" href="../map-vector-layers/">
       
       <link rel="icon" href="../../assets/myIcon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>T5. Scale in web mercator - ee-patterns</title>
+        <title>RGB composites - ee-patterns</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scale-in-web-mercator" class="md-skip">
+        <a href="#rgb-composites" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              T5. Scale in web mercator
+              RGB composites
             
           </span>
         </div>
@@ -278,14 +278,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -340,7 +342,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           PATTERNS
@@ -353,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/javascript/" class="md-nav__link">
+      <a href="../javascript/" class="md-nav__link">
         javascript
       </a>
     </li>
@@ -367,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/explain-code/" class="md-nav__link">
+      <a href="../explain-code/" class="md-nav__link">
         explain code
       </a>
     </li>
@@ -381,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/gather-raster-data/" class="md-nav__link">
+      <a href="../gather-raster-data/" class="md-nav__link">
         gather raster data
       </a>
     </li>
@@ -395,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/gather-vector-data/" class="md-nav__link">
+      <a href="../gather-vector-data/" class="md-nav__link">
         gather vector data
       </a>
     </li>
@@ -409,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/map-raster-layers/" class="md-nav__link">
+      <a href="../map-raster-layers/" class="md-nav__link">
         map raster as layers
       </a>
     </li>
@@ -421,11 +423,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../patterns/RGB-composites/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          RGB composites
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         RGB composites
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#additive-color-system" class="md-nav__link">
+    additive color system
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rgb-viz" class="md-nav__link">
+    RGB viz
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -437,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/map-vector-layers/" class="md-nav__link">
+      <a href="../map-vector-layers/" class="md-nav__link">
         map vector as layers
       </a>
     </li>
@@ -451,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/explain-symbology/" class="md-nav__link">
+      <a href="../explain-symbology/" class="md-nav__link">
         explain symbology
       </a>
     </li>
@@ -465,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/customize-Map/" class="md-nav__link">
+      <a href="../customize-Map/" class="md-nav__link">
         customize Map
       </a>
     </li>
@@ -479,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/filter-collections/" class="md-nav__link">
+      <a href="../filter-collections/" class="md-nav__link">
         filter collections
       </a>
     </li>
@@ -493,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/composite-mosaic/" class="md-nav__link">
+      <a href="../composite-mosaic/" class="md-nav__link">
         flatten collections
       </a>
     </li>
@@ -507,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/convert-data/" class="md-nav__link">
+      <a href="../convert-data/" class="md-nav__link">
         convert data
       </a>
     </li>
@@ -521,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/reclassify/" class="md-nav__link">
+      <a href="../reclassify/" class="md-nav__link">
         reclassify raster
       </a>
     </li>
@@ -535,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/scalar-operations/" class="md-nav__link">
+      <a href="../scalar-operations/" class="md-nav__link">
         scalar operations
       </a>
     </li>
@@ -549,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/local-operations/" class="md-nav__link">
+      <a href="../local-operations/" class="md-nav__link">
         local overlay operations
       </a>
     </li>
@@ -563,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/focal-operations/" class="md-nav__link">
+      <a href="../focal-operations/" class="md-nav__link">
         focal (neighborhood) operations
       </a>
     </li>
@@ -577,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/proximity-operations/" class="md-nav__link">
+      <a href="../proximity-operations/" class="md-nav__link">
         proximity operations
       </a>
     </li>
@@ -591,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/zonal-operations/" class="md-nav__link">
+      <a href="../zonal-operations/" class="md-nav__link">
         zonal overlay operations
       </a>
     </li>
@@ -605,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/vector-overlay/" class="md-nav__link">
+      <a href="../vector-overlay/" class="md-nav__link">
         vector overlay operations
       </a>
     </li>
@@ -619,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/terrain/" class="md-nav__link">
+      <a href="../terrain/" class="md-nav__link">
         terrain
       </a>
     </li>
@@ -633,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/vector-analysis/" class="md-nav__link">
+      <a href="../vector-analysis/" class="md-nav__link">
         vector analysis
       </a>
     </li>
@@ -647,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/export/" class="md-nav__link">
+      <a href="../export/" class="md-nav__link">
         export data
       </a>
     </li>
@@ -667,16 +717,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
         
@@ -713,7 +761,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           PROBLEMS
@@ -726,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial-01/" class="md-nav__link">
+      <a href="../../problems/tutorial-01/" class="md-nav__link">
         T1. A sketch map from lidar
       </a>
     </li>
@@ -740,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../practice-01/" class="md-nav__link">
+      <a href="../../problems/practice-01/" class="md-nav__link">
         P1. Memory under cover
       </a>
     </li>
@@ -754,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial-02/" class="md-nav__link">
+      <a href="../../problems/tutorial-02/" class="md-nav__link">
         T2. A slippy topographic map
       </a>
     </li>
@@ -768,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../practice-02/" class="md-nav__link">
+      <a href="../../problems/practice-02/" class="md-nav__link">
         P2. Ice age bathtub
       </a>
     </li>
@@ -782,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial-03/" class="md-nav__link">
+      <a href="../../problems/tutorial-03/" class="md-nav__link">
         T3. Intro to feature collections
       </a>
     </li>
@@ -796,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../practice-03/" class="md-nav__link">
+      <a href="../../problems/practice-03/" class="md-nav__link">
         P3. Parent materials of soils
       </a>
     </li>
@@ -810,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial-04/" class="md-nav__link">
+      <a href="../../problems/tutorial-04/" class="md-nav__link">
         T4. Forest blocks
       </a>
     </li>
@@ -824,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../practice-04/" class="md-nav__link">
+      <a href="../../problems/practice-04/" class="md-nav__link">
         P4. Forest blocks and habitat connectors
       </a>
     </li>
@@ -836,114 +884,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          T5. Scale in web mercator
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../problems/tutorial-05/" class="md-nav__link">
         T5. Scale in web mercator
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#workflow" class="md-nav__link">
-    workflow
-  </a>
-  
-    <nav class="md-nav" aria-label="workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#00-start-script" class="md-nav__link">
-    00 start script
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#01-set-up-map" class="md-nav__link">
-    01 set up map
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#02-visualize-pixel-area" class="md-nav__link">
-    02 visualize pixel area
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#03-create-tissots-indicatrix" class="md-nav__link">
-    03 create Tissot's indicatrix
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#04-visualize-area-of-indicatrix" class="md-nav__link">
-    04 visualize area of indicatrix
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#05-visualize-count-of-indicatrix" class="md-nav__link">
-    05 visualize count of indicatrix
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#06-inspect-your-results" class="md-nav__link">
-    06 inspect your results
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -955,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../practice-05/" class="md-nav__link">
+      <a href="../../problems/practice-05/" class="md-nav__link">
         P5. Land use in watershed riparian zones
       </a>
     </li>
@@ -969,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../problems/troubleshooting/" class="md-nav__link">
         TS. Troubleshooting errors
       </a>
     </li>
@@ -983,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../IP-01/" class="md-nav__link">
+      <a href="../../problems/IP-01/" class="md-nav__link">
         IP1. Independent Problem 1
       </a>
     </li>
@@ -997,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../practice-06/" class="md-nav__link">
+      <a href="../../problems/practice-06/" class="md-nav__link">
         P6. Changes in the night
       </a>
     </li>
@@ -1123,71 +1068,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#additive-color-system" class="md-nav__link">
+    additive color system
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow" class="md-nav__link">
-    workflow
+  <a href="#rgb-viz" class="md-nav__link">
+    RGB viz
   </a>
-  
-    <nav class="md-nav" aria-label="workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#00-start-script" class="md-nav__link">
-    00 start script
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#01-set-up-map" class="md-nav__link">
-    01 set up map
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#02-visualize-pixel-area" class="md-nav__link">
-    02 visualize pixel area
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#03-create-tissots-indicatrix" class="md-nav__link">
-    03 create Tissot's indicatrix
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#04-visualize-area-of-indicatrix" class="md-nav__link">
-    04 visualize area of indicatrix
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#05-visualize-count-of-indicatrix" class="md-nav__link">
-    05 visualize count of indicatrix
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#06-inspect-your-results" class="md-nav__link">
-    06 inspect your results
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1206,186 +1096,68 @@
                   
 
 
-<p><strong>TUTORIAL 5</strong></p>
-<h1 id="scale-in-web-mercator"><strong><em>scale in web mercator</em></strong></h1>
-<h2 id="_1"></h2>
-<p>This tutorial aims to introduce concepts and methods for working with <strong>proximity</strong> and <strong>zonal statistics</strong> in Earth Engine.  </p>
-<p>Our practical goal is to make a map of Tissot&rsquo;s Indicatrix and then compute the area and number of pixels contained by each circle through a zonal overlay method. By the end, your script should reproduce the layers shown in the app below. </p>
-<p>In addition, you should be able to interpret your results by using the Inspector tool to compare how pixel scale changes with respect to the area and pixel count of Tissot&rsquo;s indicatrix.   </p>
+<p><strong>PATTERNS</strong>  </p>
+<h1 id="rgb-composites"><strong><em>RGB composites</em></strong></h1>
+<h2 id="additive-color-system"><strong>additive color system</strong></h2>
+<p>RGB composites use additive color to display raster data values in three bands at once. </p>
+<p><em>More soon.</em></p>
+<hr />
+<!-- Before we get into the code, we should step back and think about why an image will often contain more than one band, why we would want to display the data in more than one band at once, and how additive color works as a system for comparing three data values.  
+
+## __display multiple conditions at locations__ 
+
+Let's say that you wanted to map the population of four zones at three different moments in time.
+
+In a vector model, you could do this with multiple __columns__ in a table.
+
+![vector-model][]  
+
+In a raster model you could do this with multiple __bands__ in an image.
+
+![raster-model][]  
+
+The main idea is that _bands in an image function like columns in a table_; they allow you to describe multiple attributes for locations. 
+
+Now let's say that you want to visualize change in these three conditions. If you made charts for each zone, it would look something like this: 
+
+![three-band-charts][]  
+
+Displaying these charts as a single map layer is tricky if you get stuck thinking about a map layer as something that displays data values with a single palette.  
+
+When you think in additive color, the problem becomes quite simple.  
+
+![as-additive-color][] 
+
+Here is how additive color works:
+
+* there are three color channels: Red, Green, and Blue 
+* the values of a single band are displayed in one color channel  
+* the three color channels combine to create a color displayed on the monitor.  
+
+---   -->
+
+<p>Use the RGB mixer below to create the colors by adding values in Red, Green, and Blue channels.  </p>
 <p><iframe
-  src="https://ee-patterns.projects.earthengine.app/view/tutorial-05"
-  style="width:854px; height:854px"
+  src="https://jhowarth.users.earthengine.app/view/ee-edu-rgb"
+  style="width:910px; height:576px;"
 ></iframe>
 </p>
-<p><a href="https://ee-patterns.projects.earthengine.app/view/tutorial-05" target="_blank"><em>open app in new tab</em></a></p>
-<h2 id="workflow"><strong>workflow</strong></h2>
+<p><a href="https://jhowarth.users.earthengine.app/view/ee-edu-rgb" target="_blank"><em>Open app in new browser window</em></a>  </p>
 <hr />
-<h3 id="00-start-script"><strong>00 start script</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="cm">/*    </span>
-<span class="cm">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;</span>
-
-<span class="cm">    AUTHOR:   </span>
-<span class="cm">    DATE:     10/7/2024</span>
-<span class="cm">    TITLE:    Scale in web mercator</span>
-
-<span class="cm">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;</span>
-<span class="cm">*/</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">geo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;users/jhowarth/eePatterns:modules/geo.js&quot;</span><span class="p">);</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo methods dictionary&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">help</span><span class="p">);</span><span class="w">    </span><span class="c1">// Prints dictionary of all tools in module.  </span>
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo palettes&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iPalettes</span><span class="p">);</span><span class="w">         </span><span class="c1">// Prints dictionary of all palettes in module. </span>
+<p>Here is the key for primary and secondary additive colors.  </p>
+<p><img alt="Additive color" src="https://geography.middlebury.edu/howarth/ee_edu/RGB_alt3.png" />  </p>
+<h2 id="rgb-viz"><strong>RGB viz</strong></h2>
+<p>The basic pattern to visualize <strong>multi-band images</strong> as a combination of red, green, and blue channels:</p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">rgb_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">bands</span><span class="o">:</span><span class="w">  </span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">],</span><span class="w">      </span>
+<span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w">    </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">],</span><span class="w">        </span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">]</span><span class="w">    </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">;</span>
 </code></pre></div>
 <hr />
-<h3 id="01-set-up-map"><strong>01 set up map</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  1. Set up map</span>
-<span class="c1">// -------------------------------------------------------------</span>
-
-<span class="c1">// 1.1. Center map on prime meridian and equator at zoom level 2.  </span>
-
-<span class="nb">Map</span><span class="p">.</span><span class="nx">setCenter</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">2</span><span class="p">);</span>
-
-<span class="c1">// 1.2. Set base map to hybrid.</span>
-
-
-
-<span class="c1">// 1.3. Compute Map scale at Map zoom </span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Map</span><span class="p">.</span><span class="nx">getScale</span><span class="p">();</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Map scale&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">);</span>
-</code></pre></div>
-<hr />
-<h3 id="02-visualize-pixel-area"><strong>02 visualize pixel area</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  2. Visualize change in pixel area across Map.</span>
-<span class="c1">// -------------------------------------------------------------</span>
-
-<span class="c1">// 2.1. Make a layer that stores area of each pixel in square kilometers.</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">pixel_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">.</span><span class="nx">pixelArea</span><span class="p">().</span><span class="nx">divide</span><span class="p">(</span><span class="mf">1e6</span><span class="p">);</span>
-
-<span class="c1">// 2.2. Draw a rectangle from equator to pole.</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">test_extent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Polygon</span><span class="p">(</span>
-<span class="w">        </span><span class="p">[[[</span><span class="o">-</span><span class="mf">139.54012012783244</span><span class="p">,</span><span class="w"> </span><span class="mf">16.927790310290327</span><span class="p">],</span>
-<span class="w">          </span><span class="p">[</span><span class="o">-</span><span class="mf">139.54012012783244</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">85.91090722591649</span><span class="p">],</span>
-<span class="w">          </span><span class="p">[</span><span class="mf">52.41300487216755</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">85.91090722591649</span><span class="p">],</span>
-<span class="w">          </span><span class="p">[</span><span class="mf">52.41300487216755</span><span class="p">,</span><span class="w"> </span><span class="mf">16.927790310290327</span><span class="p">]]]);</span>
-
-<span class="c1">// 2.3. Calculate min and max of area image with test_extent rectangle at scale of zoom level. </span>
-
-
-
-<span class="w"> </span><span class="c1">// 2.4. Define viz parameters with palette: geo.iPalettes.iDistance.inferno</span>
-
-
-
-<span class="c1">// 2.5. Display pixel_area as layer on Map.</span>
-
-
-
-<span class="c1">// 2.6. Make legend of pixel area layer. </span>
-
-
-
-<span class="c1">// 2.7. Add legend to Map.  </span>
-</code></pre></div>
-<hr />
-<h3 id="03-create-tissots-indicatrix"><strong>03 create Tissot&rsquo;s indicatrix</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  3. Create Tissot&#39;s Indicatrix. </span>
-<span class="c1">// -------------------------------------------------------------</span>
-
-<span class="c1">// 3.1. Gather tissot grid.</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">projections</span><span class="p">.</span><span class="nx">tissot_grid</span><span class="p">;</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;3.1. grid&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grid</span><span class="p">);</span>
-
-<span class="c1">// 3.2. Display grid as Map layer.</span>
-
-
-
-<span class="c1">// 3.3 Buffer each point in grid by 600,000 meters. </span>
-
-
-
-<span class="c1">// 3.4 Add buffered points (Tissot&#39;s Indicatrix) as Map Layer. </span>
-
-<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">indicatrix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;gold&#39;</span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;3.4. Tissot&#39;s Indicatrix&quot;</span><span class="p">);</span>
-</code></pre></div>
-<hr />
-<h3 id="04-visualize-area-of-indicatrix"><strong>04 visualize area of indicatrix</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  4. Visualize area of Tissot&#39;s indicatrix</span>
-<span class="c1">// -------------------------------------------------------------</span>
-
-<span class="c1">// 4.1 Zonal statistic for sum of pixel area at scale 5000.</span>
-
-
-
-
-<span class="c1">// 4.2 Convert 4.1 output to image</span>
-
-
-
-<span class="c1">// 4.3 Define viz parameters.</span>
-
-
-
-<span class="c1">// 4.4 Display as Map layer.</span>
-
-
-
-<span class="c1">// 4.5. Make legend of tissot area layer. </span>
-
-
-
-<span class="c1">// 4.6. Add legend to Map.  </span>
-</code></pre></div>
-<hr />
-<h3 id="05-visualize-count-of-indicatrix"><strong>05 visualize count of indicatrix</strong></h3>
-<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
-<span class="c1">//  5. Visualize count of indicatrix</span>
-<span class="c1">// -------------------------------------------------------------</span>
-
-<span class="c1">// 5.1 Zonal statistic for count of pixel area at scale 5000.</span>
-
-
-
-<span class="c1">// 5.2 Convert to image. </span>
-
-
-
-<span class="c1">// 5.3 Define viz parameters. </span>
-
-
-
-
-<span class="c1">// 5.4 Display as Map layer.  </span>
-
-
-
-
-<span class="c1">// 5.5. Make legend of tissot area layer. </span>
-
-
-<span class="c1">// 5.6. Add legend to Map.  </span>
-</code></pre></div>
-<hr />
-<h3 id="06-inspect-your-results"><strong>06 inspect your results</strong></h3>
-<p>Click on the <strong>Inspector tab</strong> on the right panel of the Code Editor. Moving from the equator towards the poles, clock on the Tissot Indicatrix and note the <strong>Scale (approx. m/px)</strong> that GEE reports. This number should report the distance on the ground represented by the length of one pixel side.  </p>
-<p><em>HINT: You may need to click on the <strong>Point</strong> header in order to see the scale reports.</em>  </p>
-<p>Try to answer these questions:  </p>
-<ol>
-<li>How does scale change with latitude?  </li>
-<li>How does this jive with the area and count statistics that you calculated for each circle?  </li>
-<li>How do you explain these results?  </li>
-</ol>
-<hr />
-<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License</a>.</p>
 
 
 
@@ -1407,7 +1179,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../practice-04/" class="md-footer__link md-footer__link--prev" aria-label="Previous: P4. Forest blocks and habitat connectors" rel="prev">
+          <a href="../map-raster-layers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: map raster as layers" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1416,20 +1188,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                P4. Forest blocks and habitat connectors
+                map raster as layers
               </div>
             </div>
           </a>
         
         
           
-          <a href="../practice-05/" class="md-footer__link md-footer__link--next" aria-label="Next: P5. Land use in watershed riparian zones" rel="next">
+          <a href="../map-vector-layers/" class="md-footer__link md-footer__link--next" aria-label="Next: map vector as layers" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                P5. Land use in watershed riparian zones
+                map vector as layers
               </div>
             </div>
             <div class="md-footer__button md-icon">

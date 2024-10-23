@@ -333,6 +333,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -411,6 +413,20 @@
     <li class="md-nav__item">
       <a href="../map-raster-layers/" class="md-nav__link">
         map raster as layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RGB-composites/" class="md-nav__link">
+        RGB composites
       </a>
     </li>
   
@@ -516,6 +532,19 @@
   <a href="#composite-image" class="md-nav__link">
     composite image
   </a>
+  
+    <nav class="md-nav" aria-label="composite image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statistical-composites" class="md-nav__link">
+    statistical composites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -736,6 +765,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -918,6 +949,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/practice-06/" class="md-nav__link">
+        P6. Changes in the night
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1040,6 +1085,19 @@
     composite image
   </a>
   
+    <nav class="md-nav" aria-label="composite image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statistical-composites" class="md-nav__link">
+    statistical composites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1068,8 +1126,35 @@
 <h1 id="flatten-image-collections"><em><strong>flatten image collections</strong></em></h1>
 <p>Many workflows for image collections will include a step that transforms an image collection into a single image (and <strong>flattens</strong> the collection).  </p>
 <h2 id="composite-image"><strong>composite image</strong></h2>
-<p>If the collection represents a time series of satellite scenes, the workflow will often include a step that makes a <strong>composite image</strong>.</p>
-<p><em>We will get to composite images in the second half of the semester.</em>  </p>
+<p>If the collection represents a time series of satellite scenes, the workflow will often include a step that makes a <strong>composite image</strong>. This reduces the image collection to a single image.  </p>
+<p>Conceptually, composite methods are analogous to local operations for images because they perform calculations for each pixel across a stack of images. The main difference is that the stack of images in a collection can be quite large and not restricted to  comparisons of just two images.  </p>
+<p><em>diagram forthcoming</em>  </p>
+<hr />
+<h3 id="statistical-composites"><strong>statistical composites</strong></h3>
+<p>These methods calculate a statistic of all values at each pixel across a stack of all matching bands.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">mean_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">mean</span><span class="p">();</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by mean&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">mean_collection</span><span class="p">);</span>
+</code></pre></div>
+<p>The example above calculates the mean value in each pixel across the stack of matching bands in the ic. Here are some other common statistical composites. </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">median_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">median</span><span class="p">();</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by median&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">median_collection</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">max_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">max</span><span class="p">();</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by max&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">max_collection</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">min_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">min</span><span class="p">();</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by min&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">min_collection</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Mode is the most common value at each pixel. </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">mode_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">mode</span><span class="p">();</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by mode&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">mode_collection</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="mosaic-image"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> mosaic image</strong></h2>
 <p>If the collection contains a set of small tiles, then a workflow will often include a step that makes a <strong>mosaic image</strong>. This is a common step in workflows with lidar products.  </p>

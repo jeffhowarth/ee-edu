@@ -34,7 +34,20 @@ In Earth Engine, you can filter collections in three ways:
 
 ## __filter by time__
 
-_we will get to this in a couple of weeks_  
+An image collection represents a __time series__ when it contains images that capture the same region of space at different moments in time. The date associated with each image will be a property of the image. Earth Engine provides several different methods to filter the collection by defining a __temporal interval__, or a window of time defined by a start and end date.
+
+### __filter by calendar range__  
+
+This method allows you to choose a calendar unit for a temporal interval. 
+
+```js
+
+var select_by_calendar = ic.filter(
+  ee.Filter.calendarRange(start, end, unit)
+  )
+;
+
+```
 
 ---  
 
