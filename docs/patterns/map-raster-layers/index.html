@@ -495,6 +495,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get-aoi-from-map-extent" class="md-nav__link">
+    get AOI from Map extent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get-nominal-scale-helper" class="md-nav__link">
     get Nominal scale helper
   </a>
@@ -1166,6 +1173,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get-aoi-from-map-extent" class="md-nav__link">
+    get AOI from Map extent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get-nominal-scale-helper" class="md-nav__link">
     get Nominal scale helper
   </a>
@@ -1239,7 +1253,7 @@
 <hr />
 <h3 id="print-min-max-value-of-image"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> print min &amp; max value of image</strong></h3>
 <p>Print the min and max data value of a raster image to use as min and max values in viz dictionary.   </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_min_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iMinMax</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">extent</span><span class="p">);</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_min_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iMinMax</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">aoi</span><span class="p">);</span>
 
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Min &amp; max value of image&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">output_min_max</span><span class="p">);</span>
 </code></pre></div>
@@ -1260,15 +1274,15 @@
 <td>The scale of analysis. If possible, use the scale (resolution) of the input image. If this runs really slow (or times out), then increase the scale of analysis by a factor of 2 or more.</td>
 </tr>
 <tr>
-<td align="left"><strong>extent</strong></td>
-<td>Usually the area of interest or the geographic footprint of the image.</td>
+<td align="left"><strong>aoi</strong></td>
+<td>The area of interest or the geographic footprint of the image.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h3 id="chart-histogram-of-data-values"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> chart histogram of data values</strong></h3>
 <p><strong>See how your data are distributed between the minimum and maximum data value by charting a histogram.</strong></p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_histogram</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iHistogram</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">extent</span><span class="p">);</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_histogram</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iHistogram</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">aoi</span><span class="p">);</span>
 
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Image histogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">output_histogram</span><span class="p">);</span>
 </code></pre></div>
@@ -1289,8 +1303,8 @@
 <td>The scale of analysis. If possible, use the scale (resolution) of the input image. If this runs really slow (or times out), then increase the scale of analysis by a factor of 2 or more.</td>
 </tr>
 <tr>
-<td align="left"><strong>extent</strong></td>
-<td>Usually the area of interest or the geographic footprint of the image.</td>
+<td align="left"><strong>aoi</strong></td>
+<td>An area of interest or the geographic footprint of the image.</td>
 </tr>
 </tbody>
 </table>
@@ -1361,11 +1375,11 @@
 <p>Here is a complete pattern for single-band grayscale images.</p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// Print min and max values of image. </span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Min &amp; max value of image&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iMinMax</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">extent</span><span class="p">));</span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Min &amp; max value of image&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iMinMax</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">aoi</span><span class="p">));</span>
 
 <span class="c1">// Chart histogram of actual data values.</span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Image histogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iHistogram</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">extent</span><span class="p">));</span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Image histogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iHistogram</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">aoi</span><span class="p">));</span>
 
 <span class="c1">// Define viz dictionary. </span>
 
@@ -1379,6 +1393,10 @@
 <span class="c1">// Add map layer. </span>
 
 <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="nx">single_viz</span><span class="p">,</span><span class="s2">&quot;Layer Name&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="get-aoi-from-map-extent"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> get AOI from Map extent</strong></h3>
+<p>The helper below from the geo module will retrieve an area of interest (AOI) from the current geographic extent of the Map window. </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">aoi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">uiMap</span><span class="p">.</span><span class="nx">getAOIfromMapExtent</span><span class="p">();</span>
 </code></pre></div>
 <hr />
 <h3 id="get-nominal-scale-helper"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> get Nominal scale helper</strong></h3>

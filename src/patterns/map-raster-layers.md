@@ -73,7 +73,7 @@ graph LR
 Print the min and max data value of a raster image to use as min and max values in viz dictionary.   
 
 ```js
-var output_min_max = geo.iCart.iMinMax(image, scale, extent);
+var output_min_max = geo.iCart.iMinMax(image, scale, aoi);
 
 print("Min & max value of image", output_min_max);
 
@@ -83,7 +83,7 @@ print("Min & max value of image", output_min_max);
 | :--                   |                           |
 | __image__           | The name of the variable that contains the image data to process. |
 | __scale__                 | The scale of analysis. If possible, use the scale (resolution) of the input image. If this runs really slow (or times out), then increase the scale of analysis by a factor of 2 or more. |  
-| __extent__                | Usually the area of interest or the geographic footprint of the image.|  
+| __aoi__                | The area of interest or the geographic footprint of the image.|  
 
 
 ---
@@ -93,7 +93,7 @@ print("Min & max value of image", output_min_max);
 __See how your data are distributed between the minimum and maximum data value by charting a histogram.__
 
 ```js
-var output_histogram = geo.iCart.iHistogram(image, scale, extent);
+var output_histogram = geo.iCart.iHistogram(image, scale, aoi);
 
 print("Image histogram", output_histogram);
 
@@ -104,7 +104,7 @@ print("Image histogram", output_histogram);
 | :--                   |                           |
 | __input_image__           | The name of the variable that contains the image data to process. |
 | __scale__                 | The scale of analysis. If possible, use the scale (resolution) of the input image. If this runs really slow (or times out), then increase the scale of analysis by a factor of 2 or more. |  
-| __extent__                | Usually the area of interest or the geographic footprint of the image.|  
+| __aoi__                   | An area of interest or the geographic footprint of the image.|  
 
 ---  
 
@@ -181,11 +181,11 @@ Here is a complete pattern for single-band grayscale images.
 ```js
 // Print min and max values of image. 
 
-print("Min & max value of image", geo.iCart.iMinMax(image, scale, extent));
+print("Min & max value of image", geo.iCart.iMinMax(image, scale, aoi));
 
 // Chart histogram of actual data values.
 
-print("Image histogram", geo.iCart.iHistogram(image, scale, extent));
+print("Image histogram", geo.iCart.iHistogram(image, scale, aoi));
 
 // Define viz dictionary. 
 
@@ -199,6 +199,14 @@ var single_viz =
 // Add map layer. 
 
 Map.addLayer(image,single_viz,"Layer Name");
+```
+
+### __:earth_americas: get AOI from Map extent__ 
+
+The helper below from the geo module will retrieve an area of interest (AOI) from the current geographic extent of the Map window. 
+
+```js
+var aoi = geo.uiMap.getAOIfromMapExtent();
 ```
 
 ---  
