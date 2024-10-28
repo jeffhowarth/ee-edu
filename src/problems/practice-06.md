@@ -39,7 +39,7 @@ The diagram below sketches how we will use additive color to show changes in a n
 
     AUTHOR:   
     DATE:     
-    TITLE:    CP6: hanges in the night
+    TITLE:    P6: Changes in the night
 
 // ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
 */

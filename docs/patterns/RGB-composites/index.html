@@ -754,6 +754,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -944,6 +946,20 @@
     <li class="md-nav__item">
       <a href="../../problems/practice-06/" class="md-nav__link">
         P6. Changes in the night
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/tutorial-07/" class="md-nav__link">
+        T7. NAIP Explorer
       </a>
     </li>
   
@@ -1147,15 +1163,18 @@ Here is how additive color works:
 <p>Here is the key for primary and secondary additive colors.  </p>
 <p><img alt="Additive color" src="https://geography.middlebury.edu/howarth/ee_edu/RGB_alt3.png" />  </p>
 <h2 id="rgb-viz"><strong>RGB viz</strong></h2>
-<p>The basic pattern to visualize <strong>multi-band images</strong> as a combination of red, green, and blue channels:</p>
+<p>This is a basic pattern to visualize <strong>multi-band images</strong> as a combination of red, green, and blue channels.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">rgb_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">bands</span><span class="o">:</span><span class="w">  </span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">],</span><span class="w">      </span>
 <span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w">    </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">],</span><span class="w">        </span>
-<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">]</span><span class="w">    </span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">],</span>
+<span class="w">        </span><span class="nx">gamma</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">]</span><span class="w">    </span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">;</span>
 </code></pre></div>
+<p>The <em>gamma</em> property bends the function that maps display values to data values in order to lighten or darken the midtones of the image. Lowering the gamma value (towards 0) darkens the image, while raising the gamma value (towards 2) lightens the image.  </p>
+<p>The min, max, and gamma values can be adjusted separately for each band. </p>
 <hr />
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License</a>.</p>
 

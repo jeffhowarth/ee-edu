@@ -64,17 +64,22 @@ Here is the key for primary and secondary additive colors.
 
 ## __RGB viz__  
 
-The basic pattern to visualize __multi-band images__ as a combination of red, green, and blue channels:
+This is a basic pattern to visualize __multi-band images__ as a combination of red, green, and blue channels.  
 
 ```js
 var rgb_viz = 
     {
         bands:  ['red', 'green', 'blue'],      
         min:    [0, 0, 0],        
-        max: [255, 255, 255]    
+        max: [255, 255, 255],
+        gamma: [1,1,1]    
     }
 ;
 ```
+
+The _gamma_ property bends the function that maps display values to data values in order to lighten or darken the midtones of the image. Lowering the gamma value (towards 0) darkens the image, while raising the gamma value (towards 2) lightens the image.  
+
+The min, max, and gamma values can be adjusted separately for each band. 
 
 
 ---
