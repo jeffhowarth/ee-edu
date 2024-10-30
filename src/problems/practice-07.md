@@ -4,7 +4,7 @@ __PRACTICE 7__
 
 ## __goal__  
 
-Please publish an app that allows a user to investigate land cover change based on the plan that you developed in the tutorial this week.  
+Please publish an app that guides a user to investigate land cover change in a study region based on the plan that you developed in the tutorial this week.  
 
 Your script should resemble the app below, but should be focused on your chosen study region. Ideally, you will be able to include the app in your portfolio of college work. 
 
@@ -21,7 +21,7 @@ Your script should resemble the app below, but should be focused on your chosen 
 
 To receive full credit, your app should include: 
 
-1. A swipe map with natural and false color images of your study region at two different times.    
+1. A swipe map with natural and false color images of your study region at two different times (each labeled with a date).    
 2. A side bar that contains:  
     1. A catchy title that sparks interest.
     2. A subtitle that describes where and when. 
@@ -35,6 +35,8 @@ To receive full credit, your app should include:
     3. What are the dates of the two images?
     4. What places in your select widget show changes that reflect differences in the time of year that your two images were collected? 
     5. What places in your select widget show longer-term changes in the place?  
+        1. Describe the change in land cover. 
+        2. Try to interpret what this change means.
     6. What are your data sources?    
 
 ---  

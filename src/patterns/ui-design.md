@@ -9,6 +9,10 @@ The patterns below provide a template for a swipe map with a side bar for title,
 ### __make layout__  
 
 ```js
+// -------------------------------------------------------------
+//  Make Swipe Map with Side Bar Layout
+// -------------------------------------------------------------
+
 // Initialize side bar.
 
 var side_bar = ui.Panel({
