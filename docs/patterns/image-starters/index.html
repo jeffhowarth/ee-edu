@@ -12,20 +12,20 @@
         <meta name="author" content="Jeff Howarth">
       
       
-        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/patterns/composite-mosaic/">
+        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/patterns/image-starters/">
       
       
-        <link rel="prev" href="../filter-collections/">
+        <link rel="prev" href="../export/">
       
       
-        <link rel="next" href="../convert-data/">
+        <link rel="next" href="../ui-design/">
       
       <link rel="icon" href="../../assets/myIcon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>flatten collections - ee-patterns</title>
+        <title>image starters - ee-patterns</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flatten-image-collections" class="md-skip">
+        <a href="#image-starters" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              flatten collections
+              image starters
             
           </span>
         </div>
@@ -497,72 +497,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          flatten collections
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../composite-mosaic/" class="md-nav__link">
         flatten collections
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#composite-image" class="md-nav__link">
-    composite image
-  </a>
-  
-    <nav class="md-nav" aria-label="composite image">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#statistical-composites" class="md-nav__link">
-    statistical composites
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mosaic-image" class="md-nav__link">
-    mosaic image
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -726,11 +665,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../image-starters/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          image starters
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         image starters
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#naip" class="md-nav__link">
+    NAIP
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1129,28 +1109,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#composite-image" class="md-nav__link">
-    composite image
-  </a>
-  
-    <nav class="md-nav" aria-label="composite image">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#statistical-composites" class="md-nav__link">
-    statistical composites
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mosaic-image" class="md-nav__link">
-    mosaic image
+  <a href="#naip" class="md-nav__link">
+    NAIP
   </a>
   
 </li>
@@ -1170,70 +1130,119 @@
                   
 
 
-<p><strong>PATTERNS</strong></p>
-<h1 id="flatten-image-collections"><em><strong>flatten image collections</strong></em></h1>
-<p>Many workflows for image collections will include a step that transforms an image collection into a single image (and <strong>flattens</strong> the collection).  </p>
-<h2 id="composite-image"><strong>composite image</strong></h2>
-<p>If the collection represents a time series of satellite scenes, the workflow will often include a step that makes a <strong>composite image</strong>. This reduces the image collection to a single image.  </p>
-<p>Conceptually, composite methods are analogous to local operations for images because they perform calculations for each pixel across a stack of images. The main difference is that the stack of images in a collection can be quite large and not restricted to  comparisons of just two images.  </p>
-<p><em>diagram forthcoming</em>  </p>
+<p><strong>PATTERNS</strong>  </p>
+<h1 id="image-starters"><strong><em>image starters</em></strong></h1>
+<p>This page contains starter scripts for working with different programs and missions that provide multi-spectral images.  </p>
 <hr />
-<h3 id="statistical-composites"><strong>statistical composites</strong></h3>
-<p>These methods calculate a statistic of all values at each pixel across a stack of all matching bands.  </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">mean_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">mean</span><span class="p">();</span>
+<h2 id="naip"><strong>NAIP</strong></h2>
+<div class="language-js highlight"><pre><span></span><code><span class="cm">/*    </span>
+<span class="cm">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;</span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by mean&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">mean_collection</span><span class="p">);</span>
+<span class="cm">    AUTHOR:     </span>
+<span class="cm">    DATE:       </span>
+<span class="cm">    TITLE:  NAIP starter </span>
+
+<span class="cm">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;</span>
+<span class="cm">*/</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">geo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;users/jhowarth/eePatterns:modules/geo.js&quot;</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo methods dictionary&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">help</span><span class="p">);</span><span class="w">    </span><span class="c1">// Prints dictionary of all tools in module.  </span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo palettes&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iPalettes</span><span class="p">);</span><span class="w">         </span><span class="c1">// Prints dictionary of all palettes in module. </span>
+
+
+<span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Define AOI from point with 10km buffer.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span>
+<span class="w">        </span><span class="p">[</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span>
+<span class="w">            </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Point</span><span class="p">([</span><span class="o">-</span><span class="mf">73.16875</span><span class="p">,</span><span class="w"> </span><span class="mf">44.01336</span><span class="p">]),</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">              </span><span class="s2">&quot;system:index&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">            </span><span class="p">})]);</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">aoi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcProximity</span><span class="p">.</span><span class="nx">bufferByDistance</span><span class="p">(</span><span class="nx">geometry</span><span class="p">,</span><span class="w"> </span><span class="mf">10000</span><span class="p">);</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">geometry</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span>
+
+<span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Get year of interest.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">year_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">icNAIP</span><span class="p">.</span><span class="nx">yearList</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">aoi</span><span class="p">,</span><span class="w">        </span>
+<span class="w">    </span><span class="mf">4</span><span class="w">       </span><span class="c1">// Change to 3 if you would like to include earliest images that lack NIR band.  </span>
+<span class="p">);</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">yoi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">year_list</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// This gets the first year in the year list.</span>
+
+<span class="c1">// var yoi = year_list.get(year_list.length().subtract(1));  // This gets the last year.</span>
+
+<span class="c1">// print(&quot;Year of interest&quot;, yoi);</span>
+
+<span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Filter NAIP image collection by aoi, year, and number of bands.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">ic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;USDA/NAIP/DOQQ&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">aoi</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">calendarRange</span><span class="p">(</span><span class="nx">yoi</span><span class="p">,</span><span class="w"> </span><span class="nx">yoi</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;year&quot;</span><span class="p">))</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">geo</span><span class="p">.</span><span class="nx">icNAIP</span><span class="p">.</span><span class="nx">setNumberOfBands</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;number_of_bands&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">))</span>
+<span class="w">  </span><span class="p">;</span>
+
+<span class="c1">// geo.icGather.inspectCollection(&quot;NAIP Collection&quot;, ic);</span>
+
+<span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Mosaic image collection.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">ic_mosaic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">icFlatten</span><span class="p">.</span><span class="nx">mosaicToImage</span><span class="p">(</span><span class="nx">ic</span><span class="p">);</span>
+
+<span class="c1">// print(&quot;Mosaic&quot;, ic_mosaic);</span>
+
+<span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Define viz dictionaries.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">rgb_viz_natural</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">bands</span><span class="o">:</span><span class="w">  </span><span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="p">],</span><span class="w">      </span>
+<span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w">    </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">],</span><span class="w">        </span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">],</span>
+<span class="w">        </span><span class="nx">gamma</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">]</span><span class="w">    </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">;</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">rgb_viz_false</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">bands</span><span class="o">:</span><span class="w">  </span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;G&#39;</span><span class="p">],</span><span class="w">      </span>
+<span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w">    </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">],</span><span class="w">        </span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">],</span>
+<span class="w">        </span><span class="nx">gamma</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">]</span><span class="w">    </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">;</span>
+
+<span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Refine viz dictionaries with histogram.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="c1">// To refine natural image.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">histogram</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iHistogramRGB</span><span class="p">(</span><span class="nx">ic_mosaic</span><span class="p">,</span><span class="w"> </span><span class="nx">rgb_viz_natural</span><span class="p">);</span>
+
+<span class="c1">// // To refine false image.</span>
+<span class="c1">// var histogram = geo.iCart.iHistogramRGB(ic_mosaic, rgb_viz_false);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nx">histogram</span><span class="p">);</span>
+
+<span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Display as Map layers. </span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ic_mosaic</span><span class="p">,</span><span class="nx">rgb_viz_false</span><span class="p">,</span><span class="s2">&quot;Earliest False Color&quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ic_mosaic</span><span class="p">,</span><span class="nx">rgb_viz_natural</span><span class="p">,</span><span class="s2">&quot;Earliest Natural Color &quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<p>The example above calculates the mean value in each pixel across the stack of matching bands in the ic. Here are some other common statistical composites. </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">median_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">median</span><span class="p">();</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by median&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">median_collection</span><span class="p">);</span>
-</code></pre></div>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">max_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">max</span><span class="p">();</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by max&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">max_collection</span><span class="p">);</span>
-</code></pre></div>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">min_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">min</span><span class="p">();</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by min&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">min_collection</span><span class="p">);</span>
-</code></pre></div>
-<div class="language-js highlight"><pre><span></span><code><span class="c1">// Mode is the most common value at each pixel. </span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">mode_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">mode</span><span class="p">();</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Composite collection by mode&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">mode_collection</span><span class="p">);</span>
-</code></pre></div>
-<hr />
-<h2 id="mosaic-image"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> mosaic image</strong></h2>
-<p>If the collection contains a set of small tiles, then a workflow will often include a step that makes a <strong>mosaic image</strong>. This is a common step in workflows with lidar products.  </p>
-<p><img alt="mosaic-collection" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/flattenCollection/mosaic.png" /></p>
-<p><center></p>
-<pre class="mermaid"><code>graph LR
-
-  method("geo.icFlatten.mosaicToImage()") ;
-  output[/"ic_mosaic"/]  ;
-
-  method --&gt; output
-
-  arg["ic"] ;
-
-  arg --o method
-
-  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
-  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
-  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
-
-
-  class input in-out; 
-  class method op;
-  class output in-out;
-  class arg arg; </code></pre>
-<p></center></p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">ic_mosaic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">icFlatten</span><span class="p">.</span><span class="nx">mosaicToImage</span><span class="p">(</span><span class="nx">ic</span><span class="p">);</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Mosaic&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ic_mosaic</span><span class="p">);</span>
-</code></pre></div>
-<p>This method mosaics the tiles into a single image and gives the new image the same coordinate reference system as the first image in the collection. The crs defines the xy units of the image and this enables you to use the mosaic image as an input in terrain operations.  </p>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
@@ -1257,7 +1266,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../filter-collections/" class="md-footer__link md-footer__link--prev" aria-label="Previous: filter collections" rel="prev">
+          <a href="../export/" class="md-footer__link md-footer__link--prev" aria-label="Previous: export data" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1266,20 +1275,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                filter collections
+                export data
               </div>
             </div>
           </a>
         
         
           
-          <a href="../convert-data/" class="md-footer__link md-footer__link--next" aria-label="Next: convert data" rel="next">
+          <a href="../ui-design/" class="md-footer__link md-footer__link--next" aria-label="Next: ui design" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                convert data
+                ui design
               </div>
             </div>
             <div class="md-footer__button md-icon">

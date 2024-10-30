@@ -1,6 +1,6 @@
 **TUTORIAL 7**  
 
-# __*Planning with NAIP Explorer*__  
+# __*project planning with NAIP explorer*__  
 
 ## __goal__ 
 
