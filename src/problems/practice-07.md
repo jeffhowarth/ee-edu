@@ -1,6 +1,6 @@
 __PRACTICE 7__ 
 
-# __*wipe map app*__  
+# __*swipe map app*__  
 
 ## __goal__  
 
@@ -21,7 +21,7 @@ Your script should resemble the app below, but should be focused on your chosen 
 
 To receive full credit, your app should include: 
 
-1. A wipe map with natural and false color images of your study region at two different times.    
+1. A swipe map with natural and false color images of your study region at two different times.    
 2. A side bar that contains:  
     1. A catchy title that sparks interest.
     2. A subtitle that describes where and when. 
@@ -41,7 +41,7 @@ To receive full credit, your app should include:
 
 ## __delivery__  
 
-Please complete the script, publish the app, and deliver this work <mark>by 5pm on Friday 11/1</mark>. To deliver, please complete the check up on Canvas where you will submit links to both your script and your app. 
+Please complete the script, publish the app, and deliver this work <mark>by 5pm on Friday 11/1</mark>. To deliver, please complete the check up on Canvas where you will find a form that allows you to submit links to both your script and your app. 
 
 Please note: this assignment will be manually checked, therefore you will not have the opportunity to make corrections after you submit your links.  
 

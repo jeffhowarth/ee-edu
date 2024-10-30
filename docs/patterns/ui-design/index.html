@@ -715,11 +715,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wipe-map-with-side-bar-layout" class="md-nav__link">
-    wipe map with side bar layout
+  <a href="#swipe-map-with-side-bar-layout" class="md-nav__link">
+    swipe map with side bar layout
   </a>
   
-    <nav class="md-nav" aria-label="wipe map with side bar layout">
+    <nav class="md-nav" aria-label="swipe map with side bar layout">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1184,11 +1184,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wipe-map-with-side-bar-layout" class="md-nav__link">
-    wipe map with side bar layout
+  <a href="#swipe-map-with-side-bar-layout" class="md-nav__link">
+    swipe map with side bar layout
   </a>
   
-    <nav class="md-nav" aria-label="wipe map with side bar layout">
+    <nav class="md-nav" aria-label="swipe map with side bar layout">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1282,8 +1282,8 @@
 
 <p><strong>PATTERNS</strong>  </p>
 <h1 id="user-interface-design"><strong><em>user interface design</em></strong></h1>
-<h2 id="wipe-map-with-side-bar-layout"><strong>wipe map with side bar layout</strong></h2>
-<p>The patterns below provide a template for a wipe map with a side bar for title, subtitle, documentation, and credits. </p>
+<h2 id="swipe-map-with-side-bar-layout"><strong>swipe map with side bar layout</strong></h2>
+<p>The patterns below provide a template for a swipe map with a side bar for title, subtitle, documentation, and credits. </p>
 <h3 id="make-layout"><strong>make layout</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// Initialize side bar.</span>
 
@@ -1297,9 +1297,9 @@
 <span class="kd">var</span><span class="w"> </span><span class="nx">left_Map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">();</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">right_Map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">();</span>
 
-<span class="c1">// Initialize wipe map with left and right maps.</span>
+<span class="c1">// Initialize swipe map with left and right maps.</span>
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">wipe_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">SplitPanel</span><span class="p">(</span><span class="w">        </span><span class="c1">// Initialize split panel.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">swipe_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">SplitPanel</span><span class="p">(</span><span class="w">          </span><span class="c1">// Initialize split panel.</span>
 <span class="w">  </span><span class="nx">left_Map</span><span class="p">,</span><span class="w">                             </span><span class="c1">// Put on left side of panel.</span>
 <span class="w">  </span><span class="nx">right_Map</span><span class="p">,</span><span class="w">                            </span><span class="c1">// Put on right side of panel.</span>
 <span class="w">  </span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span><span class="w">                         </span><span class="c1">// Arrange split in horizontal direction.</span>
@@ -1315,19 +1315,19 @@
 <span class="w">  </span><span class="p">])</span>
 <span class="p">;</span>
 
-<span class="c1">// Initialize a panel to hold wipe map.</span>
+<span class="c1">// Initialize a panel to hold swipe map.</span>
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">wipe_map_panel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">(</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">swipe_map_panel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">(</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">widgets</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">wipe_map</span><span class="p">]</span>
+<span class="w">    </span><span class="nx">widgets</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">swipe_map</span><span class="p">]</span>
 <span class="w">  </span><span class="p">});</span>
 
-<span class="c1">// Initialize layout with side bar and wipe map</span>
+<span class="c1">// Initialize layout with side bar and swipe map</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">SplitPanel</span><span class="p">(</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">firstPanel</span><span class="o">:</span><span class="w"> </span><span class="nx">side_bar</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">secondPanel</span><span class="o">:</span><span class="w"> </span><span class="nx">wipe_map_panel</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">secondPanel</span><span class="o">:</span><span class="w"> </span><span class="nx">swipe_map_panel</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="nx">orientation</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">wipe</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="w">  </span><span class="p">}</span>

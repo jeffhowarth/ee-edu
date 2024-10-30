@@ -2,9 +2,9 @@ __PATTERNS__
 
 # __*user interface design*__  
 
-## __wipe map with side bar layout__  
+## __swipe map with side bar layout__  
 
-The patterns below provide a template for a wipe map with a side bar for title, subtitle, documentation, and credits. 
+The patterns below provide a template for a swipe map with a side bar for title, subtitle, documentation, and credits. 
 
 ### __make layout__  
 
@@ -21,9 +21,9 @@ var side_bar = ui.Panel({
 var left_Map = ui.Map();
 var right_Map = ui.Map();
 
-// Initialize wipe map with left and right maps.
+// Initialize swipe map with left and right maps.
 
-var wipe_map = ui.SplitPanel(        // Initialize split panel.
+var swipe_map = ui.SplitPanel(          // Initialize split panel.
   left_Map,                             // Put on left side of panel.
   right_Map,                            // Put on right side of panel.
   'horizontal',                         // Arrange split in horizontal direction.
@@ -39,19 +39,19 @@ ui.Map.Linker([
   ])
 ;
 
-// Initialize a panel to hold wipe map.
+// Initialize a panel to hold swipe map.
 
-var wipe_map_panel = ui.Panel(
+var swipe_map_panel = ui.Panel(
   {
-    widgets: [wipe_map]
+    widgets: [swipe_map]
   });
 
-// Initialize layout with side bar and wipe map
+// Initialize layout with side bar and swipe map
 
 var layout = ui.SplitPanel(
   {
     firstPanel: side_bar,
-    secondPanel: wipe_map_panel, 
+    secondPanel: swipe_map_panel, 
     orientation: 'horizontal',
     wipe: false
   }
