@@ -72,7 +72,7 @@ To thoughtfully use the starter scripts below, you should be able to answer thes
 
 ---
 
-### __Landsat 5__  
+### __:earth_americas: Landsat 5__  
 
 ```js
 
@@ -149,7 +149,7 @@ print("Histogram of selected band", histogram);
 
 ---
 
-### __Landsat 7__
+### __:earth_americas: Landsat 7__
 
 ```js
 
@@ -198,8 +198,8 @@ print("Landsat 7 image", output);
 
 var viz = {
   bands: ['SR_B3', 'SR_B2', 'SR_B1'],
-  min: 0.0,
-  max: 0.3,
+  min: [0.0, 0.0, 0.0],
+  max: [0.3, 0.3, 0.3]
 };
 
 Map.addLayer(output, viz, 'Landsat 7 image');
@@ -228,7 +228,7 @@ print("Histogram of selected band", histogram);
 
 ---  
 
-### __Landsat 8__  
+### __:earth_americas: Landsat 8__  
 
 ```js
 
@@ -277,8 +277,8 @@ print("Landsat 8 image", output);
 
 var viz = {
   bands: ['SR_B4', 'SR_B3', 'SR_B2'],
-  min: 0.0,
-  max: 0.25,
+  min: [0.0, 0.0, 0.0],
+  max: [0.25, 0.25, 0.25],
 };
 
 Map.addLayer(output, viz, 'Landsat 8 image');
@@ -307,7 +307,7 @@ print("Histogram of selected band", histogram);
 
 ---  
 
-### __Landsat 9__  
+### __:earth_americas: Landsat 9__   
 
 ```js
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -334,7 +334,7 @@ Map.centerObject(geometry, 8);
 
 
 // ----------------------------------------------------------------------
-//  Filter iand flatten image collection.
+//  Filter and flatten image collection.
 // ----------------------------------------------------------------------
 
 var output = ee.ImageCollection("LANDSAT/LC09/C02/T1_L2")
@@ -356,8 +356,8 @@ print("Landsat 9 image", output);
 
 var viz = {
   bands: ['SR_B4', 'SR_B3', 'SR_B2'],
-  min: 0.0,
-  max: 0.25,
+  min: [0.0, 0.0, 0.0],
+  max: [0.25, 0.25, 0.25],
 };
 
 Map.addLayer(output, viz, 'Landsat 9 image');
@@ -384,10 +384,9 @@ print("Histogram of selected band", histogram);
 
 ```
 
-
 ---
 
-## __NAIP__  
+## __:earth_americas: NAIP__  
 
 ```js
 /*    

@@ -886,6 +886,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1104,6 +1106,20 @@
     <li class="md-nav__item">
       <a href="../../problems/tutorial-08/" class="md-nav__link">
         T8. Landsat snapshots
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/practice-08/" class="md-nav__link">
+        P8. Swipe map app (2)
       </a>
     </li>
   
@@ -1401,7 +1417,7 @@
 <li>what is the <em>spatial resolution</em> of each band?  </li>
 </ul>
 <hr />
-<h3 id="landsat-5"><strong>Landsat 5</strong></h3>
+<h3 id="landsat-5"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 5</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_L5.js</span>
 <span class="c1">//  Author:       Jeff Howarth</span>
@@ -1472,7 +1488,7 @@
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Histogram of selected band&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">histogram</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h3 id="landsat-7"><strong>Landsat 7</strong></h3>
+<h3 id="landsat-7"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 7</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_L7.js</span>
 <span class="c1">//  Author:       Jeff Howarth</span>
@@ -1518,8 +1534,8 @@
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">bands</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;SR_B3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SR_B2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SR_B1&#39;</span><span class="p">],</span>
-<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">]</span>
 <span class="p">};</span>
 
 <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">output</span><span class="p">,</span><span class="w"> </span><span class="nx">viz</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Landsat 7 image&#39;</span><span class="p">);</span>
@@ -1544,7 +1560,7 @@
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Histogram of selected band&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">histogram</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h3 id="landsat-8"><strong>Landsat 8</strong></h3>
+<h3 id="landsat-8"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 8</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_L8.js</span>
 <span class="c1">//  Author:       Jeff Howarth</span>
@@ -1590,8 +1606,8 @@
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">bands</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;SR_B4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SR_B3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SR_B2&#39;</span><span class="p">],</span>
-<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25</span><span class="p">],</span>
 <span class="p">};</span>
 
 <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">output</span><span class="p">,</span><span class="w"> </span><span class="nx">viz</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Landsat 8 image&#39;</span><span class="p">);</span>
@@ -1616,7 +1632,7 @@
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Histogram of selected band&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">histogram</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h3 id="landsat-9"><strong>Landsat 9</strong></h3>
+<h3 id="landsat-9"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 9</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_L9.js</span>
 <span class="c1">//  Author:       Jeff Howarth</span>
@@ -1641,7 +1657,7 @@
 
 
 <span class="c1">// ----------------------------------------------------------------------</span>
-<span class="c1">//  Filter iand flatten image collection.</span>
+<span class="c1">//  Filter and flatten image collection.</span>
 <span class="c1">// ----------------------------------------------------------------------</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;LANDSAT/LC09/C02/T1_L2&quot;</span><span class="p">)</span>
@@ -1663,8 +1679,8 @@
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">bands</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;SR_B4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SR_B3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SR_B2&#39;</span><span class="p">],</span>
-<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25</span><span class="p">],</span>
 <span class="p">};</span>
 
 <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">output</span><span class="p">,</span><span class="w"> </span><span class="nx">viz</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Landsat 9 image&#39;</span><span class="p">);</span>
@@ -1689,7 +1705,7 @@
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Histogram of selected band&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">histogram</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h2 id="naip"><strong>NAIP</strong></h2>
+<h2 id="naip"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> NAIP</strong></h2>
 <div class="language-js highlight"><pre><span></span><code><span class="cm">/*    </span>
 <span class="cm">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;</span>
 

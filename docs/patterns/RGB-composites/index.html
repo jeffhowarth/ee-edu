@@ -476,6 +476,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#natural-and-false-color" class="md-nav__link">
+    natural and false color
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-spectral-signatures" class="md-nav__link">
+    chart spectral signatures
+  </a>
+  
+    <nav class="md-nav" aria-label="chart spectral signatures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#landsat-5" class="md-nav__link">
+    Landsat 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#landsat-7" class="md-nav__link">
+    Landsat 7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#landsat-8" class="md-nav__link">
+    Landsat 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#landsat-9" class="md-nav__link">
+    Landsat 9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -790,6 +838,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1014,6 +1064,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/practice-08/" class="md-nav__link">
+        P8. Swipe map app (2)
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1145,6 +1209,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#natural-and-false-color" class="md-nav__link">
+    natural and false color
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-spectral-signatures" class="md-nav__link">
+    chart spectral signatures
+  </a>
+  
+    <nav class="md-nav" aria-label="chart spectral signatures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#landsat-5" class="md-nav__link">
+    Landsat 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#landsat-7" class="md-nav__link">
+    Landsat 7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#landsat-8" class="md-nav__link">
+    Landsat 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#landsat-9" class="md-nav__link">
+    Landsat 9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1210,6 +1322,7 @@ Here is how additive color works:
 <hr />
 <p>Here is the key for primary and secondary additive colors.  </p>
 <p><img alt="Additive color" src="https://geography.middlebury.edu/howarth/ee_edu/RGB_alt3.png" />  </p>
+<hr />
 <h2 id="rgb-viz"><strong>RGB viz</strong></h2>
 <p>This is a basic pattern to visualize <strong>multi-band images</strong> as a combination of red, green, and blue channels.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">rgb_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
@@ -1223,6 +1336,122 @@ Here is how additive color works:
 </code></pre></div>
 <p>The <em>gamma</em> property bends the function that maps display values to data values in order to lighten or darken the midtones of the image. Lowering the gamma value (towards 0) darkens the image, while raising the gamma value (towards 2) lightens the image.  </p>
 <p>The min, max, and gamma values can be adjusted separately for each band. </p>
+<h2 id="natural-and-false-color"><strong>natural and false color</strong></h2>
+<p>A <strong>natural color</strong> image displays reflectance in the Red, Green, and Blue bands of the EM spectrum using the Red, Green, and Blue color channels, respectively. The result looks roughly similar to what we see when we have a window seat and the shade up. </p>
+<p>A <strong>false color</strong> image breaks this like-to-like mapping of the EM spectrum to additive color. For example, the near infrared (NIR) false color image displays reflectance in NIR, Red, and Green bands of the EM spectrum to the Red, Green, and Blue color channels. respectively. The result looks different from our experience, but is often helpful for distinguishing different types of vegetation and surfaces that otherwise look &lsquo;green&rsquo; in natural color composites.  </p>
+<p>Importantly, a NIR false color image is just one example of a false color image. Many other false color images display reflectance in shortwave infrared (SWIR), sometimes called mid-range infrared, that are useful in wide range of applications. </p>
+<p>To better understand how false color images work, please read:</p>
+<ul>
+<li><a href="https://earthobservatory.nasa.gov/features/FalseColor" target="_blank">Why is that Forest Red and that Cloud Blue? How to Interpret a False-Color Satellite Image</a>  </li>
+</ul>
+<p>This is an old but still helpful reference for exploring different band combinations for false color:  </p>
+<ul>
+<li><a href="https://web.pdx.edu/~nauna/resources/10_BandCombinations.htm" target="_blank">Landsat band combinations</a>  </li>
+</ul>
+<hr />
+<h2 id="chart-spectral-signatures"><strong>chart spectral signatures</strong></h2>
+<p>To interpret and explain why false color images look the way they do, it can be helpful to chart the spectral signature of locations in an image.  </p>
+<p>If you add the appropriate pattern below to the end of a script that produces an image from a Landsat collection, you should be able to click on locations on the Map and chart the spectral signature of each location.    </p>
+<hr />
+<h3 id="landsat-5"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 5</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Click to chart spectral signatures from L5 image.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">panel_chart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bottom-left&#39;</span><span class="p">}});</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">onClick</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">coords</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">          </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;left_Map&quot; or &quot;right_Map&quot;.</span>
+
+<span class="w">  </span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="nx">coords</span><span class="p">.</span><span class="nx">lon</span><span class="p">,</span><span class="w"> </span><span class="nx">coords</span><span class="p">.</span><span class="nx">lat</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">samples</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;sample&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">samples</span><span class="p">.</span><span class="nx">length</span><span class="p">}));</span>
+
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">geo</span><span class="p">.</span><span class="nx">icLandsat</span><span class="p">.</span><span class="nx">chartSpectralSignatureL5</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">output</span><span class="p">,</span><span class="w">                             </span><span class="c1">// Name of L5 image (&#39;output&#39; assumes you are using starter script).</span>
+<span class="w">    </span><span class="nx">samples</span>
+<span class="w">    </span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">);</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">panel_chart</span><span class="p">);</span><span class="w">                   </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;side_bar&quot;.</span>
+</code></pre></div>
+<hr />
+<h3 id="landsat-7"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 7</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Click to chart spectral signatures from L7 image.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">panel_chart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bottom-left&#39;</span><span class="p">}});</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">onClick</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">coords</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">          </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;left_Map&quot; or &quot;right_Map&quot;.</span>
+
+<span class="w">  </span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="nx">coords</span><span class="p">.</span><span class="nx">lon</span><span class="p">,</span><span class="w"> </span><span class="nx">coords</span><span class="p">.</span><span class="nx">lat</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">samples</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;sample&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">samples</span><span class="p">.</span><span class="nx">length</span><span class="p">}));</span>
+
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">geo</span><span class="p">.</span><span class="nx">icLandsat</span><span class="p">.</span><span class="nx">chartSpectralSignatureL7</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">output</span><span class="p">,</span><span class="w">                             </span><span class="c1">// Name of L7 image (&#39;output&#39; assumes you are using starter script).</span>
+<span class="w">    </span><span class="nx">samples</span>
+<span class="w">    </span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">);</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">panel_chart</span><span class="p">);</span><span class="w">                   </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;side_bar&quot;.</span>
+</code></pre></div>
+<hr />
+<h3 id="landsat-8"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 8</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Click to chart spectral signatures from L8 image.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">panel_chart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bottom-left&#39;</span><span class="p">}});</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">onClick</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">coords</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">          </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;left_Map&quot; or &quot;right_Map&quot;.</span>
+
+<span class="w">  </span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="nx">coords</span><span class="p">.</span><span class="nx">lon</span><span class="p">,</span><span class="w"> </span><span class="nx">coords</span><span class="p">.</span><span class="nx">lat</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">samples</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;sample&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">samples</span><span class="p">.</span><span class="nx">length</span><span class="p">}));</span>
+
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">geo</span><span class="p">.</span><span class="nx">icLandsat</span><span class="p">.</span><span class="nx">chartSpectralSignatureL8</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">output</span><span class="p">,</span><span class="w">                             </span><span class="c1">// Name of L8 image (&#39;output&#39; assumes you are using starter script).</span>
+<span class="w">    </span><span class="nx">samples</span>
+<span class="w">    </span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">);</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">panel_chart</span><span class="p">);</span><span class="w">                   </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;side_bar&quot;.</span>
+</code></pre></div>
+<hr />
+<h3 id="landsat-9"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 9</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Click to chart spectral signatures from L9 image.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">panel_chart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bottom-left&#39;</span><span class="p">}});</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">onClick</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">coords</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">          </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;left_Map&quot; or &quot;right_Map&quot;.</span>
+
+<span class="w">  </span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="nx">coords</span><span class="p">.</span><span class="nx">lon</span><span class="p">,</span><span class="w"> </span><span class="nx">coords</span><span class="p">.</span><span class="nx">lat</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">samples</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;sample&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">samples</span><span class="p">.</span><span class="nx">length</span><span class="p">}));</span>
+
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">geo</span><span class="p">.</span><span class="nx">icLandsat</span><span class="p">.</span><span class="nx">chartSpectralSignatureL9</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">output</span><span class="p">,</span><span class="w">                             </span><span class="c1">// Name of the L9 image (&#39;output&#39; assumes you are using starter script).</span>
+<span class="w">    </span><span class="nx">samples</span>
+<span class="w">    </span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">);</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">panel_chart</span><span class="p">);</span><span class="w">                   </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;side_bar&quot;.</span>
+</code></pre></div>
 <hr />
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License</a>.</p>
 
