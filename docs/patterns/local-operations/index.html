@@ -697,6 +697,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#spectral-indices" class="md-nav__link">
+    spectral indices
+  </a>
+  
+    <nav class="md-nav" aria-label="spectral indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ndvi" class="md-nav__link">
+    NDVI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nbr" class="md-nav__link">
+    NBR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#awesome-spectral-indices-module" class="md-nav__link">
+    awesome spectral indices module
+  </a>
+  
+    <nav class="md-nav" aria-label="awesome spectral indices module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-module" class="md-nav__link">
+    load module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-parameters" class="md-nav__link">
+    define parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-spectral-indices" class="md-nav__link">
+    compute spectral indices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -854,6 +915,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
+        
+          
         
           
         
@@ -1125,6 +1188,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/tutorial-09/" class="md-nav__link">
+        T9. Spectral indices
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1351,6 +1428,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#spectral-indices" class="md-nav__link">
+    spectral indices
+  </a>
+  
+    <nav class="md-nav" aria-label="spectral indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ndvi" class="md-nav__link">
+    NDVI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nbr" class="md-nav__link">
+    NBR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#awesome-spectral-indices-module" class="md-nav__link">
+    awesome spectral indices module
+  </a>
+  
+    <nav class="md-nav" aria-label="awesome spectral indices module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-module" class="md-nav__link">
+    load module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-parameters" class="md-nav__link">
+    define parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-spectral-indices" class="md-nav__link">
+    compute spectral indices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1546,6 +1684,105 @@
 <p><img alt="local-overlay-operations" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/divide.png" /></p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_A_divide_B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image_A</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">image_B</span><span class="p">);</span>
 </code></pre></div>
+<h2 id="spectral-indices"><strong>spectral indices</strong></h2>
+<p>Spectral indices are derived from local operations that compare values in two or more spectral bands. There are many, many different indices. Below I describe two indices that we will use in tutorial 9 and problem 9.  </p>
+<h3 id="ndvi"><strong>NDVI</strong></h3>
+<p>The normalized difference vegetation index (NDVI) is a measure of the health of vegetation. It is calculated by comparing reflectance of near infrared (NIR) light and red light.  </p>
+<hr />
+<p><img alt="ndvi" src="https://gsp.humboldt.edu/olm/Courses/GSP_216/images/ndvi-formula.jpg" />  </p>
+<hr />
+<p>This takes advantage of the difference in the spectral signatures of healthy versus stressed or dead vegetation; specifically, healthy vegetation will have higher reflectance in the NIR band due to cell structure and lower reflectance in red bands due to absorption by chlorophyll.  </p>
+<hr />
+<p><img alt="ndvi-signature" src="https://ageagle.com/wp-content/uploads/micasense/2018/12/0051a-1cdzv0-ekhkg7odew-dorlw.png" /></p>
+<p>NDVI values will range from -1 to 1. Although results will vary by region, year, and instrument, here are some ballpark numbers to help interpret NDVI values:  </p>
+<ul>
+<li>0 or less: water </li>
+<li>0 - 0.15: impervious surfaces, rock, sand, or snow  </li>
+<li>0.15 - 0.33: sparse and/or stressed vegetation  </li>
+<li>0.33 - 0.66: moderatly healthy vegetation</li>
+<li>0.66 - 1: dense and/or healthy vegetation</li>
+</ul>
+<hr />
+<h3 id="nbr"><strong>NBR</strong></h3>
+<p>The normalized burn ratio (NBR) is a measure of the severity of a fire. It is calculated by comparing reflectance of near infrared (NIR) and shortwave infrared (SWIR) light. </p>
+<p><img alt="nbr" src="https://d33v4339jhl8k0.cloudfront.net/docs/assets/637d3085483e942ba866b26e/images/64beb4b357a4e8315e721be1/file-kTlMWj8ckP.png" />  </p>
+<p><a href="nbr-source" target="_blank"><em>source</em></a></p>
+<hr />
+<p>This takes advantage of differences in the spectral signatures of healthy and burned vegetation.</p>
+<hr />
+<p><img alt="nbr signatures" src="https://d33v4339jhl8k0.cloudfront.net/docs/assets/637d3085483e942ba866b26e/images/64beb58957a4e8315e721be2/file-BCK9LN3KVT.png" /></p>
+<hr />
+<h2 id="awesome-spectral-indices-module"><strong>awesome spectral indices module</strong></h2>
+<p>Although you can compute most spectral indices from scratch in Earth Engine, I appreciate using a module developed by <a href="https://github.com/davemlz" target="_blank">Dave Montero Loaiza</a> that is&hellip; pretty&hellip; awesome.  </p>
+<p>Here are the steps for using his module.  </p>
+<hr />
+<h3 id="load-module"><strong>load module</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// ------------------------------------------------------------------------</span>
+<span class="c1">//  Load spectral indices module.  </span>
+<span class="c1">// ------------------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">spectral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;users/dmlmont/spectral:spectral&quot;</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span>
+<span class="w">  </span><span class="s2">&quot;------------------&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;SPECTRAL INDICES&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="s2">&quot;------------------&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">spectral</span><span class="p">.</span><span class="nx">indices</span>
+<span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="define-parameters"><strong>define parameters</strong></h3>
+<p>This will depend on which data product you are using from the Earth Engine Data catalog and based on <a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices?tab=readme-ov-file#expressions" target="_blank">this table</a> from Dave&rsquo;s github docs.      </p>
+<p>For Landsat 5 or 7 Surface Reflectance, use this pattern:</p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// ------------------------------------------------------------------------</span>
+<span class="c1">//  Define parameters for Landsat 5 or 7 Surface Reflectance. </span>
+<span class="c1">// ------------------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;B&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B1&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;G&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B2&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;R&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B3&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;N&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B4&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;S1&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B5&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;S2&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B7&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;T&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B6&quot;</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div>
+<hr />
+<p>For Landsat 8 or 9, use this pattern:</p>
+<hr />
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// ------------------------------------------------------------------------</span>
+<span class="c1">//  Define parameters for Landsat 8 or 0 Surface Reflectance. </span>
+<span class="c1">// ------------------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;A&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B1&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;B&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B2&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;G&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B3&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;R&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B4&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;N&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B5&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;S1&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B6&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;S2&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B7&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;T1&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B10&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="s2">&quot;T2&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;SR_B11&quot;</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div>
+<hr />
+<h3 id="compute-spectral-indices"><strong>compute spectral indices</strong></h3>
+<p>You can compute one or more indices with this pattern. This example computes NDVI, NBR, and MNDWI. Each index will be stored as a new band in the output image.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// ------------------------------------------------------------------------</span>
+<span class="c1">//  Compute spectral index or indices.</span>
+<span class="c1">// ------------------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">output_si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">spectral</span><span class="p">.</span><span class="nx">computeIndex</span><span class="p">(</span><span class="nx">output</span><span class="p">,[</span><span class="s2">&quot;NDVI&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;NBR&quot;</span><span class="p">],</span><span class="w"> </span><span class="nx">parameters</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span>
+<span class="w">  </span><span class="s2">&quot;---------------------------&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;Image with spectral indices&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;---------------------------&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">output_si</span><span class="p">);</span>
+</code></pre></div>
+<hr />
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 

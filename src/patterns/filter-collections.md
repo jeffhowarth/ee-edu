@@ -43,7 +43,22 @@ This method allows you to choose a calendar unit for a temporal interval.
 ```js
 
 var select_by_calendar = ic.filter(
-  ee.Filter.calendarRange(start, end, unit)
+  ee.Filter.calendarRange(start, end, "unit")
+  )
+;
+
+```
+
+---  
+
+### __filter by date range__  
+
+This method defines a temporal interval with a start and end date. The start_date and end_date must be strings in the format: ```"YYYY-MM-DD"```.  
+
+```js
+
+var select_by_date = ic.filter(
+  ee.Filter.date("start_date," "end_date")
   )
 ;
 

@@ -568,6 +568,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reclassify-by-defined-breaks" class="md-nav__link">
+    Reclassify by defined breaks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reclassify-by-equal-intervals" class="md-nav__link">
     Reclassify by equal intervals
   </a>
@@ -766,6 +773,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
+        
+          
         
           
         
@@ -1037,6 +1046,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/tutorial-09/" class="md-nav__link">
+        T9. Spectral indices
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1162,6 +1185,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reclassify-by-defined-breaks" class="md-nav__link">
+    Reclassify by defined breaks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reclassify-by-equal-intervals" class="md-nav__link">
     Reclassify by equal intervals
   </a>
@@ -1194,7 +1224,7 @@
 <h1 id="reclassify-raster"><em><strong>reclassify raster</strong></em></h1>
 <p>These methods purposefully reclassify the values in a raster. </p>
 <hr />
-<h3 id="boolean-raster"><strong>Boolean raster</strong></h3>
+<h2 id="boolean-raster"><strong>Boolean raster</strong></h2>
 <p>This pattern asks a true or false question about each value in the input raster and returns a 1 if true and 0 if false in the corresponding pixel of the output raster.   </p>
 <hr />
 <p><img alt="boolean" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/boolean.png" /></p>
@@ -1252,7 +1282,74 @@
 </table>
 <p></center></p>
 <hr />
-<h3 id="reclassify-by-equal-intervals"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Reclassify by equal intervals</strong></h3>
+<h2 id="reclassify-by-defined-breaks"><strong>Reclassify by defined breaks</strong></h2>
+<p>This method reclassifies values in the input raster based on user-defined breaks. This is useful when the input values represent a <a href="../../three-t/#conceptual-models">field model</a> and when the intervals between breaks are not equal.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// ------------------------------------------------------------------------</span>
+<span class="c1">//  Reclassify by defined breaks. </span>
+<span class="c1">// ------------------------------------------------------------------------</span>
+
+<span class="c1">// Isolate band if necessary</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">output_si</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;band_name&quot;</span><span class="p">);</span>
+
+<span class="c1">// Define thresholds to reclassify a raster.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">thresholds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.6</span><span class="p">];</span>
+
+<span class="c1">// Make binaries for each threshold and add together. </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">output_reclassed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="nx">thresholds</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="nx">thresholds</span><span class="p">[</span><span class="mf">1</span><span class="p">]))</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="nx">thresholds</span><span class="p">[</span><span class="mf">2</span><span class="p">]))</span>
+<span class="p">;</span>
+</code></pre></div>
+<p>The pattern below will produce an image with four values as follows:</p>
+<table>
+<thead>
+<tr>
+<th align="center">NEW VALUE</th>
+<th align="center">FROM OLD VALUE</th>
+<th align="center">TO OLD VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">min value in raster</td>
+<td align="center">just less than 0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">just less than 0.2</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">0.2</td>
+<td align="center">just less than 0.6</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">0.6</td>
+<td align="center">max value in raster</td>
+</tr>
+</tbody>
+</table>
+<p>To add additional breaks, you will need to add a threshold to the list and add an addition line to the equation. For example:</p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Define thresholds to reclassify a raster.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">thresholds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="mf">0.33</span><span class="p">,</span><span class="w"> </span><span class="mf">0.66</span><span class="p">];</span>
+
+<span class="c1">// Make binaries for each threshold and add together. </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">output_reclassed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="nx">thresholds</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="nx">thresholds</span><span class="p">[</span><span class="mf">1</span><span class="p">]))</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="nx">thresholds</span><span class="p">[</span><span class="mf">2</span><span class="p">]))</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="nx">thresholds</span><span class="p">[</span><span class="mf">3</span><span class="p">]))</span>
+<span class="p">;</span>
+</code></pre></div>
+<hr />
+<h2 id="reclassify-by-equal-intervals"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Reclassify by equal intervals</strong></h2>
 <p>This method assigns raster values into equal interval classes. The method divides each value in a raster by the interval number and then rounds down to the nearest integer (finds the floor). The integers in the output are <strong>ordinal</strong> but arbitrary class numbers. </p>
 <hr />
 <p><img alt="equal intervals" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/equal-interval.png" /></p>
@@ -1282,7 +1379,7 @@
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_reclassified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iReclass</span><span class="p">.</span><span class="nx">equalInterval</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">interval</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h3 id="remap-old-values-to-new-values"><strong>Remap old values to new values</strong></h3>
+<h2 id="remap-old-values-to-new-values"><strong>Remap old values to new values</strong></h2>
 <p>This method assigns integer values in the input raster to new integer values in the output raster based on transition rules defined by two lists. The first list defines the set of original values in the input raster. The second list defines the set of new values to be stored in the output raster. The order of the two lists determines the transition. The two lists must be the same length (have the same number of values).</p>
 <hr />
 <p><img alt="remap" src="https://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/remap.png" /></p>

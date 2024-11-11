@@ -210,16 +210,25 @@ After constructing an ic object, I tend to use a ```print()``` method to learn a
 
 ```js
 print(
-    label,
-    ':: collection ::',
+    "------------------",
+    "collection",
+    "------------------",
     ic,                 // Consider commenting out this line to make script run faster.
-    ':: size ::',
+    "------------------",
+    "size",
+    "------------------",
     ic.size(),          // Consider commenting out this line to make script run faster. 
-    ':: first image ::',
+    "------------------",
+    "first image",
+    "------------------",
     ic.first(),
-    ':: number of bands ::',
+    "------------------",
+    "number of bands",
+    "------------------",
     ic.first().bandNames().length(),
-    ':: band names ::',
+    "------------------",
+    "band names",
+    "------------------",
     ic.first().bandNames()
     )
 ;

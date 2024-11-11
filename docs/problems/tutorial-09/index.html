@@ -12,27 +12,27 @@
         <meta name="author" content="Jeff Howarth">
       
       
-        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/geo-module/">
+        <link rel="canonical" href="https://github.com/jeffhowarth/ee-patterns/problems/tutorial-09/">
       
       
-        <link rel="prev" href="../three-t/">
+        <link rel="prev" href="../practice-08/">
       
       
-        <link rel="next" href="../patterns/javascript/">
+        <link rel="next" href="../../solutions/tutorials/">
       
-      <link rel="icon" href="../assets/myIcon.png">
+      <link rel="icon" href="../../assets/myIcon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>geo module - ee-patterns</title>
+        <title>T9. Spectral indices - ee-patterns</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#geo-module" class="md-skip">
+        <a href="#spectral-indices" class="md-skip">
           Skip to content
         </a>
       
@@ -91,9 +91,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="ee-patterns" class="md-header__button md-logo" aria-label="ee-patterns" data-md-component="logo">
+    <a href="../.." title="ee-patterns" class="md-header__button md-logo" aria-label="ee-patterns" data-md-component="logo">
       
-  <img src="../assets/myIcon.png" alt="logo">
+  <img src="../../assets/myIcon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              geo module
+              T9. Spectral indices
             
           </span>
         </div>
@@ -190,9 +190,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="ee-patterns" class="md-nav__button md-logo" aria-label="ee-patterns" data-md-component="logo">
+    <a href="../.." title="ee-patterns" class="md-nav__button md-logo" aria-label="ee-patterns" data-md-component="logo">
       
-  <img src="../assets/myIcon.png" alt="logo">
+  <img src="../../assets/myIcon.png" alt="logo">
 
     </a>
     ee-patterns
@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         title page
       </a>
     </li>
@@ -235,7 +235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
         introduction
       </a>
     </li>
@@ -250,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../three-t/" class="md-nav__link">
+      <a href="../../three-t/" class="md-nav__link">
         the three Ts
       </a>
     </li>
@@ -263,66 +263,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          geo module
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../geo-module/" class="md-nav__link">
         geo module
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#import-module" class="md-nav__link">
-    import module
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docs-in-eepatterns" class="md-nav__link">
-    docs in eePatterns
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#peak-under-hood" class="md-nav__link">
-    peak under hood
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -412,7 +357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/javascript/" class="md-nav__link">
+      <a href="../../patterns/javascript/" class="md-nav__link">
         javascript
       </a>
     </li>
@@ -426,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/explain-code/" class="md-nav__link">
+      <a href="../../patterns/explain-code/" class="md-nav__link">
         explain code
       </a>
     </li>
@@ -440,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/gather-raster-data/" class="md-nav__link">
+      <a href="../../patterns/gather-raster-data/" class="md-nav__link">
         gather raster data
       </a>
     </li>
@@ -454,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/gather-vector-data/" class="md-nav__link">
+      <a href="../../patterns/gather-vector-data/" class="md-nav__link">
         gather vector data
       </a>
     </li>
@@ -468,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/map-raster-layers/" class="md-nav__link">
+      <a href="../../patterns/map-raster-layers/" class="md-nav__link">
         map raster as layers
       </a>
     </li>
@@ -482,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/RGB-composites/" class="md-nav__link">
+      <a href="../../patterns/RGB-composites/" class="md-nav__link">
         RGB composites
       </a>
     </li>
@@ -496,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/map-vector-layers/" class="md-nav__link">
+      <a href="../../patterns/map-vector-layers/" class="md-nav__link">
         map vector as layers
       </a>
     </li>
@@ -510,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/explain-symbology/" class="md-nav__link">
+      <a href="../../patterns/explain-symbology/" class="md-nav__link">
         explain symbology
       </a>
     </li>
@@ -524,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/customize-Map/" class="md-nav__link">
+      <a href="../../patterns/customize-Map/" class="md-nav__link">
         customize Map
       </a>
     </li>
@@ -538,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/filter-collections/" class="md-nav__link">
+      <a href="../../patterns/filter-collections/" class="md-nav__link">
         filter collections
       </a>
     </li>
@@ -552,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/composite-mosaic/" class="md-nav__link">
+      <a href="../../patterns/composite-mosaic/" class="md-nav__link">
         flatten collections
       </a>
     </li>
@@ -566,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/convert-data/" class="md-nav__link">
+      <a href="../../patterns/convert-data/" class="md-nav__link">
         convert data
       </a>
     </li>
@@ -580,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/reclassify/" class="md-nav__link">
+      <a href="../../patterns/reclassify/" class="md-nav__link">
         reclassify raster
       </a>
     </li>
@@ -594,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/scalar-operations/" class="md-nav__link">
+      <a href="../../patterns/scalar-operations/" class="md-nav__link">
         scalar operations
       </a>
     </li>
@@ -608,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/local-operations/" class="md-nav__link">
+      <a href="../../patterns/local-operations/" class="md-nav__link">
         local overlay operations
       </a>
     </li>
@@ -622,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/focal-operations/" class="md-nav__link">
+      <a href="../../patterns/focal-operations/" class="md-nav__link">
         focal (neighborhood) operations
       </a>
     </li>
@@ -636,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/proximity-operations/" class="md-nav__link">
+      <a href="../../patterns/proximity-operations/" class="md-nav__link">
         proximity operations
       </a>
     </li>
@@ -650,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/zonal-operations/" class="md-nav__link">
+      <a href="../../patterns/zonal-operations/" class="md-nav__link">
         zonal overlay operations
       </a>
     </li>
@@ -664,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/vector-overlay/" class="md-nav__link">
+      <a href="../../patterns/vector-overlay/" class="md-nav__link">
         vector overlay operations
       </a>
     </li>
@@ -678,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/terrain/" class="md-nav__link">
+      <a href="../../patterns/terrain/" class="md-nav__link">
         terrain
       </a>
     </li>
@@ -692,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/vector-analysis/" class="md-nav__link">
+      <a href="../../patterns/vector-analysis/" class="md-nav__link">
         vector analysis
       </a>
     </li>
@@ -706,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/export/" class="md-nav__link">
+      <a href="../../patterns/export/" class="md-nav__link">
         export data
       </a>
     </li>
@@ -720,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/image-starters/" class="md-nav__link">
+      <a href="../../patterns/image-starters/" class="md-nav__link">
         image starters
       </a>
     </li>
@@ -734,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../patterns/ui-design/" class="md-nav__link">
+      <a href="../../patterns/ui-design/" class="md-nav__link">
         ui design
       </a>
     </li>
@@ -754,14 +699,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
       
       
         
@@ -806,7 +753,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           PROBLEMS
@@ -819,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/tutorial-01/" class="md-nav__link">
+      <a href="../tutorial-01/" class="md-nav__link">
         T1. A sketch map from lidar
       </a>
     </li>
@@ -833,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/practice-01/" class="md-nav__link">
+      <a href="../practice-01/" class="md-nav__link">
         P1. Memory under cover
       </a>
     </li>
@@ -847,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/tutorial-02/" class="md-nav__link">
+      <a href="../tutorial-02/" class="md-nav__link">
         T2. A slippy topographic map
       </a>
     </li>
@@ -861,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/practice-02/" class="md-nav__link">
+      <a href="../practice-02/" class="md-nav__link">
         P2. Ice age bathtub
       </a>
     </li>
@@ -875,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/tutorial-03/" class="md-nav__link">
+      <a href="../tutorial-03/" class="md-nav__link">
         T3. Intro to feature collections
       </a>
     </li>
@@ -889,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/practice-03/" class="md-nav__link">
+      <a href="../practice-03/" class="md-nav__link">
         P3. Parent materials of soils
       </a>
     </li>
@@ -903,7 +850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/tutorial-04/" class="md-nav__link">
+      <a href="../tutorial-04/" class="md-nav__link">
         T4. Forest blocks
       </a>
     </li>
@@ -917,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/practice-04/" class="md-nav__link">
+      <a href="../practice-04/" class="md-nav__link">
         P4. Forest blocks and habitat connectors
       </a>
     </li>
@@ -931,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/tutorial-05/" class="md-nav__link">
+      <a href="../tutorial-05/" class="md-nav__link">
         T5. Scale in web mercator
       </a>
     </li>
@@ -945,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/practice-05/" class="md-nav__link">
+      <a href="../practice-05/" class="md-nav__link">
         P5. Land use in watershed riparian zones
       </a>
     </li>
@@ -959,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/troubleshooting/" class="md-nav__link">
+      <a href="../troubleshooting/" class="md-nav__link">
         TS. Troubleshooting errors
       </a>
     </li>
@@ -973,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/practice-06/" class="md-nav__link">
+      <a href="../practice-06/" class="md-nav__link">
         P6. Changes in the night
       </a>
     </li>
@@ -987,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/tutorial-07/" class="md-nav__link">
+      <a href="../tutorial-07/" class="md-nav__link">
         T7. NAIP Explorer
       </a>
     </li>
@@ -1001,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/practice-07/" class="md-nav__link">
+      <a href="../practice-07/" class="md-nav__link">
         P7. Swipe map app
       </a>
     </li>
@@ -1015,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/tutorial-08/" class="md-nav__link">
+      <a href="../tutorial-08/" class="md-nav__link">
         T8. Landsat snapshots
       </a>
     </li>
@@ -1029,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problems/practice-08/" class="md-nav__link">
+      <a href="../practice-08/" class="md-nav__link">
         P8. Swipe map app (2)
       </a>
     </li>
@@ -1041,11 +988,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../problems/tutorial-09/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          T9. Spectral indices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         T9. Spectral indices
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deliverables" class="md-nav__link">
+    deliverables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ndvi-problem" class="md-nav__link">
+    NDVI problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nbr-problem" class="md-nav__link">
+    NBR problem
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1100,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../solutions/tutorials/" class="md-nav__link">
+      <a href="../../solutions/tutorials/" class="md-nav__link">
         Tutorials
       </a>
     </li>
@@ -1114,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../solutions/practice/" class="md-nav__link">
+      <a href="../../solutions/practice/" class="md-nav__link">
         Practice
       </a>
     </li>
@@ -1128,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../solutions/error-glossary/" class="md-nav__link">
+      <a href="../../solutions/error-glossary/" class="md-nav__link">
         Error Glossary
       </a>
     </li>
@@ -1169,22 +1178,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#import-module" class="md-nav__link">
-    import module
+  <a href="#goal" class="md-nav__link">
+    goal
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docs-in-eepatterns" class="md-nav__link">
-    docs in eePatterns
+  <a href="#deliverables" class="md-nav__link">
+    deliverables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#peak-under-hood" class="md-nav__link">
-    peak under hood
+  <a href="#ndvi-problem" class="md-nav__link">
+    NDVI problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nbr-problem" class="md-nav__link">
+    NBR problem
   </a>
   
 </li>
@@ -1204,37 +1220,81 @@
                   
 
 
-<h1 id="geo-module"><strong>geo module</strong></h1>
-<p>The geo module is a collection of methods that I am writing and packaging in a way that will allow you to use the methods without having to write them from scratch. </p>
-<p>I wrote these methods for two reasons:    </p>
+<p><strong>TUTORIAL 09</strong>  </p>
+<h1 id="spectral-indices"><strong><em>spectral indices</em></strong></h1>
+<h2 id="goal"><strong>goal</strong></h2>
+<p>This tutorial introduces spectral indices, or calculations made with local operations that compare two or more spectral bands. Additionally, this tutorial introduces a method to reclassify spectral indices with user-defined breaks to make nominal images of landcover.    </p>
+<p>Your practical goal is to solve the two problems described below. The first we will walk through in lecture. The second you will do either alone or with a buddy or two during lab.  </p>
+<h2 id="deliverables"><strong>deliverables</strong></h2>
+<p>By <mark>5pm on November 11</mark>, please complete the <strong>Tutorial 09 checkup</strong> on Canvas. To receive credit for this tutorial, you must submit links to your scripts (and accomplish all prompts listed below). You must also thoughtfully respond to the check-up prompts to briefly critique your results for both problems. Please note that this check-up will be manually graded, so you will only be able to submit it once.  </p>
+<h2 id="ndvi-problem"><strong>NDVI problem</strong></h2>
+<p>Please use Landsat 9 to make a map of New York City that accomplishes the following: </p>
 <ol>
-<li>
-<p>Each represents a recurring task of geospatial analysis that is supported by other geographic information systems (like QGIS or ArcGIS).</p>
-</li>
-<li>
-<p>Each requires a chain of transformations to make in Earth Engine which can be conceptually confusing and technically difficult for novices to do.    </p>
-</li>
+<li>Filters the image collection for:<ol>
+<li>a poi in New York City,</li>
+<li>the years 2022 - 2024,</li>
+<li>the months of July and August,</li>
+<li>with less than 20% cloud cover,</li>
+<li>with cloudy pixels masked.</li>
 </ol>
-<p>My hope is that providing ready-made methods may help you focus on how different methods of spatial analysis and cartography work conceptually in workflows without having to get bogged down in writing complicated task chains for common tools.  </p>
-<hr />
-<h2 id="import-module"><strong>import module</strong></h2>
-<p><strong>To use the module, create a container and require the module.</strong>  </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">geo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;users/jhowarth/eePatterns:modules/geo.js&quot;</span><span class="p">);</span>
+</li>
+<li>Flattens the collection to the median image. </li>
+<li>Displays the median image with two different false color composites:<ol>
+<li>A NIR, Red, Green composite.</li>
+<li>A SWIR2, NIR, Green composite.  </li>
+</ol>
+</li>
+<li>Calculates the NDVI of the median image. </li>
+<li>Displays the NDVI band with the divergent color scheme <code>palette_ndvi</code> defined below.</li>
+<li>Reclassifies the NDVI band with user-defined thresholds to distinguish five classes:  <ol>
+<li>Water</li>
+<li>Impervious or bare</li>
+<li>Sparse and/or stressed vegetation</li>
+<li>Moderately healthy vegetation  </li>
+<li>Dense and/or healthy vegetation  </li>
+</ol>
+</li>
+<li>Adds the reclassified layer to the Map and displays with nominal palette scheme <code>palette_reclass</code> defined below.</li>
+<li>Adds legends to the map for both NDVI layer and reclassified NDVI layer.  </li>
+</ol>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Palette helpers. </span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo methods dictionary&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">help</span><span class="p">);</span><span class="w">    </span><span class="c1">// Prints dictionary of all tools in module.  </span>
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;geo palettes&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iPalettes</span><span class="p">);</span><span class="w">         </span><span class="c1">// Prints dictionary of all palettes in module. </span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">palette_ndvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">])</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">palette_reclass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;PaleTurquoise&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;White&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Gold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;YellowGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;OliveDrab&quot;</span><span class="p">]</span>
 </code></pre></div>
-<p>The code block above will import the module and print the module&rsquo;s help dictionary and palette dictionary to the Console. The help dictionary lists all methods and url links to their docs. The palette dictionary lists all palettes in the module. You only need to import the module once in a script that calls a method or palette from the module. I usually place the above code snippet near the top of my script (under the header).  </p>
-<hr />
-<h2 id="docs-in-eepatterns"><strong>docs in eePatterns</strong></h2>
-<p><strong>A globe icon <img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> identifies methods from module.</strong>  </p>
-<p>In the METHODS documentation, the <img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> symbol identifies a method that requires the geo module. To use any of these methods, you will need to include the <a href="#import-module">import module</a> in your script prior to calling the method. </p>
-<hr />
-<h2 id="peak-under-hood"><strong>peak under hood</strong></h2>
-<p><strong>Add module to your READER tray if you want to see the underlying code to any method.</strong></p>
-<p>The module only hides the code from you if you do not want to see it. If you would like to look under the hood, I have made the code for the module public and you can add it to the READER tray of the IDE by <a href="https://code.earthengine.google.com/?accept_repo=users/jhowarth/eePatterns" target="_blank"><strong>clicking here</strong></a>. </p>
-<hr />
-<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+<h2 id="nbr-problem"><strong>NBR problem</strong></h2>
+<p>Please use Landsat 9 to make a map of the Quebec wildfire scars from the summer of 2023. Your map should accomplish the following:</p>
+<ol>
+<li>Filters the image collection for:<ol>
+<li>a poi on &ldquo;Nutimesanu, QC, Canada&rdquo;,</li>
+<li>the year 2023,</li>
+<li>the months of July and August,</li>
+<li>with less than 20% cloud cover,</li>
+<li>with cloudy pixels masked.</li>
+</ol>
+</li>
+<li>Flattens the collection to the median image. </li>
+<li>Displays the median image with two different false color composites:<ol>
+<li>A NIR, Red, Green composite.</li>
+<li>A SWIR2, NIR, Green composite.  </li>
+</ol>
+</li>
+<li>Calculates the NBR of the median image. </li>
+<li>Displays the NBR band with the divergent color scheme <code>palette_ndvi</code> defined below.</li>
+<li>Reclassifies the NBR band with user-defined thresholds to distinguish three classes:  <ol>
+<li>Water</li>
+<li>Burn scar</li>
+<li>Not burned </li>
+</ol>
+</li>
+<li>Adds the reclassified layer to the Map and displays with nominal palette scheme <code>palette_reclass</code> defined below.</li>
+<li>Adds legends to the map for both NBR layer and reclassified NBR layer.  </li>
+</ol>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Palette helpers. </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">palette_ndvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">])</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">palette_reclass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;LightSkyBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DarkOrchid&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;YellowGreen&quot;</span><span class="p">]</span>
+</code></pre></div>
 
 
 
@@ -1256,7 +1316,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../three-t/" class="md-footer__link md-footer__link--prev" aria-label="Previous: the three Ts" rel="prev">
+          <a href="../practice-08/" class="md-footer__link md-footer__link--prev" aria-label="Previous: P8. Swipe map app (2)" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1265,20 +1325,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                the three Ts
+                P8. Swipe map app (2)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../patterns/javascript/" class="md-footer__link md-footer__link--next" aria-label="Next: javascript" rel="next">
+          <a href="../../solutions/tutorials/" class="md-footer__link md-footer__link--next" aria-label="Next: Tutorials" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                javascript
+                Tutorials
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1340,10 +1400,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.indexes", "navigation.footer", "content.code.copy"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.indexes", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
