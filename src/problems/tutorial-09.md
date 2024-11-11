@@ -52,7 +52,7 @@ Please use Landsat 9 to make a map of the Quebec wildfire scars from the summer 
 1. Filters the image collection for:
     1. a poi on "Nutimesanu, QC, Canada",
     2. the year 2023,
-    3. the months of July and August,
+    3. the months of August and September,
     4. with less than 20% cloud cover,
     5. with cloudy pixels masked.
 2. Flattens the collection to the median image. 
@@ -72,6 +72,6 @@ Please use Landsat 9 to make a map of the Quebec wildfire scars from the summer 
 
 // Palette helpers. 
 
-var palette_ndvi = ['purple', 'white', 'green'])
+var palette_nbr = ['purple', 'white', 'green'])
 var palette_reclass = ["LightSkyBlue", "DarkOrchid", "YellowGreen"]
 ```

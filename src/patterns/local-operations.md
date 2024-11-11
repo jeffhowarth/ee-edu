@@ -426,7 +426,7 @@ For Landsat 8 or 9, use this pattern:
 
 ```js
 // ------------------------------------------------------------------------
-//  Define parameters for Landsat 8 or 0 Surface Reflectance. 
+//  Define parameters for Landsat 8 or 9 Surface Reflectance. 
 // ------------------------------------------------------------------------
 
 var parameters = {
