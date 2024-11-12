@@ -69,7 +69,70 @@ The table below lists some of the common methods to ask true or false questions 
 
 ## __Reclassify by defined breaks__
 
-This method reclassifies values in the input raster based on user-defined breaks. This is useful when the input values represent a [field model](../three-t.md#conceptual-models) and when the intervals between breaks are not equal.  
+This method reclassifies values in the input raster based on user-defined breaks. This is useful when the input values represent a [__field model__](../three-t.md#conceptual-models) and when the intervals between breaks are not equal.  
+
+The workflow can be a little confusing, but the basic idea is that you are using two or more threshold values to define a correspond set of boolean rasters that you then add together. Given two threshold values  
+
+<center>
+
+``` mermaid
+graph LR
+  input[input]
+  method(".gte()") ;
+  output[/"image_boolean"/]  ;
+  arg1["threshold[0]"]  ;
+
+  arg1 --o method
+  input --> method
+  method --> output
+
+  method2(".gte()") ;
+  output2[/"image_boolean"/]  ;
+  arg2["threshold[1]"]  ;
+
+  input --> method2
+  method2 --> output2
+  arg2 --o method2
+
+  method3(".add()") ;
+  output3["output_reclass"]
+
+  output --> method3 
+  output2 --> method3
+  method3 --> output3
+
+  classDef in-out fill:#FFFFFF,stroke-width:1px,stroke: #000000, color:#000000; 
+  classDef op fill:#000000,stroke-width:0px,color:#FFFFFF;
+  classDef arg fill:#CCCCCC,stroke-width:0px,color:#000000;
+  
+
+  class input in-out; 
+  class method op;
+  class output in-out;
+  class arg1 arg;
+
+  class method2 op;
+  class output2 in-out;
+  class arg2 arg;
+
+  class method3 op;
+  class output3 in-out;
+
+
+```
+
+</center>
+
+The figure below illustrates this workflow for a simple example that reclassifies an input raster (left) with two defined breaks: 0 and 2.  
+
+---
+
+![defined-breaks](http://geography.middlebury.edu/howarth/ee_edu/eePatterns/reclassify/reclass-defined-thresholds.png)
+
+---  
+
+The code snippet below shows the pattern for EE with javascript. The first step isolates the band in the image to reclassify. The second step defines the breaks as a list of thresholds. The third step chains together the workflow illustrated in the flowchart and diagram above. Notice that the ```.gte()``` argument calls an item from the threshold list, where ```threshold[0]``` is the first item in the list and ```threshold[1]``` is the second item.   
+
 
 ```js
 // ------------------------------------------------------------------------
@@ -78,43 +141,57 @@ This method reclassifies values in the input raster based on user-defined breaks
 
 // Isolate band if necessary
 
-var input = output_si.select("band_name");
+var output = input.select("band_name");
 
 // Define thresholds to reclassify a raster.
 
-var thresholds = [0, 0.2, 0.6];
+var thresholds = [0, 2];
 
 // Make binaries for each threshold and add together. 
 
-var output_reclassed = input.gte(thresholds[0])
-  .add(input.gte(thresholds[1]))
-  .add(input.gte(thresholds[2]))
+var output_reclassed = output.gte(thresholds[0])
+  .add(output.gte(thresholds[1]))
 ;
 
 ```
 
-The pattern below will produce an image with four values as follows:
+The output raster will contain three values as follows:
 
 | NEW VALUE | FROM OLD VALUE          | TO OLD VALUE        |
 |:--:       | :--:                    | :--:                |
 | 0         | min value in raster     | just less than 0    |
-| 1         | 0                       | just less than 0.2  |  
-| 2         | 0.2                     | just less than 0.6  |  
-| 3         | 0.6                     | max value in raster |
+| 1         | 0                       | just less than 2  |  
+| 2         | 2                       | max value in raster |  
 
-To add additional breaks, you will need to add a threshold to the list and add an addition line to the equation. For example:
+---  
+
+To add additional breaks, you will need to:  
+
+1. add one or more values to the list of thresholds,  
+2. add a corresponding number of ```.add(output.gte(thresholds[#]))``` lines to the routine.    
+
+For example, the pattern below uses four preliminary thresholds that are often applied to NDVI images. The result will be an image with five classes that range from 0 to 4.  
 
 ```js
+
+// ------------------------------------------------------------------------
+//  Reclassify by defined breaks. 
+// ------------------------------------------------------------------------
+
+// Isolate band if necessary
+
+var output = input.select("band_name");
+
 // Define thresholds to reclassify a raster.
 
 var thresholds = [0, 0.15, 0.33, 0.66];
 
 // Make binaries for each threshold and add together. 
 
-var output_reclassed = input.gte(thresholds[0])
-  .add(input.gte(thresholds[1]))
-  .add(input.gte(thresholds[2]))
-  .add(input.gte(thresholds[3]))
+var output_reclassed = output.gte(thresholds[0])
+  .add(output.gte(thresholds[1]))
+  .add(output.gte(thresholds[2]))
+  .add(output.gte(thresholds[3]))
 ;
 
 ```

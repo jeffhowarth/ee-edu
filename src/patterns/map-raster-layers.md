@@ -108,6 +108,43 @@ print("Image histogram", output_histogram);
 
 ---  
 
+#### __:earth_americas: histogram for spectral indices__  
+
+Many [__spectral indices__](../patterns/local-operations.md#spectral-indices), particularly normalized difference indices, will output results that range from -1 to 1. However, there are often some pixels that for various reasons lie outside this range in either direction. To chart a histogram for these images, you will need to adapt the pattern above by placing a ```.clamp()``` on the image. 
+
+```js
+var output_histogram = geo.iCart.iHistogram(image.clamp(-1, 1), scale, aoi);
+
+print("Image histogram", output_histogram);
+
+```
+
+The clamp method has two arguments (min, max) and redefines the range of values in the image so that they all fall within this range. (For this reason, you will generally see 'bookends' on either side of a histogram charted from a clamped image.)  
+
+---  
+
+#### __:earth_americas: get AOI from Map extent__ 
+
+If you are working with a global dataset or an image that has been flattened from a collection, the chart histogram pattern will likely throw errors and tell you it cannot work on an unbounded image. You can work around this with the helper below from the geo module. It will retrieve an area of interest (AOI) from the current geographic extent of the Map window.  
+
+```js
+var aoi = geo.uiMap.getAOIfromMapExtent();
+```
+
+---  
+
+#### __:earth_americas: get Nominal scale helper__ 
+
+Sometimes you may be working with an image and realize that you do not know the native image scale. The helper below from the geo module will retrieve the __nominal scale__ of the image. This is the scale at the equator of the image dataset and should be interpreted with some caution, but it can be helpful as a starting point for defining the scale for the ```geo.iCart.iHistogram()``` and ```geo.iCart.iMinMax()``` methods described above.  
+
+```js
+var scale = geo.iCart.getNominalScaleFromImage(image);
+
+print("IMAGE SCALE", scale);
+```
+
+
+
 ### __define raster viz dictionary__  
 
 __For raster data, store the viz dictionary as a variable and then call this variable when you add the map layer.__   
@@ -176,7 +213,7 @@ The ```Map.addLayer()``` method takes the following arguments:
 
 ### __complete pattern__  
 
-Here is a complete pattern for single-band grayscale images.
+Here is a complete pattern for the simple case of single-band grayscale images.
 
 ```js
 // Print min and max values of image. 
@@ -200,27 +237,6 @@ var single_viz =
 
 Map.addLayer(image,single_viz,"Layer Name");
 ```
-
-### __:earth_americas: get AOI from Map extent__ 
-
-The helper below from the geo module will retrieve an area of interest (AOI) from the current geographic extent of the Map window. 
-
-```js
-var aoi = geo.uiMap.getAOIfromMapExtent();
-```
-
----  
-
-### __:earth_americas: get Nominal scale helper__ 
-
-The helper below from the geo module will retrieve the __nominal scale__ of the image. This is the scale at the equator of the image dataset and should be interpreted with some caution, but it can be helpful as a starting point for defining the scale for the ```geo.iCart.iHistogram()``` and ```geo.iCart.iMinMax()``` methods described above.  
-
-```js
-var scale = geo.iCart.getNominalScaleFromImage(image);
-
-print("IMAGE SCALE", scale);
-```
-
 
 ---  
 

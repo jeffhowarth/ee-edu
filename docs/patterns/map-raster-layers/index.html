@@ -475,6 +475,33 @@
     chart histogram of data values
   </a>
   
+    <nav class="md-nav" aria-label="chart histogram of data values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#histogram-for-spectral-indices" class="md-nav__link">
+    histogram for spectral indices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-aoi-from-map-extent" class="md-nav__link">
+    get AOI from Map extent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-nominal-scale-helper" class="md-nav__link">
+    get Nominal scale helper
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -494,20 +521,6 @@
           <li class="md-nav__item">
   <a href="#complete-pattern" class="md-nav__link">
     complete pattern
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-aoi-from-map-extent" class="md-nav__link">
-    get AOI from Map extent
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-nominal-scale-helper" class="md-nav__link">
-    get Nominal scale helper
   </a>
   
 </li>
@@ -1245,6 +1258,33 @@
     chart histogram of data values
   </a>
   
+    <nav class="md-nav" aria-label="chart histogram of data values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#histogram-for-spectral-indices" class="md-nav__link">
+    histogram for spectral indices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-aoi-from-map-extent" class="md-nav__link">
+    get AOI from Map extent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-nominal-scale-helper" class="md-nav__link">
+    get Nominal scale helper
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1264,20 +1304,6 @@
           <li class="md-nav__item">
   <a href="#complete-pattern" class="md-nav__link">
     complete pattern
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-aoi-from-map-extent" class="md-nav__link">
-    get AOI from Map extent
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-nominal-scale-helper" class="md-nav__link">
-    get Nominal scale helper
   </a>
   
 </li>
@@ -1405,6 +1431,25 @@
 </tbody>
 </table>
 <hr />
+<h4 id="histogram-for-spectral-indices"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> histogram for spectral indices</strong></h4>
+<p>Many <a href="../local-operations/#spectral-indices"><strong>spectral indices</strong></a>, particularly normalized difference indices, will output results that range from -1 to 1. However, there are often some pixels that for various reasons lie outside this range in either direction. To chart a histogram for these images, you will need to adapt the pattern above by placing a <code>.clamp()</code> on the image. </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_histogram</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iHistogram</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">clamp</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">),</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">aoi</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Image histogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">output_histogram</span><span class="p">);</span>
+</code></pre></div>
+<p>The clamp method has two arguments (min, max) and redefines the range of values in the image so that they all fall within this range. (For this reason, you will generally see &lsquo;bookends&rsquo; on either side of a histogram charted from a clamped image.)  </p>
+<hr />
+<h4 id="get-aoi-from-map-extent"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> get AOI from Map extent</strong></h4>
+<p>If you are working with a global dataset or an image that has been flattened from a collection, the chart histogram pattern will likely throw errors and tell you it cannot work on an unbounded image. You can work around this with the helper below from the geo module. It will retrieve an area of interest (AOI) from the current geographic extent of the Map window.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">aoi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">uiMap</span><span class="p">.</span><span class="nx">getAOIfromMapExtent</span><span class="p">();</span>
+</code></pre></div>
+<hr />
+<h4 id="get-nominal-scale-helper"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> get Nominal scale helper</strong></h4>
+<p>Sometimes you may be working with an image and realize that you do not know the native image scale. The helper below from the geo module will retrieve the <strong>nominal scale</strong> of the image. This is the scale at the equator of the image dataset and should be interpreted with some caution, but it can be helpful as a starting point for defining the scale for the <code>geo.iCart.iHistogram()</code> and <code>geo.iCart.iMinMax()</code> methods described above.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">getNominalScaleFromImage</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;IMAGE SCALE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="define-raster-viz-dictionary"><strong>define raster viz dictionary</strong></h3>
 <p><strong>For raster data, store the viz dictionary as a variable and then call this variable when you add the map layer.</strong>   </p>
 <p>Here is a common pattern to visualize <strong>single-band images with grayscale</strong>:</p>
@@ -1468,7 +1513,7 @@
 </table>
 <hr />
 <h3 id="complete-pattern"><strong>complete pattern</strong></h3>
-<p>Here is a complete pattern for single-band grayscale images.</p>
+<p>Here is a complete pattern for the simple case of single-band grayscale images.</p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// Print min and max values of image. </span>
 
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Min &amp; max value of image&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">iMinMax</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">,</span><span class="w"> </span><span class="nx">aoi</span><span class="p">));</span>
@@ -1489,17 +1534,6 @@
 <span class="c1">// Add map layer. </span>
 
 <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="nx">single_viz</span><span class="p">,</span><span class="s2">&quot;Layer Name&quot;</span><span class="p">);</span>
-</code></pre></div>
-<h3 id="get-aoi-from-map-extent"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> get AOI from Map extent</strong></h3>
-<p>The helper below from the geo module will retrieve an area of interest (AOI) from the current geographic extent of the Map window. </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">aoi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">uiMap</span><span class="p">.</span><span class="nx">getAOIfromMapExtent</span><span class="p">();</span>
-</code></pre></div>
-<hr />
-<h3 id="get-nominal-scale-helper"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> get Nominal scale helper</strong></h3>
-<p>The helper below from the geo module will retrieve the <strong>nominal scale</strong> of the image. This is the scale at the equator of the image dataset and should be interpreted with some caution, but it can be helpful as a starting point for defining the scale for the <code>geo.iCart.iHistogram()</code> and <code>geo.iCart.iMinMax()</code> methods described above.  </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">iCart</span><span class="p">.</span><span class="nx">getNominalScaleFromImage</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;IMAGE SCALE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>

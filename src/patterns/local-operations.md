@@ -369,7 +369,7 @@ This takes advantage of differences in the spectral signatures of healthy and bu
 
 ## __awesome spectral indices module__  
 
-Although you can compute most spectral indices from scratch in Earth Engine, I appreciate using a module developed by [Dave Montero Loaiza](https://github.com/davemlz){target=_blank} that is... pretty... awesome.  
+Although you can compute most spectral indices from scratch in Earth Engine, I appreciate using a module developed by [Dave Montero Loaiza](https://github.com/davemlz){target=_blank} that is... pretty... [awesome](https://github.com/awesome-spectral-indices/awesome-spectral-indices){target=_blank}.  
 
 Here are the steps for using his module.  
 
