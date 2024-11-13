@@ -11,6 +11,7 @@ The links in the table below will open a worked out script for the problem in th
 | [__T3__][T3]{target=_blank}   | Intro to feature collections  | 9/23/24               |
 | [__T4__][T4]{target=_blank}   | Forest blocks (part 1)        | 9/30/24               |
 | [__T5__][T5]{target=_blank}   | Scale in web mercator         | 10/7/24               |
+| [__T9__][T9]{target=_blank}   | Quebec fire scars             | 11/13                 |
 
 ---  
 
@@ -19,3 +20,5 @@ The links in the table below will open a worked out script for the problem in th
 [T3]: https://code.earthengine.google.com/486d4443761812f6cf5e36a7b75d519c  
 [T4]: https://code.earthengine.google.com/5c170e459a75608f23f388069b3d745e
 [T5]: https://code.earthengine.google.com/60be2ea85f477f16375626cbcd86ad07
+
+[T9]: https://code.earthengine.google.com/ae87e026261abbf7fc9a63b540504cda

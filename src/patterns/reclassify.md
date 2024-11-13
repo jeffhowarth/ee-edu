@@ -71,7 +71,7 @@ The table below lists some of the common methods to ask true or false questions 
 
 This method reclassifies values in the input raster based on user-defined breaks. This is useful when the input values represent a [__field model__](../three-t.md#conceptual-models) and when the intervals between breaks are not equal.  
 
-The workflow can be a little confusing, but the basic idea is that you are using two or more threshold values to define a correspond set of boolean rasters that you then add together. Given two threshold values  
+The workflow can be a little confusing, but the basic idea is that you are using two or more threshold values to define a correspond set of boolean rasters that you then add together. The workflow below assumes that you are storing your thresholds as a list with two items.  
 
 <center>
 
