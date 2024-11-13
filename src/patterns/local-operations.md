@@ -385,9 +385,7 @@ Here are the steps for using his module.
 var spectral = require("users/dmlmont/spectral:spectral");
 
 print(
-  "------------------",
   "SPECTRAL INDICES", 
-  "------------------",
   spectral.indices
 );
 
@@ -397,7 +395,19 @@ print(
 
 ### __define parameters__  
 
-This will depend on which data product you are using from the Earth Engine Data catalog and based on [this table](https://github.com/awesome-spectral-indices/awesome-spectral-indices?tab=readme-ov-file#expressions){target=_blank} from Dave's github docs.      
+This will depend on which data product you are using from the Earth Engine Data catalog and based on [this table](https://github.com/awesome-spectral-indices/awesome-spectral-indices?tab=readme-ov-file#expressions){target=_blank} from Dave's github docs.   
+
+__Please note:__ this pattern is set up to work directly from the image starter scripts for [Landsat](../starters/landsat.md) and [Sentinel](../starters/sentinel.md). That is why the input image is called ```output```. If you are trying to compare indices at two different snapshots in time, you may have changed the name of your image and will need to insert a line that temporarily renames your image. Otherwise EE will likely throw a "Line ###: output is not defined" error message.  
+
+```js
+// Temporarily rename the input image to work with pattern.
+
+var output = target_input;  // Change "target_input" to the name of image you want to use as the input. 
+
+```
+
+
+#### __L5 & L7__
 
 For Landsat 5 or 7 Surface Reflectance, use this pattern:
 
@@ -419,6 +429,8 @@ var parameters = {
 ```
 
 ---  
+
+#### __L8 & L9__
 
 For Landsat 8 or 9, use this pattern:
 
@@ -443,7 +455,36 @@ var parameters = {
 
 ```
 
+---
+
+#### __S2__
+
+For Sentinel 2, use this pattern:
+
 ---  
+
+```js
+// ------------------------------------------------------------------------
+//  Define parameters for Sentinel 2 Surface Reflectance. 
+// ------------------------------------------------------------------------
+
+var parameters = {
+    "A": output.select("B1"),
+    "B": output.select("B2"),
+    "G": output.select("B3"),
+    "R": output.select("B4"),
+    "RE1": output.select("B5"),
+    "RE2": output.select("B6"),
+    "RE3": output.select("B7"),
+    "N": output.select("B8"),
+    "N2": output.select("B8A"),
+    "WV": output.select("B9"),
+    "S1": output.select("B11"),
+    "S2": output.select("B12")
+};
+
+```
+
 
 ### __compute spectral indices__  
 
@@ -457,9 +498,7 @@ You can compute one or more indices with this pattern. This example computes NDV
 var output_si = spectral.computeIndex(output,["NDVI", "NBR"], parameters);
 
 print(
-  "---------------------------",
-  "Image with spectral indices",
-  "---------------------------",
+  "IMAGE WITH SPECTRAL INDICES",
   output_si);
 
 ```

@@ -166,8 +166,11 @@ nav:
     - terrain: patterns/terrain.md  
     - vector analysis: patterns/vector-analysis.md  
     - export data: patterns/export.md  
-    - image starters: patterns/image-starters.md  
     - ui design: patterns/ui-design.md  
+  - STARTERS:  
+    - Landsat: starters/landsat.md  
+    - NAIP: starters/NAIP.md  
+    - Sentinel: starters/sentinel.md  
   - PROBLEMS:  
     - T1. A sketch map from lidar: problems/tutorial-01.md  
     - P1. Memory under cover: problems/practice-01.md
@@ -186,6 +189,7 @@ nav:
     - T8. Landsat snapshots: problems/tutorial-08.md  
     - P8. Swipe map app (2): problems/practice-08.md  
     - T9. Spectral indices: problems/tutorial-09.md  
+    - P9. CZU burn severity: problems/practice-09.md  
   
   - SOLUTIONS:  
     - Tutorials: solutions/tutorials.md  

@@ -1,12 +1,6 @@
-__PATTERNS__  
+__STARTERS__  
 
-# __*image starters*__  
-
-This page contains starter scripts for working with different programs and missions that provide multi-spectral images.  
-
----  
-
-## __LANDSAT__  
+# __*Landsat*__  
 
 Earth Engine provides a number of different [Landsat products][ee-landsat]{target=_blank} as cloud assets.
 
@@ -14,17 +8,17 @@ The starter scripts on this page will help you quickly find and process collecti
 
 Since that was a mouthful, let's define some key terms first.
 
-### __key terms__  
+## __key terms__  
 
-#### __collections__   
+### __collections__   
 
 There have been two major reprocessing efforts by USGS to improve data quality. [Collection 2](https://www.usgs.gov/landsat-missions/landsat-collection-2){target=_blank} is the most recent and has the best geolocation accuracy which improves time series analyses.    
 
-#### __tiers__  
+### __tiers__  
 
 Within a collection, Tier 1 data have the highest radiometric and positional quality. USGS recommends using Tier 1 data for all time-series analysis.  
 
-#### __levels__  
+### __levels__  
 
 The level of data processing applied to products.    
 
@@ -34,7 +28,7 @@ The level of data processing applied to products.
 
 - [__Level-3__](https://www.usgs.gov/landsat-missions/landsat-science-products){target=_blank} products are built from Level-2 products and include Analysis Ready Data (ARD), including Fractional Snow Covered Area and Burned Area, and Scene-based Inputs, including Provisional Actual Evapotranspiration.   
 
-#### __orbit__  
+### __orbit__  
 
 This video visualizes the path of Landsat 8 around the globe. Please note that some details about satellite orbits differ between Landsat missions.
 
@@ -42,19 +36,19 @@ This video visualizes the path of Landsat 8 around the globe. Please note that s
 
 ---  
 
-#### __spectral bands__  
+### __spectral bands__  
 
 The chart below compares the bands of each mission with respect to spectral and spatial resolution.
 
 ![landsat-comparison](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/LandsatSpectralBands_20240319.png)  
 
-#### __mother of landsat__  
+### __mother of landsat__  
 
 ![MSS image of Half Dome](https://landsat.gsfc.nasa.gov/wp-content/uploads/2014/05/HalfDome_May1972_MSSem321_crop_4web.png)
 
 Please read [Virginia Tower Norwood's biography](https://www.technologyreview.com/2021/06/29/1025732/the-woman-who-brought-us-the-world/){target=_blank}.   
 
-### __prereqs__  
+## __prereqs__  
 
 To thoughtfully use the starter scripts below, you should be able to answer these questions:  
 
@@ -72,7 +66,7 @@ To thoughtfully use the starter scripts below, you should be able to answer thes
 
 ---
 
-### __:earth_americas: Landsat 5__  
+## __:earth_americas: Landsat 5__  
 
 ```js
 
@@ -149,7 +143,7 @@ print("Histogram of selected band", histogram);
 
 ---
 
-### __:earth_americas: Landsat 7__
+## __:earth_americas: Landsat 7__
 
 ```js
 
@@ -228,7 +222,7 @@ print("Histogram of selected band", histogram);
 
 ---  
 
-### __:earth_americas: Landsat 8__  
+## __:earth_americas: Landsat 8__  
 
 ```js
 
@@ -307,7 +301,7 @@ print("Histogram of selected band", histogram);
 
 ---  
 
-### __:earth_americas: Landsat 9__   
+## __:earth_americas: Landsat 9__   
 
 ```js
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -380,122 +374,6 @@ var aoi = geo.uiMap.getAOIfromMapExtent();
 var histogram = geo.iCart.iHistogram(select_band, 30, aoi);
 
 print("Histogram of selected band", histogram);
-
-
-```
-
----
-
-## __:earth_americas: NAIP__  
-
-```js
-/*    
-// ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
-
-    AUTHOR:     
-    DATE:       
-    TITLE:  NAIP starter 
-
-// ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
-*/
-
-var geo = require("users/jhowarth/eePatterns:modules/geo.js");
-
-print("geo methods dictionary", geo.help);    // Prints dictionary of all tools in module.  
-print("geo palettes", geo.iPalettes);         // Prints dictionary of all palettes in module. 
-
-
-// -------------------------------------------------------------
-//  Define AOI from point with 10km buffer.
-// -------------------------------------------------------------
-
-var geometry = ee.FeatureCollection(
-        [ee.Feature(
-            ee.Geometry.Point([-73.16875, 44.01336]),
-            {
-              "system:index": "0"
-            })]);
-
-var aoi = geo.fcProximity.bufferByDistance(geometry, 10000);
-
-Map.centerObject(geometry, 15);
-
-// -------------------------------------------------------------
-//  Get year of interest.
-// -------------------------------------------------------------
-
-var year_list = geo.icNAIP.yearList(
-    aoi,        
-    4       // Change to 3 if you would like to include earliest images that lack NIR band.  
-);
-
-var yoi = year_list.get(0);   // This gets the first year in the year list.
-
-// var yoi = year_list.get(year_list.length().subtract(1));  // This gets the last year.
-
-// print("Year of interest", yoi);
-
-// -------------------------------------------------------------
-//  Filter NAIP image collection by aoi, year, and number of bands.
-// -------------------------------------------------------------
-
-var ic = ee.ImageCollection("USDA/NAIP/DOQQ")
-  .filterBounds(aoi)
-  .filter(ee.Filter.calendarRange(yoi, yoi, "year"))
-  .map(geo.icNAIP.setNumberOfBands)
-  .filter(ee.Filter.eq("number_of_bands", 4))
-  ;
-
-// geo.icGather.inspectCollection("NAIP Collection", ic);
-
-// -------------------------------------------------------------
-//  Mosaic image collection.
-// -------------------------------------------------------------
-  
-var ic_mosaic = geo.icFlatten.mosaicToImage(ic);
-
-// print("Mosaic", ic_mosaic);
-
-// -------------------------------------------------------------
-//  Define viz dictionaries.
-// -------------------------------------------------------------
-
-var rgb_viz_natural = 
-    {
-        bands:  ['R', 'G', 'B'],      
-        min:    [0, 0, 0],        
-        max: [255, 255, 255],
-        gamma: [1,1,1]    
-    }
-;
-
-var rgb_viz_false = 
-    {
-        bands:  ['N', 'R', 'G'],      
-        min:    [0, 0, 0],        
-        max: [255, 255, 255],
-        gamma: [1,1,1]    
-    }
-;
-
-// -------------------------------------------------------------
-//  Refine viz dictionaries with histogram.
-// -------------------------------------------------------------
-
-// To refine natural image.
-var histogram = geo.iCart.iHistogramRGB(ic_mosaic, rgb_viz_natural);
-
-// // To refine false image.
-// var histogram = geo.iCart.iHistogramRGB(ic_mosaic, rgb_viz_false);
-
-print(histogram);
-
-// -------------------------------------------------------------
-//  Display as Map layers. 
-// -------------------------------------------------------------
-
-Map.addLayer(ic_mosaic,rgb_viz_false,"Earliest False Color",true);
-Map.addLayer(ic_mosaic,rgb_viz_natural,"Earliest Natural Color ",true);
 
 
 ```
