@@ -6,7 +6,7 @@ __PRACTICE 09__
 
 This tutorial introduces a general workflow to map the burn severity of wildfire with Sentinel-2 MSI data.
 
-We will use the [CZU Lightning Complex fires][czu-wiki]{target=_blank} on California’s Slow Coast as a case study. This practice problem complements a research article on the impacts to the old growth forests in Big Basin Redwoods State Park [(Potter 2023)][potter]{target=_blank}.  
+We will use the [CZU Lightning Complex fires][czu-wiki]{target=_blank} on California’s Slow Coast as a case study. This practice problem complements a research article on CZU impacts to the old growth forests in Big Basin Redwoods State Park [(Potter 2023)][potter]{target=_blank}.  
 
 [czu-wiki]: https://en.wikipedia.org/wiki/CZU_Lightning_Complex_fires
 
@@ -39,7 +39,7 @@ Please work through the steps outlined below.
 
 ### __00 Start a script__  
 
-Start a new script with the code block below. I have define an area of interest for you by buffering a point near Bonny Doon, California. For the checks to work, please use this aoi. 
+Start a new script with the code block below. I define an area of interest for you by buffering a point near Bonny Doon, California. For the checks to work, please use this aoi. 
 
 ```js
 
@@ -161,14 +161,14 @@ var nbr_viz = {bands: ["NBR"], min:-1, max:1, palette: ['purple', 'white', 'gree
 
 ```
 
-You do not need to reload the spectral indices module, since you already did that above. You will need to do the three other steps described above (2-5) using the pre-burn image as the input. 
+You do not need to reload the spectral indices module, since you already did that above. You will need to do the other steps described above (2-5) using the pre-burn image as the input. 
 
 ---  
 
 ### __06 Map burn severity__  
 
 
-From the [readings this week][un-nbr]{target=_blank}, you saw that burn severity is the change in NBR caused by a fire scar.    
+From the [readings this week][un-nbr]{target=_blank}, you saw that burn severity is the change in NBR caused by a fire.    
 
 ![burn-severity](https://un-spider.org/sites/default/files/dNBR_formula.jpg)  
 

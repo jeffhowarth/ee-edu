@@ -1475,7 +1475,7 @@
 <h1 id="czu-lightning-complex-burn-severity"><strong><em>CZU Lightning Complex Burn Severity</em></strong></h1>
 <h3 id="goal"><strong>goal</strong></h3>
 <p>This tutorial introduces a general workflow to map the burn severity of wildfire with Sentinel-2 MSI data.</p>
-<p>We will use the <a href="https://en.wikipedia.org/wiki/CZU_Lightning_Complex_fires" target="_blank">CZU Lightning Complex fires</a> on California’s Slow Coast as a case study. This practice problem complements a research article on the impacts to the old growth forests in Big Basin Redwoods State Park <a href="https://journal.wildlife.ca.gov/2023/04/12/impacts-of-the-czu-lightning-complex-fire-of-august-2020-on-the-forests-of-big-basin-redwoods-state-park/" target="_blank">(Potter 2023)</a>.  </p>
+<p>We will use the <a href="https://en.wikipedia.org/wiki/CZU_Lightning_Complex_fires" target="_blank">CZU Lightning Complex fires</a> on California’s Slow Coast as a case study. This practice problem complements a research article on CZU impacts to the old growth forests in Big Basin Redwoods State Park <a href="https://journal.wildlife.ca.gov/2023/04/12/impacts-of-the-czu-lightning-complex-fire-of-august-2020-on-the-forests-of-big-basin-redwoods-state-park/" target="_blank">(Potter 2023)</a>.  </p>
 <p>Your script should reproduce the map layers shown in the app below.  </p>
 <hr />
 <p><iframe
@@ -1492,7 +1492,7 @@
 <p>Please work through the steps outlined below.  </p>
 <hr />
 <h3 id="00-start-a-script"><strong>00 Start a script</strong></h3>
-<p>Start a new script with the code block below. I have define an area of interest for you by buffering a point near Bonny Doon, California. For the checks to work, please use this aoi. </p>
+<p>Start a new script with the code block below. I define an area of interest for you by buffering a point near Bonny Doon, California. For the checks to work, please use this aoi. </p>
 <div class="language-js highlight"><pre><span></span><code><span class="cm">/*    </span>
 <span class="cm">// &gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;</span>
 
@@ -1574,10 +1574,10 @@
 <span class="c1">//  5. MAP NORMALIZED BURN RATIO FOR PRE-BURN SNAPSHOT</span>
 <span class="c1">// -------------------------------------------------------------</span>
 </code></pre></div>
-<p>You do not need to reload the spectral indices module, since you already did that above. You will need to do the three other steps described above (2-5) using the pre-burn image as the input. </p>
+<p>You do not need to reload the spectral indices module, since you already did that above. You will need to do the other steps described above (2-5) using the pre-burn image as the input. </p>
 <hr />
 <h3 id="06-map-burn-severity"><strong>06 Map burn severity</strong></h3>
-<p>From the <a href="https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/in-detail/normalized-burn-ratio" target="_blank">readings this week</a>, you saw that burn severity is the change in NBR caused by a fire scar.    </p>
+<p>From the <a href="https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/in-detail/normalized-burn-ratio" target="_blank">readings this week</a>, you saw that burn severity is the change in NBR caused by a fire.    </p>
 <p><img alt="burn-severity" src="https://un-spider.org/sites/default/files/dNBR_formula.jpg" />  </p>
 <p>Please calculate and map the burn severity based on your two NBR images.</p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// ------------------------------------------------------------------------</span>
