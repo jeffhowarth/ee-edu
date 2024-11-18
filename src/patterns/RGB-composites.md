@@ -233,6 +233,38 @@ Map.add(panel_chart);                   // To embed in app, change "Map" to "sid
 
 ---  
 
+### __:earth_americas: MODIS__   
+
+```js
+// -------------------------------------------------------------
+//  Click to chart spectral signatures from MODIS image.
+// -------------------------------------------------------------
+
+var config = {};
+var panel_chart = ui.Panel({style: {position: 'bottom-left'}});
+var samples = [];
+
+Map.onClick(function(coords) {          // To embed in app, change "Map" to "left_Map" or "right_Map".
+
+  config.poi = ee.Geometry.Point(coords.lon, coords.lat);
+  samples.push(ee.Feature(config.poi, {'sample': samples.length}));
+
+  panel_chart.clear();
+  panel_chart.add(geo.icMODIS.chartSpectralSignatureMODIS(
+    output,                             // Name of the MODIS image ('output' assumes you are using starter script).
+    samples
+    ));
+  }
+);
+
+Map.add(panel_chart);                   // To embed in app, change "Map" to "side_bar".
+
+
+```
+
+
+---  
+
 ### __:earth_americas: Sentinel 2__    
 
 ```js

@@ -164,11 +164,13 @@ nav:
     - zonal overlay operations: patterns/zonal-operations.md  
     - vector overlay operations: patterns/vector-overlay.md  
     - terrain: patterns/terrain.md  
+    - time series: patterns/time-series.md  
     - vector analysis: patterns/vector-analysis.md  
     - export data: patterns/export.md  
     - ui design: patterns/ui-design.md  
   - STARTERS:  
     - Landsat: starters/landsat.md  
+    - MODIS: starters/MODIS.md  
     - NAIP: starters/NAIP.md  
     - Sentinel: starters/sentinel.md  
   - PROBLEMS:  
@@ -190,6 +192,7 @@ nav:
     - P8. Swipe map app (2): problems/practice-08.md  
     - T9. Spectral indices: problems/tutorial-09.md  
     - P9. CZU burn severity: problems/practice-09.md  
+    - T10. Drought mapping: problems/tutorial-10.md  
   
   - SOLUTIONS:  
     - Tutorials: solutions/tutorials.md  

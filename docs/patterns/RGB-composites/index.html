@@ -337,6 +337,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -513,6 +515,13 @@
           <li class="md-nav__item">
   <a href="#landsat-9" class="md-nav__link">
     Landsat 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modis" class="md-nav__link">
+    MODIS
   </a>
   
 </li>
@@ -740,6 +749,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../time-series/" class="md-nav__link">
+        time series
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../vector-analysis/" class="md-nav__link">
         vector analysis
       </a>
@@ -805,6 +828,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -827,6 +852,20 @@
     <li class="md-nav__item">
       <a href="../../starters/landsat/" class="md-nav__link">
         Landsat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../starters/MODIS/" class="md-nav__link">
+        MODIS
       </a>
     </li>
   
@@ -883,6 +922,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
+        
+          
         
           
         
@@ -1186,6 +1227,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/tutorial-10/" class="md-nav__link">
+        T10. Drought mapping
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1356,6 +1411,13 @@
           <li class="md-nav__item">
   <a href="#landsat-9" class="md-nav__link">
     Landsat 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modis" class="md-nav__link">
+    MODIS
   </a>
   
 </li>
@@ -1560,6 +1622,31 @@ Here is how additive color works:
 <span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
 <span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">geo</span><span class="p">.</span><span class="nx">icLandsat</span><span class="p">.</span><span class="nx">chartSpectralSignatureL9</span><span class="p">(</span>
 <span class="w">    </span><span class="nx">output</span><span class="p">,</span><span class="w">                             </span><span class="c1">// Name of the L9 image (&#39;output&#39; assumes you are using starter script).</span>
+<span class="w">    </span><span class="nx">samples</span>
+<span class="w">    </span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">);</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">panel_chart</span><span class="p">);</span><span class="w">                   </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;side_bar&quot;.</span>
+</code></pre></div>
+<hr />
+<h3 id="modis"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> MODIS</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Click to chart spectral signatures from MODIS image.</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">panel_chart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bottom-left&#39;</span><span class="p">}});</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="nb">Map</span><span class="p">.</span><span class="nx">onClick</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">coords</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">          </span><span class="c1">// To embed in app, change &quot;Map&quot; to &quot;left_Map&quot; or &quot;right_Map&quot;.</span>
+
+<span class="w">  </span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="nx">coords</span><span class="p">.</span><span class="nx">lon</span><span class="p">,</span><span class="w"> </span><span class="nx">coords</span><span class="p">.</span><span class="nx">lat</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">samples</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">poi</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;sample&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">samples</span><span class="p">.</span><span class="nx">length</span><span class="p">}));</span>
+
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">panel_chart</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">geo</span><span class="p">.</span><span class="nx">icMODIS</span><span class="p">.</span><span class="nx">chartSpectralSignatureMODIS</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">output</span><span class="p">,</span><span class="w">                             </span><span class="c1">// Name of the MODIS image (&#39;output&#39; assumes you are using starter script).</span>
 <span class="w">    </span><span class="nx">samples</span>
 <span class="w">    </span><span class="p">));</span>
 <span class="w">  </span><span class="p">}</span>
