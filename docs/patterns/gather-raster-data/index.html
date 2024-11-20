@@ -467,9 +467,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#image-management" class="md-nav__link">
+    image management
+  </a>
+  
+    <nav class="md-nav" aria-label="image management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#compile-from-other-images" class="md-nav__link">
     compile from other images
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rename-bands" class="md-nav__link">
+    rename band(s)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -517,8 +537,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rename-bands" class="md-nav__link">
-    rename band(s)
+  <a href="#merge-collections" class="md-nav__link">
+    merge collections
   </a>
   
 </li>
@@ -1441,9 +1461,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#image-management" class="md-nav__link">
+    image management
+  </a>
+  
+    <nav class="md-nav" aria-label="image management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#compile-from-other-images" class="md-nav__link">
     compile from other images
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rename-bands" class="md-nav__link">
+    rename band(s)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1491,8 +1531,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rename-bands" class="md-nav__link">
-    rename band(s)
+  <a href="#merge-collections" class="md-nav__link">
+    merge collections
   </a>
   
 </li>
@@ -1598,7 +1638,10 @@ graph LR
 <span class="p">;</span>
 </code></pre></div>
 <hr />
-<h2 id="compile-from-other-images"><strong>compile from other images</strong></h2>
+<h2 id="image-management"><strong>image management</strong></h2>
+<p>These patterns deal with common data management tasks associated with images.  </p>
+<hr />
+<h3 id="compile-from-other-images"><strong>compile from other images</strong></h3>
 <p>You can compile a new image by bringing together one or more bands from other images. This can be helpful for making RGB composites, charts, and other workflows.  </p>
 <p>The general pattern starts with an image (named &ldquo;A&rdquo; below) and calls the <code>.addBands()</code> method to add bands from another image (&ldquo;B&rdquo;) to the output image.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">A</span><span class="p">.</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">B</span><span class="p">);</span>
@@ -1609,6 +1652,11 @@ graph LR
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">rgb_stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">A</span><span class="p">.</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">B</span><span class="p">).</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">C</span><span class="p">);</span>
 
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;RGB stack&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">rgb_stack</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="rename-bands"><strong>rename band(s)</strong></h3>
+<p>This method will change the name of one or more bands in an image. The new band name must be a string in a list and the length of the list should match the number of bands in the image.   </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_with_band_renamed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">rename</span><span class="p">([</span><span class="s2">&quot;new_band_name&quot;</span><span class="p">]);</span>
 </code></pre></div>
 <hr />
 <h2 id="image-collection-data-object"><strong>image collection data object</strong></h2>
@@ -1714,10 +1762,9 @@ Please note that this method simply prints some metadata to the Console, so you 
 <p>This method will select the first image in the collection. It functions like a conversion tool, in the sense that the input is a collection and the output is an image.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">select_first_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic</span><span class="p">.</span><span class="nx">first</span><span class="p">();</span>
 </code></pre></div>
-<hr />
-<h3 id="rename-bands"><strong>rename band(s)</strong></h3>
-<p>This method will change the name of one or more bands in an image. The new band name must be a string in a list and the length of the list should match the number of bands in the image.   </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">image_with_band_renamed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">rename</span><span class="p">([</span><span class="s2">&quot;new_band_name&quot;</span><span class="p">]);</span>
+<h3 id="merge-collections"><strong>merge collections</strong></h3>
+<p>This pattern merges two collections. It takes a deck of cards and adds another deck of cards to it to make a tall stack. Use this method with some caution; if you merge two collections with different band names together, it will complicate filters and local operations.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_merged</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ic_A</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">ic_B</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>

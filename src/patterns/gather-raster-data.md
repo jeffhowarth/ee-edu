@@ -124,7 +124,13 @@ print(
 
 ---  
 
-## __compile from other images__  
+## __image management__  
+
+These patterns deal with common data management tasks associated with images.  
+
+---  
+
+### __compile from other images__  
 
 You can compile a new image by bringing together one or more bands from other images. This can be helpful for making RGB composites, charts, and other workflows.  
 
@@ -145,6 +151,18 @@ To make an RGB composite, you will typically want to add bands from two other im
 var rgb_stack = A.addBands(B).addBands(C);
 
 print("RGB stack", rgb_stack);
+
+```
+
+---  
+
+### __rename band(s)__  
+
+This method will change the name of one or more bands in an image. The new band name must be a string in a list and the length of the list should match the number of bands in the image.   
+
+```js
+
+var image_with_band_renamed = image.rename(["new_band_name"]);
 
 ```
 
@@ -298,15 +316,13 @@ var select_first_image = ic.first();
 
 ```
 
----  
+### __merge collections__  
 
-### __rename band(s)__  
-
-This method will change the name of one or more bands in an image. The new band name must be a string in a list and the length of the list should match the number of bands in the image.   
+This pattern merges two collections. It takes a deck of cards and adds another deck of cards to it to make a tall stack. Use this method with some caution; if you merge two collections with different band names together, it will complicate filters and local operations.  
 
 ```js
 
-var image_with_band_renamed = image.rename(["new_band_name"]);
+var output_merged = ic_A.merge(ic_B);
 
 ```
 
