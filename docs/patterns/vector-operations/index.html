@@ -1488,9 +1488,9 @@
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;DISSOLVE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">fc</span><span class="p">.</span><span class="nx">first</span><span class="p">(),</span><span class="w"> </span><span class="nx">output_dissolve</span><span class="p">.</span><span class="nx">first</span><span class="p">());</span>
 </code></pre></div>
 <p>Using the illustration at the top of this section, the snippet below will transform A into B. </p>
-<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcGeometry</span><span class="p">.</span><span class="nx">dissolveByAttribute</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CITY&quot;</span><span class="p">);</span>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">fcGeometry</span><span class="p">.</span><span class="nx">dissolveByAttribute</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;GRADE&quot;</span><span class="p">);</span>
 </code></pre></div>
-<p><em>Please note that the property name is case sensitive, so when working with HOLC data you would need to specify &ldquo;city&rdquo; or &ldquo;holc_grade&rdquo;.</em>   </p>
+<p><em>Please note that the property name is literal (and case sensitive), so when working with HOLC data you would need to specify &ldquo;holc_grade&rdquo; to transform A to B and &ldquo;city&rdquo; to transform B to C.</em>   </p>
 <h2 id="vector-overlay"><strong>vector overlay</strong></h2>
 <p>Vector overlay operations compare locations between two vector layers. In Earth Engine, the vector layers are generally features in a feature collection.  </p>
 <p><em>more soon</em>  </p>

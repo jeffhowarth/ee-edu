@@ -77,10 +77,10 @@ print("DISSOLVE", fc.first(), output_dissolve.first());
 Using the illustration at the top of this section, the snippet below will transform A into B. 
 
 ```js
-var B = geo.fcGeometry.dissolveByAttribute(A, "CITY");
+var B = geo.fcGeometry.dissolveByAttribute(A, "GRADE");
 ```
 
-_Please note that the property name is case sensitive, so when working with HOLC data you would need to specify "city" or "holc_grade"._   
+_Please note that the property name is literal (and case sensitive), so when working with HOLC data you would need to specify "holc_grade" to transform A to B and "city" to transform B to C._   
 
 ## __vector overlay__  
 
