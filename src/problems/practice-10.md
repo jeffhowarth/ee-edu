@@ -8,7 +8,7 @@ This problem aims to introduce methods for mapping differences between condition
 
 This problem also introduces:
 
-* a workflow to compute [land surface temperature (LST)][lst]{target=_blank} from Landsat collections using [a module by Sophia Ermida][sophia-lst]{target=_blank};  
+* a workflow to compute [land surface temperature (LST)][lst]{target=_blank} from Landsat collections using [a module by Sofia Ermida][sofia-lst]{target=_blank};  
 
 * [a community module of color palettes][ee-palettes] to help display raster images, but generates a noticeable delay in the execution of any script that calls it; 
 
@@ -17,7 +17,7 @@ This problem also introduces:
 By the end of the tutorial, you should have a script that reproduces the layers shown in the app below. You should also be able to rerun your analysis for any city in the USA with HOLC maps simply by changing one variable of your script.  
 
 [lst]: https://earthobservatory.nasa.gov/global-maps/MOD_LSTD_M
-[sophia-lst]: https://github.com/sofiaermida/Landsat_SMW_LST  
+[sofia-lst]: https://github.com/sofiaermida/Landsat_SMW_LST  
 [ee-palettes]: https://github.com/gee-community/ee-palettes
 
 
@@ -132,7 +132,7 @@ print("Community palettes", palettes);
 
 ### __04 Create LST datasets from Landsat__  
 
-Here is [a starter script](../starters/landsat.md#land-surface-temperature){target=_blank} to help get started with Sophie's module.  
+Here is [a starter script](../starters/landsat.md#land-surface-temperature){target=_blank} to help get started with Sofia's module.  
 
 ```js
 

@@ -386,7 +386,7 @@ print("Histogram of selected band", histogram);
 
 ## __Land Surface Temperature__  
 
-[Sophia Ermida][sermida]{target=_blank} wrote and shared [a super helpful module][se-lst]{target=_blank} that makes it relatively easy to compute land surface temperature (LST) from Landsat collections. The script below outlines a basic pattern for using her module.  
+[Sofia Ermida][sermida]{target=_blank} wrote and shared [a super helpful module][se-lst]{target=_blank} that makes it relatively easy to compute land surface temperature (LST) from Landsat collections. The script below outlines a basic pattern for using her module.  
 
 ```js
 // Load module to compute LST from Landsat.
@@ -422,7 +422,7 @@ Note that you call the Landsat mission with a string:
 * ```"L7"``` calls Landsat 7   
 * ```"L5"``` calls Landsat 5   
 
-Her script pulls data from both surface reflectance and top of atmosphere Landsat collections, so behind the scenes the string that you enter as an argument points to a set of instructions for working with that mission data that the module carries out. The underlying code is public-facing on her github site if you would like to understand in detail how it works. You can also read [her article][se-article]{target=_blank} on the module if you would like to learn more.  
+Sofia's script pulls data from both surface reflectance and top of atmosphere Landsat collections, so behind the scenes the string that you enter as an argument points to a set of instructions for working with that mission data that the module carries out. The underlying code is public-facing on her github site if you would like to understand in detail how it works. You can also read [her article][se-article]{target=_blank} on the module if you would like to learn more.  
 
 
 
