@@ -158,14 +158,13 @@ nav:
     - convert data: patterns/convert-data.md  
     - reclassify raster: patterns/reclassify.md
     - scalar operations: patterns/scalar-operations.md 
-    - local overlay operations: patterns/local-operations.md  
+    - local operations: patterns/local-operations.md  
     - focal (neighborhood) operations: patterns/focal-operations.md  
     - proximity operations: patterns/proximity-operations.md    
-    - zonal overlay operations: patterns/zonal-operations.md  
-    - vector overlay operations: patterns/vector-overlay.md  
+    - zonal operations: patterns/zonal-operations.md  
+    - vector operations: patterns/vector-operations.md  
     - terrain: patterns/terrain.md  
     - time series: patterns/time-series.md  
-    - vector analysis: patterns/vector-analysis.md  
     - export data: patterns/export.md  
     - ui design: patterns/ui-design.md  
   - STARTERS:  
@@ -193,6 +192,7 @@ nav:
     - T9. Spectral indices: problems/tutorial-09.md  
     - P9. CZU burn severity: problems/practice-09.md  
     - T10. Drought mapping: problems/tutorial-10.md  
+    - P10. Memories of urban environments: problems/practice-10.md  
   
   - SOLUTIONS:  
     - Tutorials: solutions/tutorials.md  

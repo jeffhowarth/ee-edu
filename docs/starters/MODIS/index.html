@@ -335,8 +335,6 @@
         
           
         
-          
-        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -554,7 +552,7 @@
   
     <li class="md-nav__item">
       <a href="../../patterns/local-operations/" class="md-nav__link">
-        local overlay operations
+        local operations
       </a>
     </li>
   
@@ -596,7 +594,7 @@
   
     <li class="md-nav__item">
       <a href="../../patterns/zonal-operations/" class="md-nav__link">
-        zonal overlay operations
+        zonal operations
       </a>
     </li>
   
@@ -609,8 +607,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/vector-overlay/" class="md-nav__link">
-        vector overlay operations
+      <a href="../../patterns/vector-operations/" class="md-nav__link">
+        vector operations
       </a>
     </li>
   
@@ -639,20 +637,6 @@
     <li class="md-nav__item">
       <a href="../../patterns/time-series/" class="md-nav__link">
         time series
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../patterns/vector-analysis/" class="md-nav__link">
-        vector analysis
       </a>
     </li>
   
@@ -853,19 +837,25 @@
     SR time series
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="SR time series">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#basic-time-series" class="md-nav__link">
     basic time series
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#time-series-of-spectral-index" class="md-nav__link">
     time series of spectral index
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -928,6 +918,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
+        
+          
         
           
         
@@ -1247,6 +1239,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/practice-10/" class="md-nav__link">
+        P10. Memories of urban environments
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1430,19 +1436,25 @@
     SR time series
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="SR time series">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#basic-time-series" class="md-nav__link">
     basic time series
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#time-series-of-spectral-index" class="md-nav__link">
     time series of spectral index
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1762,7 +1774,7 @@
 <hr />
 <h2 id="sr-time-series"><strong>SR time series</strong></h2>
 <p>These scripts will help you get started with time series analysis. We use the eight-day composites to help speed up processing times.   </p>
-<h2 id="basic-time-series"><strong>basic time series</strong></h2>
+<h3 id="basic-time-series"><strong>basic time series</strong></h3>
 <p>The script below compiles a collection (rather than a flat image) and then charts all spectral bands over the duration of the collection. </p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_MODIS_8day_time_series.js</span>
@@ -1933,7 +1945,7 @@
 <span class="nx">geo</span><span class="p">.</span><span class="nx">icIntervals</span><span class="p">.</span><span class="nx">chartTimeSeries</span><span class="p">(</span><span class="nx">parameters</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h2 id="time-series-of-spectral-index"><strong>time series of spectral index</strong></h2>
+<h3 id="time-series-of-spectral-index"><strong>time series of spectral index</strong></h3>
 <p>The script below will compute a spectral index (NDVI) for each image in the time series and then chart the index over duration of the collection.    </p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_MODIS_8day_time_series_with_ndvi.js</span>

@@ -1,8 +1,8 @@
 __PATTERNS__
 
-# _**local overlay operations**_  
+# _**local operations**_  
 
-These methods compare values at corresponding pixels in two or more rasters. 
+Local overlay methods compare values at pixels in one or more rasters.    
 
 ![local-overlay-operations](https://geography.middlebury.edu/howarth/ee_edu/eePatterns/localOperations/local-operations-basics.png)
 

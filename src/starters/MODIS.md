@@ -288,7 +288,7 @@ print("Histogram of selected band", histogram);
 
 These scripts will help you get started with time series analysis. We use the eight-day composites to help speed up processing times.   
 
-## __basic time series__ 
+### __basic time series__ 
 
 The script below compiles a collection (rather than a flat image) and then charts all spectral bands over the duration of the collection. 
 
@@ -466,7 +466,7 @@ geo.icIntervals.chartTimeSeries(parameters);
 
 ---  
 
-## __time series of spectral index__  
+### __time series of spectral index__  
 
 The script below will compute a spectral index (NDVI) for each image in the time series and then chart the index over duration of the collection.    
 
