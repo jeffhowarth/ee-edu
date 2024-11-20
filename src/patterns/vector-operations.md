@@ -61,16 +61,26 @@ Operations are shown laterally. Moving from A to B is a __dissolve__ operation (
 
 ### __:earth_americas: dissolve by attribute__ 
 
+This will dissolve a feature collection into multipart features that share a common attribute. 
+
 ```js
 // -------------------------------------------------------------
 //  Dissolve by attribute
 // -------------------------------------------------------------
 
-var output_dissolve = geo.fcGeometry.fcDissolveByAttribute(fc, "property");
+var output_dissolve = geo.fcGeometry.dissolveByAttribute(fc, "property");
 
-print("DISSOLVE", fc.first() output_dissolve.first());
+print("DISSOLVE", fc.first(), output_dissolve.first());
 
 ```
+
+Using the illustration at the top of this section, the snippet below will transform A into B. 
+
+```js
+var B = geo.fcGeometry.dissolveByAttribute(A, "CITY");
+```
+
+_Please note that the property name is case sensitive, so when working with HOLC data you would need to specify "city" or "holc_grade"._   
 
 ## __vector overlay__  
 
