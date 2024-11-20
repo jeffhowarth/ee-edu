@@ -48,7 +48,9 @@ The chart below compares the bands of each mission with respect to spectral and 
 
 Please read [Virginia Tower Norwood's biography](https://www.technologyreview.com/2021/06/29/1025732/the-woman-who-brought-us-the-world/){target=_blank}.   
 
-## __prereqs__  
+---  
+
+### __prereqs__  
 
 To thoughtfully use the starter scripts below, you should be able to answer these questions:  
 
@@ -62,11 +64,13 @@ To thoughtfully use the starter scripts below, you should be able to answer thes
 
 [ee-landsat]: https://developers.google.com/earth-engine/datasets/catalog/landsat
 
+---  
 
+## __snapshots__ 
 
----
+These scripts will help you get started making snapshots from Landsat collections.  
 
-## __:earth_americas: Landsat 5__  
+### __:earth_americas: Landsat 5__  
 
 ```js
 
@@ -143,7 +147,7 @@ print("Histogram of selected band", histogram);
 
 ---
 
-## __:earth_americas: Landsat 7__
+### __:earth_americas: Landsat 7__
 
 ```js
 
@@ -222,7 +226,7 @@ print("Histogram of selected band", histogram);
 
 ---  
 
-## __:earth_americas: Landsat 8__  
+### __:earth_americas: Landsat 8__  
 
 ```js
 
@@ -301,7 +305,7 @@ print("Histogram of selected band", histogram);
 
 ---  
 
-## __:earth_americas: Landsat 9__   
+### __:earth_americas: Landsat 9__   
 
 ```js
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -377,6 +381,54 @@ print("Histogram of selected band", histogram);
 
 
 ```
+
+---  
+
+## __Land Surface Temperature__  
+
+[Sophia Ermida][sermida]{target=_blank} wrote and shared [a super helpful module][se-lst]{target=_blank} that makes it relatively easy to compute land surface temperature (LST) from Landsat collections. The script below outlines a basic pattern for using her module.  
+
+```js
+// Load module to compute LST from Landsat.
+
+var LandsatLST = require('users/sofiaermida/landsat_smw_lst:modules/Landsat_LST.js');
+
+// Define arguments for LST module. 
+
+var date_start = '2020-07-01';            // Filter collection by time start.
+var date_end = '2024-09-01';              // Filter collection by time end.
+var region = aoi;                         // Filter collection by location.
+var use_ndvi = true;                      // Use NDVI in computation (true or false)
+
+// Compute LST from Landsat 9.  
+
+var L9 = LandsatLST
+  .collection
+    (
+      'L9',                               // Landsat mission  - note this is a string 'L9'.
+      date_start,                         
+      date_end,                        
+      region,                               
+      use_ndvi                                
+    )
+;
+
+```
+
+Note that you call the Landsat mission with a string:  
+
+* ```"L9"``` calls Landsat 9  
+* ```"L8"``` calls Landsat 8  
+* ```"L7"``` calls Landsat 7   
+* ```"L5"``` calls Landsat 5   
+
+Her script pulls data from both surface reflectance and top of atmosphere Landsat collections, so behind the scenes the string that you enter as an argument points to a set of instructions for working with that mission data that the module carries out. The underlying code is public-facing on her github site if you would like to understand in detail how it works. You can also read [her article][se-article]{target=_blank} on the module if you would like to learn more.  
+
+
+
+[sermida]: https://github.com/sofiaermida  
+[se-lst]: https://github.com/sofiaermida/Landsat_SMW_LST  
+[se-article]: https://www.mdpi.com/2072-4292/12/9/1471
 
 ---
 

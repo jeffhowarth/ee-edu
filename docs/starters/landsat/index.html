@@ -807,42 +807,62 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#prereqs" class="md-nav__link">
+    prereqs
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prereqs" class="md-nav__link">
-    prereqs
+  <a href="#snapshots" class="md-nav__link">
+    snapshots
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="snapshots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#landsat-5" class="md-nav__link">
     Landsat 5
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#landsat-7" class="md-nav__link">
     Landsat 7
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#landsat-8" class="md-nav__link">
     Landsat 8
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#landsat-9" class="md-nav__link">
     Landsat 9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#land-surface-temperature" class="md-nav__link">
+    Land Surface Temperature
   </a>
   
 </li>
@@ -1422,42 +1442,62 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#prereqs" class="md-nav__link">
+    prereqs
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prereqs" class="md-nav__link">
-    prereqs
+  <a href="#snapshots" class="md-nav__link">
+    snapshots
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="snapshots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#landsat-5" class="md-nav__link">
     Landsat 5
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#landsat-7" class="md-nav__link">
     Landsat 7
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#landsat-8" class="md-nav__link">
     Landsat 8
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#landsat-9" class="md-nav__link">
     Landsat 9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#land-surface-temperature" class="md-nav__link">
+    Land Surface Temperature
   </a>
   
 </li>
@@ -1511,7 +1551,8 @@
 <h3 id="mother-of-landsat"><strong>mother of landsat</strong></h3>
 <p><img alt="MSS image of Half Dome" src="https://landsat.gsfc.nasa.gov/wp-content/uploads/2014/05/HalfDome_May1972_MSSem321_crop_4web.png" /></p>
 <p>Please read <a href="https://www.technologyreview.com/2021/06/29/1025732/the-woman-who-brought-us-the-world/" target="_blank">Virginia Tower Norwood&rsquo;s biography</a>.   </p>
-<h2 id="prereqs"><strong>prereqs</strong></h2>
+<hr />
+<h3 id="prereqs"><strong>prereqs</strong></h3>
 <p>To thoughtfully use the starter scripts below, you should be able to answer these questions:  </p>
 <ul>
 <li>what is <em>surface reflectance</em> and how does this differ from other Landsat products available through Earth Engine catalog? </li>
@@ -1523,7 +1564,9 @@
 <li>what is the <em>spatial resolution</em> of each band?  </li>
 </ul>
 <hr />
-<h2 id="landsat-5"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 5</strong></h2>
+<h2 id="snapshots"><strong>snapshots</strong></h2>
+<p>These scripts will help you get started making snapshots from Landsat collections.  </p>
+<h3 id="landsat-5"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 5</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_L5.js</span>
 <span class="c1">//  Author:       Jeff Howarth</span>
@@ -1594,7 +1637,7 @@
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Histogram of selected band&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">histogram</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h2 id="landsat-7"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 7</strong></h2>
+<h3 id="landsat-7"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 7</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_L7.js</span>
 <span class="c1">//  Author:       Jeff Howarth</span>
@@ -1666,7 +1709,7 @@
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Histogram of selected band&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">histogram</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h2 id="landsat-8"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 8</strong></h2>
+<h3 id="landsat-8"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 8</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_L8.js</span>
 <span class="c1">//  Author:       Jeff Howarth</span>
@@ -1738,7 +1781,7 @@
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Histogram of selected band&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">histogram</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h2 id="landsat-9"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 9</strong></h2>
+<h3 id="landsat-9"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> Landsat 9</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
 <span class="c1">//  Title:        starter_L9.js</span>
 <span class="c1">//  Author:       Jeff Howarth</span>
@@ -1810,6 +1853,41 @@
 
 <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Histogram of selected band&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">histogram</span><span class="p">);</span>
 </code></pre></div>
+<hr />
+<h2 id="land-surface-temperature"><strong>Land Surface Temperature</strong></h2>
+<p><a href="https://github.com/sofiaermida" target="_blank">Sophia Ermida</a> wrote and shared <a href="https://github.com/sofiaermida/Landsat_SMW_LST" target="_blank">a super helpful module</a> that makes it relatively easy to compute land surface temperature (LST) from Landsat collections. The script below outlines a basic pattern for using her module.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// Load module to compute LST from Landsat.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">LandsatLST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;users/sofiaermida/landsat_smw_lst:modules/Landsat_LST.js&#39;</span><span class="p">);</span>
+
+<span class="c1">// Define arguments for LST module. </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">date_start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-07-01&#39;</span><span class="p">;</span><span class="w">            </span><span class="c1">// Filter collection by time start.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">date_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2024-09-01&#39;</span><span class="p">;</span><span class="w">              </span><span class="c1">// Filter collection by time end.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">aoi</span><span class="p">;</span><span class="w">                         </span><span class="c1">// Filter collection by location.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">use_ndvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">                      </span><span class="c1">// Use NDVI in computation (true or false)</span>
+
+<span class="c1">// Compute LST from Landsat 9.  </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">L9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">LandsatLST</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">collection</span>
+<span class="w">    </span><span class="p">(</span>
+<span class="w">      </span><span class="s1">&#39;L9&#39;</span><span class="p">,</span><span class="w">                               </span><span class="c1">// Landsat mission  - note this is a string &#39;L9&#39;.</span>
+<span class="w">      </span><span class="nx">date_start</span><span class="p">,</span><span class="w">                         </span>
+<span class="w">      </span><span class="nx">date_end</span><span class="p">,</span><span class="w">                        </span>
+<span class="w">      </span><span class="nx">region</span><span class="p">,</span><span class="w">                               </span>
+<span class="w">      </span><span class="nx">use_ndvi</span><span class="w">                                </span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">;</span>
+</code></pre></div>
+<p>Note that you call the Landsat mission with a string:  </p>
+<ul>
+<li><code>"L9"</code> calls Landsat 9  </li>
+<li><code>"L8"</code> calls Landsat 8  </li>
+<li><code>"L7"</code> calls Landsat 7   </li>
+<li><code>"L5"</code> calls Landsat 5   </li>
+</ul>
+<p>Her script pulls data from both surface reflectance and top of atmosphere Landsat collections, so behind the scenes the string that you enter as an argument points to a set of instructions for working with that mission data that the module carries out. The underlying code is public-facing on her github site if you would like to understand in detail how it works. You can also read <a href="https://www.mdpi.com/2072-4292/12/9/1471" target="_blank">her article</a> on the module if you would like to learn more.  </p>
 <hr />
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 

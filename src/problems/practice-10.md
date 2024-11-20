@@ -132,6 +132,8 @@ print("Community palettes", palettes);
 
 ### __04 Create LST datasets from Landsat__  
 
+Here is [a starter script](../starters/landsat.md#land-surface-temperature){target=_blank} to help get started with Sophie's module.  
+
 ```js
 
 // ------------------------------------------------------------------------
@@ -195,8 +197,8 @@ Filter the dataset for images collected in summer months (June and August) with 
 
 Please do the following:  
 
-1. calculate the average (mean) temperature of summer month for each pixel; 
-2. convert units of reduced image from Kelvin to Fahrenheit;
+1. calculate the average (mean) temperature of summer months collection (result of step 6) for each pixel; 
+2. convert units of reduced image from Kelvin (units that result from LST module) to Fahrenheit;
 3. rename the band "AVG_LST_F" in the output image;
 4. clip to the holc_extent.
 
@@ -217,10 +219,20 @@ To convert from K to F:
 
 ### __08 Display Layer 5__  
 
+I include a viz dictionary below to help you use the community palettes module. For more help on this, please refer to [the module's docs](https://github.com/gee-community/ee-palettes?tab=readme-ov-file#ee-palettes){target=_blank}.   
+
 ```js
 // ------------------------------------------------------------------------
 //  8. Display as Layer 5.
 // ------------------------------------------------------------------------
+
+var output_viz = {
+  bands: ["AVG_LST_F"],
+  min: 85,
+  max: 115,
+  palette: palettes.colorbrewer.YlOrRd[9]
+};
+
 
 ```
 
@@ -249,11 +261,11 @@ To convert from K to F:
 //  Use zonal statistics to calculate mean lst in each aggregation level. 
 
 
-//  Convert each of above to image
+//  Convert each of above to image.
 
 
 
-// Compute difference: mean_parts - mean_whole 
+//  Compute difference: mean_parts - mean_whole 
 
 
 ```

@@ -504,7 +504,6 @@ print(
 ```
 
 
-
 ---
 
 [nbr-source]: https://support.climateengine.org/article/123-normalized-burn-ratio

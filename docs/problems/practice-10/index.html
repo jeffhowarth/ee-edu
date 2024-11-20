@@ -1636,6 +1636,7 @@
 </code></pre></div>
 <hr />
 <h3 id="04-create-lst-datasets-from-landsat"><strong>04 Create LST datasets from Landsat</strong></h3>
+<p>Here is <a href="../../starters/landsat/#land-surface-temperature" target="_blank">a starter script</a> to help get started with Sophie&rsquo;s module.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// ------------------------------------------------------------------------</span>
 <span class="c1">//  4. Create LST datasets from Landsat.</span>
 <span class="c1">// ------------------------------------------------------------------------</span>
@@ -1676,8 +1677,8 @@
 <h3 id="07-flatten-convert-rename-clip"><strong>07 Flatten, convert, rename, clip</strong></h3>
 <p>Please do the following:  </p>
 <ol>
-<li>calculate the average (mean) temperature of summer month for each pixel; </li>
-<li>convert units of reduced image from Kelvin to Fahrenheit;</li>
+<li>calculate the average (mean) temperature of summer months collection (result of step 6) for each pixel; </li>
+<li>convert units of reduced image from Kelvin (units that result from LST module) to Fahrenheit;</li>
 <li>rename the band &ldquo;AVG_LST_F&rdquo; in the output image;</li>
 <li>clip to the holc_extent.</li>
 </ol>
@@ -1693,9 +1694,17 @@
 </code></pre></div>
 <hr />
 <h3 id="08-display-layer-5"><strong>08 Display Layer 5</strong></h3>
+<p>I include a viz dictionary below to help you use the community palettes module. For more help on this, please refer to <a href="https://github.com/gee-community/ee-palettes?tab=readme-ov-file#ee-palettes" target="_blank">the module&rsquo;s docs</a>.   </p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// ------------------------------------------------------------------------</span>
 <span class="c1">//  8. Display as Layer 5.</span>
 <span class="c1">// ------------------------------------------------------------------------</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">output_viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">bands</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;AVG_LST_F&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">85</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">115</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="nx">palettes</span><span class="p">.</span><span class="nx">colorbrewer</span><span class="p">.</span><span class="nx">YlOrRd</span><span class="p">[</span><span class="mf">9</span><span class="p">]</span>
+<span class="p">};</span>
 </code></pre></div>
 <hr />
 <h3 id="09-make-and-display-layer-6"><strong>09 Make and display Layer 6</strong></h3>
@@ -1712,11 +1721,11 @@
 <span class="c1">//  Use zonal statistics to calculate mean lst in each aggregation level. </span>
 
 
-<span class="c1">//  Convert each of above to image</span>
+<span class="c1">//  Convert each of above to image.</span>
 
 
 
-<span class="c1">// Compute difference: mean_parts - mean_whole </span>
+<span class="c1">//  Compute difference: mean_parts - mean_whole </span>
 </code></pre></div>
 <hr />
 <h3 id="11-display-layer-7"><strong>11 Display Layer 7</strong></h3>
