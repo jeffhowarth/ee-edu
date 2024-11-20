@@ -677,11 +677,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multipart-single-part-geometries" class="md-nav__link">
-    multipart &amp; single part geometries
+  <a href="#multipart-vs-single-part-geometries" class="md-nav__link">
+    multipart vs. single part geometries
   </a>
   
-    <nav class="md-nav" aria-label="multipart & single part geometries">
+    <nav class="md-nav" aria-label="multipart vs. single part geometries">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1391,11 +1391,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multipart-single-part-geometries" class="md-nav__link">
-    multipart &amp; single part geometries
+  <a href="#multipart-vs-single-part-geometries" class="md-nav__link">
+    multipart vs. single part geometries
   </a>
   
-    <nav class="md-nav" aria-label="multipart & single part geometries">
+    <nav class="md-nav" aria-label="multipart vs. single part geometries">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1473,7 +1473,7 @@
 <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">fc_convex_hull</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;magenta&#39;</span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;Convex hull&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h2 id="multipart-single-part-geometries"><strong>multipart &amp; single part geometries</strong></h2>
+<h2 id="multipart-vs-single-part-geometries"><strong>multipart vs. single part geometries</strong></h2>
 <p>These methods change the form of the geometries liked to rows in a table. The picture below illustrates several concepts. The leftmost frame (<strong>A</strong>) shows a table with a <strong>singlepart</strong> geometry; a single polygon linked to each row in the table. The center frame (<strong>B</strong>) shows a table linked to <strong>multipart</strong> geometry (multipart geometry can link two or more polygons to a single row of attributes). The rightmost frame (<strong>C</strong>) shows another table with multipart geometries; four polygons associated with one row.   </p>
 <p><img alt="aggregation-levels" src="http://geography.middlebury.edu/howarth/ee_edu/eePatterns/vector-operations/aggregation-levels.png" /></p>
 <p>Operations are shown laterally. Moving from A to B is a <strong>dissolve</strong> operation (singlepart &rarr; multipart), while moving from B to A is an <strong>explode</strong> operation (multipart &rarr; singlepart). Note the asymmetry between moves on the right side. From B to C is another dissolve, but from C to B is not possible.  </p>

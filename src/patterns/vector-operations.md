@@ -51,7 +51,7 @@ Map.addLayer(fc_convex_hull, {color: 'magenta'}, "Convex hull", false);
 
 ---  
 
-## __multipart & single part geometries__  
+## __multipart vs. single part geometries__  
 
 These methods change the form of the geometries liked to rows in a table. The picture below illustrates several concepts. The leftmost frame (__A__) shows a table with a __singlepart__ geometry; a single polygon linked to each row in the table. The center frame (__B__) shows a table linked to __multipart__ geometry (multipart geometry can link two or more polygons to a single row of attributes). The rightmost frame (__C__) shows another table with multipart geometries; four polygons associated with one row.   
 

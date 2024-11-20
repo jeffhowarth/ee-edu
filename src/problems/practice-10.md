@@ -12,7 +12,7 @@ This problem also introduces:
 
 * [a community module of color palettes][ee-palettes] to help display raster images, but generates a noticeable delay in the execution of any script that calls it; 
 
-* methods for [changing aggregation levels](../patterns/vector-operations.md#multipart--single-part-geometries) of regions with attributes of feature collections.   
+* methods for [changing aggregation levels](../patterns/vector-operations.md#multipart-vs-single-part-geometries){target=_blank} of regions with attributes of feature collections.   
 
 By the end of the tutorial, you should have a script that reproduces the layers shown in the app below. You should also be able to rerun your analysis for any city in the USA with HOLC maps simply by changing one variable of your script.  
 
