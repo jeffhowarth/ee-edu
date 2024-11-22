@@ -181,7 +181,7 @@ var use_ndvi = true;                      // Use NDVI in computation (true or fa
 
 ### __06 Filter merged collection__  
 
-Filter the dataset for images collected in summer months (June and August) with cloud cover less that 10 percent. Also select only the 'LST' band from the images.
+Filter the dataset for images collected in summer months (June - August) with cloud cover less that 10 percent. Also select only the 'LST' band from the images.
 
 ```js
 
