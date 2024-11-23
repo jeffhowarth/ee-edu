@@ -99,7 +99,7 @@ The method takes four arguments that are defined in the table below.
 | dough       | The image with pixel values to be analyzed.   |  
 | cutter      | The feature collection with one or more features that define the zones of analysis. |
 | "statistic" | The statistic to calculate within each zone of analysis. Must be a string from these options: "sum", "max", "min", "mean", "count", "variety" ("count" reports the number of pixels, while "variety" reports the number of unique pixel values). |  
-| scale       | The scale of analysis. When you encounter time out errors, you can try to resolve by changing the scale of analysis. If you do not encounter time out errors, you can leave this argument blank. |  
+| scale       | The scale of analysis. Should be set to raster scale (pixel size) of dough. If you encounter time out errors that prevent you from displaying output layer, you can try to resolve by changing the scale of analysis, though this will introduce rounding errors. |  
 
 
 [zonal-stat]: http://geography.middlebury.edu/howarth/ee_edu/eePatterns/zonal-overlay/zonal-statistic.png
