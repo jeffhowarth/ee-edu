@@ -2,11 +2,48 @@ __PATTERNS__
 
 # __*user interface design*__  
 
-## __swipe map with side bar layout__  
+## __layouts__  
 
-The patterns below provide a template for a swipe map with a side bar for title, subtitle, documentation, and credits. 
+### __map with side bar layout__  
 
-### __make layout__  
+```js
+// -------------------------------------------------------------
+//  Make Map with Side Bar Layout
+// -------------------------------------------------------------
+
+// Initialize side bar.
+
+var side_bar = ui.Panel({
+  layout: ui.Panel.Layout.flow('vertical'),
+  style: {width: "20%"}
+});
+
+// Initialize new map.
+
+var right_Map = ui.Map();
+
+// Initialize layout with side bar and map
+
+var layout = ui.SplitPanel(
+  {
+    firstPanel: side_bar,
+    secondPanel: right_Map, 
+    orientation: 'horizontal',
+    wipe: false
+  }
+);
+
+// Add layout to root. 
+
+ui.root.clear();
+ui.root.setLayout(ui.Panel.Layout.flow('horizontal'));
+ui.root.add(layout);
+
+```
+
+---  
+
+### __swipe map with side bar layout__  
 
 ```js
 // -------------------------------------------------------------

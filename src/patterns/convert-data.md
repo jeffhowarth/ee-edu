@@ -49,7 +49,7 @@ The method takes three arguments that are defined in the table below.
 |:--:       | :--               | 
 | fc        | The feature collection to convert.    |
 | "column_name" | The name of the column with the numeric data to populate the pixel values of the output raster. | 
-| "reducer"     | How you would like to handle cases where two of more features overlap. Essentially, what value do you want to populate a pixel with when there is more than one number? This must be a string and one of the following: "mean", "first", "max", "min". |
+| "reducer"     | How you would like to combine the values of each intersecting feature into a final result to store in the pixel? This must be a string and one of the following: "mean", "first", "max", "min". |
 
 
 ---  
@@ -79,7 +79,7 @@ var objects_with_vectors = geo.iConvert.makeObjectsWithVectors(image, "property"
 | :--       | :--           |
 | __image__ | Input image with a band that represent boolean or nominal (class) raster to clump.    |  
 | __"property"__    | A description (as a string) of the boolean or class data used to clump. Flr example, "class".       |  
-| __scale__ | Scale of analysis to help troubleshoot TIME OUT errors. Often good practice to start relatively coarse and then increase resolution in later runs.        |  
+| __scale__ | Scale of analysis to help troubleshoot TIME OUT errors. Often good practice to start relatively coarse and then aim to match resolution of image in later runs.        |  
 | extent    | The area of interest or study region to constrain analysis.         |
 | "unit"    | Choose between "acres", "sq_m", and "sq_km"               |  
 

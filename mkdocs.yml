@@ -164,7 +164,6 @@ nav:
     - zonal operations: patterns/zonal-operations.md  
     - vector operations: patterns/vector-operations.md  
     - terrain: patterns/terrain.md  
-    - time series: patterns/time-series.md  
     - export data: patterns/export.md  
     - ui design: patterns/ui-design.md  
   - STARTERS:  

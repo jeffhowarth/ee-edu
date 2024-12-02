@@ -335,8 +335,6 @@
         
           
         
-          
-        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -669,6 +667,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#chart-by-class" class="md-nav__link">
+    chart by class
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -700,20 +705,6 @@
     <li class="md-nav__item">
       <a href="../terrain/" class="md-nav__link">
         terrain
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../time-series/" class="md-nav__link">
-        time series
       </a>
     </li>
   
@@ -1364,6 +1355,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#chart-by-class" class="md-nav__link">
+    chart by class
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1480,6 +1478,80 @@
 <tr>
 <td align="center">scale</td>
 <td align="left">The scale of analysis. Should be set to raster scale (pixel size) of dough. If you encounter time out errors that prevent you from displaying output layer, you can try to resolve by changing the scale of analysis, though this will introduce rounding errors.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="chart-by-class"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> chart by class</strong></h2>
+<p>This method differs from the zonal statistic method described above in two ways: (1) the cutters are defined by a nominal (or categorical) image (rather than a feature collection) and (2) the output is a chart (rather than a feature collection).  </p>
+<p>Otherwise, the concept is the same: you use the zones of one layer (the cutter image) to calculate statistics (within each zone) from a dough image. Because the output is a chart, there are a few more inputs, so you will need to fill out a dictionary to use the method.  </p>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// ---------------------------------------------------------------------</span>
+<span class="c1">//  Chart a zonal statistic with a class layer.  </span>
+<span class="c1">// ---------------------------------------------------------------------</span>
+
+<span class="c1">// Define chart arguments. </span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">chart_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">data_image</span><span class="o">:</span><span class="w"> </span><span class="nx">dough_image</span><span class="p">,</span><span class="w">                          </span>
+<span class="w">  </span><span class="nx">class_image</span><span class="o">:</span><span class="w"> </span><span class="nx">cutter_image</span><span class="p">,</span><span class="w">                       </span>
+<span class="w">  </span><span class="nx">aoi</span><span class="o">:</span><span class="w"> </span><span class="nx">area_or_interest</span><span class="p">,</span><span class="w">                          </span>
+<span class="w">  </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">statistic</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="nx">analysis_scale</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">class_labels</span><span class="o">:</span><span class="w"> </span><span class="nx">labels_that_define_cutters</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">chart_title</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="nx">palette_for_cutters</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">ha_label</span><span class="o">:</span><span class="w"> </span><span class="nx">label_for_horizontal_axis</span>
+
+
+<span class="p">};</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">myChart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geo</span><span class="p">.</span><span class="nx">uiChart</span><span class="p">.</span><span class="nx">makeBarChartByClass</span><span class="p">(</span><span class="nx">chart_arguments</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<p>The table below defines each key in the dictionary and describes rules of thumb.  </p>
+<table>
+<thead>
+<tr>
+<th align="right">ARGUMENT</th>
+<th align="left">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><strong>data_image</strong></td>
+<td align="left">The dough image; a numeric image with values that you would like to summarize with a statistic.</td>
+</tr>
+<tr>
+<td align="right"><strong>class_image</strong></td>
+<td align="left">The cutter image; an image with values that represent names or categories or classes, that you would like to use as zones of analysis.</td>
+</tr>
+<tr>
+<td align="right"><strong>aoi</strong></td>
+<td align="left">A feature collection that defines an area of interest or study region.</td>
+</tr>
+<tr>
+<td align="right"><strong>reducer</strong></td>
+<td align="left">The statistic that you would like to calculate within each cutter. Some common options are: <code>ee.Reducer.mean()</code>, <code>ee.Reducer.median()</code>, <code>ee.Reducer.min()</code>, <code>ee.Reducer.max()</code></td>
+</tr>
+<tr>
+<td align="right"><strong>scale</strong></td>
+<td align="left">The scale of analysis. Ideally, set to be the same resolution as your dough image. If you encounter TIME OUT errors, try to coarsen the scale.</td>
+</tr>
+<tr>
+<td align="right"><strong>class_labels</strong></td>
+<td align="left">Names for the cutters in your class image. Must be a list of strings, where each string in the list defines a class. Ideally, you have one label per class value. The order of the labels in your list should match the order of the class values. This is similar to the labels of a nominal legend.</td>
+</tr>
+<tr>
+<td align="right"><strong>title</strong></td>
+<td align="left">The title for the chart. Must be a string.</td>
+</tr>
+<tr>
+<td align="right"><strong>palette</strong></td>
+<td align="left">The colors for each class in the chart. Must be a list of strings, where each string defines an html color. The length of this list should match the length of the class label list. This is similar to the palette of a nominal legend.</td>
+</tr>
+<tr>
+<td align="right"><strong>ha_label</strong></td>
+<td align="left">A title for the horizontal axis of the chart. Must be a string.</td>
 </tr>
 </tbody>
 </table>

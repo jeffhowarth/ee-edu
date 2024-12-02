@@ -106,4 +106,56 @@ The method takes four arguments that are defined in the table below.
 
 ---  
 
+## __:earth_americas: chart by class__  
+
+This method differs from the zonal statistic method described above in two ways: (1) the cutters are defined by a nominal (or categorical) image (rather than a feature collection) and (2) the output is a chart (rather than a feature collection).  
+
+Otherwise, the concept is the same: you use the zones of one layer (the cutter image) to calculate statistics (within each zone) from a dough image. Because the output is a chart, there are a few more inputs, so you will need to fill out a dictionary to use the method.  
+
+```js
+
+// ---------------------------------------------------------------------
+//  Chart a zonal statistic with a class layer.  
+// ---------------------------------------------------------------------
+
+// Define chart arguments. 
+
+var chart_arguments = {
+  data_image: dough_image,                          
+  class_image: cutter_image,                       
+  aoi: area_or_interest,                          
+  reducer: statistic,
+  scale: analysis_scale,
+  class_labels: labels_that_define_cutters,
+  title: chart_title,
+  palette: palette_for_cutters,
+  ha_label: label_for_horizontal_axis
+  
+  
+};
+ 
+var myChart = geo.uiChart.makeBarChartByClass(chart_arguments);
+
+
+```
+
+---  
+
+The table below defines each key in the dictionary and describes rules of thumb.  
+
+| ARGUMENT          | DESCRIPTION           |
+| --:               | :--                 | 
+| **data_image**    | The dough image; a numeric image with values that you would like to summarize with a statistic.  | 
+| **class_image**   | The cutter image; an image with values that represent names or categories or classes, that you would like to use as zones of analysis.  |  
+| **aoi**           | A feature collection that defines an area of interest or study region. |  
+| **reducer**       | The statistic that you would like to calculate within each cutter. Some common options are: ```ee.Reducer.mean()```, ```ee.Reducer.median()```, ```ee.Reducer.min()```, ```ee.Reducer.max()``` |  
+| **scale**         | The scale of analysis. Ideally, set to be the same resolution as your dough image. If you encounter TIME OUT errors, try to coarsen the scale. |  
+| **class_labels**  | Names for the cutters in your class image. Must be a list of strings, where each string in the list defines a class. Ideally, you have one label per class value. The order of the labels in your list should match the order of the class values. This is similar to the labels of a nominal legend. |  
+| **title**         | The title for the chart. Must be a string. |  
+| **palette**       | The colors for each class in the chart. Must be a list of strings, where each string defines an html color. The length of this list should match the length of the class label list. This is similar to the palette of a nominal legend. |  
+| **ha_label**      | A title for the horizontal axis of the chart. Must be a string. |  
+
+
+---  
+
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>

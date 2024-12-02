@@ -335,8 +335,6 @@
         
           
         
-          
-        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -637,20 +635,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../time-series/" class="md-nav__link">
-        time series
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../export/" class="md-nav__link">
         export data
       </a>
@@ -699,16 +683,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#swipe-map-with-side-bar-layout" class="md-nav__link">
-    swipe map with side bar layout
+  <a href="#layouts" class="md-nav__link">
+    layouts
   </a>
   
-    <nav class="md-nav" aria-label="swipe map with side bar layout">
+    <nav class="md-nav" aria-label="layouts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#make-layout" class="md-nav__link">
-    make layout
+  <a href="#map-with-side-bar-layout" class="md-nav__link">
+    map with side bar layout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swipe-map-with-side-bar-layout" class="md-nav__link">
+    swipe map with side bar layout
   </a>
   
 </li>
@@ -1365,16 +1356,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#swipe-map-with-side-bar-layout" class="md-nav__link">
-    swipe map with side bar layout
+  <a href="#layouts" class="md-nav__link">
+    layouts
   </a>
   
-    <nav class="md-nav" aria-label="swipe map with side bar layout">
+    <nav class="md-nav" aria-label="layouts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#make-layout" class="md-nav__link">
-    make layout
+  <a href="#map-with-side-bar-layout" class="md-nav__link">
+    map with side bar layout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swipe-map-with-side-bar-layout" class="md-nav__link">
+    swipe map with side bar layout
   </a>
   
 </li>
@@ -1463,9 +1461,42 @@
 
 <p><strong>PATTERNS</strong>  </p>
 <h1 id="user-interface-design"><strong><em>user interface design</em></strong></h1>
-<h2 id="swipe-map-with-side-bar-layout"><strong>swipe map with side bar layout</strong></h2>
-<p>The patterns below provide a template for a swipe map with a side bar for title, subtitle, documentation, and credits. </p>
-<h3 id="make-layout"><strong>make layout</strong></h3>
+<h2 id="layouts"><strong>layouts</strong></h2>
+<h3 id="map-with-side-bar-layout"><strong>map with side bar layout</strong></h3>
+<div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
+<span class="c1">//  Make Map with Side Bar Layout</span>
+<span class="c1">// -------------------------------------------------------------</span>
+
+<span class="c1">// Initialize side bar.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">side_bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">layout</span><span class="o">:</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">.</span><span class="nx">Layout</span><span class="p">.</span><span class="nx">flow</span><span class="p">(</span><span class="s1">&#39;vertical&#39;</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;20%&quot;</span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Initialize new map.</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">right_Map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">();</span>
+
+<span class="c1">// Initialize layout with side bar and map</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">SplitPanel</span><span class="p">(</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstPanel</span><span class="o">:</span><span class="w"> </span><span class="nx">side_bar</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">secondPanel</span><span class="o">:</span><span class="w"> </span><span class="nx">right_Map</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">orientation</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">wipe</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">);</span>
+
+<span class="c1">// Add layout to root. </span>
+
+<span class="nx">ui</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="nx">ui</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">setLayout</span><span class="p">(</span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">.</span><span class="nx">Layout</span><span class="p">.</span><span class="nx">flow</span><span class="p">(</span><span class="s1">&#39;horizontal&#39;</span><span class="p">));</span>
+<span class="nx">ui</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">layout</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="swipe-map-with-side-bar-layout"><strong>swipe map with side bar layout</strong></h3>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// -------------------------------------------------------------</span>
 <span class="c1">//  Make Swipe Map with Side Bar Layout</span>
 <span class="c1">// -------------------------------------------------------------</span>

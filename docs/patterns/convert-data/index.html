@@ -335,8 +335,6 @@
         
           
         
-          
-        
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -713,20 +711,6 @@
     <li class="md-nav__item">
       <a href="../terrain/" class="md-nav__link">
         terrain
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../time-series/" class="md-nav__link">
-        time series
       </a>
     </li>
   
@@ -1448,7 +1432,7 @@
 </tr>
 <tr>
 <td align="center">&ldquo;reducer&rdquo;</td>
-<td align="left">How you would like to handle cases where two of more features overlap. Essentially, what value do you want to populate a pixel with when there is more than one number? This must be a string and one of the following: &ldquo;mean&rdquo;, &ldquo;first&rdquo;, &ldquo;max&rdquo;, &ldquo;min&rdquo;.</td>
+<td align="left">How you would like to combine the values of each intersecting feature into a final result to store in the pixel? This must be a string and one of the following: &ldquo;mean&rdquo;, &ldquo;first&rdquo;, &ldquo;max&rdquo;, &ldquo;min&rdquo;.</td>
 </tr>
 </tbody>
 </table>
@@ -1481,7 +1465,7 @@
 </tr>
 <tr>
 <td align="left"><strong>scale</strong></td>
-<td align="left">Scale of analysis to help troubleshoot TIME OUT errors. Often good practice to start relatively coarse and then increase resolution in later runs.</td>
+<td align="left">Scale of analysis to help troubleshoot TIME OUT errors. Often good practice to start relatively coarse and then aim to match resolution of image in later runs.</td>
 </tr>
 <tr>
 <td align="left">extent</td>
