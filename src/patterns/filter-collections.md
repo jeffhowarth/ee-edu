@@ -70,7 +70,7 @@ var select_by_date = ic.filter(
 
 This involves making spatial comparisons between two layers. One layer is a collection of things (features, images) that has more things than you need. The other layer is a geometry, feature, or feature collection that defines your place of interest. These filters work by comparing the location of things in the first collection with the location of the place of interest in the second layer.   
 
-### __by bounds__  
+### __filter by bounds__  
 
 One of the most common spatial filters tests for __overlap__ between items in the collection and the place of interest. Any item in the collection that overlaps the place of interest will pass through the filter and the rest of the things will be filtered out. Even things that only overlap the place of interest on the very edge will still pass through the filter and remain in the collection. The diagram below shows this by passing items 7, 13, 19 through the filter. You can think of the items in this collection as either individual images (image collection) or individual features (feature collection).   
 

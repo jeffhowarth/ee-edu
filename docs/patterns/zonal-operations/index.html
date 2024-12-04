@@ -668,8 +668,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#chart-by-class" class="md-nav__link">
-    chart by class
+  <a href="#clip-by-region" class="md-nav__link">
+    clip by region
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-zonal-statistic-by-class" class="md-nav__link">
+    chart zonal statistic by class
   </a>
   
 </li>
@@ -1356,8 +1363,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#chart-by-class" class="md-nav__link">
-    chart by class
+  <a href="#clip-by-region" class="md-nav__link">
+    clip by region
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-zonal-statistic-by-class" class="md-nav__link">
+    chart zonal statistic by class
   </a>
   
 </li>
@@ -1379,7 +1393,7 @@
 
 <p><strong>PATTERNS</strong></p>
 <h1 id="zonal-operations"><em><strong>zonal operations</strong></em></h1>
-<p>Zonal operations analyze pixel values in one layer based zones (regions) defined by another layer. In Earth Engine, the zones are generally defined by features in a feature collection.  </p>
+<p>Zonal operations analyze pixel values in one layer based on zones (regions) defined by another layer. In Earth Engine, the zones are often (but not always) defined by features in a feature collection.   </p>
 <p><em>more soon</em>  </p>
 <hr />
 <h2 id="zonal-area"><strong>zonal area</strong></h2>
@@ -1482,9 +1496,14 @@
 </tbody>
 </table>
 <hr />
-<h2 id="chart-by-class"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> chart by class</strong></h2>
-<p>This method differs from the zonal statistic method described above in two ways: (1) the cutters are defined by a nominal (or categorical) image (rather than a feature collection) and (2) the output is a chart (rather than a feature collection).  </p>
-<p>Otherwise, the concept is the same: you use the zones of one layer (the cutter image) to calculate statistics (within each zone) from a dough image. Because the output is a chart, there are a few more inputs, so you will need to fill out a dictionary to use the method.  </p>
+<h2 id="clip-by-region"><strong>clip by region</strong></h2>
+<p>This is a <strong>knife</strong> method that will use the zones of a feature collection to clip a raster. The result is similar to a <a href="../local-operations/#masks">mask operation</a>, but here you use a vector dataset to cut rather than a raster dataset. The engineers at Google warn that <code>.clip()</code> is more computationally expensive than <code>.updateMask()</code> and can be particularly slow with complex geometries.   </p>
+<div class="language-js highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">output_clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">clip</span><span class="p">(</span><span class="nx">cutter</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="chart-zonal-statistic-by-class"><strong><img alt="🌎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f30e.svg" title=":earth_americas:" /> chart zonal statistic by class</strong></h2>
+<p>This pattern calculates a zonal static where (1) a nominal (classified, categorical, object) image defines the cutter (rather than a feature collection) and (2) the output is a chart (rather than a feature collection).  </p>
+<p>As a method for calculating zonal statistics, the underlying spatial concept is to use one layer (the cutter image) to define zones for statistical analysis of a dough image. Because the output is a chart, there are a few more inputs, so you will need to fill out a dictionary to use the method.  </p>
 <div class="language-js highlight"><pre><span></span><code><span class="c1">// ---------------------------------------------------------------------</span>
 <span class="c1">//  Chart a zonal statistic with a class layer.  </span>
 <span class="c1">// ---------------------------------------------------------------------</span>
@@ -1497,8 +1516,8 @@
 <span class="w">  </span><span class="nx">aoi</span><span class="o">:</span><span class="w"> </span><span class="nx">area_or_interest</span><span class="p">,</span><span class="w">                          </span>
 <span class="w">  </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">statistic</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="nx">analysis_scale</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">class_labels</span><span class="o">:</span><span class="w"> </span><span class="nx">labels_that_define_cutters</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">chart_title</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">class_labels</span><span class="o">:</span><span class="w"> </span><span class="nx">labels_that_define_cutters</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="nx">palette_for_cutters</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">ha_label</span><span class="o">:</span><span class="w"> </span><span class="nx">label_for_horizontal_axis</span>
 

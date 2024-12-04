@@ -2,7 +2,7 @@ __PATTERNS__
 
 # _**zonal operations**_  
 
-Zonal operations analyze pixel values in one layer based zones (regions) defined by another layer. In Earth Engine, the zones are generally defined by features in a feature collection.  
+Zonal operations analyze pixel values in one layer based on zones (regions) defined by another layer. In Earth Engine, the zones are often (but not always) defined by features in a feature collection.   
 
 _more soon_  
 
@@ -106,11 +106,21 @@ The method takes four arguments that are defined in the table below.
 
 ---  
 
-## __:earth_americas: chart by class__  
+## __clip by region__  
 
-This method differs from the zonal statistic method described above in two ways: (1) the cutters are defined by a nominal (or categorical) image (rather than a feature collection) and (2) the output is a chart (rather than a feature collection).  
+This is a __knife__ method that will use the zones of a feature collection to clip a raster. The result is similar to a [mask operation](../patterns/local-operations.md#masks), but here you use a vector dataset to cut rather than a raster dataset. The engineers at Google warn that ```.clip()``` is more computationally expensive than ```.updateMask()``` and can be particularly slow with complex geometries.   
 
-Otherwise, the concept is the same: you use the zones of one layer (the cutter image) to calculate statistics (within each zone) from a dough image. Because the output is a chart, there are a few more inputs, so you will need to fill out a dictionary to use the method.  
+```js
+var output_clip = input.clip(cutter);
+```
+
+---  
+
+## __:earth_americas: chart zonal statistic by class__  
+
+This pattern calculates a zonal static where (1) a nominal (classified, categorical, object) image defines the cutter (rather than a feature collection) and (2) the output is a chart (rather than a feature collection).  
+
+As a method for calculating zonal statistics, the underlying spatial concept is to use one layer (the cutter image) to define zones for statistical analysis of a dough image. Because the output is a chart, there are a few more inputs, so you will need to fill out a dictionary to use the method.  
 
 ```js
 
@@ -126,8 +136,8 @@ var chart_arguments = {
   aoi: area_or_interest,                          
   reducer: statistic,
   scale: analysis_scale,
-  class_labels: labels_that_define_cutters,
   title: chart_title,
+  class_labels: labels_that_define_cutters,
   palette: palette_for_cutters,
   ha_label: label_for_horizontal_axis
   
