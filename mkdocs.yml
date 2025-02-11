@@ -111,8 +111,8 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       use_pygments: true
       linenums_style: pymdownx-inline
@@ -171,32 +171,32 @@ nav:
     - MODIS: starters/MODIS.md  
     - NAIP: starters/NAIP.md  
     - Sentinel: starters/sentinel.md  
-  - PROBLEMS:  
-    - T1. A sketch map from lidar: problems/tutorial-01.md  
-    - P1. Memory under cover: problems/practice-01.md
-    - T2. A slippy topographic map: problems/tutorial-02.md
-    - P2. Ice age bathtub: problems/practice-02.md  
-    - T3. Intro to feature collections: problems/tutorial-03.md  
-    - P3. Parent materials of soils: problems/practice-03.md
-    - T4. Forest blocks: problems/tutorial-04.md  
-    - P4. Forest blocks and habitat connectors: problems/practice-04.md  
-    - T5. Scale in web mercator: problems/tutorial-05.md  
-    - P5. Land use in watershed riparian zones: problems/practice-05.md  
-    - TS. Troubleshooting errors: problems/troubleshooting.md  
-    - P6. Changes in the night: problems/practice-06.md  
-    - T7. NAIP Explorer: problems/tutorial-07.md
-    - P7. Swipe map app: problems/practice-07.md  
-    - T8. Landsat snapshots: problems/tutorial-08.md  
-    - P8. Swipe map app (2): problems/practice-08.md  
-    - T9. Spectral indices: problems/tutorial-09.md  
-    - P9. CZU burn severity: problems/practice-09.md  
-    - T10. Drought mapping: problems/tutorial-10.md  
-    - P10. Memories of urban environments: problems/practice-10.md  
+  # - PROBLEMS:  
+  #   - T1. A sketch map from lidar: problems/tutorial-01.md  
+  #   - P1. Memory under cover: problems/practice-01.md
+  #   - T2. A slippy topographic map: problems/tutorial-02.md
+  #   - P2. Ice age bathtub: problems/practice-02.md  
+  #   - T3. Intro to feature collections: problems/tutorial-03.md  
+  #   - P3. Parent materials of soils: problems/practice-03.md
+  #   - T4. Forest blocks: problems/tutorial-04.md  
+  #   - P4. Forest blocks and habitat connectors: problems/practice-04.md  
+  #   - T5. Scale in web mercator: problems/tutorial-05.md  
+  #   - P5. Land use in watershed riparian zones: problems/practice-05.md  
+  #   - TS. Troubleshooting errors: problems/troubleshooting.md  
+  #   - P6. Changes in the night: problems/practice-06.md  
+  #   - T7. NAIP Explorer: problems/tutorial-07.md
+  #   - P7. Swipe map app: problems/practice-07.md  
+  #   - T8. Landsat snapshots: problems/tutorial-08.md  
+  #   - P8. Swipe map app (2): problems/practice-08.md  
+  #   - T9. Spectral indices: problems/tutorial-09.md  
+  #   - P9. CZU burn severity: problems/practice-09.md  
+  #   - T10. Drought mapping: problems/tutorial-10.md  
+  #   - P10. Memories of urban environments: problems/practice-10.md  
   
-  - SOLUTIONS:  
-    - Tutorials: solutions/tutorials.md  
-    - Practice: solutions/practice.md  
-    - Error Glossary: solutions/error-glossary.md
+  # - SOLUTIONS:  
+  #   - Tutorials: solutions/tutorials.md  
+  #   - Practice: solutions/practice.md  
+  #   - Error Glossary: solutions/error-glossary.md
 
 
 
